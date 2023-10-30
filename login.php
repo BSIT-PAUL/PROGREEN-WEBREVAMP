@@ -43,7 +43,7 @@ include 'database/dbcon.php';
               <div class="login-right-wrap">
                 <h1>Welcome</h1>
                 <p class="account-subtitle">Access to your portal</p>
-                <form action="index.html" method="post">
+                <form method="post">
                   <div class="form-group">
                     <label class="form-control-label">Username</label>
                     <input type="text" class="form-control" name="user" placeholder="Enter username" required />
