@@ -30,7 +30,7 @@
 <h1>Forgot Password?</h1>
 <p class="account-subtitle">Enter your email to get a password reset link</p>
 
-<form action="login.html">
+<form action="login.php">
 <div class="form-group">
 <label class="form-control-label">Email Address</label>
 <input class="form-control" type="text">
@@ -40,7 +40,7 @@
 </div>
 </form>
 
-<div class="text-center dont-have">Remember your password? <a href="login.html">Login</a></div>
+<div class="text-center dont-have">Remember your password? <a href="login.php">Login</a></div>
 </div>
 </div>
 </div>

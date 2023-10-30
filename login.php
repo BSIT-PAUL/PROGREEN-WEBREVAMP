@@ -71,7 +71,7 @@ include 'database/dbcon.php';
                         </div>
                       </div>
                       <div class="col-6 text-right">
-                        <a class="forgot-link" href="forgot-password.html"
+                        <a class="forgot-link" href="forgot-password.php"
                           >Forgot Password ?</a
                         >
                       </div>
@@ -100,7 +100,7 @@ include 'database/dbcon.php';
 
                   <div class="text-center dont-have">
                     Don't have an account yet?
-                    <a href="register.html">Register</a>
+                    <a href="register.php">Register</a>
                   </div>
                 </form>
                 <?php 

@@ -30,7 +30,7 @@
 <h1>Register</h1>
 <p class="account-subtitle">Access to our dashboard</p>
 
-<form action="login.html">
+<form action="login.php">
 <div class="form-group">
 <label class="form-control-label">Name</label>
 <input class="form-control" type="text">
@@ -62,7 +62,7 @@
 <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a><a href="#" class="google"><i class="fab fa-google"></i></a>
 </div>
 
-<div class="text-center dont-have">Already have an account? <a href="login.html">Login</a></div>
+<div class="text-center dont-have">Already have an account? <a href="login.php">Login</a></div>
 </div>
 </div>
 </div>

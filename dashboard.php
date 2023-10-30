@@ -1,143 +1,9 @@
 <?php 
 	include_once("includes/system_header.php");
 	include_once("includes/system_main_wraper.php");
+	include_once("includes/system_navbar.php");
+	include_once("includes/sidebar.php");
 ?>
-
-			<div class="top-nav-search">
-				<form>
-					<input type="text" class="form-control" placeholder="">
-					<button class="btn" type="submit"><i class="fas fa-search"></i></button>
-				</form>
-			</div>
-
-
-			<a class="mobile_btn" id="mobile_btn">
-				<i class="fas fa-bars"></i>
-			</a>
-
-
-			<ul class="nav user-menu">
-
-				<li class="nav-item dropdown">
-					<a href="#" class="dropdown-toggle nav-link pr-0" data-toggle="dropdown">
-						<i data-feather="bell"></i> <span class="badge badge-pill"></span>
-					</a>
-					<div class="dropdown-menu notifications">
-						<div class="topnav-dropdown-header">
-							<span class="notification-title">Notifications</span>
-							<a href="javascript:void(0)" class="clear-noti"> Clear All</a>
-						</div>
-						<div class="noti-content">
-							<ul class="notification-list">
-								<li class="notification-message">
-									<a href="activities.html">
-										<div class="media">
-											<span class="avatar avatar-sm">
-												<img class="avatar-img rounded-circle" alt="" src="assets/img/profiles/avatar-02.jpg">
-											</span>
-											<div class="media-body">
-												<p class="noti-details"><span class="noti-title">Brian Johnson</span> paid the invoice <span
-														class="noti-title">#DF65485</span></p>
-												<p class="noti-time"><span class="notification-time">4 mins ago</span></p>
-											</div>
-										</div>
-									</a>
-								</li>
-								<li class="notification-message">
-									<a href="activities.php">
-										<div class="media">
-											<span class="avatar avatar-sm">
-												<img class="avatar-img rounded-circle" alt="" src="assets/img/profiles/avatar-03.jpg">
-											</span>
-											<div class="media-body">
-												<p class="noti-details"><span class="noti-title">Marie Canales</span> has accepted your estimate
-													<span class="noti-title">#GTR458789</span></p>
-												<p class="noti-time"><span class="notification-time">6 mins ago</span></p>
-											</div>
-										</div>
-									</a>
-								</li>
-								<li class="notification-message">
-									<a href="activities.php">
-										<div class="media">
-											<div class="avatar avatar-sm">
-												<span class="avatar-title rounded-circle bg-primary-light"><i class="far fa-user"></i></span>
-											</div>
-											<div class="media-body">
-												<p class="noti-details"><span class="noti-title">New user registered</span></p>
-												<p class="noti-time"><span class="notification-time">8 mins ago</span></p>
-											</div>
-										</div>
-									</a>
-								</li>
-								<li class="notification-message">
-									<a href="activities.html">
-										<div class="media">
-											<span class="avatar avatar-sm">
-												<img class="avatar-img rounded-circle" alt="" src="assets/img/profiles/avatar-04.jpg">
-											</span>
-											<div class="media-body">
-												<p class="noti-details"><span class="noti-title">Barbara Moore</span> declined the invoice <span
-														class="noti-title">#RDW026896</span></p>
-												<p class="noti-time"><span class="notification-time">12 mins ago</span></p>
-											</div>
-										</div>
-									</a>
-								</li>
-								<li class="notification-message">
-									<a href="activities.html">
-										<div class="media">
-											<div class="avatar avatar-sm">
-												<span class="avatar-title rounded-circle bg-info-light"><i class="far fa-comment"></i></span>
-											</div>
-											<div class="media-body">
-												<p class="noti-details"><span class="noti-title">You have received a new message</span></p>
-												<p class="noti-time"><span class="notification-time">2 days ago</span></p>
-											</div>
-										</div>
-									</a>
-								</li>
-							</ul>
-						</div>
-						<div class="topnav-dropdown-footer">
-							<a href="activities.html">View all Notifications</a>
-						</div>
-					</div>
-				</li>
-
-
-				<li class="nav-item dropdown has-arrow main-drop">
-					<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-						<span class="user-img">
-							<img src="assets/img/profile.jpg" alt="">
-							<span class="status online"></span>
-						</span>
-						<span>John Paul Bayoneto</span>
-					</a>
-					<div class="dropdown-menu">
-						<a class="dropdown-item" href="profile.html"><i data-feather="user" class="mr-1"></i> Profile</a>
-						<a class="dropdown-item" href="settings.html"><i data-feather="settings" class="mr-1"></i> Settings</a>
-						<a class="dropdown-item" href="login.php"><i data-feather="log-out" class="mr-1"></i> Logout</a>
-					</div>
-				</li>
-
-			</ul>
-			<div class="dropdown mobile-user-menu show">
-				<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i
-						class="fa fa-ellipsis-v"></i></a>
-				<div class="dropdown-menu dropdown-menu-right ">
-					<a class="dropdown-item" href="profile.html">My Profile</a>
-					<a class="dropdown-item" href="settings.html">Settings</a>
-					<a class="dropdown-item" href="login.php">Logout</a>
-				</div>
-			</div>
-
-		</div>
-
-
-		<?php include("includes/sidebar.php") ?>
-
-
 		<div class="page-wrapper">
 			<div class="content container-fluid">
 				<div class="page-name 	mb-4">
@@ -149,7 +15,7 @@
 					<div class="col-xl-6 col-sm-12 col-12">
 						<div class="breadcrumb-path ">
 							<ul class="breadcrumb">
-								<li class="breadcrumb-item"><a href="index.html"><img src="assets/img/dash.png" class="mr-3"
+								<li class="breadcrumb-item"><a href="index.php"><img src="assets/img/dash.png" class="mr-3"
 											alt="breadcrumb" />Home</a>
 								</li>
 								<li class="breadcrumb-item active">Dashboard</li>
@@ -163,7 +29,7 @@
 								<a class="btn-dash" href="#"> Admin Dashboard</a>
 							</div>
 							<div class="col-xl-6 col-sm-6 col-12">
-								<a class="btn-emp" href="index-employee.html">Employee Dashboard</a>
+								<a class="btn-emp" href="index-employee.php">Employee Dashboard</a>
 							</div>
 						</div>
 					</div>
@@ -480,7 +346,7 @@
 									<label>Tue, 31 Dec 2021</label>
 								</div>
 								<div class="leave-viewall">
-									<a href="leave.html">View all <img src="assets/img/right-arrow.png" class="ml-2" alt="arrow" /></a>
+									<a href="leave.php">View all <img src="assets/img/right-arrow.png" class="ml-2" alt="arrow" /></a>
 								</div>
 							</div>
 						</div>

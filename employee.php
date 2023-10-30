@@ -1,179 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-<title>PROGREEN WebRevamp</title>
-
-<link rel="shortcut icon" href="assets/img/favicon.png">
-
-<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-
-<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
-
-<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
-
-<link rel="stylesheet" href="assets/css/style.css">
-<!--[if lt IE 9]>
-			<script src="assets/js/html5shiv.min.js"></script>
-			<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
-</head>
-<body>
-
-<div class="main-wrapper">
-
-<div class="header">
-
-<div class="header-left">
-<a href="index.html" class="logo">
-<img src="assets/img/logo_0.png" alt="Logo">
-</a>
-<a href="index.html" class="logo logo-small">
-<img src="assets/img/logo (1).png" alt="Logo" width="30" height="30">
-</a>
-<a href="javascript:void(0);" id="toggle_btn">
-<span class="bar-icon">
-<span></span>
-<span></span>
-<span></span>
-</span>
-</a>
-</div>
-
-
-
-
-<div class="top-nav-search">
-<form>
-<input type="text" class="form-control" placeholder="">
-<button class="btn" type="submit"><i class="fas fa-search"></i></button>
-</form>
-</div>
-
-
-<a class="mobile_btn" id="mobile_btn">
-<i class="fas fa-bars"></i>
-</a>
-
-
-<ul class="nav user-menu">
-
-<li class="nav-item dropdown">
-<a href="#" class="dropdown-toggle nav-link pr-0" data-toggle="dropdown">
-<i data-feather="bell"></i> <span class="badge badge-pill"></span>
-</a>
-<div class="dropdown-menu notifications">
-<div class="topnav-dropdown-header">
-<span class="notification-title">Notifications</span>
-<a href="javascript:void(0)" class="clear-noti"> Clear All</a>
-</div>
-<div class="noti-content">
-<ul class="notification-list">
-<li class="notification-message">
-<a href="activities.html">
-<div class="media">
-<span class="avatar avatar-sm">
-<img class="avatar-img rounded-circle" alt="" src="assets/img/profiles/avatar-02.jpg">
-</span>
-<div class="media-body">
-<p class="noti-details"><span class="noti-title">Brian Johnson</span> paid the invoice <span class="noti-title">#DF65485</span></p>
-<p class="noti-time"><span class="notification-time">4 mins ago</span></p>
-</div>
-</div>
-</a>
-</li>
-<li class="notification-message">
-<a href="activities.html">
-<div class="media">
-<span class="avatar avatar-sm">
-<img class="avatar-img rounded-circle" alt="" src="assets/img/profiles/avatar-03.jpg">
-</span>
-<div class="media-body">
-<p class="noti-details"><span class="noti-title">Marie Canales</span> has accepted your estimate <span class="noti-title">#GTR458789</span></p>
-<p class="noti-time"><span class="notification-time">6 mins ago</span></p>
-</div>
-</div>
-</a>
-</li>
-<li class="notification-message">
-<a href="activities.html">
-<div class="media">
-<div class="avatar avatar-sm">
- <span class="avatar-title rounded-circle bg-primary-light"><i class="far fa-user"></i></span>
-</div>
-<div class="media-body">
-<p class="noti-details"><span class="noti-title">New user registered</span></p>
-<p class="noti-time"><span class="notification-time">8 mins ago</span></p>
-</div>
-</div>
-</a>
-</li>
-<li class="notification-message">
-<a href="activities.html">
-<div class="media">
-<span class="avatar avatar-sm">
-<img class="avatar-img rounded-circle" alt="" src="assets/img/profiles/avatar-04.jpg">
-</span>
-<div class="media-body">
-<p class="noti-details"><span class="noti-title">Barbara Moore</span> declined the invoice <span class="noti-title">#RDW026896</span></p>
-<p class="noti-time"><span class="notification-time">12 mins ago</span></p>
-</div>
-</div>
-</a>
-</li>
-<li class="notification-message">
-<a href="activities.html">
-<div class="media">
-<div class="avatar avatar-sm">
-<span class="avatar-title rounded-circle bg-info-light"><i class="far fa-comment"></i></span>
-</div>
-<div class="media-body">
-<p class="noti-details"><span class="noti-title">You have received a new message</span></p>
-<p class="noti-time"><span class="notification-time">2 days ago</span></p>
-</div>
-</div>
-</a>
-</li>
-</ul>
-</div>
-<div class="topnav-dropdown-footer">
-<a href="activities.html">View all Notifications</a>
-</div>
-</div>
-</li>
-
-
-<li class="nav-item dropdown has-arrow main-drop">
-<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-<span class="user-img">
-<img src="assets/img/profile.jpg" alt="">
-<span class="status online"></span>
-</span>
-<span>John Paul Bayoneto</span>
-</a>
-<div class="dropdown-menu">
-<a class="dropdown-item" href="profile.html"><i data-feather="user" class="mr-1"></i> Profile</a>
-<a class="dropdown-item" href="settings.html"><i data-feather="settings" class="mr-1"></i> Settings</a>
-<a class="dropdown-item" href="login.html"><i data-feather="log-out" class="mr-1"></i> Logout</a>
-</div>
-</li>
-
-</ul>
-<div class="dropdown mobile-user-menu show">
-<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-<div class="dropdown-menu dropdown-menu-right ">
-<a class="dropdown-item" href="profile.html">My Profile</a>
-<a class="dropdown-item" href="settings.html">Settings</a>
-<a class="dropdown-item" href="login.html">Logout</a>
-</div>
-</div>
-
-</div>
-
-
-<?php include("includes/sidebar.php") ?>
+<?php 
+	include_once("includes/system_header.php");
+	include_once("includes/system_main_wraper.php");
+	include_once("includes/system_navbar.php");
+	include_once("includes/sidebar.php");
+?>
 
 
 <div class="page-wrapper">
@@ -182,7 +12,7 @@
 <div class="col-xl-12 col-sm-12 col-12">
 <div class="breadcrumb-path mb-4">
 <ul class="breadcrumb">
-<li class="breadcrumb-item"><a href="index.html"><img src="assets/img/dash.png" class="mr-2" alt="breadcrumb" />Home</a>
+<li class="breadcrumb-item"><a href="index.php"><img src="assets/img/dash.png" class="mr-2" alt="breadcrumb" />Home</a>
 </li>
 <li class="breadcrumb-item active"> Employees</li>
 </ul>
@@ -193,10 +23,10 @@
 <div class="head-link-set">
 <ul>
 <li><a class="active" href="#">All</a></li>
-<li><a href="employee-team.html">Teams</a></li>
-<li><a href="employee-office.html">Offices</a></li>
+<li><a href="employee-team.php">Teams</a></li>
+<li><a href="employee-office.php">Offices</a></li>
 </ul>
-<a class="btn-add" href="add-employee.html"><i data-feather="plus"></i> Add Person</a>
+<a class="btn-add" href="add-employee.php"><i data-feather="plus"></i> Add Person</a>
 </div>
 </div>
 <div class="col-xl-12 col-sm-12 col-12 mb-4">
@@ -205,7 +35,7 @@
 <label class="employee_count">7 People</label>
 </div>
 <div class="col-xl-1 col-sm-2 col-12 ">
-<a href="employee-grid.html" class="btn-view "><i data-feather="grid"></i> </a>
+<a href="employee-grid.php" class="btn-view "><i data-feather="grid"></i> </a>
 </div>
 <div class="col-xl-1 col-sm-2 col-12 ">
 <a href="#" class="btn-view active"><i data-feather="list"></i> </a>
@@ -233,7 +63,7 @@
 <tr>
 <td>
 <div class="table-img">
-<a href="profile.html">
+<a href="profile.php">
 <img src="assets/img/profiles/avatar-13.jpg" alt="profile" class="img-table" /><label>Arvin Villaluna
 </label>
 </a>
@@ -257,7 +87,7 @@
 <tr>
 <td>
 <div class="table-img">
-<a href="profile.html">
+<a href="profile.php">
 <img src="assets/img/profiles/avatar-16.jpg" alt="profile" class="img-table" /><label>Graciella Relevo
 </label>
 </a>
@@ -281,7 +111,7 @@
 <tr>
 <td>
 <div class="table-img">
-<a href="profile.html">
+<a href="profile.php">
 <img src="assets/img/profiles/avatar-17.jpg" alt="profile" class="img-table" />
 </a>
 <label>Jenni Sims</label>
@@ -305,7 +135,7 @@
 <tr>
 <td>
 <div class="table-img">
-<a href="profile.html">
+<a href="profile.php">
 <img src="assets/img/profiles/avatar-19.jpg" alt="profile" class="img-table" />
 </a>
 <label>Stacey Linville</label>
@@ -329,7 +159,7 @@
 <tr>
 <td>
 <div class="table-img">
-<a href="profile.html">
+<a href="profile.php">
 <img src="assets/img/profiles/avatar-14.jpg" alt="profile" class="img-table" />
 </a>
 <label>Maria Cotton</label>
@@ -353,7 +183,7 @@
 <tr>
 <td>
 <div class="table-img">
- <a href="profile.html">
+ <a href="profile.php">
 <img src="assets/img/profiles/avatar-18.jpg" alt="profile" class="img-table" />
 </a>
 <label>John Gibbs</label>
@@ -377,7 +207,7 @@
 <tr>
 <td>
 <div class="table-img">
-<a href="profile.html">
+<a href="profile.php">
 <img src="assets/img/profiles/avatar-10.jpg" alt="profile" class="img-table" />
 </a>
 <label>Richard Wilson</label>

@@ -25,10 +25,10 @@
 <div class="header">
 
 <div class="header-left">
-<a href="index.html" class="logo">
+<a href="index.php" class="logo">
 <img src="assets/img/logo_0.png" alt="Logo">
 </a>
-<a href="index.html" class="logo logo-small">
+<a href="index.php" class="logo logo-small">
 <img src="assets/img/logo (1).png" alt="Logo" width="30" height="30">
 </a>
 <a href="javascript:void(0);" id="toggle_btn">
@@ -70,7 +70,7 @@
 <div class="noti-content">
 <ul class="notification-list">
 <li class="notification-message">
-<a href="activities.html">
+<a href="activities.php">
 <div class="media">
 <span class="avatar avatar-sm">
 <img class="avatar-img rounded-circle" alt="" src="assets/img/profiles/avatar-02.jpg">
@@ -83,7 +83,7 @@
 </a>
 </li>
 <li class="notification-message">
-<a href="activities.html">
+<a href="activities.php">
 <div class="media">
 <span class="avatar avatar-sm">
 <img class="avatar-img rounded-circle" alt="" src="assets/img/profiles/avatar-03.jpg">
@@ -96,7 +96,7 @@
 </a>
 </li>
 <li class="notification-message">
-<a href="activities.html">
+<a href="activities.php">
 <div class="media">
 <div class="avatar avatar-sm">
 <span class="avatar-title rounded-circle bg-primary-light"><i class="far fa-user"></i></span>
@@ -109,7 +109,7 @@
 </a>
 </li>
 <li class="notification-message">
-<a href="activities.html">
+<a href="activities.php">
 <div class="media">
 <span class="avatar avatar-sm">
 <img class="avatar-img rounded-circle" alt="" src="assets/img/profiles/avatar-04.jpg">
@@ -122,7 +122,7 @@
 </a>
 </li>
 <li class="notification-message">
-<a href="activities.html">
+<a href="activities.php">
 <div class="media">
 <div class="avatar avatar-sm">
 <span class="avatar-title rounded-circle bg-info-light"><i class="far fa-comment"></i></span>
@@ -137,7 +137,7 @@
 </ul>
 </div>
 <div class="topnav-dropdown-footer">
-<a href="activities.html">View all Notifications</a>
+<a href="activities.php">View all Notifications</a>
 </div>
 </div>
 </li>
@@ -152,9 +152,9 @@
 <span>John Paul Bayoneto</span>
 </a>
 <div class="dropdown-menu">
-<a class="dropdown-item" href="profile.html"><i data-feather="user" class="mr-1"></i> Profile</a>
-<a class="dropdown-item" href="settings.html"><i data-feather="settings" class="mr-1"></i> Settings</a>
-<a class="dropdown-item" href="login.html"><i data-feather="log-out" class="mr-1"></i> Logout</a>
+<a class="dropdown-item" href="profile.php"><i data-feather="user" class="mr-1"></i> Profile</a>
+<a class="dropdown-item" href="settings.php"><i data-feather="settings" class="mr-1"></i> Settings</a>
+<a class="dropdown-item" href="login.php"><i data-feather="log-out" class="mr-1"></i> Logout</a>
 </div>
 </li>
 
@@ -162,9 +162,9 @@
 <div class="dropdown mobile-user-menu show">
 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
 <div class="dropdown-menu dropdown-menu-right ">
-<a class="dropdown-item" href="profile.html">My Profile</a>
-<a class="dropdown-item" href="settings.html">Settings</a>
-<a class="dropdown-item" href="login.html">Logout</a>
+<a class="dropdown-item" href="profile.php">My Profile</a>
+<a class="dropdown-item" href="settings.php">Settings</a>
+<a class="dropdown-item" href="login.php">Logout</a>
 </div>
 </div>
 
@@ -197,39 +197,39 @@
 </div>
 <ul>
 <li>
-<a href="index.html"><img src="assets/img/home.svg" alt="sidebar_img"> <span>Dashboard</span></a>
+<a href="index.php"><img src="assets/img/home.svg" alt="sidebar_img"> <span>Dashboard</span></a>
 </li>
 <li class="active">
-<a href="employee.html"><img src="assets/img/employee.svg" alt="sidebar_img"><span> Employees</span></a>
+<a href="employee.php"><img src="assets/img/employee.svg" alt="sidebar_img"><span> Employees</span></a>
 </li>
 <li>
-<a href="company.html"><img src="assets/img/company.svg" alt="sidebar_img"> <span> Company</span></a>
+<a href="company.php"><img src="assets/img/company.svg" alt="sidebar_img"> <span> Company</span></a>
 </li>
 <li>
-<a href="calendar.html"><img src="assets/img/calendar.svg" alt="sidebar_img"> <span>Calendar</span></a>
+<a href="calendar.php"><img src="assets/img/calendar.svg" alt="sidebar_img"> <span>Calendar</span></a>
 </li>
 <li>
-<a href="leave.html"><img src="assets/img/leave.svg" alt="sidebar_img"> <span>Leave</span></a>
+<a href="leave.php"><img src="assets/img/leave.svg" alt="sidebar_img"> <span>Leave</span></a>
 </li>
 <li>
-<a href="review.html"><img src="assets/img/review.svg" alt="sidebar_img"><span>Review</span></a>
+<a href="review.php"><img src="assets/img/review.svg" alt="sidebar_img"><span>Review</span></a>
 </li>
 <li>
-<a href="report.html"><img src="assets/img/report.svg" alt="sidebar_img"><span>Report</span></a>
+<a href="report.php"><img src="assets/img/report.svg" alt="sidebar_img"><span>Report</span></a>
 </li>
 <li>
-<a href="manage.html"><img src="assets/img/manage.svg" alt="sidebar_img"> <span>Manage</span></a>
+<a href="manage.php"><img src="assets/img/manage.svg" alt="sidebar_img"> <span>Manage</span></a>
 </li>
 <li>
-<a href="settings.html"><img src="assets/img/settings.svg" alt="sidebar_img"><span>Settings</span></a>
+<a href="settings.php"><img src="assets/img/settings.svg" alt="sidebar_img"><span>Settings</span></a>
 </li>
 <li>
-<a href="profile.html"><img src="assets/img/profile.svg" alt="sidebar_img"> <span>Profile</span></a>
+<a href="profile.php"><img src="assets/img/profile.svg" alt="sidebar_img"> <span>Profile</span></a>
 </li>
 </ul>
 <ul class="logout">
 <li>
-<a href="login.html"><img src="assets/img/logout.svg" alt="sidebar_img"><span>Log out</span></a>
+<a href="login.php"><img src="assets/img/logout.svg" alt="sidebar_img"><span>Log out</span></a>
 </li>
 </ul>
 </div>
@@ -244,7 +244,7 @@
 <div class="col-xl-12 col-sm-12 col-12 mb-4">
 <div class="breadcrumb-path ">
 <ul class="breadcrumb">
-<li class="breadcrumb-item"><a href="index.html"><img src="assets/img/dash.png" class="mr-2" alt="breadcrumb" />Home</a>
+<li class="breadcrumb-item"><a href="index.php"><img src="assets/img/dash.png" class="mr-2" alt="breadcrumb" />Home</a>
 </li>
 <li class="breadcrumb-item active"> Employees</li>
 </ul>
@@ -255,10 +255,10 @@
 <div class="head-link-set">
 <ul>
 <li><a class="active" href="#">All</a></li>
-<li><a href="employee-team.html">Teams</a></li>
-<li><a href="employee-office.html">Offices</a></li>
+<li><a href="employee-team.php">Teams</a></li>
+<li><a href="employee-office.php">Offices</a></li>
 </ul>
-<a class="btn-add" href="add-employee.html"><i data-feather="plus"></i> Add Person</a>
+<a class="btn-add" href="add-employee.php"><i data-feather="plus"></i> Add Person</a>
 </div>
 </div>
 <div class="col-xl-12 col-sm-12 col-12 mb-4">
@@ -270,7 +270,7 @@
 <a href="#" class="btn-view active "><i data-feather="grid"></i> </a>
 </div>
 <div class="col-xl-1 col-sm-2 col-12 ">
-<a href="employee.html" class="btn-view "><i data-feather="list"></i> </a>
+<a href="employee.php" class="btn-view "><i data-feather="list"></i> </a>
 </div>
 </div>
 </div>
@@ -280,7 +280,7 @@
 <div class="row">
 <div class="col-xl-4 col-sm-12 col-12 ">
 <div class="employee_grid">
-<a href="profile.html"><img src="assets/img/profiles/avatar-14.jpg" alt="profile" /></a>
+<a href="profile.php"><img src="assets/img/profiles/avatar-14.jpg" alt="profile" /></a>
 <h5>Maria Cotton</h5>
 <label>PHP Team Lead</label>
 <a><span class="__cf_email__" data-cfemail="254844574c44464a51514a4b65405d44485549400b464a48">[email&#160;protected]</span></a>
@@ -288,7 +288,7 @@
 </div>
 <div class="col-xl-4 col-sm-12 col-12 ">
 <div class="employee_grid">
-<a href="profile.html"><img src="assets/img/profiles/avatar-15.jpg" alt="profile" /></a>
+<a href="profile.php"><img src="assets/img/profiles/avatar-15.jpg" alt="profile" /></a>
 <h5>Danny Ward</h5>
 <label>Designing Team Lead</label>
 <a><span class="__cf_email__" data-cfemail="187c797676616f796a7c587d60797568747d367b7775">[email&#160;protected]</span></a>
@@ -296,7 +296,7 @@
 </div>
 <div class="col-xl-4 col-sm-12 col-12 ">
 <div class="employee_grid">
-<a href="profile.html"><img src="assets/img/profiles/avatar-16.jpg" alt="profile" /></a>
+<a href="profile.php"><img src="assets/img/profiles/avatar-16.jpg" alt="profile" /></a>
 <h5>Graciella Relevo
 </h5>
 <label>IOS Team Lead</label>
@@ -307,7 +307,7 @@
 <div class="row">
 <div class="col-xl-4 col-sm-12 col-12 ">
 <div class="employee_grid">
-<a href="profile.html"><img src="assets/img/profiles/avatar-17.jpg" alt="profile" /></a>
+<a href="profile.php"><img src="assets/img/profiles/avatar-17.jpg" alt="profile" /></a>
 <h5>Jenni Sims</h5>
 <label>Android Team Lead</label>
 <a><span class="__cf_email__" data-cfemail="345e515a5a5d475d594774514c55594458511a575b59">[email&#160;protected]</span></a>
@@ -315,7 +315,7 @@
 </div>
 <div class="col-xl-4 col-sm-12 col-12 ">
 <div class="employee_grid">
-<a href="profile.html"><img src="assets/img/profiles/avatar-18.jpg" alt="profile" /></a>
+<a href="profile.php"><img src="assets/img/profiles/avatar-18.jpg" alt="profile" /></a>
 <h5>John Gibbs</h5>
 <label>Business Team Lead</label>
 <a><span class="__cf_email__" data-cfemail="573d383f3933252e2433363b3217322f363a273b327934383a">[email&#160;protected]</span></a>
@@ -323,7 +323,7 @@
 </div>
 <div class="col-xl-4 col-sm-12 col-12 ">
 <div class="employee_grid">
-<a href="profile.html"><img src="assets/img/profiles/avatar-19.jpg" alt="profile" /></a>
+<a href="profile.php"><img src="assets/img/profiles/avatar-19.jpg" alt="profile" /></a>
 <h5>Stacey Linville</h5>
 <label>Testing Team Lead</label>
 <a><span class="__cf_email__" data-cfemail="85f6f1e4e6e0fce9ecebf3ece9e9e0c5e0fde4e8f5e9e0abe6eae8">[email&#160;protected]</span></a>
@@ -333,7 +333,7 @@
 <div class="row">
 <div class="col-xl-4 col-sm-12 col-12 ">
 <div class="employee_grid">
-<a href="profile.html"><img src="assets/img/profiles/avatar-10.jpg" alt="profile" /></a>
+<a href="profile.php"><img src="assets/img/profiles/avatar-10.jpg" alt="profile" /></a>
 <h5>Richard Wilson</h5>
 <label>Operation Manager</label>
 <a><span class="__cf_email__" data-cfemail="a3d1cac0cbc2d1c7d4cacfd0cccde3c6dbc2ced3cfc68dc0ccce">[email&#160;protected]</span></a>
@@ -341,7 +341,7 @@
 </div>
 <div class="col-xl-4 col-sm-12 col-12 ">
 <div class="employee_grid">
-<a href="profile.html"><img src="assets/img/profiles/avatar-20.jpg" alt="profile" /></a>
+<a href="profile.php"><img src="assets/img/profiles/avatar-20.jpg" alt="profile" /></a>
 <h5>Daniel Griffing</h5>
 <label>Designing Team</label>
 <a><span class="__cf_email__" data-cfemail="8ce8ede2e5e9e0ebfee5eaeae5e2ebcce9f4ede1fce0e9a2efe3e1">[email&#160;protected]</span></a>
@@ -349,7 +349,7 @@
 </div>
 <div class="col-xl-4 col-sm-12 col-12 ">
 <div class="employee_grid">
-<a href="profile.html"><img src="assets/img/profiles/avatar-21.jpg" alt="profile" /></a>
+<a href="profile.php"><img src="assets/img/profiles/avatar-21.jpg" alt="profile" /></a>
 <h5>Michelle Fairfax</h5>
 <label>PHP Team</label>
 <a><span class="__cf_email__" data-cfemail="f19c989299949d9d9497909883979089b19489909c819d94df929e9c">[email&#160;protected]</span></a>

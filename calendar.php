@@ -29,10 +29,10 @@
 <div class="header">
 
 <div class="header-left">
-<a href="index.html" class="logo">
+<a href="index.php" class="logo">
 	<img src="assets/img/logo_0.png" alt="Logo">
 </a>
-<a href="index.html" class="logo logo-small">
+<a href="index.php" class="logo logo-small">
 <img src="assets/img/logo (1).png" alt="Logo" width="30" height="30">
 </a>
 <a href="javascript:void(0);" id="toggle_btn">
@@ -74,7 +74,7 @@
 <div class="noti-content">
 <ul class="notification-list">
 <li class="notification-message">
-<a href="activities.html">
+<a href="activities.php">
 <div class="media">
 <span class="avatar avatar-sm">
 <img class="avatar-img rounded-circle" alt="" src="assets/img/profiles/avatar-02.jpg">
@@ -87,7 +87,7 @@
 </a>
 </li>
 <li class="notification-message">
-<a href="activities.html">
+<a href="activities.php">
 <div class="media">
 <span class="avatar avatar-sm">
 <img class="avatar-img rounded-circle" alt="" src="assets/img/profiles/avatar-03.jpg">
@@ -100,7 +100,7 @@
 </a>
 </li>
 <li class="notification-message">
-<a href="activities.html">
+<a href="activities.php">
 <div class="media">
 <div class="avatar avatar-sm">
 <span class="avatar-title rounded-circle bg-primary-light"><i class="far fa-user"></i></span>
@@ -113,7 +113,7 @@
 </a>
 </li>
 <li class="notification-message">
-<a href="activities.html">
+<a href="activities.php">
 <div class="media">
 <span class="avatar avatar-sm">
 <img class="avatar-img rounded-circle" alt="" src="assets/img/profiles/avatar-04.jpg">
@@ -126,7 +126,7 @@
 </a>
 </li>
 <li class="notification-message">
-<a href="activities.html">
+<a href="activities.php">
 <div class="media">
 <div class="avatar avatar-sm">
 <span class="avatar-title rounded-circle bg-info-light"><i class="far fa-comment"></i></span>
@@ -141,7 +141,7 @@
 </ul>
 </div>
 <div class="topnav-dropdown-footer">
-<a href="activities.html">View all Notifications</a>
+<a href="activities.php">View all Notifications</a>
 </div>
 </div>
 </li>
@@ -156,9 +156,9 @@
 <span>John Paul Bayoneto</span>
 </a>
 <div class="dropdown-menu">
-<a class="dropdown-item" href="profile.html"><i data-feather="user" class="mr-1"></i> Profile</a>
-<a class="dropdown-item" href="settings.html"><i data-feather="settings" class="mr-1"></i> Settings</a>
-<a class="dropdown-item" href="login.html"><i data-feather="log-out" class="mr-1"></i> Logout</a>
+<a class="dropdown-item" href="profile.php"><i data-feather="user" class="mr-1"></i> Profile</a>
+<a class="dropdown-item" href="settings.php"><i data-feather="settings" class="mr-1"></i> Settings</a>
+<a class="dropdown-item" href="login.php"><i data-feather="log-out" class="mr-1"></i> Logout</a>
 </div>
 </li>
 
@@ -166,9 +166,9 @@
 <div class="dropdown mobile-user-menu show">
 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
 <div class="dropdown-menu dropdown-menu-right ">
-<a class="dropdown-item" href="profile.html">My Profile</a>
-<a class="dropdown-item" href="settings.html">Settings</a>
-<a class="dropdown-item" href="login.html">Logout</a>
+<a class="dropdown-item" href="profile.php">My Profile</a>
+<a class="dropdown-item" href="settings.php">Settings</a>
+<a class="dropdown-item" href="login.php">Logout</a>
 </div>
 </div>
 
@@ -187,7 +187,7 @@
 <div class="col-xl-12 col-sm-12 col-12  mb-4">
 <div class="breadcrumb-path">
 <ul class="breadcrumb">
-<li class="breadcrumb-item"><a href="index.html"><img src="assets/img/dash.png" class="mr-2" alt="breadcrumb">Home</a>
+<li class="breadcrumb-item"><a href="index.php"><img src="assets/img/dash.png" class="mr-2" alt="breadcrumb">Home</a>
 </li>
 <li class="breadcrumb-item active"> Calendar</li>
 </ul>
