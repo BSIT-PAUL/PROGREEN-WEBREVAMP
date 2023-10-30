@@ -1,4 +1,4 @@
-<?php 
+<?php session_start();
 include 'database/dbcon.php';
 ?>
 <!DOCTYPE html>
@@ -46,12 +46,12 @@ include 'database/dbcon.php';
                 <form action="index.html" method="post">
                   <div class="form-group">
                     <label class="form-control-label">Username</label>
-                    <input type="text" class="form-control" name="username" />
+                    <input type="text" class="form-control" name="user" placeholder="Enter username" required />
                   </div>
                   <div class="form-group">
                     <label class="form-control-label">Password</label>
                     <div class="pass-group">
-                      <input type="password" class="form-control pass-input" name="password" />
+                      <input type="password" class="form-control pass-input" name="pass" required />
                       <span class="fas fa-eye toggle-password"></span>
                     </div>
                   </div>
@@ -79,7 +79,6 @@ include 'database/dbcon.php';
                   <button
                     class="btn btn-lg btn-block btn-primary"
                     type="submit"
-                    value="login"
                     name="login"
                   >
                     Login
@@ -88,28 +87,7 @@ include 'database/dbcon.php';
                     <span class="or-line"></span>
                     <span class="span-or">or</span>
                   </div>
-                    <?php 
-                    $username = mysqli_real_escape_string($con, $_POST['username']);
-                    $password = mysqli_real_escape_string($con, $_POST['password']);
-
-                    $password = md5($password);
-                    
-                    $query 		= mysqli_query($con, "SELECT * FROM admin WHERE Password='$password' and UserName='$username'");
-                    $row		= mysqli_fetch_array($query);
-                    $num_row 	= mysqli_num_rows($query);
-                    
-                    if ($num_row > 0) 
-                        {			
-                            $_SESSION['user_id']=$row['user_id'];
-                            header('location:index.php');
-                            
-                        }
-                    else
-                        {
-                          echo "<script>alert('Invalid Details');</script>";
-                        }
-                    
-                    ?>
+                   
                   <div class="social-login mb-3">
                     <span>Login with</span>
                     <a href="#" class="facebook"
@@ -124,6 +102,35 @@ include 'database/dbcon.php';
                     <a href="register.html">Register</a>
                   </div>
                 </form>
+                <?php 
+                if (isset($_POST['login']))
+                {
+                    $username = mysqli_real_escape_string($con, $_POST['user']);
+                    $password = mysqli_real_escape_string($con, $_POST['pass']);
+
+                    $password = md5($password);
+                    
+                    $query 		= mysqli_query($con, "SELECT * FROM admin WHERE password='$password' and username='$username'");
+                    $row		= mysqli_fetch_array($query);
+                    $num_row 	= mysqli_num_rows($query);
+                    
+                    if ($num_row > 0) 
+                        {			
+                            $_SESSION['user_id']=$row['user_id'];
+                             header('location: index.html');
+                            
+                        }
+                    else
+                        {
+                            echo "<div class='alert alert-danger alert-dismissible' role='alert'>
+                            Invalid Username and Password
+                            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                                <span aria-hidden='true'>&times;</span>
+                            </button>
+                            </div>";
+                        }
+                }
+                    ?>
               </div>
             </div>
           </div>
@@ -134,10 +141,11 @@ include 'database/dbcon.php';
     <script src="assets/js/jquery-3.5.1.min.js"></script>
 
     <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+    
 
     <script src="assets/js/feather.min.js"></script>
 
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
   </body>
 </html>
