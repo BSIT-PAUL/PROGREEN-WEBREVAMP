@@ -88,28 +88,7 @@ include 'database/dbcon.php';
                     <span class="or-line"></span>
                     <span class="span-or">or</span>
                   </div>
-                    <?php 
-                    $username = mysqli_real_escape_string($con, $_POST['username']);
-                    $password = mysqli_real_escape_string($con, $_POST['password']);
-
-                    $password = md5($password);
-                    
-                    $query 		= mysqli_query($con, "SELECT * FROM admin WHERE Password='$password' and UserName='$username'");
-                    $row		= mysqli_fetch_array($query);
-                    $num_row 	= mysqli_num_rows($query);
-                    
-                    if ($num_row > 0) 
-                        {			
-                            $_SESSION['user_id']=$row['user_id'];
-                            header('location: dashboard.php');
-                            
-                        }
-                    else
-                        {
-                          echo "<script>alert('Invalid Details');</script>";
-                        }
-                    
-                    ?>
+                   
                   <div class="social-login mb-3">
                     <span>Login with</span>
                     <a href="#" class="facebook"
@@ -125,33 +104,34 @@ include 'database/dbcon.php';
                   </div>
                 </form>
                 <?php 
-                if (isset($_POST['login']))
-                {
-                    $username = mysqli_real_escape_string($con, $_POST['user']);
-                    $password = mysqli_real_escape_string($con, $_POST['pass']);
-
-                    $password = md5($password);
+                    if (isset($_POST['login']))
+                    {
+                        $username = mysqli_real_escape_string($con, $_POST['user']);
+                        $password = mysqli_real_escape_string($con, $_POST['pass']);
+    
+                        $password = md5($password);
+                        
+                        $query 		= mysqli_query($con, "SELECT * FROM admin WHERE password='$password' and username='$username'");
+                        $row		= mysqli_fetch_array($query);
+                        $num_row 	= mysqli_num_rows($query);
+                        
+                        if ($num_row > 0) 
+                            {			
+                                $_SESSION['user_id']=$row['user_id'];
+                                 header('location: dashboard.php');
+                                
+                            }
+                        else
+                            {
+                                echo "<div class='alert alert-danger alert-dismissible' role='alert'>
+                                Invalid Username and Password
+                                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+                                    <span aria-hidden='true'>&times;</span>
+                                </button>
+                                </div>";
+                            }
+                    }
                     
-                    $query 		= mysqli_query($con, "SELECT * FROM admin WHERE password='$password' and username='$username'");
-                    $row		= mysqli_fetch_array($query);
-                    $num_row 	= mysqli_num_rows($query);
-                    
-                    if ($num_row > 0) 
-                        {			
-                            $_SESSION['user_id']=$row['user_id'];
-                             header('location: index.html');
-                            
-                        }
-                    else
-                        {
-                            echo "<div class='alert alert-danger alert-dismissible' role='alert'>
-                            Invalid Username and Password
-                            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-                                <span aria-hidden='true'>&times;</span>
-                            </button>
-                            </div>";
-                        }
-                }
                     ?>
               </div>
             </div>
