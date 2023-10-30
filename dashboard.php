@@ -1,49 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-	<title>PROGREEN WebRevamp</title>
-
-	<link rel="shortcut icon" href="assets/img/favicon.png">
-
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-
-	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-	<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
-
-	<link rel="stylesheet" href="assets/css/style.css">
-	<!--[if lt IE 9]>
-			<script src="assets/js/html5shiv.min.js"></script>
-			<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
-</head>
-
-<body>
-
-	<div class="main-wrapper">
-
-		<div class="header">
-
-			<div class="header-left">
-				<a href="index.html" class="logo">
-					<img src="assets/img/logo_0.png" alt="Logo">
-				</a>
-				<a href="index.html" class="logo logo-small">
-					<img src="assets/img/logo (1).png" alt="Logo" width="30" height="30">
-				</a>
-				<a href="javascript:void(0);" id="toggle_btn">
-					<span class="bar-icon">
-						<span></span>
-						<span></span>
-						<span></span>
-					</span>
-				</a>
-			</div>
-
-
-
+<?php 
+	include_once("includes/system_header.php");
+	include_once("includes/system_main_wraper.php");
+?>
 
 			<div class="top-nav-search">
 				<form>
@@ -86,7 +44,7 @@
 									</a>
 								</li>
 								<li class="notification-message">
-									<a href="activities.html">
+									<a href="activities.php">
 										<div class="media">
 											<span class="avatar avatar-sm">
 												<img class="avatar-img rounded-circle" alt="" src="assets/img/profiles/avatar-03.jpg">
@@ -100,7 +58,7 @@
 									</a>
 								</li>
 								<li class="notification-message">
-									<a href="activities.html">
+									<a href="activities.php">
 										<div class="media">
 											<div class="avatar avatar-sm">
 												<span class="avatar-title rounded-circle bg-primary-light"><i class="far fa-user"></i></span>
@@ -177,71 +135,7 @@
 		</div>
 
 
-		<div class="sidebar" id="sidebar">
-			<div class="sidebar-inner slimscroll">
-				<div class="sidebar-contents">
-					<div id="sidebar-menu" class="sidebar-menu">
-						<div class="mobile-show">
-							<div class="offcanvas-menu">
-								<div class="user-info align-center bg-theme text-center">
-									<span class="lnr lnr-cross  text-white" id="mobile_btn_close">X</span>
-									<a href="javascript:void(0)" class="d-block menu-style text-white">
-										<div class="user-avatar d-inline-block mr-3">
-											<img src="assets/img/profiles/avatar-18.jpg" alt="user avatar" class="rounded-circle" width="50">
-										</div>
-									</a>
-								</div>
-							</div>
-							<div class="sidebar-input">
-								<div class="top-nav-search">
-									<form>
-										<input type="text" class="form-control" placeholder="Search here">
-										<button class="btn" type="submit"><i class="fas fa-search"></i></button>
-									</form>
-								</div>
-							</div>
-						</div>
-						<ul>
-							<li class="active">
-								<a href="index.html"><img src="assets/img/home.svg" alt="sidebar_img"> <span>Dashboard</span></a>
-							</li>
-							<li>
-								<a href="employee.html"><img src="assets/img/employee.svg" alt="sidebar_img"><span> Employees</span></a>
-							</li>
-							<li>
-								<a href="company.html"><img src="assets/img/company.svg" alt="sidebar_img"> <span> Company</span></a>
-							</li>
-							<li>
-								<a href="calendar.html"><img src="assets/img/calendar.svg" alt="sidebar_img"> <span>Calendar</span></a>
-							</li>
-							<li>
-								<a href="leave.html"><img src="assets/img/leave.svg" alt="sidebar_img"> <span>Leave</span></a>
-							</li>
-							<li>
-								<a href="review.html"><img src="assets/img/review.svg" alt="sidebar_img"><span>Review</span></a>
-							</li>
-							<li>
-								<a href="report.html"><img src="assets/img/report.svg" alt="sidebar_img"><span>Report</span></a>
-							</li>
-							<li>
-								<a href="manage.html"><img src="assets/img/manage.svg" alt="sidebar_img"> <span>Manage</span></a>
-							</li>
-							<li>
-								<a href="settings.html"><img src="assets/img/settings.svg" alt="sidebar_img"><span>Settings</span></a>
-							</li>
-							<li>
-								<a href="profile.html"><img src="assets/img/profile.svg" alt="sidebar_img"> <span>Profile</span></a>
-							</li>
-						</ul>
-						<ul class="logout">
-							<li>
-								<a href="login.php"><img src="assets/img/logout.svg" alt="sidebar_img"><span>Log out</span></a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
+		<?php include("includes/sidebar.php") ?>
 
 
 		<div class="page-wrapper">
@@ -609,7 +503,7 @@
 
 	<script src="assets/plugins/apexchart/apexcharts.min.js"></script>
 	<script src="assets/plugins/apexchart/chart-data.js"></script>
-
+	<script src="js/activePage.js"></script>
 	<script src="assets/js/script.js"></script>
 </body>
 

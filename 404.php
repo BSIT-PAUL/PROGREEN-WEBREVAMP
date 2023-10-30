@@ -1,7 +1,7 @@
 <?php 
-    include("header.html");
-    include("spinner.html");
-    include("navbar.html");
+    include("includes/header.php");
+    include("includes/spinner.php");
+    include("includes/navbar.php");
 ?>
     <!-- Page Header Start -->
     <div class="container-fluid page-header wow fadeIn" data-wow-delay="0.1s">
@@ -38,6 +38,6 @@
 
     <!-- Footer Start -->
 
-    <?php include("footer.html"); ?>
+    <?php include("includes/footer.php"); ?>
     
     <!-- Footer End -->

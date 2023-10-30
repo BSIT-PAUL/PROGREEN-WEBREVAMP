@@ -611,7 +611,7 @@
 <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
 <script src="assets/plugins/select2/js/select2.min.js"></script>
-
+<script src="js/activePage.js"></script>
 <script src="assets/js/script.js"></script>
 </body>
 </html>

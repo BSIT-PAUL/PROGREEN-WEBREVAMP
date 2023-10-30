@@ -12,6 +12,10 @@
 <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
 <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
 
+<link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+
+<link rel="stylesheet" href="assets/plugins/fullcalendar/fullcalendar.min.css">
+
 <link rel="stylesheet" href="assets/css/style.css">
 <!--[if lt IE 9]>
 			<script src="assets/js/html5shiv.min.js"></script>
@@ -26,7 +30,7 @@
 
 <div class="header-left">
 <a href="index.html" class="logo">
-<img src="assets/img/logo_0.png" alt="Logo">
+	<img src="assets/img/logo_0.png" alt="Logo">
 </a>
 <a href="index.html" class="logo logo-small">
 <img src="assets/img/logo (1).png" alt="Logo" width="30" height="30">
@@ -100,7 +104,7 @@
 <div class="media">
 <div class="avatar avatar-sm">
 <span class="avatar-title rounded-circle bg-primary-light"><i class="far fa-user"></i></span>
- </div>
+</div>
 <div class="media-body">
 <p class="noti-details"><span class="noti-title">New user registered</span></p>
 <p class="noti-time"><span class="notification-time">8 mins ago</span></p>
@@ -187,13 +191,13 @@
 </div>
 </div>
 <div class="sidebar-input">
-<div class="top-nav-search">
+ <div class="top-nav-search">
 <form>
 <input type="text" class="form-control" placeholder="Search here">
 <button class="btn" type="submit"><i class="fas fa-search"></i></button>
 </form>
 </div>
- </div>
+</div>
 </div>
 <ul>
 <li>
@@ -205,8 +209,8 @@
 <li>
 <a href="company.html"><img src="assets/img/company.svg" alt="sidebar_img"> <span> Company</span></a>
 </li>
-<li>
-<a href="calendar.html"><img src="assets/img/calendar.svg" alt="sidebar_img"> <span>Calendar</span></a>
+<li class="active">
+<a href="#"><img src="assets/img/calendar.svg" alt="sidebar_img"> <span>Calendar</span></a>
 </li>
 <li>
 <a href="leave.html"><img src="assets/img/leave.svg" alt="sidebar_img"> <span>Leave</span></a>
@@ -214,7 +218,7 @@
 <li>
 <a href="review.html"><img src="assets/img/review.svg" alt="sidebar_img"><span>Review</span></a>
 </li>
-<li class="active">
+<li>
 <a href="report.html"><img src="assets/img/report.svg" alt="sidebar_img"><span>Report</span></a>
 </li>
 <li>
@@ -238,120 +242,158 @@
 </div>
 
 
-<div class="page-wrapper">
+<div class="page-wrapper calendar_page">
 <div class="content container-fluid">
+
 <div class="row">
-<div class="col-xl-12 col-sm-12 col-12 ">
-<div class="breadcrumb-path mb-4">
+<div class="col-xl-12 col-sm-12 col-12  mb-4">
+<div class="breadcrumb-path">
 <ul class="breadcrumb">
 <li class="breadcrumb-item"><a href="index.html"><img src="assets/img/dash.png" class="mr-2" alt="breadcrumb">Home</a>
 </li>
-<li class="breadcrumb-item active"> Reports</li>
+<li class="breadcrumb-item active"> Calendar</li>
 </ul>
-<h3>Reports	</h3>
+<h3>Calendar</h3>
 </div>
 </div>
-<div class="col-xl-12 col-sm-12 col-12 mb-4">
-<div class="head-link-set">
-<ul>
-<li><a href="report.html">Team Reports</a></li>
-<li><a href="leave-report.html">Leave Reports</a></li>
-<li><a href="payroll-report.html">Payroll Reports</a></li>
-<li><a href="contact-report.html">Contact Reports</a></li>
-<li><a href="email-report.html">Email Reports</a></li>
-<li><a href="security-report.html">Security Reports</a></li>
-<li><a class="active" href="#">W F H Reports</a></li>
-</ul>
 </div>
-</div>
-<div class="col-xl-12 col-sm-12 col-12 mb-4">
-<div class="form-set">
+
 <div class="row">
-<div class="col-xl-3 col-sm-6 col-12 ">
-<div class="form-group">
-<input type="text" placeholder="start Date">
-</div>
-</div>
-<div class="col-xl-3 col-sm-6 col-12">
-<div class="form-group">
-<input type="text" placeholder="From">
-</div>
-</div>
-<div class="col-xl-3 col-sm-6 col-12 ">
-<div class="form-group">
-<input type="text" placeholder="To">
-</div>
-</div>
-<div class="col-xl-3 col-sm-6 col-12 ">
-<a class="btn btn-save">Apply Filter</a>
-</div>
-</div>
-</div>
-</div>
-<div class="col-xl-12 col-sm-12 col-12 ">
+<div class="col-lg-3 col-md-4">
 <div class="card">
-<div class="table-responsive">
-<table class="table  custom-table  no-footer">
-<thead>
-<tr>
-<th>Team Member	</th>
-<th>Email</th>
-<th>Working From Home (This Year)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<div class="table-img">
-<img src="assets/img/profiles/avatar-15.jpg" alt="profile" class="img-table"><label>Danny Ward</label>
+<div class="card-body">
+<h2 class="calendar_head">Calendar</h2>
 </div>
-</td>
-<td><label><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f397929d8a84928197b3968b929e839f96dd909c9e">[email&#160;protected]</a> </label></td>
-<td><label>5</label></td>
-</tr>
-<tr>
-<td>
-<div class="table-img">
-<img src="assets/img/profiles/avatar-16.jpg" alt="profile" class="img-table"><label>Graciella Relevo
+<div class="calendar_events">
+<h4 class="card-title">Drag and drop your event or click in the calendar</h4>
+<div id="calendar-events" class="mb-3">
+<div class="calendar-events" data-class="bg-info"><i class="fas fa-square bg-primary"></i> New Theme Release</div>
+<div class="calendar-events" data-class="bg-success"><i class="fas fa-square bg-success"></i>My Event</div>
+<div class="calendar-events" data-class="bg-danger"><i class="fas fa-square bg-warning"></i> Meet Manager</div>
+<div class="calendar-events" data-class="bg-warning"><i class="fas fa-square bg-secondary"></i> Create New theme</div>
+</div>
+<div class="checkbox  mb-3">
+<input id="drop-remove" type="checkbox">
+<label for="drop-remove">
+Remove after drop
 </label>
 </div>
-</td>
-<td><label><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9cf0f5f2f8fdffeefdeaf9eedcf9e4fdf1ecf0f9b2fff3f1">[email&#160;protected]</a></label></td>
-<td><label>3</label></td>
-</tr>
-<tr>
-<td>
-<div class="table-img">
-<img src="assets/img/profiles/avatar-17.jpg" alt="profile" class="img-table"><label>Jenni Sims</label>
+<a href="#" data-toggle="modal" data-target="#add_new_event" class="btn mb-3 btn-primary btn-block">
+<i class="fas fa-plus"></i> Create New
+</a>
 </div>
-</td>
-<td><label><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="97fdf2f9f9fee4fefae4d7f2eff6fae7fbf2b9f4f8fa">[email&#160;protected]</a></label></td>
-<td><label>4</label></td>
-</tr>
-<tr>
-<td>
-<div class="table-img">
-<img src="assets/img/profiles/avatar-14.jpg" alt="profile" class="img-table"><label>Maria Cottons	</label>
 </div>
-</td>
-<td><label><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="acc1cddec5cdcfc3d8d8c3c2ecc9d4cdc1dcc0c982cfc3c1">[email&#160;protected]</a></label></td>
-<td><label>6</label></td>
-</tr>
-<tr>
-<td>
-<div class="table-img">
-<img src="assets/img/profiles/avatar-18.jpg" alt="profile" class="img-table"><label>John Gibbs	</label>
 </div>
-</td>
-<td><label><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e2888d8a8c86909b9186838e87a2879a838f928e87cc818d8f">[email&#160;protected]</a></label></td>
-<td><label>7</label></td>
-</tr>
-</tbody>
-</table>
+<div class="col-lg-9 col-md-8">
+<div class="card bg-white">
+<div class="card-body">
+<div id="calendar"></div>
 </div>
-<div class="btn-set">
-<a class="btn btn-dwnd mt-3 mb-3">Download Report</a>
 </div>
+ </div>
+</div>
+
+<div class="customize_popup">
+<div class="modal fade" id="add_event" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabelevent" aria-hidden="true">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="staticBackdropLabelevent">Add New Event</h5>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<div class=" col-md-12 p-0">
+<div class=" form-popup">
+<label>Event Name</label>
+<input type="text" placeholder="Insert Event Name">
+</div>
+<div class=" form-popup">
+<label>Category Color</label>
+<select name="Danger">
+<option value="Danger">Danger</option>
+<option value="Success">Success</option>
+<option value="Warning">Warning</option>
+</select>
+</div>
+</div>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-apply">Apply</button>
+<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="customize_popup">
+<div class="modal fade" id="my_event" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabeladd" aria-hidden="true">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="staticBackdropLabeladd">Add New Event</h5>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<div class=" col-md-12 p-0">
+<div class=" form-popup">
+<label>Event Name</label>
+<input type="text" placeholder="Insert Event Name">
+</div>
+<div class=" form-popup">
+<label>Category Color</label>
+<select name="Danger">
+<option value="Danger">Danger</option>
+<option value="Success">Success</option>
+<option value="Warning">Warning</option>
+</select>
+</div>
+</div>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-apply">Apply</button>
+<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="customize_popup">
+<div class="modal fade" id="add_new_event" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="staticBackdropLabel">Add a category</h5>
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<div class=" col-md-12 p-0">
+<div class=" form-popup">
+<label>Category Name</label>
+<input type="text" placeholder="Enter Name">
+</div>
+<div class=" form-popup">
+<label>Choose Category Color</label>
+<select name="Success">
+<option value="Success">Success</option>
+<option value="Cancel">Danger</option>
+<option value="Cancel">Warning</option>
+</select>
+</div>
+</div>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-apply">Apply</button>
+<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 </div>
 </div>
 </div>
@@ -359,9 +401,12 @@
 </div>
 
 </div>
+</div>
+
+</div>
 
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/jquery-3.6.0.min.js"></script>
+<script src="assets/js/jquery-3.6.0.min.js"></script>
 
 <script src="assets/js/popper.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
@@ -370,6 +415,13 @@
 
 <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
+<script src="assets/plugins/moment/moment.min.js"></script>
+<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+
+<script src="assets/js/jquery-ui.min.js"></script>
+<script src="assets/plugins/fullcalendar/fullcalendar.min.js"></script>
+<script src="assets/plugins/fullcalendar/jquery.fullcalendar.js"></script>
+<script src="js/activePage.js"></script>
 <script src="assets/js/script.js"></script>
 </body>
 </html>

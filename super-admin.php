@@ -1,46 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-<title>PROGREEN WebRevamp</title>
-
-<link rel="shortcut icon" href="assets/img/favicon.png">
-
-<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-
-<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
-
-<link rel="stylesheet" href="assets/css/style.css">
-<!--[if lt IE 9]>
-			<script src="assets/js/html5shiv.min.js"></script>
-			<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
-</head>
-<body>
-
-<div class="main-wrapper">
-
-<div class="header">
-
-<div class="header-left">
-<a href="index.html" class="logo">
-<img src="assets/img/logo_0.png" alt="Logo">
-</a>
-<a href="index.html" class="logo logo-small">
-<img src="assets/img/logo (1).png" alt="Logo" width="30" height="30">
-</a>
-<a href="javascript:void(0);" id="toggle_btn">
-<span class="bar-icon">
-<span></span>
-<span></span>
-<span></span>
-</span>
-</a>
-</div>
-
-
+<?php 
+	include_once("includes/system_header.php");
+	include_once("includes/system_main_wraper.php");
+?>
 
 
 <div class="top-nav-search">
@@ -70,7 +31,7 @@
 <div class="noti-content">
 <ul class="notification-list">
 <li class="notification-message">
-<a href="activities.html">
+<a href="activities.php">
 <div class="media">
 <span class="avatar avatar-sm">
 <img class="avatar-img rounded-circle" alt="" src="assets/img/profiles/avatar-02.jpg">
@@ -83,7 +44,7 @@
 </a>
 </li>
 <li class="notification-message">
-<a href="activities.html">
+<a href="activities.php">
 <div class="media">
 <span class="avatar avatar-sm">
 <img class="avatar-img rounded-circle" alt="" src="assets/img/profiles/avatar-03.jpg">
@@ -96,7 +57,7 @@
 </a>
 </li>
 <li class="notification-message">
-<a href="activities.html">
+<a href="activities.php">
 <div class="media">
 <div class="avatar avatar-sm">
 <span class="avatar-title rounded-circle bg-primary-light"><i class="far fa-user"></i></span>
@@ -109,7 +70,7 @@
 </a>
 </li>
 <li class="notification-message">
-<a href="activities.html">
+<a href="activities.php">
 <div class="media">
 <span class="avatar avatar-sm">
 <img class="avatar-img rounded-circle" alt="" src="assets/img/profiles/avatar-04.jpg">
@@ -122,7 +83,7 @@
 </a>
 </li>
 <li class="notification-message">
-<a href="activities.html">
+<a href="activities.php">
 <div class="media">
 <div class="avatar avatar-sm">
 <span class="avatar-title rounded-circle bg-info-light"><i class="far fa-comment"></i></span>
@@ -137,7 +98,7 @@
 </ul>
 </div>
 <div class="topnav-dropdown-footer">
-<a href="activities.html">View all Notifications</a>
+<a href="activities.php">View all Notifications</a>
 </div>
 </div>
 </li>
@@ -152,9 +113,9 @@
 <span>John Paul Bayoneto</span>
 </a>
 <div class="dropdown-menu">
-<a class="dropdown-item" href="profile.html"><i data-feather="user" class="mr-1"></i> Profile</a>
-<a class="dropdown-item" href="settings.html"><i data-feather="settings" class="mr-1"></i> Settings</a>
-<a class="dropdown-item" href="login.html"><i data-feather="log-out" class="mr-1"></i> Logout</a>
+<a class="dropdown-item" href="profile.php"><i data-feather="user" class="mr-1"></i> Profile</a>
+<a class="dropdown-item" href="settings.php"><i data-feather="settings" class="mr-1"></i> Settings</a>
+<a class="dropdown-item" href="login.php"><i data-feather="log-out" class="mr-1"></i> Logout</a>
 </div>
 </li>
 
@@ -162,9 +123,9 @@
 <div class="dropdown mobile-user-menu show">
 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
 <div class="dropdown-menu dropdown-menu-right ">
-<a class="dropdown-item" href="profile.html">My Profile</a>
-<a class="dropdown-item" href="settings.html">Settings</a>
-<a class="dropdown-item" href="login.html">Logout</a>
+<a class="dropdown-item" href="profile.php">My Profile</a>
+<a class="dropdown-item" href="settings.php">Settings</a>
+<a class="dropdown-item" href="login.php">Logout</a>
 </div>
 </div>
 
@@ -197,39 +158,39 @@
  </div>
 <ul>
 <li>
-<a href="index.html"><img src="assets/img/home.svg" alt="sidebar_img"> <span>Dashboard</span></a>
+<a href="dashboard.php"><img src="assets/img/home.svg" alt="sidebar_img"> <span>Dashboard</span></a>
 </li>
 <li>
-<a href="employee.html"><img src="assets/img/employee.svg" alt="sidebar_img"><span> Employees</span></a>
+<a href="employee.php"><img src="assets/img/employee.svg" alt="sidebar_img"><span> Employees</span></a>
 </li>
 <li>
-<a href="company.html"><img src="assets/img/company.svg" alt="sidebar_img"> <span> Company</span></a>
+<a href="company.php"><img src="assets/img/company.svg" alt="sidebar_img"> <span> Company</span></a>
 </li>
 <li>
-<a href="calendar.html"><img src="assets/img/calendar.svg" alt="sidebar_img"> <span>Calendar</span></a>
+<a href="calendar.php"><img src="assets/img/calendar.svg" alt="sidebar_img"> <span>Calendar</span></a>
 </li>
 <li>
-<a href="leave.html"><img src="assets/img/leave.svg" alt="sidebar_img"> <span>Leave</span></a>
+<a href="leave.php"><img src="assets/img/leave.svg" alt="sidebar_img"> <span>Leave</span></a>
 </li>
 <li>
-<a href="review.html"><img src="assets/img/review.svg" alt="sidebar_img"><span>Review</span></a>
+<a href="review.php"><img src="assets/img/review.svg" alt="sidebar_img"><span>Review</span></a>
 </li>
 <li>
-<a href="report.html"><img src="assets/img/report.svg" alt="sidebar_img"><span>Report</span></a>
+<a href="report.php"><img src="assets/img/report.svg" alt="sidebar_img"><span>Report</span></a>
 </li>
 <li>
-<a href="manage.html"><img src="assets/img/manage.svg" alt="sidebar_img"> <span>Manage</span></a>
+<a href="manage.php"><img src="assets/img/manage.svg" alt="sidebar_img"> <span>Manage</span></a>
 </li>
 <li>
-<a href="settings.html"><img src="assets/img/settings.svg" alt="sidebar_img"><span>Settings</span></a>
+<a href="settings.php"><img src="assets/img/settings.svg" alt="sidebar_img"><span>Settings</span></a>
 </li>
 <li>
-<a href="profile.html"><img src="assets/img/profile.svg" alt="sidebar_img"> <span>Profile</span></a>
+<a href="profile.php"><img src="assets/img/profile.svg" alt="sidebar_img"> <span>Profile</span></a>
 </li>
 </ul>
 <ul class="logout">
 <li>
-<a href="login.html"><img src="assets/img/logout.svg" alt="sidebar_img"><span>Log out</span></a>
+<a href="login.php"><img src="assets/img/logout.svg" alt="sidebar_img"><span>Log out</span></a>
 </li>
 </ul>
 </div>
@@ -244,7 +205,7 @@
 <div class="col-xl-12 col-sm-12 col-12">
 <div class="breadcrumb-path mb-4">
 <ul class="breadcrumb">
-<li class="breadcrumb-item"><a href="index.html">Home</a>
+<li class="breadcrumb-item"><a href="index.php">Home</a>
 </li>
 <li class="breadcrumb-item active"> Manage</li>
 </ul>

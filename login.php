@@ -43,7 +43,7 @@ include 'database/dbcon.php';
               <div class="login-right-wrap">
                 <h1>Welcome</h1>
                 <p class="account-subtitle">Access to your portal</p>
-                <form action="index.html" method="post">
+                <form action="dashboard.php" method="post">
                   <div class="form-group">
                     <label class="form-control-label">Username</label>
                     <input type="text" class="form-control" name="username" />
@@ -101,7 +101,7 @@ include 'database/dbcon.php';
                     if ($num_row > 0) 
                         {			
                             $_SESSION['user_id']=$row['user_id'];
-                            header('location:index.php');
+                            header('location: dashboard.php');
                             
                         }
                     else
