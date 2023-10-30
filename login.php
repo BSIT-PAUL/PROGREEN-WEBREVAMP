@@ -1,3 +1,6 @@
+<?php 
+include 'database/dbcon.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -40,15 +43,15 @@
               <div class="login-right-wrap">
                 <h1>Welcome</h1>
                 <p class="account-subtitle">Access to your portal</p>
-                <form action="index.html">
+                <form action="index.html" method="post">
                   <div class="form-group">
-                    <label class="form-control-label">Email Address</label>
-                    <input type="email" class="form-control"  />
+                    <label class="form-control-label">Username</label>
+                    <input type="text" class="form-control" name="username" />
                   </div>
                   <div class="form-group">
                     <label class="form-control-label">Password</label>
                     <div class="pass-group">
-                      <input type="password" class="form-control pass-input"  />
+                      <input type="password" class="form-control pass-input" name="password" />
                       <span class="fas fa-eye toggle-password"></span>
                     </div>
                   </div>
@@ -76,6 +79,8 @@
                   <button
                     class="btn btn-lg btn-block btn-primary"
                     type="submit"
+                    value="login"
+                    name="login"
                   >
                     Login
                   </button>
@@ -83,7 +88,28 @@
                     <span class="or-line"></span>
                     <span class="span-or">or</span>
                   </div>
+                    <?php 
+                    $username = mysqli_real_escape_string($con, $_POST['username']);
+                    $password = mysqli_real_escape_string($con, $_POST['password']);
 
+                    $password = md5($password);
+                    
+                    $query 		= mysqli_query($con, "SELECT * FROM admin WHERE Password='$password' and UserName='$username'");
+                    $row		= mysqli_fetch_array($query);
+                    $num_row 	= mysqli_num_rows($query);
+                    
+                    if ($num_row > 0) 
+                        {			
+                            $_SESSION['user_id']=$row['user_id'];
+                            header('location:index.php');
+                            
+                        }
+                    else
+                        {
+                          echo "<script>alert('Invalid Details');</script>";
+                        }
+                    
+                    ?>
                   <div class="social-login mb-3">
                     <span>Login with</span>
                     <a href="#" class="facebook"

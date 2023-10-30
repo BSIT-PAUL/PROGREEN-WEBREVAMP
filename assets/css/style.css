@@ -1441,7 +1441,7 @@ button.bg-danger:hover {
     background: url(../img/dropdown.png) no-repeat 0 0 / 14px 7px;
     height: 15px;
 }
-.form-group  .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+.  .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
 	border-color: transparent;
     border-style: solid;
     border-width: 6px 6px 0;
