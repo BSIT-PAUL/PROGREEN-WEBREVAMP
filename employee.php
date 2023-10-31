@@ -1,8 +1,8 @@
-<?php 
-	include_once("includes/system_header.php");
-	include_once("includes/system_main_wraper.php");
-	include_once("includes/system_navbar.php");
-	include_once("includes/sidebar.php");
+<?php
+include_once("includes/system_header.php");
+include_once("includes/system_main_wraper.php");
+include_once("includes/system_navbar.php");
+include_once("includes/sidebar.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">

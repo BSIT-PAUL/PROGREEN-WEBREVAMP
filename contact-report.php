@@ -1,3 +1,9 @@
+<?php 
+    include("includes/header.php");
+    include("includes/spinner.php");
+    include("includes/navbar.php");
+    include("includes/carousel.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
