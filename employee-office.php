@@ -2,6 +2,9 @@
 	include_once("includes/system_header.php");
 	include_once("includes/system_main_wraper.php");
 	include_once("includes/system_navbar.php");
+
+	session_start();
+	include_once("database/dbcon.php");
 ?>
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
@@ -112,24 +115,52 @@
 					<div class="col-xl-12 col-sm-12 col-12 ">
 						<div class="card  card-lists">
 							<div class="card-header  ">
-								<h2 class="card-titles">Create New Office</h2>
+								<h2 class="card-titles">Create New Department</h2>
 							</div>
 							<div class="card-body">
+							<form method="POST" action="">
 								<div class="row">
-									<div class="col-xl-8 col-sm-12 col-12 ">
-										<input type="text" placeholder="Office Name" class="input-form">
+									<div class="col-xl-8 col-sm-12 col-12">
+										<input type="text" name="deptName" placeholder="Department Name" class="input-form">
 									</div>
-									<div class="col-xl-2 col-sm-6 col-6 ">
-										<a href="#" class="btn-create ">Create Office </a>
+									<div class="col-xl-2 col-sm-6 col-6">
+										<button type="submit" class="btn-create">Create Department</button>
 									</div>
-									<div class="col-xl-2 col-sm-6 col-6 ">
-										<a href="#" class="btn-cancel ">Cancel </a>
+									<div class="col-xl-2 col-sm-6 col-6">
+										<a href="#" class="btn-cancel">Cancel</a>
 									</div>
-								</div>
+								</div>			
+							</form>
 							</div>
 						</div>
 					</div>
 				</div>
+
+				<div class="row">
+					<div class="col-xl-12 col-sm-12 col-12 ">
+						<div class="card  card-lists">
+							<div class="card-header  ">
+								<h2 class="card-titles">Create New Job Title</h2>
+							</div>
+							<div class="card-body">
+							<form method="POST" action="">
+								<div class="row">
+									<div class="col-xl-8 col-sm-12 col-12">
+										<input type="text" name="deptName" placeholder="Department Name" class="input-form">
+									</div>
+									<div class="col-xl-2 col-sm-6 col-6">
+										<button type="submit" class="btn-create">Create Department</button>
+									</div>
+									<div class="col-xl-2 col-sm-6 col-6">
+										<a href="#" class="btn-cancel">Cancel</a>
+									</div>
+								</div>
+							</form>
+							</div>
+						</div>
+					</div>
+				</div>
+
 				<div class="row">
 					<div class="col-xl-12 col-sm-12 col-12 ">
 						<div class="card">
@@ -373,7 +404,7 @@
 							<div class=" col-md-12 p-0">
 								<div class=" form-popup">
 									<label>Office Name</label>
-									<input type="text" placeholder="Enter Department Name">
+									<input type="text">
 								</div>
 							</div>
 						</div>
@@ -415,6 +446,29 @@
 
 	</div>
 
+	<!-- INSERTING TO THE DEPARTMENT ID -->
+	<?php 
+		if ($_SERVER["REQUEST_METHOD"] == "POST") {
+			if (isset($_POST["deptName"])) {
+				$officeName = $_POST["deptName"];
+		
+				$sql = "INSERT INTO department (deptName) VALUES (?)";
+
+				$stmt = mysqli_prepare($con, $sql);
+				mysqli_stmt_bind_param($stmt, "s", $officeName);
+		
+				if (mysqli_stmt_execute($stmt)) {
+					echo "Department inserted successfully!";
+				} else {
+					echo "Error inserting office: " . mysqli_error($con);
+				}
+		
+				mysqli_stmt_close($stmt);
+			} else {
+				echo "Department Name not provided.";
+			}
+		}
+	?>
 
 	<script src="assets/js/jquery-3.6.0.min.js"></script>
 
