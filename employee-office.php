@@ -373,7 +373,7 @@
 							<div class=" col-md-12 p-0">
 								<div class=" form-popup">
 									<label>Office Name</label>
-									<input type="text">
+									<input type="text" placeholder="Enter Department Name">
 								</div>
 							</div>
 						</div>
