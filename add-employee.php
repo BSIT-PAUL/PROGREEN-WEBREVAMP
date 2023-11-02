@@ -143,6 +143,7 @@
 										<div class="form-group">
 										<label for="select">Select Department</label>
 											<select class="select">
+												<option value="" selected disabled>Select Department</option>
 												<option value="Engineering">Engineering</option>
 												<option value="Production">Production</option>
 												<option value="Warehouse">Warehouse</option>
@@ -164,7 +165,7 @@
 										<div class="form-group">
 											<label for="select">Select Job Title</label>
 										<select class="select">
-												<option value="Engineering">Engineering</option>
+												<option value="" selected disabled>Select Job Title</option>
 												<option value="Production">Production</option>
 												<option value="Warehouse">Warehouse</option>
 												<option value="CSS">CSS</option>
