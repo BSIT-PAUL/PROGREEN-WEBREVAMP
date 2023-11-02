@@ -3,7 +3,9 @@
 	include_once("includes/system_main_wraper.php");
 	include_once("includes/system_navbar.php");
 ?>
-
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
 		<div class="sidebar" id="sidebar">
 			<div class="sidebar-inner slimscroll">
 				<div class="sidebar-contents">
