@@ -1,4 +1,5 @@
 <?php
+	include("database/dbcon.php");
 	include_once("includes/system_header.php");
 	include_once("includes/system_main_wraper.php");
 	include_once("includes/system_navbar.php");
@@ -223,64 +224,34 @@
 		</div>
 
 
-		<div class="create_popup">
-			<div class="modal fade" id="editcompany" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-				<div class="modal-dialog modal-lg">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="staticBackdropLabel">Edit Company Information</h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div class="modal-body">
-							<div class=" col-md-12 p-0">
-								<div class=" form-popup">
-									<label>Office Name</label>
-									<input type="text">
-								</div>
-								<div class=" form-popup">
-									<label>Registered Company Number</label>
-									<input type="text">
-								</div>
-								<div class=" form-popup">
-									<label>Incorporation Date</label>
-									<input type="text">
-								</div>
-								<div class=" form-popup">
-									<label>Vat Number</label>
-									<input type="text">
-								</div>
-								<div class=" form-popup">
-									<label>Address line 1</label>
-									<input type="text">
-								</div>
-								<div class=" form-popup">
-									<label>Address line 2</label>
-									<input type="text">
-								</div>
-								<div class=" form-popup">
-									<label>City</label>
-									<input type="text">
-								</div>
-								<div class=" form-popup">
-									<label>Country</label>
-									<input type="text">
-								</div>
-								<div class=" form-popup">
-									<label>Post - Code</label>
-									<input type="text">
-								</div>
-							</div>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-primary">Add</button>
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		<?php
+		if ($_SERVER["REQUEST_METHOD"] == "POST") {
+			// Retrieve form data
+			$departmentID = $_POST["departmentID"];
+			$companyNumber = $_POST["companyNumber"];
+			$incorporationDate = $_POST["incorporationDate"];
+			$address = $_POST["companyAddress"];
+			$city = $_POST["companyCity"];
+			$country = $_POST["companyCountry"];
+			$postalCode = $_POST["postalCode"];
+
+			// SQL query to insert data into the "company" table
+			$sql = "INSERT INTO company (deptID, companyNum, incDate, address, city, country, postalCode)
+					VALUES ('$departmentID', '$companyNumber', '$incorporationDate', '$address', '$city', '$country', '$postalCode')";
+
+			if (mysqli_query($con, $sql)) {
+				// Data inserted successfully
+				echo "Company information inserted successfully.";
+			} else {
+				// Error occurred while inserting data
+				echo "Error: " . mysqli_error($con);
+			}
+
+			// Close the database connection
+			mysqli_close($con);
+		}
+		?>
+
 
 		<div class="customize_popup">
 			<div class="modal fade" id="addcompany" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -292,49 +263,52 @@
 								<span aria-hidden="true">&times;</span>
 							</button>
 						</div>
+						<!-- Inside your "Add Company Information" modal -->
 						<div class="modal-body">
-							<div class=" col-md-12 p-0">
-								<div class=" form-popup">
-									<label>Office Name</label>
-									<input type="text">
+							<form method="post">
+								<div class="col-md-12 p-0 form-popup">
+									<label for="departmentID">Department Name</label>
+									<select name="departmentID" class="input-form" required>
+										<option value="Select department" selected disabled>Select Department</option>
+										<?php
+										// Fetch departments from the 'department' table
+										$departmentQuery = mysqli_query($con, "SELECT * FROM department");
+
+										while ($row = mysqli_fetch_assoc($departmentQuery)) {
+											echo "<option value='" . $row['deptID'] . "'>" . $row['deptName'] . "</option>";
+										}
+										?>
+									</select>
 								</div>
-								<div class=" form-popup">
-									<label>Registered Company Number</label>
-									<input type="text">
+								<div class="col-md-12 p-0 form-popup">
+									<label for="companyNumber">Registered Company Number</label>
+									<input type="text" name="companyNumber" required>
 								</div>
-								<div class=" form-popup">
-									<label>Incorporation Date</label>
-									<input type="text">
+								<div class="col-md-12 p-0 form-popup">
+									<label for="incorporationDate">Incorporation Date</label>
+									<input type="date" name="incorporationDate" required>
 								</div>
-								<div class=" form-popup">
-									<label>Vat Number</label>
-									<input type="text">
+								<div class="col-md-12 p-0 form-popup">
+									<label for="companyAddress">Address</label>
+									<input type="text" name="companyAddress" required>
 								</div>
-								<div class=" form-popup">
-									<label>Address line 1</label>
-									<input type="text">
+								<div class="col-md-12 p-0 form-popup">
+									<label for="companyCity">City</label>
+									<input type="text" name="companyCity" required>
 								</div>
-								<div class=" form-popup">
-									<label>Address line 2</label>
-									<input type="text">
+								<div class="col-md-12 p-0 form-popup">
+									<label for="companyCountry">Country</label>
+									<input type="text" name="companyCountry" required>
 								</div>
-								<div class=" form-popup">
-									<label>City</label>
-									<input type="text">
+								<div class="col-md-12 p-0 form-popup">
+									<label for="postalCode">Postal - Code</label>
+									<input type="text" name="postalCode" required>
 								</div>
-								<div class=" form-popup">
-									<label>Country</label>
-									<input type="text">
+								<div class="modal-footer">
+									<button type="submit" class="btn btn-primary">Add</button>
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 								</div>
-								<div class=" form-popup">
-									<label>Post - Code</label>
-									<input type="text">
-								</div>
-							</div>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-primary">Add</button>
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -391,7 +365,7 @@
 							</div>
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-primary">Add</button>
+							<button type="submit" class="btn btn-primary">Add</button>
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 						</div>
 					</div>
@@ -438,7 +412,6 @@
 				</div>
 			</div>
 		</div>
-
 	</div>
 
 
