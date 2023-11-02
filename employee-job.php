@@ -121,12 +121,27 @@
 							<div class="card-body">
 							<form method="POST" action="">
 								<div class="row">
-									<div class="col-xl-7 col-sm-12 col-12">
-										<input type="text" name="deptName" placeholder="Department Name" class="input-form">
+									<div class="col-xl-3 col-sm-12 col-12">
+                                        <input type="text" name="jobTitle" placeholder="Job Title" class="input-form">
+									</div>
+
+                                    <div class="col-xl-4 col-sm-12 col-12">
+                                        <div class="form-group">
+                                            <select name="departmentID" class="input-form ">
+                                                <?php
+                                                    // Fetch departments from the 'department' table
+                                                    $departmentQuery = mysqli_query($con, "SELECT * FROM department");
+                                                    
+                                                    while ($row = mysqli_fetch_assoc($departmentQuery)) {
+                                                        echo "<option value='" . $row['deptID'] . "'>" . $row['deptName'] . "</option>";
+                                                    }
+                                                ?>
+                                            </select>
+                                        </div>
 									</div>
 
 									<div class="col-xl-3 col-sm-3 col-3">
-										<button type="submit" class="btn-create">Add Department</button>
+										<button type="submit" class="btn-create">Add Job</button>
 									</div>
 
 									<div class="col-xl-2 col-sm-6 col-6">
@@ -424,28 +439,39 @@
 
 	</div>
 
-	<!-- INSERTING TO THE DEPARTMENT ID -->
+	<!-- INSERTING TO THE JOB TABLE -->
 	<?php 
-		if ($_SERVER["REQUEST_METHOD"] == "POST") {
-			if (isset($_POST["deptName"])) {
-				$officeName = $_POST["deptName"];
-		
-				$sql = "INSERT INTO department (deptName) VALUES (?)";
-
-				$stmt = mysqli_prepare($con, $sql);
-				mysqli_stmt_bind_param($stmt, "s", $officeName);
-		
-				if (mysqli_stmt_execute($stmt)) {
-					echo "Department inserted successfully!";
-				} else {
-					echo "Error inserting office: " . mysqli_error($con);
-				}
-		
-				mysqli_stmt_close($stmt);
-			} else {
-				echo "Department Name not provided.";
-			}
-		}
+		if (isset($_POST["jobTitle"]) && isset($_POST["departmentID"])) {
+            $jobTitle = $_POST["jobTitle"];
+            $departmentID = $_POST["departmentID"];
+        
+            $sql = "INSERT INTO job (jobTitle, departmentID) VALUES (?, ?)";
+        
+            $stmt = mysqli_prepare($con, $sql);
+        
+            if ($stmt) {
+                //si means we are inserting a string and an integer
+                mysqli_stmt_bind_param($stmt, "si", $jobTitle, $departmentID);
+        
+                if (mysqli_stmt_execute($stmt)) {
+                    echo "Job inserted successfully!";
+                } else {
+                    echo "<div class='alert alert-danger alert-dismissible' role='alert'>";
+                            "Error inserting job: " . mysqli_error($con) ;
+                                "</div>"; 
+                }
+        
+                mysqli_stmt_close($stmt);
+            } else {
+                echo "<div class='alert alert-danger alert-dismissible' role='alert'>";
+                        "Error preparing statement: " . mysqli_error($con);
+                                "</div>"; 
+            }
+        } else {
+            echo "Job Title or Department not provided.";
+        }
+        
+        
 	?>
 
 	<script src="assets/js/jquery-3.6.0.min.js"></script>
