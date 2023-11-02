@@ -141,8 +141,8 @@
 								<div class="row">
 									<div class="col-xl-6 col-sm-12 col-12 ">
 										<div class="form-group">
+										<label for="select">Select Department</label>
 											<select class="select">
-												<option value="Select Department">Department Type </option>
 												<option value="Engineering">Engineering</option>
 												<option value="Production">Production</option>
 												<option value="Warehouse">Warehouse</option>
@@ -154,15 +154,16 @@
 									</div>
 									<div class="col-xl-6 col-sm-12 col-12 ">
 										<div class="form-group">
-											<input type="text" placeholder="Start Date">
+											<label for="date">Start Date</label>
+											<input type="date" placeholder="Start Date">
 										</div>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-xl-6 col-sm-12 col-12 ">
 										<div class="form-group">
+											<label for="select">Select Job Title</label>
 										<select class="select">
-												<option value="Select Job Title">Job Title</option>
 												<option value="Engineering">Engineering</option>
 												<option value="Production">Production</option>
 												<option value="Warehouse">Warehouse</option>
@@ -174,9 +175,13 @@
 									</div>
 									<div class="col-xl-6 col-sm-12 col-12 ">
 										<div class="form-group">
+										<label for="select">Select Employment Type</label>
 											<select class="select">
-												<option value="Select Employment Type">Regular</option>
-												<option value="leave"></option>
+												<option value="Regular">Regular</option>
+												<option value="Casual">Casual</option>
+												<option value="Seasonal">Seasonal</option>
+												<option value="Project">Project</option>
+												<option value="Fix Term">Fix Term</option>
 											</select>
 										</div>
 									</div>
