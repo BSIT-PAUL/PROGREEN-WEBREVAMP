@@ -94,8 +94,8 @@
 							<ul>
 								<li><a href="employee.php">All</a></li>
 								<li><a href="employee-team.php">Teams</a></li>
-								<li><a class="active" href="#">Offices</a></li>
-								<li><a href="employee-job.php">Job</a></li>
+								<li><a href="employee-office.php">Offices</a></li>
+                                <li><a class="active" href="#">Job</a></li>
 							</ul>
 							<a class="btn-add" href="add-employee.php"><i data-feather="plus"></i> Add Person</a>
 						</div>
@@ -103,7 +103,7 @@
 				</div>
 				<div class="row mb-3">
 					<div class="col-xl-10 col-sm-8 col-12 ">
-						<label class="employee_count">1 Office</label>
+						<label class="employee_count">1 Job</label>
 					</div>
 					<div class="col-xl-1 col-sm-2 col-12 ">
 						<a href="#" class="btn-view active "><i data-feather="grid"></i> </a>
@@ -116,7 +116,7 @@
 					<div class="col-xl-12 col-sm-12 col-12 ">
 						<div class="card  card-lists">
 							<div class="card-header  ">
-								<h2 class="card-titles">Create New Department</h2>
+								<h2 class="card-titles">Create New Job</h2>
 							</div>
 							<div class="card-body">
 							<form method="POST" action="">
