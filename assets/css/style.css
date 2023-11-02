@@ -5385,6 +5385,9 @@ span.mandatory {
 a.btn.btn-apply:hover {
     border: 1px solid #00882E;
 }
+button.btn.btn-apply:hover {
+    border: 1px solid #00882E;
+}
 .btn-secondary {
     background: #DC3545;
 }
@@ -5545,7 +5548,7 @@ label.employee_count {
 	background: transparent;
 	color:#00882E;
 }
-.form-btn a.btn-applys{
+.form-btn a.btn-applys, .form-btn button.btn-applys{
     width: 210px;
 	background: #00882E;
 	color: #fff;
@@ -5782,6 +5785,18 @@ a.btn-create {
     font-weight: 600;
     border-radius: 10px;
 }
+button.btn-create {
+    width: 100%;
+    text-align: center;
+    display: block;
+    background: #FF8D07;
+    border: 1px solid #FF8D07;
+    color: #fff;
+    font-size: 20px;
+    padding: 19px 0;
+    font-weight: 600;
+    border-radius: 10px;
+}
 .member-registor ul {
     padding: 0;
     border: 1px solid #EBECF1;
@@ -5820,6 +5835,10 @@ a.btn-create {
     padding: 30px;
 }
 a.btn-create:hover {
+    color: #FF8D07;
+    background: transparent;
+}
+button.btn-create:hover {
     color: #FF8D07;
     background: transparent;
 }
