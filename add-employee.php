@@ -141,7 +141,7 @@
 								<div class="row">
 									<div class="col-xl-6 col-sm-12 col-12 ">
 										<div class="form-group">
-										<label for="select">Select Department</label>
+										<label for="select">Department</label>
 											<select class="select">
 												<option value="" selected disabled>Select Department</option>
 												<option value="Engineering">Engineering</option>
@@ -163,7 +163,7 @@
 								<div class="row">
 									<div class="col-xl-6 col-sm-12 col-12 ">
 										<div class="form-group">
-											<label for="select">Select Job Title</label>
+											<label for="select">Job Title</label>
 										<select class="select">
 												<option value="" selected disabled>Select Job Title</option>
 												<option value="Production">Production</option>
@@ -176,8 +176,9 @@
 									</div>
 									<div class="col-xl-6 col-sm-12 col-12 ">
 										<div class="form-group">
-										<label for="select">Select Employment Type</label>
+										<label for="select">Employment Type</label>
 											<select class="select">
+											<option value="" selected disabled>Select Employment Type</option>
 												<option value="Regular">Regular</option>
 												<option value="Casual">Casual</option>
 												<option value="Seasonal">Seasonal</option>
