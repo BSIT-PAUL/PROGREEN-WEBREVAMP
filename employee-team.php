@@ -91,8 +91,9 @@ include_once("includes/system_navbar.php");
 								<li><a href="employee.php">All</a></li>
 								<li><a class="active" href="#">Teams</a></li>
 								<li><a href="employee-office.php">Offices</a></li>
+						<li><a href="employee-job.php">Job</a></li>
 							</ul>
-							<a class="btn-add" data-toggle="modal" data-target="#addteam"><i data-feather="plus"></i> Add Person</a>
+							<a class="btn-add" data-toggle="modal" data-target="#addteam"><i data-feather="plus"></i> Add Employee</a>
 						</div>
 					</div>
 					<div class="col-xl-12 col-sm-12 col-12 ">

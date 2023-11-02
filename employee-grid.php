@@ -90,7 +90,7 @@ include_once("includes/system_navbar.php");
 								<li><a href="employee-team.php">Teams</a></li>
 								<li><a href="employee-office.php">Offices</a></li>
 							</ul>
-							<a class="btn-add" href="add-employee.php"><i data-feather="plus"></i> Add Person</a>
+							<a class="btn-add" href="add-employee.php"><i data-feather="plus"></i> Add Employee</a>
 						</div>
 					</div>
 					<div class="col-xl-12 col-sm-12 col-12 mb-4">

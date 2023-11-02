@@ -1,10 +1,11 @@
 <?php
+	session_start();
+	include 'database/dbcon.php';
 	include_once("includes/system_header.php");
 	include_once("includes/system_main_wraper.php");
 	include_once("includes/system_navbar.php");
 
-	session_start();
-	include_once("database/dbcon.php");
+
 ?>
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
@@ -97,7 +98,7 @@
 								<li><a class="active" href="#">Offices</a></li>
 								<li><a href="employee-job.php">Job</a></li>
 							</ul>
-							<a class="btn-add" href="add-employee.php"><i data-feather="plus"></i> Add Person</a>
+							<a class="btn-add" href="add-employee.php"><i data-feather="plus"></i> Add Employee</a>
 						</div>
 					</div>
 				</div>
@@ -114,6 +115,29 @@
 				</div>
 				<div class="row">
 					<div class="col-xl-12 col-sm-12 col-12 ">
+						<!-- INSERTING TO THE DEPARTMENT ID -->
+	<?php 
+		if ($_SERVER["REQUEST_METHOD"] == "POST") {
+			if (isset($_POST["deptName"])) {
+				$officeName = $_POST["deptName"];
+		
+				$sql = "INSERT INTO department (deptName) VALUES (?)";
+
+				$stmt = mysqli_prepare($con, $sql);
+				mysqli_stmt_bind_param($stmt, "s", $officeName);
+		
+				if (mysqli_stmt_execute($stmt)) {
+					echo "<div class='alert alert-success' role='alert'>Department inserted successfully!</div>";
+				} else {
+					echo "<div class='alert alert-danger' role='alert'>Error inserting department:  " . mysqli_error($con) . "</div>";
+				}
+		
+				mysqli_stmt_close($stmt);
+			} else {
+				echo "<div class='alert alert-danger' role='alert'>Error preparing statement: " . mysqli_error($con) . "</div>";
+			}
+		}
+	?>
 						<div class="card  card-lists">
 							<div class="card-header  ">
 								<h2 class="card-titles">Create New Department</h2>
@@ -122,7 +146,7 @@
 							<form method="POST" action="">
 								<div class="row">
 									<div class="col-xl-7 col-sm-12 col-12">
-										<input type="text" name="deptName" placeholder="Department Name" class="input-form">
+										<input type="text" name="deptName" placeholder="Department Name" class="input-form" required>
 									</div>
 
 									<div class="col-xl-3 col-sm-3 col-3">
@@ -424,29 +448,7 @@
 
 	</div>
 
-	<!-- INSERTING TO THE DEPARTMENT ID -->
-	<?php 
-		if ($_SERVER["REQUEST_METHOD"] == "POST") {
-			if (isset($_POST["deptName"])) {
-				$officeName = $_POST["deptName"];
-		
-				$sql = "INSERT INTO department (deptName) VALUES (?)";
-
-				$stmt = mysqli_prepare($con, $sql);
-				mysqli_stmt_bind_param($stmt, "s", $officeName);
-		
-				if (mysqli_stmt_execute($stmt)) {
-					echo "Department inserted successfully!";
-				} else {
-					echo "Error inserting office: " . mysqli_error($con);
-				}
-		
-				mysqli_stmt_close($stmt);
-			} else {
-				echo "Department Name not provided.";
-			}
-		}
-	?>
+	
 
 	<script src="assets/js/jquery-3.6.0.min.js"></script>
 
