@@ -142,9 +142,13 @@
 									<div class="col-xl-6 col-sm-12 col-12 ">
 										<div class="form-group">
 											<select class="select">
-												<option value="Select leave">Country of Employment </option>
-												<option value="leave">country1</option>
-												<option value="leave">country2</option>
+												<option value="Select Department">Department Type </option>
+												<option value="Engineering">Engineering</option>
+												<option value="Production">Production</option>
+												<option value="Warehouse">Warehouse</option>
+												<option value="CSS">CSS</option>
+												<option value="GHQ">GHQ</option>
+												<option value="GSS">GSS</option>
 											</select>
 										</div>
 									</div>
@@ -157,14 +161,22 @@
 								<div class="row">
 									<div class="col-xl-6 col-sm-12 col-12 ">
 										<div class="form-group">
-											<input type="text" placeholder="Job Title">
+										<select class="select">
+												<option value="Select Job Title">Job Title</option>
+												<option value="Engineering">Engineering</option>
+												<option value="Production">Production</option>
+												<option value="Warehouse">Warehouse</option>
+												<option value="CSS">CSS</option>
+												<option value="GHQ">GHQ</option>
+												<option value="GSS">GSS</option>
+											</select>
 										</div>
 									</div>
 									<div class="col-xl-6 col-sm-12 col-12 ">
 										<div class="form-group">
 											<select class="select">
-												<option value="Select leave">Permanent </option>
-												<option value="leave">Freelancer</option>
+												<option value="Select Employment Type">Regular</option>
+												<option value="leave"></option>
 											</select>
 										</div>
 									</div>
