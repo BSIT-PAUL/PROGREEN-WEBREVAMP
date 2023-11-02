@@ -147,7 +147,7 @@
 												<option value="Engineering">Engineering</option>
 												<option value="Production">Production</option>
 												<option value="Warehouse">Warehouse</option>
-												<option value="CSS">CSS</option>
+												<option value="LCS">LCS</option>
 												<option value="GHQ">GHQ</option>
 												<option value="GSS">GSS</option>
 											</select>
@@ -197,30 +197,20 @@
 							</div>
 							<div class="card-body">
 								<div class="row">
-									<div class="col-xl-6 col-sm-12 col-12 ">
+								<div class="col-xl-6 col-sm-12 col-12 ">
 										<div class="form-group">
-											<select class="select">
-												<option value="Select leave">Currency </option>
-												<option value="leave">$</option>
-											</select>
+											<input type="number" placeholder="Salary">
 										</div>
 									</div>
 									<div class="col-xl-6 col-sm-12 col-12 ">
 										<div class="form-group">
 											<select class="select">
-												<option value="Select leave">Frequency </option>
+												<option value="Select leave" selected disabled>Frequency </option>
 												<option value="leave">Annualy</option>
 												<option value="leave">Monthly</option>
 												<option value="leave">Weekly</option>
 												<option value="leave">Daily</option>
 											</select>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-xl-6 col-sm-12 col-12 ">
-										<div class="form-group">
-											<input type="text" placeholder="Start Date">
 										</div>
 									</div>
 								</div>
