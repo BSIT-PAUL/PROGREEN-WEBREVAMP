@@ -223,6 +223,65 @@
 		</div>
 
 
+		<div class="create_popup">
+			<div class="modal fade" id="editcompany" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="staticBackdropLabel">Edit Company Information</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<div class=" col-md-12 p-0">
+								<div class=" form-popup">
+									<label>Office Name</label>
+									<input type="text">
+								</div>
+								<div class=" form-popup">
+									<label>Registered Company Number</label>
+									<input type="text">
+								</div>
+								<div class=" form-popup">
+									<label>Incorporation Date</label>
+									<input type="text">
+								</div>
+								<div class=" form-popup">
+									<label>Vat Number</label>
+									<input type="text">
+								</div>
+								<div class=" form-popup">
+									<label>Address line 1</label>
+									<input type="text">
+								</div>
+								<div class=" form-popup">
+									<label>Address line 2</label>
+									<input type="text">
+								</div>
+								<div class=" form-popup">
+									<label>City</label>
+									<input type="text">
+								</div>
+								<div class=" form-popup">
+									<label>Country</label>
+									<input type="text">
+								</div>
+								<div class=" form-popup">
+									<label>Post - Code</label>
+									<input type="text">
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary">Add</button>
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<div class="customize_popup">
 			<div class="modal fade" id="addcompany" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 				<div class="modal-dialog modal-lg">
