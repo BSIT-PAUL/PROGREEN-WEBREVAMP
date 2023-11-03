@@ -130,7 +130,7 @@ include_once("includes/sidebar.php");
 <div class="customize_popup">
 			<div class="modal fade" id="edit" tabindex="-1" aria-labelledby="staticBackdropLa" aria-hidden="true">
 				<div class="modal-dialog modal-lg modal-dialog-centered">
-					<div class="modal-content">
+					<div class="modal-content" id="updateemployeee">
 						<div class="modal-header">
 							<h5 class="modal-title" id="staticBackdropLa">Edit Employee</h5>
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close">

@@ -29,14 +29,8 @@
 							</div>
 						</div>
 						<ul>
-							<li class="active">
-								<a href="dashboard.php"><img src="assets/img/home.svg" alt="sidebar_img"> <span>Dashboard</span></a>
-							</li>
 							<li>
-								<a href="employee.php"><img src="assets/img/employee.svg" alt="sidebar_img"><span> Employees</span></a>
-							</li>
-							<li>
-								<a href="company.php"><img src="assets/img/company.svg" alt="sidebar_img"> <span> Company</span></a>
+								<a href="index-employee.php"><img src="assets/img/home.svg" alt="sidebar_img"> <span>Dashboard</span></a>
 							</li>
 							<li>
 								<a href="calendar.php"><img src="assets/img/calendar.svg" alt="sidebar_img"> <span>Calendar</span></a>
@@ -45,24 +39,12 @@
 								<a href="leave.php"><img src="assets/img/leave.svg" alt="sidebar_img"> <span>Leave</span></a>
 							</li>
 							<li>
-								<a href="review.php"><img src="assets/img/review.svg" alt="sidebar_img"><span>Review</span></a>
-							</li>
-							<li>
-								<a href="report.php"><img src="assets/img/report.svg" alt="sidebar_img"><span>Report</span></a>
-							</li>
-							<li>
-								<a href="manage.php"><img src="assets/img/manage.svg" alt="sidebar_img"> <span>Manage</span></a>
-							</li>
-							<li>
-								<a href="settings.php"><img src="assets/img/settings.svg" alt="sidebar_img"><span>Settings</span></a>
-							</li>
-							<li>
 								<a href="profile.php"><img src="assets/img/profile.svg" alt="sidebar_img"> <span>Profile</span></a>
 							</li>
 						</ul>
 						<ul class="logout">
 							<li>
-								<a href="login.php"><img src="assets/img/logout.svg" alt="sidebar_img"><span>Log out</span></a>
+								<a href="../login.php"><img src="assets/img/logout.svg" alt="sidebar_img"><span>Log out</span></a>
 							</li>
 						</ul>
 					</div>
