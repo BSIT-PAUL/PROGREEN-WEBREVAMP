@@ -38,7 +38,13 @@ include_once("includes/sidebar.php");
 			<div class="col-xl-12 col-sm-12 col-12 mb-4">
 				<div class="row">
 					<div class="col-xl-10 col-sm-8 col-12 ">
-						<label class="employee_count">7 People</label>
+						<?php
+							// Count the number of employees
+							$countQuery = "SELECT COUNT(*) AS employeeCount FROM employee";
+							$countResult = mysqli_query($con, $countQuery);
+							$employeeCount = mysqli_fetch_assoc($countResult)['employeeCount'];
+						?>
+						<label class="employee_count"><?php echo $employeeCount; ?> People</label>
 					</div>
 					<div class="col-xl-1 col-sm-2 col-12 ">
 						<a href="employee-grid.php" class="btn-view "><i data-feather="grid"></i> </a>
