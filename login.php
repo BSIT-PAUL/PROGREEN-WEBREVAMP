@@ -104,33 +104,37 @@ include 'database/dbcon.php';
                   </div>
                 </form>
                 <?php 
-                    if (isset($_POST['login']))
-                    {
-                        $username = mysqli_real_escape_string($con, $_POST['user']);
-                        $password = mysqli_real_escape_string($con, $_POST['pass']);
-    
-                        $password = md5($password);
-                        
-                        $query 		= mysqli_query($con, "SELECT * FROM admin WHERE password='$password' and username='$username'");
-                        $row		= mysqli_fetch_array($query);
-                        $num_row 	= mysqli_num_rows($query);
-                        
-                        if ($num_row > 0) 
-                            {			
-                                $_SESSION['user_id']=$row['user_id'];
-                                 header('location: dashboard.php');
-                                
-                            }
-                        else
-                            {
-                                echo "<div class='alert alert-danger alert-dismissible' role='alert'>
-                                Invalid Username and Password
-                                <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-                                    <span aria-hidden='true'>&times;</span>
-                                </button>
-                                </div>";
-                            }
+                   if (isset($_POST['login'])) {
+                    $username = mysqli_real_escape_string($con, $_POST['user']);
+                    $password = mysqli_real_escape_string($con, $_POST['pass']);
+                    
+                    // Hash the password
+                    $password = md5($password);
+                
+                    $admin_query = mysqli_query($con, "SELECT * FROM admin WHERE password='$password' AND username='$username'");
+                    $row_admin = mysqli_fetch_array($admin_query);
+                    $num_row_admin = mysqli_num_rows($admin_query);
+                
+                    if ($num_row_admin > 0) {
+                        // If the user is an admin, redirect to admin dashboard
+                        $_SESSION['user_id'] = $row_admin['user_id'];
+                        header('location: dashboard.php');
+                    } else {
+                        $employee_query = mysqli_query($con, "SELECT * FROM employee WHERE username='$username' AND password='$password'");
+                        $row_employee = mysqli_fetch_array($employee_query);
+                        $num_row_employee = mysqli_num_rows($employee_query);
+                
+                        if ($num_row_employee > 0) {
+                            // If the user is an employee, redirect to employee dashboard
+                            $_SESSION['employee_id'] = $row_employee['employeeID'];
+                            header("Location: employee/index-employee.php");
+                        } else {
+                            // If neither admin nor employee, redirect back to the login page
+                            header("Location: index.php");
+                        }
                     }
+                }
+                
                     
                     ?>
               </div>
