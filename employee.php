@@ -56,197 +56,59 @@ include_once("includes/sidebar.php");
 					<div class="table-responsive">
 						<table class="table  custom-table no-footer">
 							<thead>
-								<tr>
-									<th>Name</th>
-									<th>Line Manager</th>
-									<th>Team</th>
-									<th>Office</th>
-									<th>Permissions</th>
-									<th>Status</th>
+								<tr class="text-center">
+									<th>Full Name</th>
+									<th>Username</th>
+									<th>Department</th>
+									<th>Job</th>
+									<th>Start Date</th>
+									<th>Employment Type</th>
+									<th>Salary</th>
+									<th>Salary Frequency</th>
 									<th>Action</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<td>
-										<div class="table-img">
-											<a href="profile.php">
-												<img src="assets/img/profiles/avatar-13.jpg" alt="profile" class="img-table" /><label>Arvin Villaluna
-												</label>
-											</a>
-										</div>
-									</td>
-									<td>
-										<label class="action_label">Richard Wilson </label>
-									</td>
-									<td>
-										<label class="action_label2">Design </label>
-									</td>
-									<td><label>Focus Technologies </label></td>
-									<td><label>Team Lead</label></td>
-									<td class="tab-select">
-										<select class="select">
-											<option value="active">Active</option>
-											<option value="inactive">Inactive</option>
-										</select>
-									</td>
-									<td>
-											<!-- actionsssss -->
-										<div class="employee-head">
-											<ul>
-												<li><a class="edit_employee" data-toggle="modal" data-target="#edit"><i data-feather="edit"></i></a></li>
-												<li><a class="edit_delete" data-toggle="modal" data-target="#delete"><i data-feather="trash-2"></i></a></li>
-											</ul>
-										</div>
+									<?php 
+										$query = "SELECT * FROM employee";
+										$result = mysqli_query($con, $query);
 
-									</td>
+										while ($row = mysqli_fetch_assoc($result)) {
+											echo "<tr class='text-center'>";
+											echo "<td>" . $row['firstName'] . " " . $row['lastName'] . "</td>";
+											echo "<td>" . $row['username'] . "</td>";
+											
+											// Fetch and display the department name
+											$departmentQuery = "SELECT deptName FROM department WHERE deptID = " . $row['departmentID'];
+											$departmentResult = mysqli_query($con, $departmentQuery);
+											$departmentName = mysqli_fetch_assoc($departmentResult)['deptName'];
+							
+											// Fetch and display the job title
+											$jobQuery = "SELECT jobTitle FROM job WHERE jobID = " . $row['jobID'];
+											$jobResult = mysqli_query($con, $jobQuery);
+											$jobTitle = mysqli_fetch_assoc($jobResult)['jobTitle'];
+							
+											echo "<td>" . $departmentName . "</td>";
+											echo "<td>" . $jobTitle . "</td>";
 
+											echo "<td>" . $row['startDate'] . "</td>";
+											echo "<td>" . $row['employmentType'] . "</td>";
+											echo "<td>" . $row['salary'] . "</td>";
+											echo "<td>" . $row['salaryFrequency'] . "</td>";
+											//For The Actions
+											echo '<td>';
+											echo '<div class="employee-head">';
+											echo '<ul>';
+											echo '<li><a class="edit_employee" data-toggle="modal" data-target="#edit"><i data-feather="edit"></i></a></li>';
+											echo '<li><a class="edit_delete" data-toggle="modal" data-target="#delete"><i data-feather="trash-2"></i></a></li>';
+											echo '</ul>';
+											echo '</div>';
+											echo '</td>';
+											echo "</tr>";
+										}
 
-
-								</tr>
-								<tr>
-									<td>
-										<div class="table-img">
-											<a href="profile.php">
-												<img src="assets/img/profiles/avatar-16.jpg" alt="profile" class="img-table" /><label>Graciella Relevo
-												</label>
-											</a>
-										</div>
-									</td>
-									<td>
-										<label class="action_label">Richard Wilson </label>
-									</td>
-									<td>
-										<label class="action_label2">IOS </label>
-									</td>
-									<td><label>Focus Technologies </label></td>
-									<td><label>Team Lead</label></td>
-									<td class="tab-select">
-										<select class="select">
-											<option value="active">Active</option>
-											<option value="inactive">Inactive</option>
-										</select>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class="table-img">
-											<a href="profile.php">
-												<img src="assets/img/profiles/avatar-17.jpg" alt="profile" class="img-table" />
-											</a>
-											<label>Jenni Sims</label>
-										</div>
-									</td>
-									<td>
-										<label class="action_label">Richard Wilson </label>
-									</td>
-									<td>
-										<label class="action_label2">Android </label>
-									</td>
-									<td><label>Focus Technologies </label></td>
-									<td><label>Team Lead</label></td>
-									<td class="tab-select">
-										<select class="select">
-											<option value="active">Active</option>
-											<option value="inactive">Inactive</option>
-										</select>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class="table-img">
-											<a href="profile.php">
-												<img src="assets/img/profiles/avatar-19.jpg" alt="profile" class="img-table" />
-											</a>
-											<label>Stacey Linville</label>
-										</div>
-									</td>
-									<td>
-										<label class="action_label">Richard Wilson </label>
-									</td>
-									<td>
-										<label class="action_label2">Testing </label>
-									</td>
-									<td><label>Focus Technologies </label></td>
-									<td><label>Team Lead</label></td>
-									<td class="tab-select">
-										<select class="select">
-											<option value="active">Active</option>
-											<option value="inactive">Inactive</option>
-										</select>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class="table-img">
-											<a href="profile.php">
-												<img src="assets/img/profiles/avatar-14.jpg" alt="profile" class="img-table" />
-											</a>
-											<label>Maria Cotton</label>
-										</div>
-									</td>
-									<td>
-										<label class="action_label">Richard Wilson </label>
-									</td>
-									<td>
-										<label class="action_label2">PHP </label>
-									</td>
-									<td><label>Focus Technologies </label></td>
-									<td><label>Team Lead</label></td>
-									<td class="tab-select">
-										<select class="select">
-											<option value="active">Active</option>
-											<option value="inactive">Inactive</option>
-										</select>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class="table-img">
-											<a href="profile.php">
-												<img src="assets/img/profiles/avatar-18.jpg" alt="profile" class="img-table" />
-											</a>
-											<label>John Gibbs</label>
-										</div>
-									</td>
-									<td>
-										<label class="action_label">Richard Wilson </label>
-									</td>
-									<td>
-										<label class="action_label2">PHP </label>
-									</td>
-									<td><label>Focus Technologies </label></td>
-									<td><label>Team Lead</label></td>
-									<td class="tab-select">
-										<select class="select">
-											<option value="active">Active</option>
-											<option value="inactive">Inactive</option>
-										</select>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div class="table-img">
-											<a href="profile.php">
-												<img src="assets/img/profiles/avatar-10.jpg" alt="profile" class="img-table" />
-											</a>
-											<label>Richard Wilson</label>
-										</div>
-									</td>
-									<td>
-										<label class="action_label in_active">No </label>
-									</td>
-									<td>
-										<label class="action_label2">Business </label>
-									</td>
-									<td><label>Focus Technologies </label></td>
-									<td><label>Super Admin</label></td>
-									<td class="tab-select">
-										<select class="select">
-											<option value="active">Active</option>
-											<option value="inactive">Inactive</option>
-										</select>
-									</td>
+									?>
 								</tr>
 							</tbody>
 						</table>
