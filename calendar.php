@@ -4,7 +4,18 @@
 	include_once("includes/system_navbar.php");
 	include("includes/sidebar.php");
 ?>
+<link rel="shortcut icon" href="assets/img/favicon.png">
 
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+
+<link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+
+<link rel="stylesheet" href="assets/plugins/fullcalendar/fullcalendar.min.css">
+
+<link rel="stylesheet" href="assets/css/style.css">
 		<div class="page-wrapper calendar_page">
 			<div class="content container-fluid">
 
