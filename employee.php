@@ -1,4 +1,5 @@
 <?php
+include("database/dbcon.php");
 include_once("includes/system_header.php");
 include_once("includes/system_main_wraper.php");
 include_once("includes/system_navbar.php");
@@ -270,9 +271,48 @@ include_once("includes/sidebar.php");
 						</div>
 						<div class="modal-body">
 							<div class=" col-md-12 p-0">
-								<div class=" form-popup m-0">
-									<input type="text" placeholder="Name">
-								</div>
+									<div class=" form-popup">
+										<input type="text" placeholder="First Name">
+									</div>
+									<div class=" form-popup">
+										<input type="text" placeholder="Last Name">
+									</div>
+									<div class=" form-popup">
+										<select name="departmentID" class="input-form" required>
+												<option value="Select department" selected disabled>Select Department</option>
+												<?php
+												// Fetch departments from the 'department' table
+												$departmentQuery = mysqli_query($con, "SELECT * FROM department");
+
+												while ($row = mysqli_fetch_assoc($departmentQuery)) {
+													echo "<option value='" . $row['deptID'] . "'>" . $row['deptName'] . "</option>";
+												}
+												?>
+											</select>
+									</div>
+									<div class=" form-popup">
+										<select name="jobID" class="input-form " required>
+												<option value="Select job" selected disabled>Select Job</option>
+												<?php
+												// Fetch departments from the 'department' table
+												$jobQuery = mysqli_query($con, "SELECT * FROM job");
+
+												while ($row = mysqli_fetch_assoc($jobQuery)) {
+													echo "<option value='" . $row['jobID'] . "'>" . $row['jobTitle'] . "</option>";
+												}
+												?>
+										</select>
+									</div>
+									<div class=" form-popup">
+										<select class="input-form" name="employmentType" required>
+											<option value="" selected disabled>Select Employment Type</option>
+											<option value="Regular">Regular</option>
+											<option value="Casual">Casual</option>
+											<option value="Seasonal">Seasonal</option>
+											<option value="Project">Project</option>
+											<option value="Fix Term">Fix Term</option>
+										</select>
+									</div>
 							</div>
 						</div>
 						<div class="modal-footer">
@@ -300,7 +340,7 @@ include_once("includes/sidebar.php");
 				</div>
 			</div>
 		</div>
-		
+
 <script src="assets/js/jquery-3.6.0.min.js"></script>
 
 <script src="assets/js/popper.min.js"></script>
