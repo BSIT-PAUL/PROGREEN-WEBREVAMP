@@ -106,7 +106,7 @@ include_once("includes/sidebar.php");
 											echo '<td>';
 											echo '<div class="employee-head">';
 											echo '<ul>';
-											echo '<li><a class="edit_employee" data-toggle="modal" data-target="#edit"><i data-feather="edit"></i></a></li>';
+											echo '<li><a class="edit_employee" data-employee-id="' . $row['employeeID'] . '" data-toggle="modal" data-target="#edit"><i data-feather="edit"></i></a></li>';
 											echo '<li><a class="edit_delete" data-employee-id="' . $row['employeeID'] . '" data-toggle="modal" data-target="#delete"><i data-feather="trash-2"></i></a></li>';
 											echo '</ul>';
 											echo '</div>';
@@ -140,13 +140,13 @@ include_once("includes/sidebar.php");
 						<div class="modal-body">
 							<div class=" col-md-12 p-0">
 									<div class=" form-popup">
-										<input type="text" placeholder="First Name">
+										<input type="text" id="first_name" placeholder="First Name">
 									</div>
 									<div class=" form-popup">
-										<input type="text" placeholder="Last Name">
+										<input type="text" id="last_name" placeholder="Last Name">
 									</div>
 									<div class=" form-popup">
-										<select name="departmentID" class="input-form" required>
+										<select name="departmentID" id="department_id" class="input-form" required>
 												<option value="Select department" selected disabled>Select Department</option>
 												<?php
 												// Fetch departments from the 'department' table
@@ -159,7 +159,7 @@ include_once("includes/sidebar.php");
 											</select>
 									</div>
 									<div class=" form-popup">
-										<select name="jobID" class="input-form " required>
+										<select name="jobID" id="job_id" class="input-form " required>
 												<option value="Select job" selected disabled>Select Job</option>
 												<?php
 												// Fetch departments from the 'department' table
@@ -172,7 +172,7 @@ include_once("includes/sidebar.php");
 										</select>
 									</div>
 									<div class=" form-popup">
-										<select class="input-form" name="employmentType" required>
+										<select class="input-form" id="employment_type" name="employmentType" required>
 											<option value="" selected disabled>Select Employment Type</option>
 											<option value="Regular">Regular</option>
 											<option value="Casual">Casual</option>
@@ -181,10 +181,22 @@ include_once("includes/sidebar.php");
 											<option value="Fix Term">Fix Term</option>
 										</select>
 									</div>
+									<div class="form-popup">
+										<input type="number" id="salary" placeholder="Salary">
+									</div>
+									<div class="form-popup">
+										<select class="input-form" id="salary_frequency" name="salaryFrequency" required>
+												<option value="Select Salary Frequency" selected disabled>Frequency </option>
+												<option value="Annualy">Annualy</option>
+												<option value="Monthly">Monthly</option>
+												<option value="Weekly">Weekly</option>
+												<option value="Daily">Daily</option>
+											</select>
+									</div>
 							</div>
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-primary">Add</button>
+							<button type="button" class="btn btn-primary" id="confirmUpdate">Update</button>
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 						</div>
 					</div>
