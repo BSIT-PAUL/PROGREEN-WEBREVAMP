@@ -5,7 +5,16 @@
 	include_once("includes/sidebar.php");
 ?>
 
+<link rel="shortcut icon" href="assets/img/favicon.png">
 
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+
+<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+
+<link rel="stylesheet" href="assets/css/style.css">
 		<div class="page-wrapper">
 			<div class="content container-fluid">
 				<div class="row">
