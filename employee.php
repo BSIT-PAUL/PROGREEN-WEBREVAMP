@@ -38,13 +38,13 @@ include_once("includes/sidebar.php");
 			<div class="col-xl-12 col-sm-12 col-12 mb-4">
 				<div class="row">
 					<div class="col-xl-10 col-sm-8 col-12 ">
-						<?php
-							// Count the number of employees
-							$countQuery = "SELECT COUNT(*) AS employeeCount FROM employee";
-							$countResult = mysqli_query($con, $countQuery);
-							$employeeCount = mysqli_fetch_assoc($countResult)['employeeCount'];
-						?>
-						<label class="employee_count"><?php echo $employeeCount; ?> People</label>
+					<?php
+						// Count the number of employees
+						$countQuery = "SELECT COUNT(*) AS employeeCount FROM employee";
+						$countResult = mysqli_query($con, $countQuery);
+						$employeeCount = mysqli_fetch_assoc($countResult)['employeeCount'];
+					?>
+					<label class="employee_count"><?php echo $employeeCount; ?> People</label>
 					</div>
 					<div class="col-xl-1 col-sm-2 col-12 ">
 						<a href="employee-grid.php" class="btn-view "><i data-feather="grid"></i> </a>
@@ -107,7 +107,7 @@ include_once("includes/sidebar.php");
 											echo '<div class="employee-head">';
 											echo '<ul>';
 											echo '<li><a class="edit_employee" data-toggle="modal" data-target="#edit"><i data-feather="edit"></i></a></li>';
-											echo '<li><a class="edit_delete" data-toggle="modal" data-target="#delete"><i data-feather="trash-2"></i></a></li>';
+											echo '<li><a class="edit_delete" data-employee-id="' . $row['employeeID'] . '" data-toggle="modal" data-target="#delete"><i data-feather="trash-2"></i></a></li>';
 											echo '</ul>';
 											echo '</div>';
 											echo '</td>';
@@ -201,13 +201,14 @@ include_once("includes/sidebar.php");
 							<h5 class="modal-title text-center" id="staticBackdropLabels1">Are You Sure Want to Delete?</h5>
 						</div>
 						<div class="modal-footer text-centers">
-							<button type="button" class="btn btn-primary">Delete</button>
+							<button type="button" class="btn btn-primary" id="confirmDelete">Delete</button>
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+
 
 <script src="assets/js/jquery-3.6.0.min.js"></script>
 
@@ -221,6 +222,7 @@ include_once("includes/sidebar.php");
 <script src="assets/plugins/select2/js/select2.min.js"></script>
 <script src="js/activePage.js"></script>
 <script src="assets/js/script.js"></script>
+<script src="assets/js/ajax.js"></script>
 </body>
 
 </html>
