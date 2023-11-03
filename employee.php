@@ -258,7 +258,49 @@ include_once("includes/sidebar.php");
 
 </div>
 
+<div class="customize_popup">
+			<div class="modal fade" id="edit" tabindex="-1" aria-labelledby="staticBackdropLa" aria-hidden="true">
+				<div class="modal-dialog modal-lg modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="staticBackdropLa">Edit Employee</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">×</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<div class=" col-md-12 p-0">
+								<div class=" form-popup m-0">
+									<input type="text" placeholder="Name">
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary">Add</button>
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
+
+		<div class="customize_popup">
+			<div class="modal fade" id="delete" tabindex="-1" aria-labelledby="staticBackdropLabels1" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered ">
+					<div class="modal-content">
+						<div class="modal-header text-centers border-0">
+							<h5 class="modal-title text-center" id="staticBackdropLabels1">Are You Sure Want to Delete?</h5>
+						</div>
+						<div class="modal-footer text-centers">
+							<button type="button" class="btn btn-primary">Delete</button>
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
 <script src="assets/js/jquery-3.6.0.min.js"></script>
 
 <script src="assets/js/popper.min.js"></script>
