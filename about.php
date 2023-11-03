@@ -1,6 +1,6 @@
 <?php 
-    include("header.html");
-    include("spinner.html");
+    include("includes\header.php");
+    include("includes\spinner.php");
     include("navbar.html");
 ?>
     <!-- Page Header Start -->
