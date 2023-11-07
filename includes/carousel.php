@@ -3,12 +3,13 @@
         <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item">
-                    <img class="w-100" src="img/pexels-math-21393.jpg" alt="Image">
+                    <img class="w-100" src="img/probg.jpg" alt="Image">
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.4);"></div>
                     <div class="carousel-caption">
                         <div class="container">
-                            <div class="row justify-content-center">
+                            <div class="row justify-content-center text-center">
                                 <div class="col-lg-7">
-                                    <h5 class="display-2 mb-5 animated slideInDown">A GLOBAL PARTNERSHIP FOR SUSTAINABLE AND RESILIENT LANDSCAPES</h5>
+                                    <h5 class="display-4 mb-5 animated slideInDown">A GLOBAL PARTNERSHIP FOR SUSTAINABLE AND RESILIENT LANDSCAPES</h5>
                                     <a href="product.html" class="btn btn-primary rounded-pill py-sm-3 px-sm-5">Products</a>
                                     <a href="product.html" class="btn btn-primary rounded-pill py-sm-3 px-sm-5 ms-3">Services</a>
                                 </div>
@@ -17,12 +18,13 @@
                     </div>
                 </div>
                 <div class="carousel-item active" >
-                    <img class="w-100" src="img/pexels-kafeel-ahmed-13455911.jpg" alt="Image">
+                    <img class="w-100" src="img/probg.jpg" alt="Image">
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.4);"></div>
                     <div class="carousel-caption">
                         <div class="container">
-                            <div class="row justify-content-center">
+                            <div class="row justify-content-center text-center">
                                 <div class="col-lg-7">
-                                    <h1 class="display-2 mb-5 animated slideInDown">A GLOBAL PARTNERSHIP FOR SUSTAINABLE AND RESILIENT LANDSCAPES</h1>
+                                    <h1 class="display-4 mb-5 animated slideInDown">A GLOBAL PARTNERSHIP FOR SUSTAINABLE AND RESILIENT LANDSCAPES</h1>
                                     <a href="product.html" class="btn btn-primary rounded-pill py-sm-3 px-sm-5">Products</a>
                                     <a href="feature.html" class="btn btn-primary rounded-pill py-sm-3 px-sm-5 ms-3">Services</a>
                                 </div>
