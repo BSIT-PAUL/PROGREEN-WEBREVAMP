@@ -1,3 +1,7 @@
+<?php
+include("database/dbcon.php");
+
+?>
 <div class="top-nav-search">
     <form>
         <input type="text" class="form-control" placeholder="">
@@ -116,7 +120,13 @@
                 <img src="assets/img/profile.jpg" alt="">
                 <span class="status online"></span>
             </span>
-            <span>John Paul Bayoneto</span>
+            <span>  <?php
+
+// Get the name of the user from the session
+$welcomeMessage = $_SESSION['user_firstname'] . ' ' . $_SESSION['user_lastname'];
+echo $welcomeMessage;
+
+?></span>
         </a>
         <div class="dropdown-menu">
             <a class="dropdown-item" href="profile.php"><i data-feather="user" class="mr-1"></i> Profile</a>

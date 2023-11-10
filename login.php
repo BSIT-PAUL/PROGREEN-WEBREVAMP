@@ -103,40 +103,47 @@ include 'database/dbcon.php';
                     <a href="register.php">Register</a>
                   </div>
                 </form>
-                <?php 
-                   if (isset($_POST['login'])) {
-                    $username = mysqli_real_escape_string($con, $_POST['user']);
-                    $password = mysqli_real_escape_string($con, $_POST['pass']);
-                    
-                    // Hash the password
-                    $password = md5($password);
-                
-                    $admin_query = mysqli_query($con, "SELECT * FROM admin WHERE password='$password' AND username='$username'");
-                    $row_admin = mysqli_fetch_array($admin_query);
-                    $num_row_admin = mysqli_num_rows($admin_query);
-                
-                    if ($num_row_admin > 0) {
-                        // If the user is an admin, redirect to admin dashboard
-                        $_SESSION['user_id'] = $row_admin['user_id'];
-                        header('location: dashboard.php');
-                    } else {
-                        $employee_query = mysqli_query($con, "SELECT * FROM employee WHERE username='$username' AND password='$password'");
-                        $row_employee = mysqli_fetch_array($employee_query);
-                        $num_row_employee = mysqli_num_rows($employee_query);
-                
-                        if ($num_row_employee > 0) {
-                            // If the user is an employee, redirect to employee dashboard
-                            $_SESSION['employee_id'] = $row_employee['employeeID'];
-                            header("Location: employee/index-employee.php");
-                        } else {
-                            // If neither admin nor employee, redirect back to the login page
-                            header("Location: index.php");
-                        }
-                    }
-                }
-                
-                    
-                    ?>
+                <?php
+    if (isset($_POST['login'])) {
+        $username = mysqli_real_escape_string($con, $_POST['user']);
+        $password = mysqli_real_escape_string($con, $_POST['pass']);
+        
+        // Hash the password
+        $password = md5($password);
+    
+        $admin_query = mysqli_query($con, "SELECT * FROM admin WHERE password='$password' AND username='$username'");
+        $row_admin = mysqli_fetch_array($admin_query);
+        $num_row_admin = mysqli_num_rows($admin_query);
+    
+        if ($num_row_admin > 0) {
+            // If the user is an admin, redirect to admin dashboard
+            $_SESSION['user_id'] = $row_admin['user_id'];
+            $_SESSION['user_firstname'] = "Admin"; // Set a default name for admin
+            $_SESSION['user_lastname'] = "";
+            header('location: dashboard.php');
+        } else {
+            $employee_query = mysqli_query($con, "SELECT * FROM employee WHERE username='$username' AND password='$password'");
+            $row_employee = mysqli_fetch_array($employee_query);
+            $num_row_employee = mysqli_num_rows($employee_query);
+    
+            if ($num_row_employee > 0) {
+                // If the user is an employee, redirect to employee dashboard
+                $_SESSION['employee_id'] = $row_employee['employeeID'];
+                $_SESSION['user_firstname'] = $row_employee['firstName']; // Store first name in the session
+                $_SESSION['user_lastname'] = $row_employee['lastName']; // Store first name in the session
+                header("Location: employee/index-employee.php");
+                exit();
+            } else {
+                // If neither admin nor employee, redirect back to the login page
+                header("Location: login.php");
+                echo "<div class='alert alert-danger' role='alert'>Wrong Password or Username</div>";
+
+            }
+        }
+    }
+?>
+
+
               </div>
             </div>
           </div>

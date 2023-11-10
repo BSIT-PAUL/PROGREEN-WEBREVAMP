@@ -1,5 +1,8 @@
 <?php
+						session_start();
+
 include("database/dbcon.php");
+
 	include_once("includes/system_header.php");
 	include_once("includes/system_main_wraper.php");
 	include_once("includes/system_navbar.php");
@@ -57,31 +60,24 @@ include("database/dbcon.php");
 		<div class="page-wrapper">
 			<div class="content container-fluid">
 			<div class="page-name mb-4">
-				<!-- get the name of the employee -->
-    <h4 class="d-flex align-items-center m-0"> 
-        <img src="assets/img/profiles/avatar-14.jpg" class="mr-1 employeename" name="employeename" alt="profile" />
-        <label>
+    <h4 class="d-flex align-items-center">
+        <img src="assets/img/profile.jpg" class="mr-2 employeeprofile" name="employeeprofile" alt="profile" />
+        <label class="small-text">
             <?php
-                // Get the name of the first employee
-                $employeeQuery = "SELECT firstname FROM employee LIMIT 1"; 
-                $employeeResult = mysqli_query($con, $employeeQuery);
-                $employeeData = mysqli_fetch_assoc($employeeResult);
-                
-                if ($employeeData) {
-                    $welcomeMessage = "Welcome " . $employeeData['firstname'];
-                    echo $welcomeMessage;
-                } else {
-                    echo "Welcome, Guest";
-                }
+
+                // Get the name of the user from the session
+                $welcomeMessage = "Welcome " .  $_SESSION['user_firstname'];
+                echo $welcomeMessage;
             ?>
         </label>
     </h4>
     <?php
         // Display current date
         $currentDate = date("D, d M Y"); // Format: "Day, DD Month YYYY"
-        echo "<label>$currentDate</label>";
+        echo "<label class='small-text'>$currentDate</label>";
     ?>
 </div>
+
 				<div class="row mb-4">
 					<div class="col-xl-6 col-sm-12 col-12">
 						<div class="breadcrumb-path ">
