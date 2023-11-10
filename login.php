@@ -130,7 +130,8 @@ include 'database/dbcon.php';
                 // If the user is an employee, redirect to employee dashboard
                 $_SESSION['employee_id'] = $row_employee['employeeID'];
                 $_SESSION['user_firstname'] = $row_employee['firstName']; // Store first name in the session
-                $_SESSION['user_lastname'] = $row_employee['lastName']; // Store first name in the session
+                $_SESSION['user_lastname'] = $row_employee['lastName']; // Store last name in the session
+                $_SESSION['user_id'] = $row_employee['employeeID'];
                 header("Location: employee/index-employee.php");
                 exit();
             } else {

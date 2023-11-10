@@ -1,9 +1,9 @@
 <?php
 include("database/dbcon.php");
-	include_once("includes/system_header.php");
-	include_once("includes/system_main_wraper.php");
-	include_once("includes/system_navbar.php");
-	include("includes/sidebar.php");
+include_once("includes/system_header.php");
+include_once("includes/system_main_wraper.php");
+include_once("includes/system_navbar.php");
+include("includes/sidebar.php");
 ?>
 <link rel="shortcut icon" href="assets/img/favicon.png">
 
@@ -16,154 +16,163 @@ include("database/dbcon.php");
 
 <link rel="stylesheet" href="assets/css/style.css">
 
-		<div class="page-wrapper">
-			<div class="content container-fluid">
-				<div class="row">
-					<div class="col-xl-12 col-sm-12 col-12 mb-4">
-						<div class="breadcrumb-path ">
-							<ul class="breadcrumb">
-								<li class="breadcrumb-item"><a href="index.php"><img src="assets/img/dash.png" class="mr-2" alt="breadcrumb">Home</a>
-								</li>
-								<li class="breadcrumb-item active"> Leave</li>
-							</ul>
-							<h3>Leave</h3>
-						</div>
-					</div>
+<div class="page-wrapper">
+	<div class="content container-fluid">
+		<div class="row">
+			<div class="col-xl-12 col-sm-12 col-12 mb-4">
+				<div class="breadcrumb-path ">
+					<ul class="breadcrumb">
+						<li class="breadcrumb-item"><a href="index.php"><img src="assets/img/dash.png" class="mr-2" alt="breadcrumb">Home</a>
+						</li>
+						<li class="breadcrumb-item active"> Leave</li>
+					</ul>
+					<h3>Leave</h3>
 				</div>
-				<div class="row">
-					<div class="col-xl-6 col-sm-12 col-12 d-flex	">
-						<div class="card card-lists flex-fill">
-							<div class="card-header">
-								<h2 class="card-titles">Focus Technologies<span>Head Office</span></h2>
-								<a class="edit-link" data-toggle="modal" data-target="#editmember"> <i data-feather="edit"></i></a>
-							</div>
-							<div class="card-body d-flex align-items-center">
-								<div class=" member-head employee-image">
-									<h2>Members</h2>
-									<div class="avatar-group">
-										<div class="avatar avatar-xs group_img group_header">
-											<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/profiles/avatar-10.jpg">
-										</div>
-										<div class="avatar avatar-xs group_img group_header">
-											<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/profiles/avatar-15.jpg">
-										</div>
-										<div class="avatar avatar-xs group_img group_header">
-											<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/profiles/avatar-16.jpg">
-										</div>
-										<div class="avatar avatar-xs group_img group_header">
-											<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/profiles/avatar-17.jpg">
-										</div>
-										<div class="avatar avatar-xs group_img group_header">
-											<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/profiles/avatar-14.jpg">
-										</div>
-										<div class="avatar avatar-xs group_img group_header">
-											<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/profiles/avatar-18.jpg">
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xl-6 col-sm-12 col-12 d-flex	">
+				<div class="card card-lists flex-fill">
+					<div class="card-header">
+						<h2 class="card-titles">Focus Technologies<span>Head Office</span></h2>
+						<a class="edit-link" data-toggle="modal" data-target="#editmember"> <i data-feather="edit"></i></a>
 					</div>
-					<div class="col-xl-3 col-sm-6 col-12 d-flex">
-						<div class="card flex-fill">
-							<div class="card-body">
-								<div class="employee_status text-center">
-									<img alt="User Image" src="assets/img/profiles/avatar-17.jpg">
-									<label>Jenni Sims is working <br>from home today.</label>
+					<div class="card-body d-flex align-items-center">
+						<div class=" member-head employee-image">
+							<h2>Members</h2>
+							<div class="avatar-group">
+								<div class="avatar avatar-xs group_img group_header">
+									<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/profiles/avatar-10.jpg">
 								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-xl-3 col-sm-6 col-12 d-flex">
-						<div class="card flex-fill">
-							<div class="card-body">
-								<div class="employee_status text-center">
-									<img alt="User Image" src="assets/img/profiles/avatar-18.jpg">
-									<label>John Gibbs is away today.</label>
+								<div class="avatar avatar-xs group_img group_header">
+									<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/profiles/avatar-15.jpg">
+								</div>
+								<div class="avatar avatar-xs group_img group_header">
+									<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/profiles/avatar-16.jpg">
+								</div>
+								<div class="avatar avatar-xs group_img group_header">
+									<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/profiles/avatar-17.jpg">
+								</div>
+								<div class="avatar avatar-xs group_img group_header">
+									<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/profiles/avatar-14.jpg">
+								</div>
+								<div class="avatar avatar-xs group_img group_header">
+									<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/profiles/avatar-18.jpg">
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-xl-12 col-sm-12 col-12 ">
-						<div class="card">
-							<div class="card-header">
-								<h2 class="card-titles">Apply Leaves</h2>
-							</div>
-							<div class="form-creation">
-								<div class="row">
-									<div class="col-xl-6 col-sm-6 col-12 ">
-										<div class="form-group">
-											<label>Leave Type <span class="mandatory">*</span> </label>
-											<select class="select">
-												<option value="Select leave">Select leave</option>
-												<option value="leave">Casual leave</option>
-												<option value="leave">Earned leave</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-xl-6 col-sm-6 col-12 ">
-										<div class="form-group">
-											<label>Remaining Leaves</label>
-											<input type="text" value="10" disabled>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-xl-6 col-sm-12 col-12 ">
-										<div class="form-group">
-											<label>From </label>
-											<input type="date">
-										</div>
-									</div>
-									<div class="col-xl-6 col-sm-12 col-12 ">
-										<div class="form-group">
-											<label>To</label>
-											<input type="date">
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-xl-6 col-sm-12 col-12 ">
-										<div class="form-group">
-											<label>Half Day <span class="mandatory">*</span> </label>
-											<select class="select">
-												<option value="Select leave">Select </option>
-												<option value="leave">Casual leave</option>
-												<option value="leave">Earned leave</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-xl-6 col-sm-12 col-12 ">
-										<div class="form-group">
-											<label>Remaining Leaves</label>
-											<input type="text" value="2" disabled>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-xl-12 col-sm-12 col-12 ">
-										<div class="form-group">
-											<label>Additional reasons </label>
-											
-											<textarea rows="4" cols="50" class="date">	</textarea>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-xl-12 col-sm-12 col-12 ">
-										<div class="form-btn">
-											<a href="#" class="btn btn-apply">Apply</a>
-											<a href="#" class="btn btn-secondary">Cancel</a>
-										</div>
-									</div>
-								</div>
-							</div>
+			</div>
+			<div class="col-xl-3 col-sm-6 col-12 d-flex">
+				<div class="card flex-fill">
+					<div class="card-body">
+						<div class="employee_status text-center">
+							<img alt="User Image" src="assets/img/profiles/avatar-17.jpg">
+							<label>Jenni Sims is working <br>from home today.</label>
 						</div>
 					</div>
 				</div>
-				<div class="row">
+			</div>
+			<div class="col-xl-3 col-sm-6 col-12 d-flex">
+				<div class="card flex-fill">
+					<div class="card-body">
+						<div class="employee_status text-center">
+							<img alt="User Image" src="assets/img/profiles/avatar-18.jpg">
+							<label>John Gibbs is away today.</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<form method="post" >
+    <div class="row">
+        <div class="col-xl-12 col-sm-12 col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-titles">Apply Leaves</h2>
+                </div>
+                <div class="form-creation">
+                    <div class="row">
+                        <div class="col-xl-6 col-sm-6 col-12 ">
+                            <div class="form-group">
+                                <label>Leave Type <span class="mandatory">*</span> </label>
+                                <select name="leave_type" class="select">
+                                    <option value="Select leave" selected disabled>Select leave</option>
+                                    <option value="Casual leave">Casual leave</option>
+                                    <option value="Earned leave">Earned leave</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-sm-6 col-12 ">
+                            <div class="form-group">
+                                <label>Remaining Leaves</label>
+                                <input type="text" value="10" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-6 col-sm-12 col-12 ">
+                            <div class="form-group">
+                                <label>From </label>
+                                <input type="date" name="start_date">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-sm-12 col-12 ">
+                            <div class="form-group">
+                                <label>To</label>
+                                <input type="date" name="end_date">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12 col-sm-12 col-12 ">
+                            <div class="form-group">
+                                <label>Additional reasons </label>
+                                <textarea name="additional_reasons" rows="4" cols="50" class="date"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12 col-sm-12 col-12 ">
+                            <div class="form-btn">
+                                <button type="submit" class="btn btn-apply" name="apply">Apply</button>
+                                <a href="#" class="btn btn-secondary">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<?php 
+if ( isset($_POST['apply'])) {
+	// Process the form data
+	$employee_id = $_SESSION['user_id']; // Assuming you have the user ID stored in the session
+	$leave_type = $_POST["leave_type"];
+	$start_date = $_POST["start_date"];
+	$end_date = $_POST["end_date"];
+	$additional_reasons = $_POST["additional_reasons"];
+	$status = "Pending";
+
+
+	$sql = "INSERT INTO leave_application (employee_id, leave_type, start_date, end_date, additional_reasons, status)
+	        VALUES ('$employee_id', '$leave_type', '$start_date', '$end_date', '$additional_reasons', '$status')";
+
+	if ($con->query($sql) === TRUE) {
+		echo "<div id='successAlert' class='alert alert-success' role='alert'>New record created successfully.</div>";
+
+	    echo "Leave application submitted successfully";
+	} else {
+	    echo "Error: " . $sql . "<br>" . $con->error;
+	}
+	
+
+	$con->close();
+}
+?>
+		<!-- <div class="row">
 					<div class="col-xl-12 col-sm-12 col-12 ">
 						<div class="card">
 							<div class="card-header">
@@ -305,9 +314,9 @@ include("database/dbcon.php");
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
-
+		<!-- 
 		<div class="customize_popup">
 			<div class="modal fade" id="edit" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 				<div class="modal-dialog modal-lg">
@@ -375,21 +384,21 @@ include("database/dbcon.php");
 			</div>
 		</div>
 
-	</div>
+	</div> -->
 
 
-	<script src="assets/js/jquery-3.6.0.min.js"></script>
+		<script src="assets/js/jquery-3.6.0.min.js"></script>
 
-	<script src="assets/js/popper.min.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/popper.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
 
-	<script src="assets/js/feather.min.js"></script>
+		<script src="assets/js/feather.min.js"></script>
 
-	<script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+		<script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
-	<script src="assets/plugins/select2/js/select2.min.js"></script>
-	<script src="js/activePage.js"></script>
-	<script src="assets/js/script.js"></script>
-</body>
+		<script src="assets/plugins/select2/js/select2.min.js"></script>
+		<script src="js/activePage.js"></script>
+		<script src="assets/js/script.js"></script>
+		</body>
 
-</html>
+		</html>
