@@ -113,13 +113,13 @@
 									<div class="col-xl-6 col-sm-12 col-12 ">
 										<div class="form-group">
 											<label>From </label>
-											<input type="text">
+											<input type="date">
 										</div>
 									</div>
 									<div class="col-xl-6 col-sm-12 col-12 ">
 										<div class="form-group">
 											<label>To</label>
-											<input type="text">
+											<input type="date">
 										</div>
 									</div>
 								</div>
@@ -144,8 +144,9 @@
 								<div class="row">
 									<div class="col-xl-12 col-sm-12 col-12 ">
 										<div class="form-group">
-											<label>From </label>
-											<textarea rows="4" cols="50">	</textarea>
+											<label>Additional reasons </label>
+											
+											<textarea rows="4" cols="50" class="date">	</textarea>
 										</div>
 									</div>
 								</div>
