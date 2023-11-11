@@ -117,7 +117,7 @@ include 'database/dbcon.php';
     
         if ($num_row_admin > 0) {
             // If the user is an admin, redirect to admin dashboard
-            $_SESSION['user_id'] = $row_admin['user_id'];
+            $_SESSION['user_id'] = $row_admin['id'];
             $_SESSION['user_firstname'] = "Admin"; // Set a default name for admin
             $_SESSION['user_lastname'] = "";
             header('location: dashboard.php');
