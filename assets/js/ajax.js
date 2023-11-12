@@ -95,3 +95,40 @@ $("#confirmUpdate").on("click", function () {
 });
 
 });
+
+//Ajax For Handling Approval of Leaving
+$(document).ready(function () {
+    $(".action_label3").on("click", function () {
+        var leaveID = $(this).data("leave-id");
+
+        // Store the leave ID in the modal button's data attribute
+        $("#confirmApprove").data("leave-id", leaveID);
+
+        // Open the modal
+        $('#approving').modal('show');
+    });
+
+    $("#confirmApprove").on("click", function () {
+        var leaveID = $(this).data("leave-id");
+
+        $.ajax({
+            type: "POST",
+            url: "approve_leave.php",
+            data: { id: leaveID },
+            success: function (data) {
+                if (data === 'Leave approved successfully') {
+                    location.reload();
+                    alert("Leaved approved successfully");
+                } else {
+                    alert("Error approving leave");
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error(xhr.responseText);
+                alert("Error during Ajax request");
+            }
+        });
+    });
+});
+
+

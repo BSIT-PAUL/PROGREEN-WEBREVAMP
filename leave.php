@@ -82,10 +82,9 @@
 											<tr class="text-center">
 												<th>Employee</th>
 												<th>Leave Type </th>
-												<th>Remaining Leaves</th>
 												<th>Start Date</th>
 												<th>End Date</th>
-												<th>Notes</th>
+												<th>Desc</th>
 												<th>Status</th>
 												<th colspan="3">Action</th>
 											</tr>
@@ -102,14 +101,14 @@
 														echo "<tr class='text-center'>";
 														echo "<td>" . $row['firstName'] . " " . $row['lastName'] . "</td>";
 														echo "<td>" . $row['leave_type'] . "</td>";
-														echo "<td>" . $row['remaining_leaves'] . "</td>";
 														echo "<td>". $row["start_date"] . "</td>";
 														echo "<td>". $row["end_date"] ."</td>";
 														echo "<td>". $row["additional_reasons"] . "</td>";
 														echo "<td>". $row["Status"] . "</td>";
 														echo '<td>';
 														echo '<div class="employee-head">';
-														echo '<label><a class="action_label3" data-approved-leave-id="'. $row['id'].'" data-toggle="modal" data-target="#approving" >Approved</a></label>';
+														echo '<label><a class="action_label3" data-leave-id="'. $row['id'].'" data-toggle="modal" data-target="#approving">Approve</a></label>';
+
 														echo '<label><a class="action_label4 text-center" data-decline-leave-id="'. $row['id'].'" data-toggle="modal" data-target="#delete">Reject <i data-feather="trash-2"></i> </a></label>';
 														echo '</div>';
 														echo '</td>';
@@ -162,7 +161,7 @@
 							<h5 class="modal-title text-center" id="staticBackdropLabels1">Are You Sure Want to Approve?</h5>
 						</div>
 						<div class="modal-footer text-centers">
-							<button type="button" class="btn btn-primary">Approve</button>
+							<button type="submit" class="btn btn-primary" id="confirmApprove">Approve</button>
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 						</div>
 					</div>
@@ -177,7 +176,7 @@
 							<h5 class="modal-title text-center" id="staticBackdropLabels1">Are You Sure Want to Reject?</h5>
 						</div>
 						<div class="modal-footer text-centers">
-							<button type="button" class="btn btn-primary">Reject</button>
+							<button type="submit" class="btn btn-primary" id="confirmReject">Reject</button>
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 						</div>
 					</div>
@@ -200,6 +199,7 @@
 	<script src="assets/plugins/select2/js/select2.min.js"></script>
 	<script src="js/activePage.js"></script>
 	<script src="assets/js/script.js"></script>
+	<script src="assets/js/ajax.js"></script>
 </body>
 
 </html>
