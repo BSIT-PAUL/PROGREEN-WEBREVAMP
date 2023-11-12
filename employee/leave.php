@@ -30,61 +30,7 @@ include("includes/sidebar.php");
 				</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-xl-6 col-sm-12 col-12 d-flex	">
-				<div class="card card-lists flex-fill">
-					<div class="card-header">
-						<h2 class="card-titles">Focus Technologies<span>Head Office</span></h2>
-						<a class="edit-link" data-toggle="modal" data-target="#editmember"> <i data-feather="edit"></i></a>
-					</div>
-					<div class="card-body d-flex align-items-center">
-						<div class=" member-head employee-image">
-							<h2>Members</h2>
-							<div class="avatar-group">
-								<div class="avatar avatar-xs group_img group_header">
-									<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/profiles/avatar-10.jpg">
-								</div>
-								<div class="avatar avatar-xs group_img group_header">
-									<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/profiles/avatar-15.jpg">
-								</div>
-								<div class="avatar avatar-xs group_img group_header">
-									<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/profiles/avatar-16.jpg">
-								</div>
-								<div class="avatar avatar-xs group_img group_header">
-									<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/profiles/avatar-17.jpg">
-								</div>
-								<div class="avatar avatar-xs group_img group_header">
-									<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/profiles/avatar-14.jpg">
-								</div>
-								<div class="avatar avatar-xs group_img group_header">
-									<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/profiles/avatar-18.jpg">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xl-3 col-sm-6 col-12 d-flex">
-				<div class="card flex-fill">
-					<div class="card-body">
-						<div class="employee_status text-center">
-							<img alt="User Image" src="assets/img/profiles/avatar-17.jpg">
-							<label>Jenni Sims is working <br>from home today.</label>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-xl-3 col-sm-6 col-12 d-flex">
-				<div class="card flex-fill">
-					<div class="card-body">
-						<div class="employee_status text-center">
-							<img alt="User Image" src="assets/img/profiles/avatar-18.jpg">
-							<label>John Gibbs is away today.</label>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		
 		<form method="post" >
     <div class="row">
         <div class="col-xl-12 col-sm-12 col-12">
@@ -105,10 +51,9 @@ include("includes/sidebar.php");
                             </div>
                         </div>
                         <div class="col-xl-6 col-sm-6 col-12 ">
-                            <div class="form-group">
-                                <label>Remaining Leaves</label>
-                                <input type="text" value="10" disabled>
-                            </div>
+
+
+
                         </div>
                     </div>
                     <div class="row">
@@ -155,7 +100,6 @@ if ( isset($_POST['apply'])) {
 	$end_date = $_POST["end_date"];
 	$additional_reasons = $_POST["additional_reasons"];
 	$status = "Pending";
-
 
 	$sql = "INSERT INTO leave_application (employee_id, leave_type, start_date, end_date, additional_reasons, status)
 	        VALUES ('$employee_id', '$leave_type', '$start_date', '$end_date', '$additional_reasons', '$status')";
