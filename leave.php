@@ -1,4 +1,5 @@
 <?php
+	include("database/dbcon.php");
 	include_once("includes/system_header.php");
 	include_once("includes/system_main_wraper.php");
 	include_once("includes/system_navbar.php");
@@ -78,92 +79,43 @@
 								<div class="table-responsive">
 									<table class="table  custom-table  no-footer">
 										<thead>
-											<tr>
+											<tr class="text-center">
 												<th>Employee</th>
 												<th>Leave Type </th>
-												<th>From </th>
-												<th>To</th>
-												<th>Days</th>
-												<th>Remaining Days </th>
+												<th>Remaining Leaves</th>
+												<th>Start Date</th>
+												<th>End Date</th>
 												<th>Notes</th>
 												<th>Status</th>
-												<th>Action</th>
+												<th colspan="3">Action</th>
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td>
-													<div class="table-img">
-														<a href="profile.php"><img src="assets/img/profiles/avatar-13.jpg" alt="profile" class="img-table"></a>
-														<label>Arvin Villaluna
-														</label>
-													</div>
-												</td>
-												<td>
-													<label>Parental Leave </label>
-												</td>
-												<td>
-													<label>05 Dec 2019 </label>
-												</td>
-												<td><label>07 Dec 2019 </label></td>
-												<td><label>3</label></td>
-												<td><label>9</label></td>
-												<td><label>Parenting Leave</label></td>
-												<td>
-													<label><a class="action_label3">Approved</a></label>
-												</td>
-												<td>
-													<label><a class="action_label4" data-toggle="modal" data-target="#delete">Delete <i data-feather="trash-2"></i> </a></label>
-												</td>
-											</tr>
-											<tr>
-												<td>
-													<div class="table-img">
-														<a href="profile.php"><img src="assets/img/profiles/avatar-16.jpg" alt="profile" class="img-table"></a>
-														<label>Graciella Relevo
-														</label>
-													</div>
-												</td>
-												<td>
-													<label>Parental Leave </label>
-												</td>
-												<td>
-													<label>05 Dec 2019 </label>
-												</td>
-												<td><label>07 Dec 2019 </label></td>
-												<td><label>3</label></td>
-												<td><label>9</label></td>
-												<td><label>Going to Hospital</label></td>
-												<td>
-													<label><a class="action_label3">Approved</a></label>
-												</td>
-												<td>
-													<label><a class="action_label4" data-toggle="modal" data-target="#delete">Delete <i data-feather="trash-2"></i> </a></label>
-												</td>
-											</tr>
-											<tr>
-												<td>
-													<div class="table-img">
-														<a href="profile.php"><img src="assets/img/profiles/avatar-17.jpg" alt="profile" class="img-table"></a>
-														<label>Jenni Sims</label>
-													</div>
-												</td>
-												<td>
-													<label>Parental Leave </label>
-												</td>
-												<td>
-													<label>05 Dec 2019 </label>
-												</td>
-												<td><label>07 Dec 2019 </label></td>
-												<td><label>3</label></td>
-												<td><label>9</label></td>
-												<td><label>Raining</label></td>
-												<td>
-													<label><a class="action_label3">Approved</a></label>
-												</td>
-												<td>
-													<label><a class="action_label4" data-toggle="modal" data-target="#delete">Delete <i data-feather="trash-2"></i> </a></label>
-												</td>
+												<?php 
+													$query = "SELECT * FROM leave_application lp
+															  INNER JOIN employee e ON e.employeeID = lp.employee_id
+															  WHERE lp.Status = 'Pending'";
+
+													$result = mysqli_query($con, $query);
+
+													while ($row = mysqli_fetch_assoc($result)) {
+														echo "<tr class='text-center'>";
+														echo "<td>" . $row['firstName'] . " " . $row['lastName'] . "</td>";
+														echo "<td>" . $row['leave_type'] . "</td>";
+														echo "<td>" . $row['remaining_leaves'] . "</td>";
+														echo "<td>". $row["start_date"] . "</td>";
+														echo "<td>". $row["end_date"] ."</td>";
+														echo "<td>". $row["additional_reasons"] . "</td>";
+														echo "<td>". $row["Status"] . "</td>";
+														echo '<td>';
+														echo '<div class="employee-head">';
+														echo '<label><a class="action_label3" data-approved-leave-id="'. $row['id'].'" data-toggle="modal" data-target="#approving" >Approved</a></label>';
+														echo '<label><a class="action_label4 text-center" data-decline-leave-id="'. $row['id'].'" data-toggle="modal" data-target="#delete">Reject <i data-feather="trash-2"></i> </a></label>';
+														echo '</div>';
+														echo '</td>';
+														echo "</tr>";
+													}
+												?>
 											</tr>
 										</tbody>
 									</table>
@@ -203,24 +155,14 @@
 			</div>
 		</div>
 		<div class="customize_popup">
-			<div class="modal fade" id="editmember" tabindex="-1" aria-labelledby="staticBackdropLabels" aria-hidden="true">
-				<div class="modal-dialog modal-lg modal-dialog-centered">
+			<div class="modal fade" id="approving" tabindex="-1" aria-labelledby="staticBackdropLabels" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered">
 					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="staticBackdropLabels">Edit Member</h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">×</span>
-							</button>
+						<div class="modal-header text-centers border-0">
+							<h5 class="modal-title text-center" id="staticBackdropLabels1">Are You Sure Want to Approve?</h5>
 						</div>
-						<div class="modal-body">
-							<div class=" col-md-12 p-0">
-								<div class=" form-popup">
-									<input type="text" placeholder="Member Name">
-								</div>
-							</div>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-primary">Save</button>
+						<div class="modal-footer text-centers">
+							<button type="button" class="btn btn-primary">Approve</button>
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 						</div>
 					</div>
@@ -232,10 +174,10 @@
 				<div class="modal-dialog modal-dialog-centered">
 					<div class="modal-content">
 						<div class="modal-header text-centers border-0">
-							<h5 class="modal-title text-center" id="staticBackdropLabels1">Are You Sure Want to Delete?</h5>
+							<h5 class="modal-title text-center" id="staticBackdropLabels1">Are You Sure Want to Reject?</h5>
 						</div>
 						<div class="modal-footer text-centers">
-							<button type="button" class="btn btn-primary">Delete</button>
+							<button type="button" class="btn btn-primary">Reject</button>
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 						</div>
 					</div>
