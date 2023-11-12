@@ -77,48 +77,49 @@
 							</div>
 							<div class="card-body p-0">
 								<div class="table-responsive">
-									<table class="table  custom-table  no-footer">
-										<thead>
-											<tr class="text-center">
-												<th>Employee</th>
-												<th>Leave Type </th>
-												<th>Remaining Leaves</th>
-												<th>Start Date</th>
-												<th>End Date</th>
-												<th>Notes</th>
-												<th>Status</th>
-												<th colspan="3">Action</th>
-											</tr>
-										</thead>
-										<tbody>
-												<?php 
-													$query = "SELECT * FROM leave_application lp
-															  INNER JOIN employee e ON e.employeeID = lp.employee_id
-															  WHERE lp.Status = 'Pending'";
+								<table class="table custom-table no-footer">
+    <thead>
+        <tr class="text-center">
+            <th>Employee</th>
+            <th>Leave Type</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Notes</th>
+            <th>Status</th>
+            <th colspan="3">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+        $query = "SELECT * FROM leave_application lp
+                  INNER JOIN employee e ON e.employeeID = lp.employee_id
+                  WHERE lp.Status = 'Pending'";
 
-													$result = mysqli_query($con, $query);
+        $result = mysqli_query($con, $query);
 
-													while ($row = mysqli_fetch_assoc($result)) {
-														echo "<tr class='text-center'>";
-														echo "<td>" . $row['firstName'] . " " . $row['lastName'] . "</td>";
-														echo "<td>" . $row['leave_type'] . "</td>";
-														echo "<td>" . $row['remaining_leaves'] . "</td>";
-														echo "<td>". $row["start_date"] . "</td>";
-														echo "<td>". $row["end_date"] ."</td>";
-														echo "<td>". $row["additional_reasons"] . "</td>";
-														echo "<td>". $row["Status"] . "</td>";
-														echo '<td>';
-														echo '<div class="employee-head">';
-														echo '<label><a class="action_label3" data-approved-leave-id="'. $row['id'].'" data-toggle="modal" data-target="#approving" >Approved</a></label>';
-														echo '<label><a class="action_label4 text-center" data-decline-leave-id="'. $row['id'].'" data-toggle="modal" data-target="#delete">Reject <i data-feather="trash-2"></i> </a></label>';
-														echo '</div>';
-														echo '</td>';
-														echo "</tr>";
-													}
-												?>
-											</tr>
-										</tbody>
-									</table>
+        while ($row = mysqli_fetch_assoc($result)) {
+            // Check if the status is pending and set text color to orange
+            $statusStyle = $row["Status"] == "Pending" ? 'style="color: orange;"' : '';
+
+            echo "<tr class='text-center'>";
+            echo "<td>" . $row['firstName'] . " " . $row['lastName'] . "</td>";
+            echo "<td>" . $row['leave_type'] . "</td>";
+            echo "<td>" . $row["start_date"] . "</td>";
+            echo "<td>" . $row["end_date"] . "</td>";
+            echo "<td>" . $row["additional_reasons"] . "</td>";
+            echo "<td $statusStyle>" . $row["Status"] . "</td>";
+            echo '<td>';
+						echo '<div class="actionset" style="padding: 10px; margin-top: 10px;">';
+						echo '<label style="margin-right: 10px;"><a class="action_label3" data-approved-leave-id="' . $row['id'] . '" data-toggle="modal" data-target="#approving">Approved</a></label>';
+						echo '<label><a class="action_label4 text-center" data-decline-leave-id="' . $row['id'] . '" data-toggle="modal" data-target="#delete">Reject <i data-feather="trash-2"></i> </a></label>';
+						echo '</div>';						
+            echo '</td>';
+            echo "</tr>";
+        }
+        ?>
+    </tbody>
+</table>
+
 								</div>
 							</div>
 						</div>
