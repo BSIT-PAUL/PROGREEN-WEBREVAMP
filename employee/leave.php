@@ -103,8 +103,8 @@ include("includes/sidebar.php");
                     <div class="row">
                         <div class="col-xl-12 col-sm-12 col-12 ">
                             <div class="form-btn">
-                                <button type="submit" class="btn btn-apply" name="apply">Apply</button>
-                                <a href="#" class="btn btn-danger">Clear</a>
+                                <button type="submit" class="btn btn-apply btn-lg" name="apply">Apply</button>
+
                             </div>
                         </div>
                     </div>
