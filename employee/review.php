@@ -23,9 +23,9 @@ include_once("includes/sidebar.php");
 					<ul class="breadcrumb">
 						<li class="breadcrumb-item"><a href="index.php"><img src="assets/img/dash.png" class="mr-2" alt="breadcrumb">Home</a>
 						</li>
-						<li class="breadcrumb-item active"> Reviews</li>
+						<li class="breadcrumb-item active"> Attendance</li>
 					</ul>
-					<h3>Reviews</h3>
+					<h3>Attendance</h3>
 				</div>
 			</div>
 			<div class="col-xl-12 col-sm-12 col-12 mb-4">
@@ -43,62 +43,102 @@ include_once("includes/sidebar.php");
 						<h2 class="card-titles">Attendance</h2>
 					</div>
 					<div class="table-responsive">
-						<table class="table custom-table no-footer">
-							<thead>
-								<tr>
-									<th>Employee Name</th>
-									<th>Employee ID</th>
-									<th>Check-In Time</th>
-									<th>Check-Out Time</th>
-									<th>Action</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>
-										<label>Arvin Villaluna</label>
-									</td>
-									<td>
-										<label>EMP001</label>
-									</td>
-									<td>
-										<label id="checkInTime">-</label>
-									</td>
-									<td>
-										<label id="checkOutTime">-</label>
-									</td>
+					<table class="table custom-table no-footer">
+    <thead>
+        <tr>
+            <th>Employee Name</th>
+            <th>Employee ID</th>
+            <th>Check-In Time</th>
+            <th>Check-Out Time</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <label><?php echo $_SESSION['user_firstname'] . ' ' . $_SESSION['user_lastname']; ?></label>
+            </td>
+            <td>
+                <label><?php echo $_SESSION['user_id']; ?></label>
+            </td>
+            <td>
+                <label id="checkInTime">-</label>
+            </td>
+            <td>
+                <label id="checkOutTime">-</label>
+            </td>
+            <td>
+						<form method="post" action="">
+                <div class="actionset">
+								<button type="submit" class="btn btn-success" name="timeIn">Time In</button>
+    						<button type="submit" class="btn btn-danger" name="timeOut">Time Out</button>
+                </div>
+						</form>
+            </td>
+        </tr>
+        <!-- Add more rows for other employees -->
+    </tbody>
+</table>
 
-									<td>
-										<div class="actionset">
-											<button class="btn btn-success" onclick="timeIn()">Time In</button>
-											<button class="btn btn-danger" onclick="timeOut()">Time Out</button>
-										</div>
-									</td>
-								</tr>
-								<!-- Add more rows for other employees -->
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
+</div>
 
-			<script>
-				function formatTime(date) {
-					var hours = date.getHours();
-					var minutes = date.getMinutes();
-					return hours + ":" + (minutes < 10 ? "0" : "") + minutes;
-				}
+<script>
+    function formatDateTime(date) {
+        var day = date.getDate();
+        var month = date.toLocaleString('default', { month: 'short' });
+        var year = date.getFullYear();
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var ampm = hours >= 12 ? 'PM' : 'AM';
 
-				function timeIn() {
-					var now = new Date();
-					document.getElementById("checkInTime").innerText = now.toLocaleString();
-				}
+        // Convert to 12-hour format
+        hours = hours % 12 || 12;
 
-				function timeOut() {
-					var now = new Date();
-					document.getElementById("checkOutTime").innerText = now.toLocaleString();
-				}
-			</script>
+        return `${day} ${month} ${year} ${hours}:${minutes} ${ampm}`;
+    }
+
+    function timeIn() {
+        var now = new Date();
+        document.getElementById("checkInTime").innerText = formatDateTime(now);
+    }
+
+    function timeOut() {
+        var now = new Date();
+        document.getElementById("checkOutTime").innerText = formatDateTime(now);
+    }
+</script>
+<?php
+
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['timeIn'])) {
+        // Time In button is clicked
+        $employeeId = $_SESSION['user_id'];
+        $checkInTime = date('Y-m-d H:i:s');
+        $attendanceStatus = 'Present';
+
+        // Insert data into the database
+        $query = "INSERT INTO attendance_records (employee_id, check_in_time, attendance_status) VALUES (?, ?, ?)";
+        $stmt = $con->prepare($query);
+        $stmt->bind_param('iss', $employeeId, $checkInTime, $attendanceStatus);
+        $stmt->execute();
+        $stmt->close();
+    } elseif (isset($_POST['timeOut'])) {
+        // Time Out button is clicked
+        $employeeId = $_SESSION['user_id'];
+        $checkOutTime = date('Y-m-d H:i:s');
+        $attendanceStatus = 'Present'; // Assuming the employee is considered 'Present' when checking out
+
+        // Update the existing record with check_out_time
+        $query = "UPDATE attendance_records SET check_out_time=?, attendance_status=? WHERE employee_id=? AND attendance_status='Present'";
+        $stmt = $con->prepare($query);
+        $stmt->bind_param('ssi', $checkOutTime, $attendanceStatus, $employeeId);
+        $stmt->execute();
+        $stmt->close();
+    }
+}
+?>
+
 
 		</div>
 	</div>

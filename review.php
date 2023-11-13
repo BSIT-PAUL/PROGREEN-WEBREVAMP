@@ -37,112 +37,65 @@
 							<a class="btn-add" href="add-Review.php">Create Review</a>
 						</div>
 					</div>
-					<div class="col-xl-12 col-sm-12 col-12 ">
-						<div class="card">
-							<div class="card-header">
-								<h2 class="card-titles">Leave Details</h2>
-							</div>
-							<div class="table-responsive">
-								<table class="table  custom-table  no-footer">
-									<thead>
-										<tr>
-											<th>Review Name </th>
-											<th>Reviewers </th>
-											<th>Begin On </th>
-											<th>Due By </th>
-											<th>Status</th>
+					<div class="col-xl-12 col-sm-12 col-12">
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-titles">Attendance Details</h2>
+        </div>
+        <div class="table-responsive">
+            <table class="table custom-table no-footer">
+						<thead>
+								<tr>
+								<th>Employee Name </th>
+											<th>Employee ID </th>
+											<th>Check In </th>
+											<th>Check out</th>
+											<th>Status </th>
 											<th>Action</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>
-												<label>Monthly Review </label>
-											</td>
-											<td>
-												<div class="table-img">
-													<a href="profile.php"><img src="assets/img/profiles/avatar-13.jpg" alt="profile" class="img-table"></a>
-													<label>Arvin Villaluna
-													</label>
-												</div>
-											</td>
-											<td>
-												<label>05 Dec 2019 </label>
-											</td>
-											<td><label>07 Dec 2019 </label></td>
-											<td class="tab-select">
-												<select class="select">
-													<option value="active">Completed</option>
-													<option value="inactive">In Progress</option>
-												</select>
-											</td>
-											<td>
-												<div class="actionset">
-													<label><a class="action_label5" href="add-Review.php">Edit <i data-feather="edit"></i></a></label>
-													<label><a class="action_label4" data-toggle="modal" data-target="#delete">Delete <i data-feather="trash-2"></i></a></label>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<label>Employees Review </label>
-											</td>
-											<td>
-												<div class="table-img">
-													<a href="profile.php"><img src="assets/img/profiles/avatar-16.jpg" alt="profile" class="img-table"></a>
-													<label>Graciella Relevo
-													</label>
-												</div>
-											</td>
-											<td>
-												<label>05 Dec 2019 </label>
-											</td>
-											<td><label>07 Dec 2019 </label></td>
-											<td class="tab-select inactive">
-												<select class="select">
-													<option value="active">In Progress</option>
-													<option value="inactive">Completed</option>
-												</select>
-											</td>
-											<td>
-												<div class="actionset">
-													<label><a class="action_label5" href="add-Review.php">Edit <i data-feather="edit"></i></a></label>
-													<label><a class="action_label4" data-toggle="modal" data-target="#delete">Delete <i data-feather="trash-2"></i></a></label>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<label>Employees Review </label>
-											</td>
-											<td>
-												<div class="table-img">
-													<a href="profile.php"><img src="assets/img/profiles/avatar-17.jpg" alt="profile" class="img-table"></a>
-													<label>Jenni Sims</label>
-												</div>
-											</td>
-											<td>
-												<label>05 Dec 2019 </label>
-											</td>
-											<td><label>07 Dec 2019 </label></td>
-											<td class="tab-select">
-												<select class="select">
-													<option value="active">Completed</option>
-													<option value="inactive">In Progress</option>
-												</select>
-											</td>
-											<td>
-												<div class="actionset">
-													<label><a class="action_label5" href="add-Review.php">Edit <i data-feather="edit"></i></a></label>
-													<label><a class="action_label4" data-toggle="modal" data-target="#delete">Delete <i data-feather="trash-2"></i></a></label>
-												</div>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</div>
-					</div>
+								</tr>
+							</thead>
+							<tbody>
+                <?php 
+								// Query to retrieve employee attendance data with concatenated employee name
+$query = "SELECT ar.record_id, e.employeeID, CONCAT(e.firstName, ' ', e.lastName) AS employee_name, ar.check_in_time, ar.check_out_time, ar.attendance_status
+FROM attendance_records AS ar
+JOIN employee AS e ON ar.employee_id = e.employeeID";
+$result = mysqli_query($con, $query);
+								// Check if there are any results
+if (mysqli_num_rows($result) > 0) {
+	while ($row = mysqli_fetch_assoc($result)) {
+			echo '<tr>';
+			echo '<td><label>' . $row['employee_name'] . '</label></td>';
+			echo '<td><label>' . $row['employeeID'] . '</label></td>';
+			echo '<td><label>' . $row['check_in_time'] . '</label></td>';
+			echo '<td><label>' . $row['check_out_time'] . '</label></td>';
+			echo '<td class="tab-select">';
+			echo '<select class="select">';
+			echo '<option value="Not Checked In" ' . ($row['attendance_status'] == 'Not Checked In' ? 'selected' : '') . '>Not Checked In</option>';
+			echo '<option value="Present" ' . ($row['attendance_status'] == 'Present' ? 'selected' : '') . '>Present</option>';
+			echo '<option value="Absent" ' . ($row['attendance_status'] == 'Absent' ? 'selected' : '') . '>Absent</option>';
+			echo '</select>';
+			echo '</td>';
+			echo '<td>';
+			echo '<div class="actionset">';
+			echo '<label><a class="action_label5" href="edit-attendance.php?id=' . $row['record_id'] . '">Edit <i data-feather="edit"></i></a></label>';
+			echo '<label><a class="action_label4" data-toggle="modal" data-target="#delete">Delete <i data-feather="trash-2"></i></a></label>';
+			echo '</div>';
+			echo '</td>';
+			echo '</tr>';
+	}
+} else {
+	echo '<tr><td colspan="6">No records found</td></tr>';
+}
+
+// Close the database connection
+mysqli_close($con);
+								?></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
 				</div>
 			</div>
 		</div>
