@@ -234,16 +234,13 @@ include_once("includes/system_navbar.php");
 										$query = "SELECT * FROM `employee` e
 											INNER JOIN attendance_records ar
 											ON e.employeeID = ar.employee_id;";
-										// check_in_time
-										// check_out_time
-										// attendance_status
-										
+								
 										$result = mysqli_query($con, $query);
 
 										while ($row = mysqli_fetch_assoc($result)) {
 											echo "<tr class='text-center'>";
 											echo "<td>" . $row['firstName'] . " " . $row['lastName'] . "</td>";
-											
+
 											// Fetch and display the department name
 											$departmentQuery = "SELECT deptName FROM department WHERE deptID = " . $row['departmentID'];
 											$departmentResult = mysqli_query($con, $departmentQuery);
@@ -259,13 +256,13 @@ include_once("includes/system_navbar.php");
 
 											echo "<td>" . $row['check_in_time'] . "</td>";
 											echo "<td>" . $row['check_out_time'] . "</td>";
-											echo "<td>" . $row['attendance_status']. "</td>";
+											echo "<td>" . $row['attendance_status'] . "</td>";
 											//For The Actions
 											echo '<td>';
 											echo '<div class="employee-head">';
 											echo '<ul>';
-											echo '<li><a class="edit_employee" data-employee-id="' . $row['employeeID'] . '" data-toggle="modal" data-target="#edit"><i data-feather="edit"></i></a></li>';
-											echo '<li><a class="edit_delete" data-employee-id="' . $row['employeeID'] . '" data-toggle="modal" data-target="#delete"><i data-feather="trash-2"></i></a></li>';
+											echo '<li><a class="edit_employee edit_employee_office" data-employee-id="' . $row['employeeID'] . '" data-toggle="modal" data-target="#edit"><i data-feather="edit"></i></a></li>';
+											echo '<li><a class="edit_delete edit_delete_office" data-employee-id="' . $row['employeeID'] . '" data-toggle="modal" data-target="#delete"><i data-feather="trash-2"></i></a></li>';
 											echo '</ul>';
 											echo '</div>';
 											echo '</td>';
@@ -312,25 +309,77 @@ include_once("includes/system_navbar.php");
 </div>
 
 <div class="customize_popup">
-	<div class="modal fade" id="edit" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	<div class="modal fade" id="edit" tabindex="-1" aria-labelledby="staticBackdropLa" aria-hidden="true">
 		<div class="modal-dialog modal-lg modal-dialog-centered">
-			<div class="modal-content">
+			<div class="modal-content" id="updateemployeee">
 				<div class="modal-header">
-					<h5 class="modal-title" id="staticBackdropLabel">Edit Office</h5>
+					<h5 class="modal-title" id="staticBackdropLa">Edit Employee</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
+						<span aria-hidden="true">×</span>
 					</button>
 				</div>
 				<div class="modal-body">
 					<div class=" col-md-12 p-0">
 						<div class=" form-popup">
-							<label>Office Name</label>
-							<input type="text">
+							<input type="text" id="first_name_office" placeholder="First Name">
+						</div>
+						<div class=" form-popup">
+							<input type="text" id="last_name_office" placeholder="Last Name">
+						</div>
+						<div class=" form-popup">
+							<select name="departmentID" id="department_id_office" class="input-form" required>
+								<option value="Select department" selected disabled>Select Department</option>
+								<?php
+								// Fetch departments from the 'department' table
+								$departmentQuery = mysqli_query($con, "SELECT * FROM department");
+
+								while ($row = mysqli_fetch_assoc($departmentQuery)) {
+									echo "<option value='" . $row['deptID'] . "'>" . $row['deptName'] . "</option>";
+								}
+								?>
+							</select>
+						</div>
+						<div class=" form-popup">
+							<select name="jobID" id="job_id_office" class="input-form " required>
+								<option value="Select job" selected disabled>Select Job</option>
+								<?php
+								// Fetch departments from the 'department' table
+								$jobQuery = mysqli_query($con, "SELECT * FROM job");
+
+								while ($row = mysqli_fetch_assoc($jobQuery)) {
+									echo "<option value='" . $row['jobID'] . "'>" . $row['jobTitle'] . "</option>";
+								}
+								?>
+							</select>
+						</div>
+						<div class="form-popup">
+							<select class="input-form" id="attendance_status_dropdown" name="salaryFrequency" required>
+								<option value="Select Salary Frequency" selected disabled>Status</option>
+								<option value="Present">Present</option>
+								<option value="Inactive">Inactive</option>
+							</select>
 						</div>
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-apply">Apply</button>
+					<button type="button" class="btn btn-primary" id="confirmUpdateOffice">Update</button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="customize_popup">
+	<div class="modal fade" id="delete" tabindex="-1" aria-labelledby="staticBackdropLabels1" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered ">
+			<div class="modal-content">
+				<div class="modal-header text-centers border-0">
+					<h5 class="modal-title text-center" id="staticBackdropLabels1">Are You Sure Want to Delete?</h5>
+				</div>
+				<div class="modal-footer text-centers">
+					<button type="button" class="btn btn-primary" id="confirmDeleteOffice">Delete</button>
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 				</div>
 			</div>
@@ -354,6 +403,7 @@ include_once("includes/system_navbar.php");
 <script src="assets/plugins/select2/js/select2.min.js"></script>
 
 <script src="assets/js/script.js"></script>
+<script src="assets/js/ajax.js"></script>
 </body>
 
 </html>

@@ -167,3 +167,62 @@ $(document).ready(function () {
 
 
 
+//Ajax For Updating Employee
+$(document).ready(function () {
+    // ...
+
+    // Handle the click event for the ".edit_employee" elements
+    $(".edit_employee_office").on("click", function () {
+        var employeeID = $(this).data("employee-id");
+
+        // Use AJAX to fetch the employee data based on employeeID
+        $.ajax({
+            type: "GET",
+            url: "get_employee_attendance.php?employee_id=" + employeeID,
+            success: function (data) {
+                var employeeData = JSON.parse(data);
+
+                $("#first_name_office").val(employeeData.firstName);
+                $("#last_name_office").val(employeeData.lastName);
+                $("#department_id_office").val(employeeData.departmentID);
+                $("#job_id_office").val(employeeData.jobID);
+                $("#attendance_status_dropdown").val(employeeData.attendance_status);
+
+                $("#confirmUpdateOffice").data("employee-id", employeeID);
+            }
+        });
+    });
+
+    $("#confirmUpdateOffice").on("click", function () {
+        var employeeID = $(this).data("employee-id");
+        var first_name = $("#first_name_office").val();
+        var last_name = $("#last_name_office").val();
+        var department_id = $("#department_id_office").val();
+        var job_id = $("#job_id_office").val();
+        var attendance_status = $("#attendance_status_dropdown").val();
+    
+        // Use AJAX to send the updated employee data to the server
+        $.ajax({
+            type: "POST",
+            url: "update_employee.php",
+            data: {
+                employee_id: employeeID,
+                first_name: first_name,
+                last_name: last_name,
+                department_id: department_id,
+                job_id: job_id,
+                attendance_status: attendance_status
+            },
+            success: function (data) {
+                if (data === 'Employee updated successfully') {
+                    location.reload();
+                    // Alert for successful update
+                    alert("Employee updated successfully");
+                } else {
+                    alert("Error updating employee");
+                }
+            }
+        });
+    });
+
+});
