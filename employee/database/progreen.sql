@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 10, 2023 at 03:00 PM
+-- Generation Time: Nov 13, 2023 at 02:00 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 7.1.32
 
@@ -41,6 +41,27 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`id`, `UserName`, `Password`, `updationDate`) VALUES
 (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', '2023-10-29 23:01:20');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `attendance_records`
+--
+
+CREATE TABLE `attendance_records` (
+  `record_id` int(11) NOT NULL,
+  `employee_id` int(11) DEFAULT NULL,
+  `check_in_time` datetime DEFAULT NULL,
+  `check_out_time` datetime DEFAULT NULL,
+  `attendance_status` enum('Not Checked In','Present','Absent') DEFAULT 'Not Checked In'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `attendance_records`
+--
+
+INSERT INTO `attendance_records` (`record_id`, `employee_id`, `check_in_time`, `check_out_time`, `attendance_status`) VALUES
+(1, 7, '2023-11-13 13:46:26', '2023-11-13 13:46:34', 'Present');
 
 -- --------------------------------------------------------
 
@@ -145,7 +166,6 @@ CREATE TABLE `leave_application` (
   `id` int(11) NOT NULL,
   `employee_id` int(11) DEFAULT NULL,
   `leave_type` varchar(50) DEFAULT NULL,
-  `remaining_leaves` int(11) DEFAULT NULL,
   `start_date` date DEFAULT NULL,
   `end_date` date DEFAULT NULL,
   `additional_reasons` text DEFAULT NULL,
@@ -156,12 +176,21 @@ CREATE TABLE `leave_application` (
 -- Dumping data for table `leave_application`
 --
 
-INSERT INTO `leave_application` (`id`, `employee_id`, `leave_type`, `remaining_leaves`, `start_date`, `end_date`, `additional_reasons`, `Status`) VALUES
-(3, 7, 'Casual leave', NULL, '2023-11-10', '2023-11-11', '', 'Pending');
+INSERT INTO `leave_application` (`id`, `employee_id`, `leave_type`, `start_date`, `end_date`, `additional_reasons`, `Status`) VALUES
+(8, 7, 'Sick Leave', '2023-11-12', '2023-11-13', '', 'Approved'),
+(9, 7, 'Personal/Unpaid Leave', '2023-11-13', '2023-11-14', 'none', 'Reject'),
+(10, 7, 'Sick Leave', '2023-11-14', '2023-11-14', '', 'Pending');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `attendance_records`
+--
+ALTER TABLE `attendance_records`
+  ADD PRIMARY KEY (`record_id`),
+  ADD KEY `employee_id` (`employee_id`);
 
 --
 -- Indexes for table `company`
@@ -203,6 +232,12 @@ ALTER TABLE `leave_application`
 --
 
 --
+-- AUTO_INCREMENT for table `attendance_records`
+--
+ALTER TABLE `attendance_records`
+  MODIFY `record_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `company`
 --
 ALTER TABLE `company`
@@ -230,11 +265,17 @@ ALTER TABLE `job`
 -- AUTO_INCREMENT for table `leave_application`
 --
 ALTER TABLE `leave_application`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `attendance_records`
+--
+ALTER TABLE `attendance_records`
+  ADD CONSTRAINT `attendance_records_ibfk_1` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`employeeID`);
 
 --
 -- Constraints for table `company`
