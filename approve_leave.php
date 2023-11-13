@@ -10,10 +10,11 @@ if (isset($_POST['id'])) {
 
     if ($result) {
         // Update successful
-        echo 'Employee updated successfully';
+        echo 'Leave approved successfully';
     } else {
         // Update failed
-        echo 'Error updating employee';
+        echo 'Error updating leave: ' . mysqli_error($con);
     }
 }
+
 ?>

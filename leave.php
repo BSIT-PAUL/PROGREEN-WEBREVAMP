@@ -22,8 +22,7 @@ include("includes/sidebar.php");
 			<div class="col-xl-12 col-sm-12 col-12 mb-4">
 				<div class="breadcrumb-path ">
 					<ul class="breadcrumb">
-						<li class="breadcrumb-item"><a href="index.php"><img src="assets/img/dash.png" class="mr-2"
-									alt="breadcrumb">Home</a>
+						<li class="breadcrumb-item"><a href="index.php"><img src="assets/img/dash.png" class="mr-2" alt="breadcrumb">Home</a>
 						</li>
 						<li class="breadcrumb-item active"> Leave</li>
 					</ul>
@@ -69,6 +68,62 @@ include("includes/sidebar.php");
 					</div>
 				</div>
 			</div>
+		</div><div class="row">
+			<div class="col-xl-12 col-sm-12 col-12 ">
+				<div class="card ">
+					<div class="card-header">
+						<h2 class="card-titles">Employee Leave History</h2>
+					</div>
+					<div class="card-body p-0">
+						<div class="table-responsive">
+						<table class="table custom-table no-footer">
+    <thead>
+        <tr class="text-center">
+            <th>Employee</th>
+            <th>Leave Type</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Desc</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+    $query = "SELECT * FROM leave_application lp
+              INNER JOIN employee e ON e.employeeID = lp.employee_id";
+
+    $result = mysqli_query($con, $query);
+
+    while ($row = mysqli_fetch_assoc($result)) {
+        $statusStyle = '';
+        if ($row["Status"] == "Reject") {
+            $statusStyle = 'style="color: red;"';
+        } elseif ($row["Status"] == "Approved") {
+            $statusStyle = 'style="color: green;"';
+        }
+
+        echo "<tr class='text-center'>";
+        echo "<td><label>" . $row['firstName'] . " " . $row['lastName'] . "</label></td>";
+        echo "<td><label>" . $row['leave_type'] . "</label></td>";
+        echo "<td><label>" . $row["start_date"] . "</label></td>";
+        echo "<td><label>" . $row["end_date"] . "</label></td>";
+        echo "<td><label>" . $row["additional_reasons"] . "</label></td>";
+        echo "<td $statusStyle>" . $row["Status"] . "</td>";
+        echo '<td>';
+        echo '</div>';
+        echo '</td>';
+        echo "</tr>";
+    }
+    ?>
+</tbody>
+
+</table>
+
+
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 		<div class="row">
 			<div class="col-xl-12 col-sm-12 col-12 ">
@@ -83,7 +138,6 @@ include("includes/sidebar.php");
 									<tr class="text-center">
 										<th>Employee</th>
 										<th>Leave Type </th>
-										<th>Remaining Leaves</th>
 										<th>Start Date</th>
 										<th>End Date</th>
 										<th>Desc</th>
@@ -112,8 +166,8 @@ include("includes/sidebar.php");
 										echo "<td $statusStyle>" . $row["Status"] . "</td>";
 										echo '<td>';
 										echo '<div class="actionset" style="padding: 10px; margin-top: 10px;">';
-										echo '<label style="margin-right: 10px;"><a class="action_label3" data-approved-leave-id="' . $row['id'] . '" data-toggle="modal" data-target="#approving">Approved</a></label>';
-										echo '<label><a class="action_label4 text-center" data-decline-leave-id="' . $row['id'] . '" data-toggle="modal" data-target="#delete">Reject <i data-feather="trash-2"></i> </a></label>';
+										echo '<label style="margin-right: 10px;"><a class="action_label3" data-leave-id="' . $row['id'] . '" data-toggle="modal" data-target="#approving">Approved</a></label>';
+										echo '<label><a class="action_label4 text-center" data-decline-leave-id="' . $row['id'] . '" data-toggle="modal" data-target="#delete">Reject <i data-feather="trash-2"></i></a></label>';
 										echo '</div>';
 										echo '</td>';
 										echo "</tr>";

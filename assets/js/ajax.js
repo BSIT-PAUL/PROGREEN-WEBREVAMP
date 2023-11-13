@@ -129,6 +129,41 @@ $(document).ready(function () {
             }
         });
     });
+   
 });
+$(document).ready(function () {
+    $(".action_label4").on("click", function () {
+        var leaveID = $(this).data("decline-leave-id");
+
+        // Store the leave ID in the modal button's data attribute
+        $("#confirmReject").data("decline-leave-id", leaveID);
+
+        // Open the modal
+        $('#rejecting').modal('show');
+    });
+
+    $("#confirmReject").on("click", function () {
+        var leaveID = $(this).data("decline-leave-id");
+
+        $.ajax({
+            type: "POST",
+            url: "reject_leave.php",
+            data: { id: leaveID },
+            success: function (data) {
+                if (data === 'Leave rejected successfully') {
+                    location.reload();
+                    alert("Leave rejected successfully");
+                } else {
+                    alert("Error rejecting leave");
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error(xhr.responseText);
+                alert("Error during Ajax request");
+            }
+        });
+    });
+});
+
 
 

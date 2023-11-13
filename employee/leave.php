@@ -114,30 +114,39 @@ include("includes/sidebar.php");
     </div>
 </form>
 <?php 
-if ( isset($_POST['apply'])) {
-	// Process the form data
-	$employee_id = $_SESSION['user_id']; // Assuming you have the user ID stored in the session
-	$leave_type = $_POST["leave_type"];
-	$start_date = $_POST["start_date"];
-	$end_date = $_POST["end_date"];
-	$additional_reasons = $_POST["additional_reasons"];
-	$status = "Pending";
+if (isset($_POST['apply'])) {
+    // Check if the employee has pending leave
+    $employee_id = $_SESSION['user_id']; // Assuming you have the user ID stored in the session
 
-	$sql = "INSERT INTO leave_application (employee_id, leave_type, start_date, end_date, additional_reasons, status)
-	        VALUES ('$employee_id', '$leave_type', '$start_date', '$end_date', '$additional_reasons', '$status')";
+    $pendingLeaveQuery = "SELECT * FROM leave_application WHERE employee_id = '$employee_id' AND status = 'Pending'";
+    $pendingLeaveResult = mysqli_query($con, $pendingLeaveQuery);
 
-	if ($con->query($sql) === TRUE) {
-		echo "<div id='successAlert' class='alert alert-success' role='alert'>New record created successfully.</div>";
+    if (mysqli_num_rows($pendingLeaveResult) > 0) {
+        echo "<div id='errorAlert' class='alert alert-danger' role='alert'>You have a pending leave application. Please wait for the current application to be processed.</div>";
+    } else {
+        // Process the form data
+        $leave_type = $_POST["leave_type"];
+        $start_date = $_POST["start_date"];
+        $end_date = $_POST["end_date"];
+        $additional_reasons = $_POST["additional_reasons"];
+        $status = "Pending";
 
-	    echo "Leave application submitted successfully";
-	} else {
-	    echo "Error: " . $sql . "<br>" . $con->error;
-	}
-	
+        $sql = "INSERT INTO leave_application (employee_id, leave_type, start_date, end_date, additional_reasons, status)
+                VALUES ('$employee_id', '$leave_type', '$start_date', '$end_date', '$additional_reasons', '$status')";
 
-	$con->close();
+        if ($con->query($sql) === TRUE) {
+            echo "<div id='successAlert' class='alert alert-success' role='alert'>New record created successfully.</div>";
+
+            echo "Leave application submitted successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . $con->error;
+        }
+
+        $con->close();
+    }
 }
 ?>
+
 		<!-- <div class="row">
 					<div class="col-xl-12 col-sm-12 col-12 ">
 						<div class="card">
