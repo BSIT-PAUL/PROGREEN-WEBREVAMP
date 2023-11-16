@@ -226,22 +226,38 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-    $("#confirmDeleteOffice").on("click", function () {
-        var employeeID = $(this).data("office-delete-id");
-        console.log(employeeID);
+    // Event listener for edit_delete_office buttons
+    $(".edit_delete_office").on("click", function () {
+        // Get the employee ID to be deleted
+        var employeeID = $(this).data("delete-id");
 
-        // Use Ajax to send the delete request to the server
+        // Set the employee ID in the confirmDeleteOffice button
+        $("#confirmDeleteOffice").data("delete-id", employeeID);
+    });
+
+    // Event listener for confirmDeleteOffice button
+    $("#confirmDeleteOffice").on("click", function () {
+        // Get the employee ID to be deleted
+        var employeeID = $(this).data("delete-id");
+
+        // AJAX request for deletion
         $.ajax({
+            url: "delete_employee_office.php", // Change this to the actual PHP file handling deletion
             type: "POST",
-            url: "delete_employee_office.php",
-            data: { employee_id: employeeID },
-            success: function (data) {
-                if (data === 'Employee deleted successfully') {
+            data: { employeeID: employeeID },
+            success: function (response) {
+                // Handle the response from the server
+                if (response === "success") {
+                    // Reload the page or update the UI as needed
                     location.reload();
-                    alert("Employee deleted successfully");
                 } else {
-                    alert("Error deleting employee");
+                    // Display an error message or handle the error case
+                    console.error("Error deleting employee:", response);
                 }
+            },
+            error: function (xhr, status, error) {
+                // Handle AJAX errors
+                console.error("AJAX error:", status, error);
             }
         });
     });

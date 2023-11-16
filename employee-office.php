@@ -266,7 +266,7 @@ include_once("includes/system_navbar.php");
 											echo '<div class="employee-head">';
 											echo '<ul>';
 											echo '<li><a class="edit_employee edit_employee_office" data-employee-id="' . $row['employeeID'] . '" data-toggle="modal" data-target="#edit"><i data-feather="edit"></i></a></li>';
-											echo '<li><a class="edit_delete edit_delete_office" data-office-delete-id="' . $row['employeeID'] . '" data-toggle="modal" data-target="#delete"><i data-feather="trash-2"></i></a></li>';
+											echo '<li><a class="edit_delete edit_delete_office" data-delete-id="' . $row['employeeID'] . '" data-toggle="modal" data-target="#delete"><i data-feather="trash-2"></i></a></li>';
 											echo '</ul>';
 											echo '</div>';
 											echo '</td>';

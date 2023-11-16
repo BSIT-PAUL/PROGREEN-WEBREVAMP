@@ -4,6 +4,9 @@
 	include_once("includes/system_navbar.php");
 ?>
 
+
+
+
 		<div class="sidebar" id="sidebar">
 			<div class="sidebar-inner slimscroll">
 				<div class="sidebar-contents">
@@ -133,31 +136,31 @@
 											<ul>
 												<li>
 													<label>Preferred Name </label>
-													<span>Maria</span>
+													<span><?php echo $_SESSION['user_preferredName']  ?></span>
 												</li>
 												<li>
 													<label>First Name </label>
-													<span>Maria</span>
+													<span><?php echo $_SESSION['user_firstname'] ?></span>
 												</li>
 												<li>
 													<label>Last Name </label>
-													<span>Cotton</span>
+													<span><?php echo $_SESSION['user_lastname'] ?></span>
 												</li>
 												<li>
 													<label>Nationality </label>
-													<span>American</span>
+													<span><?php echo $_SESSION['nationality'] ?></span>
 												</li>
 												<li>
 													<label>Date of Birth </label>
-													<span>05 May 1990</span>
+													<span> <?php echo $_SESSION['dateOfBirth'] ?></span>
 												</li>
 												<li>
 													<label>Gender </label>
-													<span>Female</span>
+													<span><?php echo $_SESSION['gender'] ?></span>
 												</li>
 												<li>
 													<label>Blood Group</label>
-													<span>A+</span>
+													<span> <?php echo $_SESSION['bloodgroup'] ?></span>
 												</li>
 											</ul>
 										</div>
@@ -178,7 +181,7 @@
 											<ul>
 												<li>
 													<label>Phone Number </label>
-													<span>987654321</span>
+													<span><?php echo $_SESSION['phoneNumber'] ?></span>
 												</li>
 												<li>
 													<label>Personal Email</label>
@@ -186,15 +189,7 @@
 												</li>
 												<li>
 													<label>Secondary Number </label>
-													<span>986754231</span>
-												</li>
-												<li>
-													<label>Web Site </label>
-													<span>www.focustechnology.com</span>
-												</li>
-												<li>
-													<label>Linkedin </label>
-													<span>#mariacotton</span>
+													<span><?php echo $_SESSION['secondaryNumber'] ?></span>
 												</li>
 											</ul>
 										</div>
@@ -212,7 +207,7 @@
 											<ul>
 												<li>
 													<label>Phone Number </label>
-													<span>987654321</span>
+													<span><?php echo $_SESSION['phoneNumber'] ?></span>
 												</li>
 												<li>
 													<label>Personal Email</label>
