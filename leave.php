@@ -22,7 +22,8 @@ include("includes/sidebar.php");
 			<div class="col-xl-12 col-sm-12 col-12 mb-4">
 				<div class="breadcrumb-path ">
 					<ul class="breadcrumb">
-						<li class="breadcrumb-item"><a href="index.php"><img src="assets/img/dash.png" class="mr-2" alt="breadcrumb">Home</a>
+						<li class="breadcrumb-item"><a href="index.php"><img src="assets/img/dash.png" class="mr-2"
+									alt="breadcrumb">Home</a>
 						</li>
 						<li class="breadcrumb-item active"> Leave</li>
 					</ul>
@@ -68,7 +69,8 @@ include("includes/sidebar.php");
 					</div>
 				</div>
 			</div>
-		</div><div class="row">
+		</div>
+		<div class="row">
 			<div class="col-xl-12 col-sm-12 col-12 ">
 				<div class="card ">
 					<div class="card-header">
@@ -76,48 +78,48 @@ include("includes/sidebar.php");
 					</div>
 					<div class="card-body p-0">
 						<div class="table-responsive">
-						<table class="table custom-table no-footer">
-    <thead>
-        <tr class="text-center">
-            <th>Employee</th>
-            <th>Leave Type</th>
-            <th>Start Date</th>
-            <th>End Date</th>
-            <th>Desc</th>
-            <th>Status</th>
-        </tr>
-    </thead>
-    <tbody>
-    <?php
-    $query = "SELECT * FROM leave_application lp
-              INNER JOIN employee e ON e.employeeID = lp.employee_id";
+							<table class="table custom-table no-footer">
+								<thead>
+									<tr class="text-center">
+										<th>Employee</th>
+										<th>Leave Type</th>
+										<th>Start Date</th>
+										<th>End Date</th>
+										<th>Desc</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php
+									$query = "SELECT * FROM leave_application lp
+              								  INNER JOIN employee e ON e.employeeID = lp.employee_id";
 
-    $result = mysqli_query($con, $query);
+									$result = mysqli_query($con, $query);
 
-    while ($row = mysqli_fetch_assoc($result)) {
-        $statusStyle = '';
-        if ($row["Status"] == "Reject") {
-            $statusStyle = 'style="color: red;"';
-        } elseif ($row["Status"] == "Approved") {
-            $statusStyle = 'style="color: green;"';
-        }
+									while ($row = mysqli_fetch_assoc($result)) {
+										$statusStyle = '';
+										if ($row["Status"] == "Reject") {
+											$statusStyle = 'style="color: red;"';
+										} elseif ($row["Status"] == "Approved") {
+											$statusStyle = 'style="color: green;"';
+										}
 
-        echo "<tr class='text-center'>";
-        echo "<td><label>" . $row['firstName'] . " " . $row['lastName'] . "</label></td>";
-        echo "<td><label>" . $row['leave_type'] . "</label></td>";
-        echo "<td><label>" . $row["start_date"] . "</label></td>";
-        echo "<td><label>" . $row["end_date"] . "</label></td>";
-        echo "<td><label>" . $row["additional_reasons"] . "</label></td>";
-        echo "<td $statusStyle>" . $row["Status"] . "</td>";
-        echo '<td>';
-        echo '</div>';
-        echo '</td>';
-        echo "</tr>";
-    }
-    ?>
-</tbody>
+										echo "<tr class='text-center'>";
+										echo "<td><label>" . $row['firstName'] . " " . $row['lastName'] . "</label></td>";
+										echo "<td><label>" . $row['leave_type'] . "</label></td>";
+										echo "<td><label>" . $row["start_date"] . "</label></td>";
+										echo "<td><label>" . $row["end_date"] . "</label></td>";
+										echo "<td><label>" . $row["additional_reasons"] . "</label></td>";
+										echo "<td $statusStyle>" . $row["Status"] . "</td>";
+										echo '<td>';
+										echo '</div>';
+										echo '</td>';
+										echo "</tr>";
+									}
+									?>
+								</tbody>
 
-</table>
+							</table>
 
 
 						</div>

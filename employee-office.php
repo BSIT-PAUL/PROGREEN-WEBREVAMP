@@ -231,10 +231,14 @@ include_once("includes/system_navbar.php");
 								<tbody>
 									<tr>
 										<?php
-										$query = "SELECT * FROM `employee` e
-											INNER JOIN attendance_records ar
-											ON e.employeeID = ar.employee_id;";
-								
+										$query =   "SELECT * FROM `employee` e
+													INNER JOIN attendance_records ar ON e.employeeID = ar.employee_id
+													WHERE ar.check_in_time = (
+														SELECT MAX(check_in_time)
+														FROM attendance_records
+														WHERE employee_id = e.employeeID
+													);";
+
 										$result = mysqli_query($con, $query);
 
 										while ($row = mysqli_fetch_assoc($result)) {
@@ -262,7 +266,7 @@ include_once("includes/system_navbar.php");
 											echo '<div class="employee-head">';
 											echo '<ul>';
 											echo '<li><a class="edit_employee edit_employee_office" data-employee-id="' . $row['employeeID'] . '" data-toggle="modal" data-target="#edit"><i data-feather="edit"></i></a></li>';
-											echo '<li><a class="edit_delete edit_delete_office" data-employee-id="' . $row['employeeID'] . '" data-toggle="modal" data-target="#delete"><i data-feather="trash-2"></i></a></li>';
+											echo '<li><a class="edit_delete edit_delete_office" data-office-delete-id="' . $row['employeeID'] . '" data-toggle="modal" data-target="#delete"><i data-feather="trash-2"></i></a></li>';
 											echo '</ul>';
 											echo '</div>';
 											echo '</td>';
@@ -356,7 +360,8 @@ include_once("includes/system_navbar.php");
 							<select class="input-form" id="attendance_status_dropdown" name="salaryFrequency" required>
 								<option value="Select Salary Frequency" selected disabled>Status</option>
 								<option value="Present">Present</option>
-								<option value="Inactive">Inactive</option>
+								<option value="Not Checked In">Not Checked In</option>
+								<option value="Absent">Absent</option>
 							</select>
 						</div>
 					</div>

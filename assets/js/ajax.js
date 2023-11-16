@@ -131,6 +131,7 @@ $(document).ready(function () {
     });
    
 });
+
 $(document).ready(function () {
     $(".action_label4").on("click", function () {
         var leaveID = $(this).data("decline-leave-id");
@@ -167,11 +168,8 @@ $(document).ready(function () {
 
 
 
-//Ajax For Updating Employee
+//Ajax For Updating Employee Attendance
 $(document).ready(function () {
-    // ...
-
-    // Handle the click event for the ".edit_employee" elements
     $(".edit_employee_office").on("click", function () {
         var employeeID = $(this).data("employee-id");
 
@@ -204,7 +202,7 @@ $(document).ready(function () {
         // Use AJAX to send the updated employee data to the server
         $.ajax({
             type: "POST",
-            url: "update_employee.php",
+            url: "update_employee_office.php",
             data: {
                 employee_id: employeeID,
                 first_name: first_name,
@@ -226,3 +224,26 @@ $(document).ready(function () {
     });
 
 });
+
+$(document).ready(function () {
+    $("#confirmDeleteOffice").on("click", function () {
+        var employeeID = $(this).data("office-delete-id");
+        console.log(employeeID);
+
+        // Use Ajax to send the delete request to the server
+        $.ajax({
+            type: "POST",
+            url: "delete_employee_office.php",
+            data: { employee_id: employeeID },
+            success: function (data) {
+                if (data === 'Employee deleted successfully') {
+                    location.reload();
+                    alert("Employee deleted successfully");
+                } else {
+                    alert("Error deleting employee");
+                }
+            }
+        });
+    });
+});
+
