@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 13, 2023 at 02:00 PM
+-- Host: localhost
+-- Generation Time: Nov 17, 2023 at 05:19 AM
 -- Server version: 10.4.28-MariaDB
--- PHP Version: 7.1.32
+-- PHP Version: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -45,6 +44,31 @@ INSERT INTO `admin` (`id`, `UserName`, `Password`, `updationDate`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `admin_basic_info`
+--
+
+CREATE TABLE `admin_basic_info` (
+  `id` int(11) NOT NULL,
+  `preferredName` varchar(50) DEFAULT NULL,
+  `adminID` int(11) DEFAULT NULL,
+  `nationality` varchar(50) DEFAULT NULL,
+  `dateOfBirth` date DEFAULT NULL,
+  `gender` varchar(50) DEFAULT NULL,
+  `bloodgroup` varchar(50) DEFAULT NULL,
+  `phoneNumber` varchar(50) DEFAULT NULL,
+  `secondaryNumber` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `admin_basic_info`
+--
+
+INSERT INTO `admin_basic_info` (`id`, `preferredName`, `adminID`, `nationality`, `dateOfBirth`, `gender`, `bloodgroup`, `phoneNumber`, `secondaryNumber`) VALUES
+(1, 'Adonis', 1, 'Filipino', '2023-11-16', 'Male', 'A+', '09817462412', '09176165926');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `attendance_records`
 --
 
@@ -61,7 +85,9 @@ CREATE TABLE `attendance_records` (
 --
 
 INSERT INTO `attendance_records` (`record_id`, `employee_id`, `check_in_time`, `check_out_time`, `attendance_status`) VALUES
-(1, 7, '2023-11-13 13:46:26', '2023-11-13 13:46:34', 'Present');
+(1, 7, '2023-11-13 13:46:26', '2023-11-13 13:46:34', 'Present'),
+(2, 8, '2023-11-16 09:41:24', NULL, 'Present'),
+(3, 8, '2023-11-16 09:41:34', NULL, 'Present');
 
 -- --------------------------------------------------------
 
@@ -129,7 +155,33 @@ CREATE TABLE `employee` (
 --
 
 INSERT INTO `employee` (`employeeID`, `firstName`, `lastName`, `email`, `username`, `password`, `departmentID`, `jobID`, `startDate`, `employmentType`, `salary`, `salaryFrequency`) VALUES
-(7, 'John Paul', 'Bayoneto', 'bayonetojohnpaul@gmail.com', 'bayoneto', '202cb962ac59075b964b07152d234b70', 1, 1, '2023-11-02', 'Regular', '10000.00', 'Annualy');
+(7, 'John Paul', 'Bayoneto', 'bayonetojohnpaul@gmail.com', 'bayoneto', '202cb962ac59075b964b07152d234b70', 1, 1, '2023-11-02', 'Regular', 10000.00, 'Annualy'),
+(8, 'Arvin Jade', 'Villaluna', 'arvin.villaluna@yahoo.com.ph', 'Nightwalker5373', '7215bceb852a1d0fea095bf8f0471f88', 3, 4, '2023-11-16', 'Casual', 6999.00, 'Monthly');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `employee_basic_info`
+--
+
+CREATE TABLE `employee_basic_info` (
+  `id` int(11) NOT NULL,
+  `preferredName` varchar(50) DEFAULT NULL,
+  `employeeID` int(11) DEFAULT NULL,
+  `nationality` varchar(50) DEFAULT NULL,
+  `dateOfBirth` date DEFAULT NULL,
+  `gender` varchar(50) DEFAULT NULL,
+  `bloodgroup` varchar(50) DEFAULT NULL,
+  `phoneNumber` varchar(50) DEFAULT NULL,
+  `secondaryNumber` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `employee_basic_info`
+--
+
+INSERT INTO `employee_basic_info` (`id`, `preferredName`, `employeeID`, `nationality`, `dateOfBirth`, `gender`, `bloodgroup`, `phoneNumber`, `secondaryNumber`) VALUES
+(1, 'XeroXCopY', 8, 'Filipino', '2002-11-10', 'Male', 'AB+', '09534216078', '09677402662');
 
 -- --------------------------------------------------------
 
@@ -179,11 +231,25 @@ CREATE TABLE `leave_application` (
 INSERT INTO `leave_application` (`id`, `employee_id`, `leave_type`, `start_date`, `end_date`, `additional_reasons`, `Status`) VALUES
 (8, 7, 'Sick Leave', '2023-11-12', '2023-11-13', '', 'Approved'),
 (9, 7, 'Personal/Unpaid Leave', '2023-11-13', '2023-11-14', 'none', 'Reject'),
-(10, 7, 'Sick Leave', '2023-11-14', '2023-11-14', '', 'Pending');
+(10, 7, 'Sick Leave', '2023-11-14', '2023-11-14', '', 'Pending'),
+(11, 8, 'Personal/Unpaid Leave', '2023-11-17', '2023-11-22', 'Natatae ako', 'Approved');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `admin_basic_info`
+--
+ALTER TABLE `admin_basic_info`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `admin_info` (`adminID`);
 
 --
 -- Indexes for table `attendance_records`
@@ -214,6 +280,12 @@ ALTER TABLE `employee`
   ADD KEY `jobID` (`jobID`);
 
 --
+-- Indexes for table `employee_basic_info`
+--
+ALTER TABLE `employee_basic_info`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `job`
 --
 ALTER TABLE `job`
@@ -232,10 +304,22 @@ ALTER TABLE `leave_application`
 --
 
 --
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `admin_basic_info`
+--
+ALTER TABLE `admin_basic_info`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `attendance_records`
 --
 ALTER TABLE `attendance_records`
-  MODIFY `record_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `record_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `company`
@@ -253,7 +337,13 @@ ALTER TABLE `department`
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `employeeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `employeeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `employee_basic_info`
+--
+ALTER TABLE `employee_basic_info`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `job`
@@ -265,11 +355,17 @@ ALTER TABLE `job`
 -- AUTO_INCREMENT for table `leave_application`
 --
 ALTER TABLE `leave_application`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `admin_basic_info`
+--
+ALTER TABLE `admin_basic_info`
+  ADD CONSTRAINT `admin_info` FOREIGN KEY (`adminID`) REFERENCES `admin` (`id`);
 
 --
 -- Constraints for table `attendance_records`
