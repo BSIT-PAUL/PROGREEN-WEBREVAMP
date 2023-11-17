@@ -83,7 +83,7 @@ include("database/dbcon.php");
 						</ul>
 						<ul class="logout">
 							<li>
-								<a href="login.php"><img src="assets/img/logout.svg" alt="sidebar_img"><span>Log out</span></a>
+								<a href="../login.php"><img src="assets/img/logout.svg" alt="sidebar_img"><span>Log out</span></a>
 							</li>
 						</ul>
 					</div>
