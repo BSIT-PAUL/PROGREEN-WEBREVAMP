@@ -58,9 +58,6 @@ include_once("includes/system_navbar.php");
 						<a href="report.php"><img src="assets/img/report.svg" alt="sidebar_img"><span>Report</span></a>
 					</li>
 					<li>
-						<a href="manage.php"><img src="assets/img/manage.svg" alt="sidebar_img"> <span>Manage</span></a>
-					</li>
-					<li>
 						<a href="settings.php"><img src="assets/img/settings.svg"
 								alt="sidebar_img"><span>Settings</span></a>
 					</li>
