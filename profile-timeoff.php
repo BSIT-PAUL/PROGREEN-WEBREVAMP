@@ -23,10 +23,8 @@
 							<ul>
 								<li><a href="profile.php">Employement</a></li>
 								<li><a href="profile-detail.php">Detail</a></li>
-								<li><a href="profile-document.php">Document</a></li>
 								<li><a href="profile-payroll.php">Payroll</a></li>
 								<li><a class="active" href="#">Timeoff</a></li>
-								<li><a href="profile-review.php">Reviews</a></li>
 								<li><a href="profile-setting.php">Settings</a></li>
 							</ul>
 						</div>

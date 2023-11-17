@@ -31,39 +31,36 @@
 						</div>
 						<ul>
 							<li>
-								<a href="dashboard.html"><img src="assets/img/home.svg" alt="sidebar_img"> <span>Dashboard</span></a>
+								<a href="dashboard.php"><img src="assets/img/home.svg" alt="sidebar_img"> <span>Dashboard</span></a>
 							</li>
 							<li>
-								<a href="employee.html"><img src="assets/img/employee.svg" alt="sidebar_img"><span> Employees</span></a>
+								<a href="employee.php"><img src="assets/img/employee.svg" alt="sidebar_img"><span> Employees</span></a>
 							</li>
 							<li>
-								<a href="company.html"><img src="assets/img/company.svg" alt="sidebar_img"> <span> Company</span></a>
+								<a href="company.php"><img src="assets/img/company.svg" alt="sidebar_img"> <span> Company</span></a>
 							</li>
 							<li>
-								<a href="calendar.html"><img src="assets/img/calendar.svg" alt="sidebar_img"> <span>Calendar</span></a>
+								<a href="leave.php"><img src="assets/img/leave.svg" alt="sidebar_img"> <span>Leave</span></a>
 							</li>
 							<li>
-								<a href="leave.html"><img src="assets/img/leave.svg" alt="sidebar_img"> <span>Leave</span></a>
+								<a href="review.php"><img src="assets/img/review.svg" alt="sidebar_img"><span>Review</span></a>
 							</li>
 							<li>
-								<a href="review.html"><img src="assets/img/review.svg" alt="sidebar_img"><span>Review</span></a>
+								<a href="report.php"><img src="assets/img/report.svg" alt="sidebar_img"><span>Report</span></a>
 							</li>
 							<li>
-								<a href="report.html"><img src="assets/img/report.svg" alt="sidebar_img"><span>Report</span></a>
+								<a href="manage.php"><img src="assets/img/manage.svg" alt="sidebar_img"> <span>Manage</span></a>
 							</li>
 							<li>
-								<a href="manage.html"><img src="assets/img/manage.svg" alt="sidebar_img"> <span>Manage</span></a>
+								<a href="settings.php"><img src="assets/img/settings.svg" alt="sidebar_img"><span>Settings</span></a>
 							</li>
 							<li>
-								<a href="settings.html"><img src="assets/img/settings.svg" alt="sidebar_img"><span>Settings</span></a>
-							</li>
-							<li>
-								<a href="profile.html"><img src="assets/img/profile.svg" alt="sidebar_img"> <span>Profile</span></a>
+								<a href="profile.php"><img src="assets/img/profile.svg" alt="sidebar_img"> <span>Profile</span></a>
 							</li>
 						</ul>
 						<ul class="logout">
 							<li>
-								<a href="login.html"><img src="assets/img/logout.svg" alt="sidebar_img"><span>Log out</span></a>
+								<a href="login.php"><img src="assets/img/logout.svg" alt="sidebar_img"><span>Log out</span></a>
 							</li>
 						</ul>
 					</div>
@@ -78,7 +75,7 @@
 					<div class="col-xl-12 col-sm-12 col-12 ">
 						<div class="breadcrumb-path mb-4">
 							<ul class="breadcrumb">
-								<li class="breadcrumb-item"><a href="index.html">Home</a>
+								<li class="breadcrumb-item"><a href="index.php">Home</a>
 								</li>
 								<li class="breadcrumb-item active"> Activities</li>
 							</ul>
@@ -91,13 +88,13 @@
 								<ul class="activity-list">
 									<li>
 										<div class="activity-user">
-											<a href="profile.html" title="" data-toggle="tooltip" class="avatar" data-original-title="Lesley Grauer">
+											<a href="profile.php" title="" data-toggle="tooltip" class="avatar" data-original-title="Lesley Grauer">
 												<img alt="Lesley Grauer" src="assets/img/user.jpg" class="img-fluid rounded-circle">
 											</a>
 										</div>
 										<div class="activity-content">
 											<div class="timeline-content">
-												<a href="profile.html" class="name">Lesley Grauer</a> buy new coin <a href="#">BTC</a>
+												<a href="profile.php" class="name">Lesley Grauer</a> buy new coin <a href="#">BTC</a>
 												<span class="time">4 mins ago</span>
 											</div>
 										</div>
@@ -105,13 +102,13 @@
 									</li>
 									<li>
 										<div class="activity-user">
-											<a href="profile.html" title="" data-toggle="tooltip" class="avatar" data-original-title="Lesley Grauer">
+											<a href="profile.php" title="" data-toggle="tooltip" class="avatar" data-original-title="Lesley Grauer">
 												<img alt="Lesley Grauer" src="assets/img/profiles/avatar-02.jpg" class="img-fluid rounded-circle">
 											</a>
 										</div>
 										<div class="activity-content">
 											<div class="timeline-content">
-												<a href="profile.html" class="name">Jeffery Lalor</a> added <a href="profile.html" class="name">Loren Gatlin</a> and <a href="profile.html" class="name">Tarah Shropshire</a> to project <a href="#">Crypto</a>
+												<a href="profile.php" class="name">Jeffery Lalor</a> added <a href="profile.php" class="name">Loren Gatlin</a> and <a href="profile.php" class="name">Tarah Shropshire</a> to project <a href="#">Crypto</a>
 												<span class="time">6 mins ago</span>
 											</div>
 										</div>
@@ -119,14 +116,14 @@
 									</li>
 									<li>
 										<div class="activity-user">
-											<a href="profile.html" title="" data-toggle="tooltip" class="avatar" data-original-title="Lesley Grauer">
+											<a href="profile.php" title="" data-toggle="tooltip" class="avatar" data-original-title="Lesley Grauer">
 												<img alt="Lesley Grauer" src="assets/img/profiles/avatar-04.jpg" class="img-fluid rounded-circle">
 											</a>
 										</div>
 										<div class="activity-content">
 											<div class="timeline-content">
 												<div class="timeline-content">
-													<a href="profile.html" class="name">Catherine Manseau</a> completed task <a href="#">Crypto coin sell with payment gateway</a>
+													<a href="profile.php" class="name">Catherine Manseau</a> completed task <a href="#">Crypto coin sell with payment gateway</a>
 													<span class="time">12 mins ago</span>
 												</div>
 											</div>
@@ -135,13 +132,13 @@
 									</li>
 									<li>
 										<div class="activity-user">
-											<a href="profile.html" title="" data-toggle="tooltip" class="avatar" data-original-title="Lesley Grauer">
+											<a href="profile.php" title="" data-toggle="tooltip" class="avatar" data-original-title="Lesley Grauer">
 												<img alt="Lesley Grauer" src="assets/img/user.jpg" class="img-fluid rounded-circle">
 											</a>
 										</div>
 										<div class="activity-content">
 											<div class="timeline-content">
-												<a href="profile.html" class="name">Lesley Grauer</a> buy new coin <a href="#">BTC</a>
+												<a href="profile.php" class="name">Lesley Grauer</a> buy new coin <a href="#">BTC</a>
 												<span class="time">4 mins ago</span>
 											</div>
 										</div>
@@ -149,13 +146,13 @@
 									</li>
 									<li>
 										<div class="activity-user">
-											<a href="profile.html" title="" data-toggle="tooltip" class="avatar" data-original-title="Lesley Grauer">
+											<a href="profile.php" title="" data-toggle="tooltip" class="avatar" data-original-title="Lesley Grauer">
 												<img alt="Lesley Grauer" src="assets/img/profiles/avatar-05.jpg" class="img-fluid rounded-circle">
 											</a>
 										</div>
 										<div class="activity-content">
 											<div class="timeline-content">
-												<a href="profile.html" class="name">Jeffery Lalor</a> added <a href="profile.html" class="name">Loren Gatlin</a> and <a href="profile.html" class="name">Tarah Shropshire</a> to project <a href="#">Crypto</a>
+												<a href="profile.php" class="name">Jeffery Lalor</a> added <a href="profile.php" class="name">Loren Gatlin</a> and <a href="profile.php" class="name">Tarah Shropshire</a> to project <a href="#">Crypto</a>
 												<span class="time">6 mins ago</span>
 											</div>
 										</div>
@@ -163,14 +160,14 @@
 									</li>
 									<li>
 										<div class="activity-user">
-											<a href="profile.html" title="" data-toggle="tooltip" class="avatar" data-original-title="Lesley Grauer">
+											<a href="profile.php" title="" data-toggle="tooltip" class="avatar" data-original-title="Lesley Grauer">
 												<img alt="Lesley Grauer" src="assets/img/profiles/avatar-07.jpg" class="img-fluid rounded-circle">
 											</a>
 										</div>
 										<div class="activity-content">
 											<div class="timeline-content">
 												<div class="timeline-content">
-													<a href="profile.html" class="name">Catherine Manseau</a> completed task <a href="#">Crypto coin sell with payment gateway</a>
+													<a href="profile.php" class="name">Catherine Manseau</a> completed task <a href="#">Crypto coin sell with payment gateway</a>
 													<span class="time">12 mins ago</span>
 												</div>
 											</div>

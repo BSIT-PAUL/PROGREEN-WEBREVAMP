@@ -28,7 +28,6 @@ include_once("includes/sidebar.php");
 				<div class="head-link-set">
 					<ul>
 						<li><a class="active" href="#">All</a></li>
-						<li><a href="employee-team.php">Teams</a></li>
 						<li><a href="employee-office.php">Offices</a></li>
 						<li><a href="employee-job.php">Job</a></li>
 					</ul>

@@ -42,9 +42,6 @@ include_once("includes/system_navbar.php");
 						<a href="company.php"><img src="assets/img/company.svg" alt="sidebar_img"> <span> Company</span></a>
 					</li>
 					<li>
-						<a href="calendar.php"><img src="assets/img/calendar.svg" alt="sidebar_img"> <span>Calendar</span></a>
-					</li>
-					<li>
 						<a href="leave.php"><img src="assets/img/leave.svg" alt="sidebar_img"> <span>Leave</span></a>
 					</li>
 					<li>
@@ -89,7 +86,6 @@ include_once("includes/system_navbar.php");
 				<div class="head-link-set">
 					<ul>
 						<li><a href="employee.php">All</a></li>
-						<li><a href="employee-team.php">Teams</a></li>
 						<li><a href="employee-office.php">Offices</a></li>
 						<li><a class="active" href="#">Job</a></li>
 					</ul>

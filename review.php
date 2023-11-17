@@ -32,7 +32,6 @@
 						<div class="head-link-set">
 							<ul>
 								<li><a class="active" href="#">Overview</a></li>
-								<li><a href="review-type.php">Review Types</a></li>
 							</ul>
 							<a class="btn-add" href="add-Review.php">Create Review</a>
 						</div>

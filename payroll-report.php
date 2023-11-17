@@ -38,9 +38,6 @@
 								<a href="company.php"><img src="assets/img/company.svg" alt="sidebar_img"> <span> Company</span></a>
 							</li>
 							<li>
-								<a href="calendar.php"><img src="assets/img/calendar.svg" alt="sidebar_img"> <span>Calendar</span></a>
-							</li>
-							<li>
 								<a href="leave.php"><img src="assets/img/leave.svg" alt="sidebar_img"> <span>Leave</span></a>
 							</li>
 							<li>
@@ -48,9 +45,6 @@
 							</li>
 							<li class="active">
 								<a href="report.php"><img src="assets/img/report.svg" alt="sidebar_img"><span>Report</span></a>
-							</li>
-							<li>
-								<a href="manage.php"><img src="assets/img/manage.svg" alt="sidebar_img"> <span>Manage</span></a>
 							</li>
 							<li>
 								<a href="settings.php"><img src="assets/img/settings.svg" alt="sidebar_img"><span>Settings</span></a>
@@ -87,12 +81,8 @@
 						<div class="head-link-set">
 							<ul>
 								<li><a href="report.php">Team Reports</a></li>
-								<li><a href="leave-report.php">Leave Reports</a></li>
-								<li><a class="active" href="#">Payroll Reports</a></li>
-								<li><a href="contact-report.php">Contact Reports</a></li>
-								<li><a href="email-report.php">Email Reports</a></li>
+								<li><a  class="active" href="payroll-report.php">Payroll Reports</a></li>
 								<li><a href="security-report.php">Security Reports</a></li>
-								<li><a href="wfh-report.php">W F H Reports</a></li>
 							</ul>
 						</div>
 					</div>

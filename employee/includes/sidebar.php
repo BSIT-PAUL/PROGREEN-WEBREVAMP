@@ -27,9 +27,6 @@
 								<a href="index-employee.php"><img src="assets/img/home.svg" alt="sidebar_img"> <span>Dashboard</span></a>
 							</li>
 							<li>
-								<a href="calendar.php"><img src="assets/img/calendar.svg" alt="sidebar_img"> <span>Calendar</span></a>
-							</li>
-							<li>
 								<a href="leave.php"><img src="assets/img/leave.svg" alt="sidebar_img"> <span>Leave</span></a>
 							</li>
 							<li>

@@ -95,68 +95,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-xl-12 col-sm-12 col-12 ">
-						<div class="card card-lists ">
-							<div class="card-header">
-								<h2 class="card-titles">DocumentsAdd </h2>
-								<a class="btn btn-head"> Add Document </a>
-							</div>
-							<div class="card-body p-0">
-								<div class="table-responsive">
-									<table class="table  custom-table  no-footer">
-										<thead>
-											<tr>
-												<th>Type</th>
-												<th>Name</th>
-												<th>Date</th>
-												<th>Size</th>
-												<th>Status</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>
-													<div class="table-img">
-														<img src="assets/img/pdf.png" alt="pdf" />
-													</div>
-												</td>
-												<td>
-													<label>Leave & Attendance Policy</label>
-												</td>
-												<td><label> 05 Jan 2012 </label></td>
-												<td><label>20 MB</label></td>
-												<td><label><a class="action_label4" data-toggle="modal" data-target="#delete">Delete <i data-feather="trash-2"></i></a></label></td>
-											</tr>
-											<tr>
-												<td>
-													<div class="table-img">
-														<img src="assets/img/word.png" alt="profile">
-													</div>
-												</td>
-												<td><label>Dress Code Policy </label></td>
-												<td><label> 05 Jan 2012 </label></td>
-												<td><label> 30MB </label></td>
-												<td><label><a class="action_label4" data-toggle="modal" data-target="#delete">Delete <i data-feather="trash-2"></i></a></label></td>
-											</tr>
-											<tr>
-												<td>
-													<div class="table-img">
-														<img src="assets/img/pdf.png" alt="pdf" />
-													</div>
-												</td>
-												<td>
-													<label>Leave & Attendance Policy</label>
-												</td>
-												<td><label> 05 Jan 2012 </label></td>
-												<td><label>20 MB</label></td>
-												<td><label><a class="action_label4" data-toggle="modal" data-target="#delete">Delete <i data-feather="trash-2"></i></a></label></td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</div>
-					</div>
+					<!-- -->
 					<div class="col-xl-12 col-sm-12 col-12 ">
 						<div class="row">
 							<div class="col-xl-6 col-sm-12 col-12 d-flex">
@@ -196,17 +135,16 @@
 								<div class="card card-lists flex-fill">
 									<div class="card-header">
 										<h2 class="card-title">Overview </h2>
-										<a class="btn btn-head" href="manage.php"> Manage Teams </a>
 									</div>
 									<div class="card-body">
 										<div class="over-view-path">
 											<ul>
 												<li>
-													<label>Teams</label>
+													<label>Department</label>
 													<span>6</span>
 												</li>
 												<li>
-													<label>People</label>
+													<label>Employees</label>
 													<span>7</span>
 												</li>
 											</ul>
