@@ -97,7 +97,7 @@ include 'database/dbcon.php';
                   $_SESSION['user_id'] = $row_admin['id'];
                   $_SESSION['user_firstname'] = "Admin"; // Set a default name for admin
                   $_SESSION['user_lastname'] = "";
-
+                  $_SESSION['user_name'] = $row_admin['UserName'];
                   $admin_info_query = mysqli_query($con, "SELECT * FROM admin_basic_info WHERE adminID = " . $row_admin['id']);
                   $admin_info = mysqli_fetch_array($admin_info_query);
 
@@ -125,6 +125,8 @@ include 'database/dbcon.php';
                     $_SESSION['user_firstname'] = $row_employee['firstName']; // Store first name in the session
                     $_SESSION['user_lastname'] = $row_employee['lastName']; // Store last name in the session
                     $_SESSION['user_id'] = $row_employee['employeeID'];
+                    $_SESSION['user_name'] = $row_admin['username'];
+
 
                     $employee_info_query = mysqli_query($con, "SELECT * FROM employee_basic_info WHERE employeeID=". $row_employee['employeeID']);
                     $employee_info = mysqli_fetch_array($employee_info_query);
