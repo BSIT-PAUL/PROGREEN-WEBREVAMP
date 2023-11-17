@@ -127,7 +127,8 @@ include 'database/dbcon.php';
                     $_SESSION['user_id'] = $row_employee['employeeID'];
                     $_SESSION['user_name'] = $row_admin['username'];
 
-
+                    $imageData = $row['ProfilePicture'];
+                    $_SESSION['imageData'] = $imageData;
                     $employee_info_query = mysqli_query($con, "SELECT * FROM employee_basic_info WHERE employeeID=". $row_employee['employeeID']);
                     $employee_info = mysqli_fetch_array($employee_info_query);
                     

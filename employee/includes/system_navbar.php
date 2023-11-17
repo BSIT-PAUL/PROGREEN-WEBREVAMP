@@ -3,6 +3,7 @@ session_start();
 
 include("database/dbcon.php");
 
+
 ?>
 <div class="top-nav-search">
     <form>
@@ -34,8 +35,7 @@ include("database/dbcon.php");
                         <a href="activities.php">
                             <div class="media">
                                 <span class="avatar avatar-sm">
-                                    <img class="avatar-img rounded-circle" alt=""
-                                        src="assets/img/profiles/avatar-02.jpg">
+                                    <img class="avatar-img rounded-circle" alt="" src="assets/img/profiles/avatar-02.jpg">
                                 </span>
                                 <div class="media-body">
                                     <!-- This need backend -->
@@ -50,8 +50,7 @@ include("database/dbcon.php");
                         <a href="activities.php">
                             <div class="media">
                                 <span class="avatar avatar-sm">
-                                    <img class="avatar-img rounded-circle" alt=""
-                                        src="assets/img/profiles/avatar-03.jpg">
+                                    <img class="avatar-img rounded-circle" alt="" src="assets/img/profiles/avatar-03.jpg">
                                 </span>
                                 <div class="media-body">
                                     <p class="noti-details"><span class="noti-title">Marie Canales</span> has accepted
@@ -67,8 +66,7 @@ include("database/dbcon.php");
                         <a href="activities.php">
                             <div class="media">
                                 <div class="avatar avatar-sm">
-                                    <span class="avatar-title rounded-circle bg-primary-light"><i
-                                            class="far fa-user"></i></span>
+                                    <span class="avatar-title rounded-circle bg-primary-light"><i class="far fa-user"></i></span>
                                 </div>
                                 <div class="media-body">
                                     <p class="noti-details"><span class="noti-title">New user registered</span></p>
@@ -81,8 +79,7 @@ include("database/dbcon.php");
                         <a href="activities.php">
                             <div class="media">
                                 <span class="avatar avatar-sm">
-                                    <img class="avatar-img rounded-circle" alt=""
-                                        src="assets/img/profiles/avatar-04.jpg">
+                                    <img class="avatar-img rounded-circle" alt="" src="assets/img/profiles/avatar-04.jpg">
                                 </span>
                                 <div class="media-body">
                                     <p class="noti-details"><span class="noti-title">Barbara Moore</span> declined the
@@ -96,8 +93,7 @@ include("database/dbcon.php");
                         <a href="activities.php">
                             <div class="media">
                                 <div class="avatar avatar-sm">
-                                    <span class="avatar-title rounded-circle bg-info-light"><i
-                                            class="far fa-comment"></i></span>
+                                    <span class="avatar-title rounded-circle bg-info-light"><i class="far fa-comment"></i></span>
                                 </div>
                                 <div class="media-body">
                                     <p class="noti-details"><span class="noti-title">You have received a new
@@ -114,21 +110,43 @@ include("database/dbcon.php");
             </div>
         </div>
     </li>
+    <?php // Replace 'userprofile' with your actual table name
+    // Use prepared statement to prevent SQL injection
+    $query = "SELECT `UserID`, `ProfilePicture` FROM `userprofile` WHERE `UserID` = ?";
+    $employeeId = $_SESSION['employee_id'];
 
+    $stmt = mysqli_prepare($con, $query);
+    mysqli_stmt_bind_param($stmt, 'i', $employeeId);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+
+    if ($result) {
+        // Check if any rows were returned
+        if ($row = mysqli_fetch_assoc($result)) {
+            $userId = $row['UserID'];
+            $profilePicture = $row['ProfilePicture'];
+        } else {
+            // Handle the case where no rows are returned
+            echo "No user found with the provided ID.";
+        }
+    } else {
+        // Handle the case where the query execution fails
+        echo "Error executing the query: " . mysqli_error($con);
+    } ?>
 
     <li class="nav-item dropdown has-arrow main-drop">
         <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
             <span class="user-img">
-                <img src="assets/img/profile.jpg" alt="">
+                <img src="data:image/jpeg;base64,<?php echo base64_encode($profilePicture); ?>" alt="profile" />
                 <span class="status online"></span>
             </span>
             <span><?php
 
-// Get the name of the user from the session
-$welcomeMessage = $_SESSION['user_firstname'] . ' ' . $_SESSION['user_lastname'];
-echo $welcomeMessage;
+                    // Get the name of the user from the session
+                    $welcomeMessage = $_SESSION['user_firstname'] . ' ' . $_SESSION['user_lastname'];
+                    echo $welcomeMessage;
 
-?></span>
+                    ?></span>
         </a>
         <div class="dropdown-menu">
             <a class="dropdown-item" href="profile.php"><i data-feather="user" class="mr-1"></i> Profile</a>
@@ -139,8 +157,7 @@ echo $welcomeMessage;
 
 </ul>
 <div class="dropdown mobile-user-menu show">
-    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i
-            class="fa fa-ellipsis-v"></i></a>
+    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
     <div class="dropdown-menu dropdown-menu-right ">
         <a class="dropdown-item" href="profile.php">My Profile</a>
         <a class="dropdown-item" href="settings.php">Settings</a>
