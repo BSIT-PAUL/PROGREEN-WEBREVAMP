@@ -27,6 +27,7 @@ $(document).ready(function () {
           name: "Pending",
           type: "column",
           data: [23, 42, 35, 27, 43, 22, 17, 31, 22, 22, 12, 16, 80],
+          data: [99, 42, 35, 27, 43, 22, 17, 31, 22, 22, 12, 16, 80],
         },
       ],
       chart: {
@@ -83,3 +84,27 @@ $(document).ready(function () {
   var pieChart = new ApexCharts(pieCtx, pieConfig);
   pieChart.render();
 });
+
+
+// let monthArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+// let categories = [
+//     "Jan",
+//     "Feb",
+//     "Mar",
+//     "Apr",
+//     "May",
+//     "Jun",
+//     "Jul",
+//     "Aug",
+//     "Sep",
+//     "Oct",
+//     "Nov",
+//     "Dec"
+// ];
+
+// for (let i = 0; i < monthArr.length; i++) {
+//     if (month === monthArr[i]) {
+//         console.log(categories[i]);
+//         break;
+//     }
+// }

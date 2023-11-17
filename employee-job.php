@@ -17,7 +17,8 @@ include_once("includes/system_navbar.php");
 							<span class="lnr lnr-cross  text-white" id="mobile_btn_close">X</span>
 							<a href="javascript:void(0)" class="d-block menu-style text-white">
 								<div class="user-avatar d-inline-block mr-3">
-									<img src="assets/img/profiles/avatar-18.jpg" alt="user avatar" class="rounded-circle" width="50">
+									<img src="assets/img/profiles/avatar-18.jpg" alt="user avatar"
+										class="rounded-circle" width="50">
 								</div>
 							</a>
 						</div>
@@ -33,16 +34,16 @@ include_once("includes/system_navbar.php");
 				</div>
 				<ul>
 					<li>
-						<a href="dashboard.php"><img src="assets/img/home.svg" alt="sidebar_img"> <span>Dashboard</span></a>
+						<a href="dashboard.php"><img src="assets/img/home.svg" alt="sidebar_img">
+							<span>Dashboard</span></a>
 					</li>
 					<li class="active">
-						<a href="employee.php"><img src="assets/img/employee.svg" alt="sidebar_img"><span> Employees</span></a>
+						<a href="employee.php"><img src="assets/img/employee.svg" alt="sidebar_img"><span>
+								Employees</span></a>
 					</li>
 					<li>
-						<a href="company.php"><img src="assets/img/company.svg" alt="sidebar_img"> <span> Company</span></a>
-					</li>
-					<li>
-						<a href="calendar.php"><img src="assets/img/calendar.svg" alt="sidebar_img"> <span>Calendar</span></a>
+						<a href="company.php"><img src="assets/img/company.svg" alt="sidebar_img"> <span>
+								Company</span></a>
 					</li>
 					<li>
 						<a href="leave.php"><img src="assets/img/leave.svg" alt="sidebar_img"> <span>Leave</span></a>
@@ -57,10 +58,12 @@ include_once("includes/system_navbar.php");
 						<a href="manage.php"><img src="assets/img/manage.svg" alt="sidebar_img"> <span>Manage</span></a>
 					</li>
 					<li>
-						<a href="settings.php"><img src="assets/img/settings.svg" alt="sidebar_img"><span>Settings</span></a>
+						<a href="settings.php"><img src="assets/img/settings.svg"
+								alt="sidebar_img"><span>Settings</span></a>
 					</li>
 					<li>
-						<a href="profile.php"><img src="assets/img/profile.svg" alt="sidebar_img"> <span>Profile</span></a>
+						<a href="profile.php"><img src="assets/img/profile.svg" alt="sidebar_img">
+							<span>Profile</span></a>
 					</li>
 				</ul>
 				<ul class="logout">
@@ -78,7 +81,8 @@ include_once("includes/system_navbar.php");
 			<div class="col-xl-12 col-sm-12 col-12 mb-4">
 				<div class="breadcrumb-path ">
 					<ul class="breadcrumb">
-						<li class="breadcrumb-item"><a href="index.php"><img src="assets/img/dash.png" class="mr-2" alt="breadcrumb" />Home</a>
+						<li class="breadcrumb-item"><a href="index.php"><img src="assets/img/dash.png" class="mr-2"
+									alt="breadcrumb" />Home</a>
 						</li>
 						<li class="breadcrumb-item active"> Employees</li>
 					</ul>
@@ -89,7 +93,6 @@ include_once("includes/system_navbar.php");
 				<div class="head-link-set">
 					<ul>
 						<li><a href="employee.php">All</a></li>
-						<li><a href="employee-team.php">Teams</a></li>
 						<li><a href="employee-office.php">Offices</a></li>
 						<li><a class="active" href="#">Job</a></li>
 					</ul>
@@ -144,13 +147,15 @@ include_once("includes/system_navbar.php");
 						<form method="POST" action="">
 							<div class="row">
 								<div class="col-xl-5 col-sm-12 col-12">
-									<input type="text" name="jobTitle" placeholder="Job Title" class="input-form" required>
+									<input type="text" name="jobTitle" placeholder="Job Title" class="input-form"
+										required>
 								</div>
 
 								<div class="col-xl-3 col-sm-12 col-12">
 									<div class="form-group">
 										<select name="departmentID" class="input-form ">
-										<option value="Select department" selected disabled>Select Department</option>
+											<option value="Select department" selected disabled>Select Department
+											</option>
 											<?php
 											// Fetch departments from the 'department' table
 											$departmentQuery = mysqli_query($con, "SELECT * FROM department");
@@ -193,211 +198,80 @@ include_once("includes/system_navbar.php");
 								<h2>Members</h2>
 								<div class="avatar-group">
 									<div class="avatar avatar-xs group_img group_header">
-										<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/profiles/avatar-10.jpg">
+										<img class="avatar-img rounded-circle" alt="User Image"
+											src="assets/img/profiles/avatar-10.jpg">
 									</div>
 									<div class="avatar avatar-xs group_img group_header">
-										<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/profiles/avatar-15.jpg">
+										<img class="avatar-img rounded-circle" alt="User Image"
+											src="assets/img/profiles/avatar-15.jpg">
 									</div>
 									<div class="avatar avatar-xs group_img group_header">
-										<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/profiles/avatar-16.jpg">
+										<img class="avatar-img rounded-circle" alt="User Image"
+											src="assets/img/profiles/avatar-16.jpg">
 									</div>
 									<div class="avatar avatar-xs group_img group_header">
-										<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/profiles/avatar-17.jpg">
+										<img class="avatar-img rounded-circle" alt="User Image"
+											src="assets/img/profiles/avatar-17.jpg">
 									</div>
 									<div class="avatar avatar-xs group_img group_header">
-										<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/profiles/avatar-14.jpg">
+										<img class="avatar-img rounded-circle" alt="User Image"
+											src="assets/img/profiles/avatar-14.jpg">
 									</div>
 									<div class="avatar avatar-xs group_img group_header">
-										<img class="avatar-img rounded-circle" alt="User Image" src="assets/img/profiles/avatar-18.jpg">
+										<img class="avatar-img rounded-circle" alt="User Image"
+											src="assets/img/profiles/avatar-18.jpg">
 									</div>
 								</div>
 							</div>
 							<div class="member_link">
-								<a data-toggle="collapse" href="#table" role="button" aria-expanded="false" aria-controls="table"><i data-feather="chevron-down"></i></a>
+								<a data-toggle="collapse" href="#table" role="button" aria-expanded="false"
+									aria-controls="table"><i data-feather="chevron-down"></i></a>
 							</div>
 						</div>
 						<div class="table-responsive collapse show" id="table">
 							<table class="table  custom-table  no-footer">
 								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Line Manager</th>
-										<th>Team</th>
-										<th>Office</th>
-										<th>Permissions</th>
+									<tr class="text-center">
+										<th>Full Name</th>
+										<th>Username</th>
+										<th>Department</th>
+										<th>Job</th>
 										<th>Status</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-										<td>
-											<div class="table-img">
-												<a href="profile.php">
-													<img src="assets/img/profiles/avatar-13.jpg" alt="profile" class="img-table" />
-												</a>
-												<label>Arvin Villaluna
-												</label>
-											</div>
-										</td>
-										<td>
-											<label class="action_label">Richard Wilson </label>
-										</td>
-										<td>
-											<label class="action_label2">Design </label>
-										</td>
-										<td><label>Focus Technologies </label></td>
-										<td><label>Team Lead</label></td>
-										<td class="tab-select">
-											<select class="select">
-												<option value="active">Active</option>
-												<option value="inactive">Inactive</option>
-											</select>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<div class="table-img">
-												<a href="profile.php">
-													<img src="assets/img/profiles/avatar-16.jpg" alt="profile" class="img-table" />
-												</a>
-												<label>Graciella Relevo
-												</label>
-											</div>
-										</td>
-										<td>
-											<label class="action_label">Richard Wilson </label>
-										</td>
-										<td>
-											<label class="action_label2">IOS </label>
-										</td>
-										<td><label>Focus Technologies </label></td>
-										<td><label>Team Lead</label></td>
-										<td class="tab-select">
-											<select class="select">
-												<option value="active">Active</option>
-												<option value="inactive">Inactive</option>
-											</select>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<div class="table-img">
-												<a href="profile.php">
-													<img src="assets/img/profiles/avatar-17.jpg" alt="profile" class="img-table" />
-												</a>
-												<label>Jenni Sims</label>
-											</div>
-										</td>
-										<td>
-											<label class="action_label">Richard Wilson </label>
-										</td>
-										<td>
-											<label class="action_label2">Android </label>
-										</td>
-										<td><label>Focus Technologies </label></td>
-										<td><label>Team Lead</label></td>
-										<td class="tab-select">
-											<select class="select">
-												<option value="active">Active</option>
-												<option value="inactive">Inactive</option>
-											</select>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<div class="table-img">
-												<a href="profile.php">
-													<img src="assets/img/profiles/avatar-19.jpg" alt="profile" class="img-table" />
-												</a>
-												<label>Stacey Linville</label>
-											</div>
-										</td>
-										<td>
-											<label class="action_label">Richard Wilson </label>
-										</td>
-										<td>
-											<label class="action_label2">Testing </label>
-										</td>
-										<td><label>Focus Technologies </label></td>
-										<td><label>Team Lead</label></td>
-										<td class="tab-select">
-											<select class="select">
-												<option value="active">Active</option>
-												<option value="inactive">Inactive</option>
-											</select>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<div class="table-img">
-												<a href="profile.php">
-													<img src="assets/img/profiles/avatar-14.jpg" alt="profile" class="img-table" />
-												</a>
-												<label>Maria Cotton</label>
-											</div>
-										</td>
-										<td>
-											<label class="action_label">Richard Wilson </label>
-										</td>
-										<td>
-											<label class="action_label2">PHP </label>
-										</td>
-										<td><label>Focus Technologies </label></td>
-										<td><label>Team Lead</label></td>
-										<td class="tab-select">
-											<select class="select">
-												<option value="active">Active</option>
-												<option value="inactive">Inactive</option>
-											</select>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<div class="table-img">
-												<a href="profile.php">
-													<img src="assets/img/profiles/avatar-18.jpg" alt="profile" class="img-table" />
-												</a>
-												<label>John Gibbs</label>
-											</div>
-										</td>
-										<td>
-											<label class="action_label">Richard Wilson </label>
-										</td>
-										<td>
-											<label class="action_label2">PHP </label>
-										</td>
-										<td><label>Focus Technologies </label></td>
-										<td><label>Team Lead</label></td>
-										<td class="tab-select">
-											<select class="select">
-												<option value="active">Active</option>
-												<option value="inactive">Inactive</option>
-											</select>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<div class="table-img">
-												<a href="profile.php">
-													<img src="assets/img/profiles/avatar-10.jpg" alt="profile" class="img-table" />
-												</a>
-												<label>Richard Wilson</label>
-											</div>
-										</td>
-										<td>
-											<label class="action_label in_active">No </label>
-										</td>
-										<td>
-											<label class="action_label2">Business </label>
-										</td>
-										<td><label>Focus Technologies </label></td>
-										<td><label>Super Admin</label></td>
-										<td class="tab-select">
-											<select class="select">
-												<option value="active">Active</option>
-												<option value="inactive">Inactive</option>
-											</select>
-										</td>
+										<?php
+										$query = "SELECT * FROM employee";
+										$result = mysqli_query($con, $query);
+
+										while ($row = mysqli_fetch_assoc($result)) {
+											echo "<tr class='text-center'>";
+											echo "<td>" . $row['firstName'] . " " . $row['lastName'] . "</td>";
+											echo "<td>" . $row['username'] . "</td>";
+
+											// Fetch and display the department name
+											$departmentQuery = "SELECT deptName FROM department WHERE deptID = " . $row['departmentID'];
+											$departmentResult = mysqli_query($con, $departmentQuery);
+											$departmentName = mysqli_fetch_assoc($departmentResult)['deptName'];
+
+											// Fetch and display the job title
+											$jobQuery = "SELECT jobTitle FROM job WHERE jobID = " . $row['jobID'];
+											$jobResult = mysqli_query($con, $jobQuery);
+											$jobTitle = mysqli_fetch_assoc($jobResult)['jobTitle'];
+
+											echo "<td>" . $departmentName . "</td>";
+											echo "<td>" . $jobTitle . "</td>";
+
+											echo '<td class="tab-select">';
+											echo '<select class="select">';
+											echo '<option value="active">Active</option>';
+											echo '<option value="inactive">Inactive</option>';
+											echo "</select>";
+											echo "</td>";
+											echo "</tr>";
+										}
+										?>
 									</tr>
 								</tbody>
 							</table>

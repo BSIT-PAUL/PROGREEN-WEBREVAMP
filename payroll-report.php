@@ -38,9 +38,6 @@
 								<a href="company.php"><img src="assets/img/company.svg" alt="sidebar_img"> <span> Company</span></a>
 							</li>
 							<li>
-								<a href="calendar.php"><img src="assets/img/calendar.svg" alt="sidebar_img"> <span>Calendar</span></a>
-							</li>
-							<li>
 								<a href="leave.php"><img src="assets/img/leave.svg" alt="sidebar_img"> <span>Leave</span></a>
 							</li>
 							<li>
@@ -48,9 +45,6 @@
 							</li>
 							<li class="active">
 								<a href="report.php"><img src="assets/img/report.svg" alt="sidebar_img"><span>Report</span></a>
-							</li>
-							<li>
-								<a href="manage.php"><img src="assets/img/manage.svg" alt="sidebar_img"> <span>Manage</span></a>
 							</li>
 							<li>
 								<a href="settings.php"><img src="assets/img/settings.svg" alt="sidebar_img"><span>Settings</span></a>
@@ -87,12 +81,8 @@
 						<div class="head-link-set">
 							<ul>
 								<li><a href="report.php">Team Reports</a></li>
-								<li><a href="leave-report.php">Leave Reports</a></li>
-								<li><a class="active" href="#">Payroll Reports</a></li>
-								<li><a href="contact-report.php">Contact Reports</a></li>
-								<li><a href="email-report.php">Email Reports</a></li>
+								<li><a  class="active" href="payroll-report.php">Payroll Reports</a></li>
 								<li><a href="security-report.php">Security Reports</a></li>
-								<li><a href="wfh-report.php">W F H Reports</a></li>
 							</ul>
 						</div>
 					</div>
@@ -125,111 +115,50 @@
 							<div class="table-responsive">
 								<table class="table  custom-table no-footer">
 									<thead>
-										<tr>
-											<th>Team Member </th>
-											<th>Active </th>
+										<tr class="text-center">
+											<th>Full Name</th>
+											<th>Job Role</th>
 											<th>Email</th>
 											<th>Salary</th>
-											<th>Bank Name</th>
-											<th>Account Number</th>
+											<th>Phone Number</th>
+											<th>Secondary Number</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
-											<td>
-												<div class="table-img">
-													<img src="assets/img/profiles/avatar-15.jpg" alt="profile" class="img-table"><label>Danny Ward</label>
-												</div>
-											</td>
-											<td class="tab-select">
-												<select class="select">
-													<option value="active">Active</option>
-													<option value="inactive">Inactive</option>
-												</select>
-											</td>
-											<td>
-												<label><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="99fdf8f7e0eef8ebfdd9fce1f8f4e9f5fcb7faf6f4">[email&#160;protected]</a> </label>
-											</td>
-											<td><label>$4000</label></td>
-											<td><label>Life Essence Banks, Inc.</label></td>
-											<td><label>112300987652</label></td>
-										</tr>
-										<tr>
-											<td>
-												<div class="table-img">
-													<img src="assets/img/profiles/avatar-16.jpg" alt="profile" class="img-table"><label>Graciella Relevo
-													</label>
-												</div>
-											</td>
-											<td class="tab-select">
-												<select class="select">
-													<option value="active">Active</option>
-													<option value="inactive">Inactive</option>
-												</select>
-											</td>
-											<td>
-												<label><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fe9297909a9f9d8c9f889b8cbe9b869f938e929bd09d9193">[email&#160;protected]</a></label>
-											</td>
-											<td><label>$3000</label></td>
-											<td><label>Life Essence Banks, Inc.</label></td>
-											<td><label>112300987652</label></td>
-										</tr>
-										<tr>
-											<td>
-												<div class="table-img">
-													<img src="assets/img/profiles/avatar-17.jpg" alt="profile" class="img-table"><label>Jenni Sims</label>
-												</div>
-											</td>
-											<td class="tab-select">
-												<select class="select">
-													<option value="active">Active</option>
-													<option value="inactive">Inactive</option>
-												</select>
-											</td>
-											<td>
-												<label><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="adc7c8c3c3c4dec4c0deedc8d5ccc0ddc1c883cec2c0">[email&#160;protected]</a></label>
-											</td>
-											<td><label>$2000</label></td>
-											<td><label>Life Essence Banks, Inc.</label></td>
-											<td><label>112300987652</label></td>
-										</tr>
-										<tr>
-											<td>
-												<div class="table-img">
-													<img src="assets/img/profiles/avatar-14.jpg" alt="profile" class="img-table"><label>Maria Cottons </label>
-												</div>
-											</td>
-											<td class="tab-select">
-												<select class="select">
-													<option value="active">Active</option>
-													<option value="inactive">Inactive</option>
-												</select>
-											</td>
-											<td>
-												<label><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e38e82918a82808c97978c8da3869b828e938f86cd808c8e">[email&#160;protected]</a></label>
-											</td>
-											<td><label>$4000</label></td>
-											<td><label>Life Essence Banks, Inc.</label></td>
-											<td><label>112300987652</label></td>
-										</tr>
-										<tr>
-											<td>
-												<div class="table-img">
-													<img src="assets/img/profiles/avatar-18.jpg" alt="profile" class="img-table"><label>John Gibbs </label>
-												</div>
-											</td>
-											<td class="tab-select">
-												<select class="select">
-													<option value="active">Active</option>
-													<option value="inactive">Inactive</option>
-												</select>
-											</td>
-											<td>
-												<label><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8ae0e5e2e4eef8f3f9eeebe6efcaeff2ebe7fae6efa4e9e5e7">[email&#160;protected]</a></label>
-											</td>
-											<td><label>$4500</label></td>
-											<td><label>Life Essence Banks, Inc.</label></td>
-											<td><label>112300987652</label></td>
+
+											<?php
+										$query = "SELECT * FROM employee e 
+												  INNER JOIN employee_basic_info eb
+												  ON e.employeeID = eb.employeeID";
+
+										$result = mysqli_query($con, $query);
+
+										while ($row = mysqli_fetch_assoc($result)) {
+											echo "<tr class='text-center'>";
+											echo "<td>" . $row['firstName'] . " " . $row['lastName'] . "</td>";
+											echo "<td>" . $row['username'] . "</td>";
+
+											// Fetch and display the department name
+											$departmentQuery = "SELECT deptName FROM department WHERE deptID = " . $row['departmentID'];
+											$departmentResult = mysqli_query($con, $departmentQuery);
+											$departmentName = mysqli_fetch_assoc($departmentResult)['deptName'];
+
+											// Fetch and display the job title
+											$jobQuery = "SELECT jobTitle FROM job WHERE jobID = " . $row['jobID'];
+											$jobResult = mysqli_query($con, $jobQuery);
+											$jobTitle = mysqli_fetch_assoc($jobResult)['jobTitle'];
+
+											echo "<td>";
+											echo '<label><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="99fdf8f7e0eef8ebfdd9fce1f8f4e9f5fcb7faf6f4">[email&#160;protected]</a> </label>';
+											echo "</td>";
+
+											echo "<td> &#8369; " . $row['salary'] . "</td>";
+											echo "<td>".$row["phoneNumber"]."</td>";
+											echo "<td>".$row["secondaryNumber"]."</td>";
+											echo "</tr>";
+										}
+										?>
 										</tr>
 									</tbody>
 								</table>

@@ -31,12 +31,8 @@
 						<div class="head-link-set">
 							<ul>
 								<li><a class="active" href="#">Team Reports</a></li>
-								<li><a href="leave-report.php">Leave Reports</a></li>
 								<li><a href="payroll-report.php">Payroll Reports</a></li>
-								<li><a href="contact-report.php">Contact Reports</a></li>
-								<li><a href="email-report.php">Email Reports</a></li>
 								<li><a href="security-report.php">Security Reports</a></li>
-								<li><a href="wfh-report.php">W F H Reports</a></li>
 							</ul>
 						</div>
 					</div>
@@ -67,8 +63,7 @@
 					<div class="col-xl-12 col-sm-12 col-12 mb-4">
 						<div class="head-link-set">
 							<ul>
-								<li><a class="active" href="#">Offical Reports</a></li>
-								<li><a href="personal-report.php">Personal Reports</a></li>
+								<li><a class="active" href="personal-report.php">Personal Reports</a></li>
 							</ul>
 						</div>
 					</div>

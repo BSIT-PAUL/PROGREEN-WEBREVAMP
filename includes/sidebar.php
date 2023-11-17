@@ -33,9 +33,6 @@
 								<a href="company.php"><img src="assets/img/company.svg" alt="sidebar_img"> <span> Company</span></a>
 							</li>
 							<li>
-								<a href="calendar.php"><img src="assets/img/calendar.svg" alt="sidebar_img"> <span>Calendar</span></a>
-							</li>
-							<li>
 								<a href="leave.php"><img src="assets/img/leave.svg" alt="sidebar_img"> <span>Leave</span></a>
 							</li>
 							<li>
@@ -43,9 +40,6 @@
 							</li>
 							<li>
 								<a href="report.php"><img src="assets/img/report.svg" alt="sidebar_img"><span>Report</span></a>
-							</li>
-							<li>
-								<a href="manage.php"><img src="assets/img/manage.svg" alt="sidebar_img"> <span>Manage</span></a>
 							</li>
 							<li>
 								<a href="settings.php"><img src="assets/img/settings.svg" alt="sidebar_img"><span>Settings</span></a>
