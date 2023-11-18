@@ -29,6 +29,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmtUpdate->bind_param("si", $imageData, $userID);
             $stmtUpdate->execute();
             $stmtUpdate->close();
+            echo '<script>top.location.reload(true);</script>';
+
         } else {
             // User has not uploaded a picture, insert a new record
             $stmtCheck->close();
@@ -38,6 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmtInsert->bind_param("iss", $userID, $userName, $imageData);
             $stmtInsert->execute();
             $stmtInsert->close();
+            echo '<script>top.location.reload(true);</script>';
+
         }
 
         // Retrieve the image data from the database
@@ -52,38 +56,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             die("Database error during retrieval: " . $con->error);
         }
 
-      // Fetch image data from the database or session
-if (isset($_SESSION['imageData'])) {
-	$imageData = $_SESSION['imageData'];
-} else {
-	// Assuming you have a database connection, fetch image data from the database
-	$sql = "SELECT ProfilePicture FROM UserProfile WHERE UserID = ?"; // Replace with your actual query
-	$stmt = $con->prepare($sql);
+        // Fetch image data from the database or session
+        if (isset($_SESSION['imageData'])) {
+            $imageData = $_SESSION['imageData'];
+            echo "<script>top.location.reload(true);</script>";
+            exit();
+        } else {
+            // Assuming you have a database connection, fetch image data from the database
+            $sql = "SELECT ProfilePicture FROM UserProfile WHERE UserID = ?"; // Replace with your actual query
+            $stmt = $con->prepare($sql);
 
-	// Assuming you have a valid user ID stored in the session
-	$userID = $_SESSION['user_id']; // Replace with your actual session variable
+            // Assuming you have a valid user ID stored in the session
+            $userID = $_SESSION['user_id']; // Replace with your actual session variable
 
-	$stmt->bind_param("i", $userID);
-	$stmt->execute();
-	$result = $stmt->get_result();
+            $stmt->bind_param("i", $userID);
+            $stmt->execute();
+            $result = $stmt->get_result();
 
-	// Check if a row is returned
-	if ($row = $result->fetch_assoc()) {
-			$imageData = $row['ProfilePicture'];
-			$_SESSION['imageData'] = $imageData; // Store the image data in the session for future use
-	} else {
-			// Display a default image if no image is available
-			$imageData = null;
-	}}
+            // Check if a row is returned
+            if ($row = $result->fetch_assoc()) {
+                $imageData = $row['ProfilePicture'];
+                $_SESSION['imageData'] = $imageData; // Store the image data in the session for future use
+                echo "<script>top.location.reload(true);</script>";
+                exit();
+            } else {
+                // Display a default image if no image is available
+                $imageData = null;
+            }
+        }
 
         // Close the statement
         $stmtRetrieve->close();
-
-        // Redirect to profile-detail.php after a successful upload
-        header("Location: profile-detail.php");
-        exit(); // Ensure no further output is sent after the header
     }
-
-
 }
 ?>

@@ -72,9 +72,7 @@ if ($row = $result->fetch_assoc()) {
 							<li>
 								<a href="index-employee.php"><img src="assets/img/home.svg" alt="sidebar_img"> <span>Dashboard</span></a>
 							</li>
-							<li>
-								<a href="calendar.php"><img src="assets/img/calendar.svg" alt="sidebar_img"> <span>Calendar</span></a>
-							</li>
+
 							<li>
 								<a href="leave.php"><img src="assets/img/leave.svg" alt="sidebar_img"> <span>Leave</span></a>
 							</li>
@@ -217,10 +215,10 @@ if ($row = $result->fetch_assoc()) {
                     <?php
                     // Display the image if available
                     if (isset($imageData)) {
-                        echo '<img style="max-width: 100%; max-height: 200px;" src="data:image/jpeg;base64,' . base64_encode($imageData) . '" alt="profile_picture" />';
+                        echo '<img style="max-width: 100%; max-height: 300px;" src="data:image/jpeg;base64,' . base64_encode($imageData) . '" alt="profile_picture" />';
                     } else {
                         // Display a default image if no image is available
-                        echo '<img style="max-width: 100%; max-height: 200px;" src="img/default_profile_picture.png" alt="default_profile_picture" />';
+                        echo '<img style="max-width: 100%; max-height: 300px;" src="img/default_profile_picture.png" alt="default_profile_picture" />';
                     }
                     ?>
                 </div>
@@ -249,58 +247,65 @@ if ($row = $result->fetch_assoc()) {
         document.getElementById('alertContainer').innerHTML = '';  // Clear the content of the alert container
     }
 
-    function validateForm(event) {
-        event.preventDefault();  // Prevent the default form submission behavior
+		function validateForm(event) {
+    event.preventDefault();  // Prevent the default form submission behavior
 
-        var fileInput = document.getElementById('edit_img');
-        if (fileInput.files.length === 0) {
-            // If no file is selected, display a Bootstrap danger alert above the card header
-            var alertHtml = '<div class="alert alert-danger alert-dismissible fade show" role="alert">' +
-                'Please select a file for upload.' +
-                '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
-                '<span aria-hidden="true">&times;</span>' +
-                '</button>' +
-                '</div>';
-            document.getElementById('alertContainer').innerHTML = alertHtml;
+    var fileInput = document.getElementById('edit_img');
+    if (fileInput.files.length === 0) {
+        // If no file is selected, display a Bootstrap danger alert above the card header
+        var alertHtml = '<div class="alert alert-danger alert-dismissible fade show" role="alert">' +
+            'Please select a file for upload.' +
+            '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+            '<span aria-hidden="true">&times;</span>' +
+            '</button>' +
+            '</div>';
 
-            // Remove the alert after 5 seconds
-            setTimeout(removeAlert, 5000);
-        } else {
-            // If a file is selected, submit the form
-            var formData = new FormData(document.getElementById('uploadForm'));
+        document.getElementById('alertContainer').innerHTML = alertHtml;
 
-            fetch('upload.php', {
-                method: 'POST',
-                body: formData
-            })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        // If upload is successful, display a Bootstrap success alert
-                        var successAlertHtml = '<div class="alert alert-success alert-dismissible fade show" role="alert">' +
-                            'Upload successful!' +
-                            '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
-                            '<span aria-hidden="true">&times;</span>' +
-                            '</button>' +
-                            '</div>';
-                        document.getElementById('alertContainer').innerHTML = successAlertHtml;
+        // Remove the alert after 5 seconds
+        setTimeout(removeAlert, 2000);
+    } else {
+        // If a file is selected, submit the form
+        var formData = new FormData(document.getElementById('uploadForm'));
 
-                        setTimeout(removeAlert, 3000);
-                    } else {
-                        // If upload is unsuccessful, display a Bootstrap danger alert
-                        var dangerAlertHtml = '<div class="alert alert-danger alert-dismissible fade show" role="alert">' +
-                            'Upload failed. Please try again.' +
-                            '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
-                            '<span aria-hidden="true">&times;</span>' +
-                            '</button>' +
-                            '</div>';
-                        document.getElementById('alertContainer').innerHTML = dangerAlertHtml;
+        fetch('upload.php', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // If upload is successful, display a Bootstrap success alert
+                    var successAlertHtml = '<div class="alert alert-success alert-dismissible fade show" role="alert">' +
+                        'Upload successful!' +
+                        '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+                        '<span aria-hidden="true">&times;</span>' +
+                        '</button>' +
+                        '</div>';
 
-                        setTimeout(removeAlert, 3000);
-                    }
-                });
-        }
+                    document.getElementById('alertContainer').innerHTML = successAlertHtml;
+										console.log(successAlertHtml);
+                    setTimeout(function () {
+                        removeAlert();
+                        // Reload the page after 3 seconds
+                        location.reload();
+                    }, 3000);
+                } else {
+                    // If upload is unsuccessful, display a Bootstrap danger alert
+                    var dangerAlertHtml = '<div class="alert alert-danger alert-dismissible fade show" role="alert">' +
+                        'Upload failed. Please try again.' +
+                        '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+                        '<span aria-hidden="true">&times;</span>' +
+                        '</button>' +
+                        '</div>';
+                    document.getElementById('alertContainer').innerHTML = dangerAlertHtml;
+
+                    setTimeout(removeAlert, 3000);
+                }
+            });
     }
+}
+
 </script>
 
 

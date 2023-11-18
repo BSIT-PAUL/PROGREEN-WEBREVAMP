@@ -41,7 +41,43 @@ include 'database/dbcon.php';
 							<div class="card-body">
 								<div class="card_widget_header">
 									<label>Employees</label>
-									<h4>700</h4>
+									<?php
+
+
+
+// SQL query
+$sql = "SELECT 
+            COUNT(*) as employeeCount
+        
+        FROM 
+            `employee` ";
+
+// Execute the query
+$result = $con->query($sql);
+
+// Check for query result
+if ($result) {
+    // Fetch the count
+    $row = $result->fetch_assoc();
+    $employeeCount = $row['employeeCount'];
+
+    // Output the count
+    echo "<h4>$employeeCount</h4>";
+
+    // Fetch and output the employee data
+    while ($row = $result->fetch_assoc()) {
+        echo "<p>{$row['firstName']} {$row['lastName']}</p>";
+    }
+} else {
+    echo "Error: " . $sql . "<br>" . $con->error;
+}
+
+// Close the MySQLi connection
+$con->close();
+
+?>
+
+
 								</div>
 								<div class="card_widget_img">
 									<img src="assets/img/dash1.png" alt="card-img" />
