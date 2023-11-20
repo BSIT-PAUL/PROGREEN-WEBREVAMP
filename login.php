@@ -44,17 +44,14 @@ include 'database/dbcon.php';
                 <div class="form-group">
                   <label class="form-control-label">Password</label>
                   <div class="pass-group">
-                    <input type="password" class="form-control pass-input" name="pass" required />
-                    <span class="fas fa-eye toggle-password"></span>
+                    <input type="password" class="form-control pass-input" name="pass" id="passwordInput" required />
+<span class="fas fa-eye toggle-password" id="togglePassword"></span>
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="row">
                     <div class="col-6">
-                      <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="cb1" />
-                        <label class="custom-control-label" for="cb1">Remember me</label>
-                      </div>
+
                     </div>
                     <div class="col-6 text-right">
                       <a class="forgot-link" href="forgot-password.php">Forgot Password ?</a>
@@ -64,16 +61,8 @@ include 'database/dbcon.php';
                 <button class="btn btn-lg btn-block btn-primary" type="submit" name="login">
                   Login
                 </button>
-                <div class="login-or">
-                  <span class="or-line"></span>
-                  <span class="span-or">or</span>
-                </div>
 
-                <div class="social-login mb-3">
-                  <span>Login with</span>
-                  <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a><a href="#" class="google"><i
-                      class="fab fa-google"></i></a>
-                </div>
+
 
                 <div class="text-center dont-have">
                   Don't have an account yet?
@@ -161,6 +150,22 @@ include 'database/dbcon.php';
       </div>
     </div>
   </div>
+  <script>
+document.addEventListener('DOMContentLoaded', function () {
+  const passwordInput = document.getElementById('passwordInput');
+  const togglePassword = document.getElementById('togglePassword');
+
+  // Add click event listener to the eye icon
+  togglePassword.addEventListener('click', function () {
+    // Toggle the password input type between "password" and "text"
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+    } else {
+      passwordInput.type = 'password';
+    }
+  });
+});
+</script>
 
   <script src="assets/js/jquery-3.5.1.min.js"></script>
 

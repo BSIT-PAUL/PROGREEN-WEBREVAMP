@@ -89,7 +89,7 @@ $con->close();
 						<div class="card board1 fill2 ">
 							<div class="card-body">
 								<div class="card_widget_header">
-									<label>Companies</label>
+									<label>Department</label>
 									<h4>30</h4>
 								</div>
 								<div class="card_widget_img">

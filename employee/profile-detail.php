@@ -2,7 +2,7 @@
 include("database/dbcon.php");
 	include_once("includes/system_header.php");
 	include_once("includes/system_main_wraper.php");
-	include_once("includes/system_navbar.php");
+	include("includes/system_navbar.php");
 // Assuming you have a database connection, fetch image data from the database
 $sql = "SELECT ProfilePicture FROM UserProfile WHERE UserID = ?"; // Replace with your actual query
 $stmt = $con->prepare($sql);
