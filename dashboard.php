@@ -9,8 +9,12 @@ include_once("includes/sidebar.php");
 	<div class="content container-fluid">
 		<div class="page-name 	mb-4">
 			<h4 class="m-0"><img src="assets/img/profile.jpg" class="mr-1" alt="profile" /> Welcome Admin</h4>
-			<label>Sat, 21 Oct 2023
-			</label>
+			<?php
+			// Display current date
+			$currentDate = date("D, d M Y"); // Format: "Day, DD Month YYYY"
+			echo "<label class='small-text'>$currentDate</label>";
+			?>
+			
 		</div>
 		<div class="row mb-4">
 			<div class="col-xl-6 col-sm-12 col-12">
