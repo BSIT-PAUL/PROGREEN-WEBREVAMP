@@ -130,6 +130,7 @@ include_once("includes/system_navbar.php");
 			</div>
 		</div>
 		<?php
+
 		// Query to get the leave count
 		$sqlLeaveCount = "SELECT COUNT(*) as leave_count FROM `leave_application` WHERE employee_id=$userId ";
 		$resultLeaveCount = mysqli_query($con, $sqlLeaveCount);
@@ -389,7 +390,7 @@ include_once("includes/system_navbar.php");
 			<div class="col-xl-6 col-sm-12 col-12 d-flex">
 				<div class="card card-list flex-fill">
 					<div class="card-header ">
-						<h4 class="card-title-dash">Your Upcoming Leave</h4>
+						<h4 class="card-title-dash">Leave History</h4>
 						<div class="dropdown">
 							<button class="btn btn-action " type="button" id="roomsBtn" data-toggle="dropdown"
 								aria-haspopup="true" aria-expanded="false">
@@ -401,7 +402,7 @@ include_once("includes/system_navbar.php");
 						</div>
 					</div>
 					<?php
-					$query = "SELECT * FROM leave_application";
+					$query = "SELECT * FROM leave_application WHERE employee_id = $userId";
 					$result = mysqli_query($con, $query);
 
 					if ($result) {
@@ -426,7 +427,8 @@ include_once("includes/system_navbar.php");
 							echo '<span class="' . $statusClass . '">';
 							echo '<i class="fas fa-briefcase"></i>';
 							echo '</span>';
-							echo '<label>' . $formattedDate . '</label>';
+							echo '<label style="margin-right: 10px">' . $formattedDate . '</label>';
+							echo '<label style="margin-right: 10px">' . $row['leave_type'] . '</label>';
 							echo '</div>';
 						}
 
