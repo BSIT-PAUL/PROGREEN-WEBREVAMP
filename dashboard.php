@@ -174,7 +174,7 @@ $chartData = json_encode(array_values($percentage));
             data: {
                 labels: chartLabel,
                 datasets: [{
-                    backgroundColor: ["#51EAEA", "#FCDDB0", "#FF9D76", "#FB3569", "#82CD47","#7638FF", "#22CC62"],
+                    backgroundColor: ["#7638FF", "#22CC62", "#EF3737", "#757575","#FFBC34","#009EFB","#1EC1B0"],
                     data: chartData
                 }]
             },
