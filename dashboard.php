@@ -188,7 +188,7 @@ include_once("includes/sidebar.php");
 				<div class="card flex-fill">
 					<div class="card-header">
 						<div class="d-flex justify-content-between align-items-center">
-							<h5 class="card-title">Total Salary By Unit</h5>
+							<h5 class="card-title">Total Salary By Frequency per Month</h5>
 						</div>
 					</div>
 					<div class="card-body">
