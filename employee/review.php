@@ -29,121 +29,113 @@ include_once("includes/sidebar.php");
                     <h3>Attendance</h3>
                 </div>
             </div>
-            <div class="col-xl-12 col-sm-12 col-12 mb-4">
-                <div class="head-link-set">
-                    <ul>
-                        <li><a class="active" href="#">Overview</a></li>
-                    </ul>
-                    <a class="btn-add" href="add-Review.php">Create Review</a>
-                </div>
-            </div>
+
             <div class="col-xl-12 col-sm-12 col-12">
                 <div class="card">
                     <div class="card-header">
                         <h2 class="card-titles">Attendance</h2>
                     </div>
                     <div class="table-responsive">
-                        <table class="table custom-table no-footer">
-                            <thead>
-                                <tr>
-                                    <th>Employee Name</th>
-                                    <th>Employee ID</th>
-                                    <th>Check-In Time</th>
-                                    <th>Check-Out Time</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <label>
-                                            <?php echo $_SESSION['user_firstname'] . ' ' . $_SESSION['user_lastname']; ?>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label>
-                                            <?php echo $_SESSION['user_id']; ?>
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label id="checkInTime">-</label>
-                                    </td>
-                                    <td>
-                                        <label id="checkOutTime">-</label>
-                                    </td>
-                                    <td>
-                                        <form method="post" action="">
-                                            <div class="actionset">
-                                                <button type="submit" class="btn btn-success" name="timeIn">Time
-                                                    In</button>
-                                                <button type="submit" class="btn btn-danger" name="timeOut">Time
-                                                    Out</button>
-                                            </div>
-                                        </form>
-                                    </td>
-                                </tr>
-                                <!-- Add more rows for other employees -->
-                            </tbody>
-                        </table>
+                    <table class="table custom-table no-footer">
+    <thead>
+        <tr>
+            <th>Employee Name</th>
+            <th>Employee ID</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <label>
+                    <?php echo $_SESSION['user_firstname'] . ' ' . $_SESSION['user_lastname']; ?>
+                </label>
+            </td>
+            <td>
+                <label>
+                    <?php echo $_SESSION['user_id']; ?>
+                </label>
+            </td>
 
+            <td>
+                <form method="post" action="">
+                    <div class="actionset">
+                        <button type="submit" class="btn btn-success" name="timeIn">Time In</button>
+                        <button type="submit" class="btn btn-danger" name="timeOut">Time Out</button>
                     </div>
-
-                    <script>
-                        function formatDateTime(date) {
-                            var day = date.getDate();
-                            var month = date.toLocaleString('default', { month: 'short' });
-                            var year = date.getFullYear();
-                            var hours = date.getHours();
-                            var minutes = date.getMinutes();
-                            var ampm = hours >= 12 ? 'PM' : 'AM';
-
-                            // Convert to 12-hour format
-                            hours = hours % 12 || 12;
-
-                            return `${day} ${month} ${year} ${hours}:${minutes} ${ampm}`;
-                        }
-
-                        function timeIn() {
-                            var now = new Date();
-                            document.getElementById("checkInTime").innerText = formatDateTime(now);
-                        }
-
-                        function timeOut() {
-                            var now = new Date();
-                            document.getElementById("checkOutTime").innerText = formatDateTime(now);
-                        }
-                    </script>
+                </form>
+            </td>
+        </tr>
+        <!-- Add more rows for other employees -->
+    </tbody>
+</table>
+                    </div>
                     <?php
+// Assuming you have a database connection established
+// Include the database connection code or use your own connection method
 
+// Handle form submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['timeIn'])) {
+        // Time In logic
+        $employeeID = $_SESSION['user_id'];
+        $checkInTime = date('Y-m-d H:i:s');
+        $attendanceStatus = 'Present';
 
-                    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                        if (isset($_POST['timeIn'])) {
-                            // Time In button is clicked
-                            $employeeId = $_SESSION['user_id'];
-                            $checkInTime = date('Y-m-d H:i:s');
-                            $attendanceStatus = 'Present';
+        $sql = "INSERT INTO `attendance_records`(`employee_id`, `check_in_time`, `attendance_status`) 
+                VALUES ('$employeeID', '$checkInTime', '$attendanceStatus')";
+        
+        if ($con->query($sql) === TRUE) {
+            echo '<div class="alert alert-success" role="alert">
+                    Check in successfully
+                  </div>';
+        } else {
+            echo '<div class="alert alert-danger" role="alert">
+                    Error: ' . $sql . '<br>' . $con->error . '
+                  </div>';
+        }
+    } elseif (isset($_POST['timeOut'])) {
+        // Time Out logic
+        $employeeID = $_SESSION['user_id'];
+        $checkOutTime = date('Y-m-d H:i:s');
 
-                            // Insert data into the database
-                            $query = "INSERT INTO attendance_records (employee_id, check_in_time, attendance_status) VALUES (?, ?, ?)";
-                            $stmt = $con->prepare($query);
-                            $stmt->bind_param('iss', $employeeId, $checkInTime, $attendanceStatus);
-                            $stmt->execute();
-                            $stmt->close();
-                        } elseif (isset($_POST['timeOut'])) {
-                            // Time Out button is clicked
-                            $employeeId = $_SESSION['user_id'];
-                            $checkOutTime = date('Y-m-d H:i:s');
-                            $attendanceStatus = 'Present'; // Assuming the employee is considered 'Present' when checking out
-                    
-                            // Update the existing record with check_out_time
-                            $query = "UPDATE attendance_records SET check_out_time=?, attendance_status=? WHERE employee_id=? AND attendance_status='Present'";
-                            $stmt = $con->prepare($query);
-                            $stmt->bind_param('ssi', $checkOutTime, $attendanceStatus, $employeeId);
-                            $stmt->execute();
-                            $stmt->close();
-                        }
-                    }
-                    ?>
+        // Find the most recent attendance record for the user
+        $sql = "SELECT * FROM `attendance_records` 
+                WHERE `employee_id` = '$employeeID' 
+                ORDER BY `check_in_time` DESC 
+                LIMIT 1";
+
+        $result = $con->query($sql);
+
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $attendanceID = $row['record_id'];
+
+            // Update the check-out time for the most recent attendance record
+            $updateSql = "UPDATE `attendance_records` 
+                          SET `check_out_time` = '$checkOutTime' 
+                          WHERE `record_id` = '$attendanceID'";
+
+            if ($con->query($updateSql) === TRUE) {
+                echo '<div class="alert alert-success" role="alert">
+                        Check-out time updated successfully
+                      </div>';
+            } else {
+                echo '<div class="alert alert-danger" role="alert">
+                        Error: ' . $updateSql . '<br>' . $con->error . '
+                      </div>';
+            }
+        } else {
+            echo '<div class="alert alert-warning" role="alert">
+                    No attendance record found for the user
+                  </div>';
+        }
+    }
+}
+
+// Display the employee information in the table
+?>
+
 
 
                 </div>
