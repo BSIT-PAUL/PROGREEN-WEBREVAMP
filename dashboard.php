@@ -75,6 +75,23 @@ include_once("includes/sidebar.php");
 
 		// Format the result with "M"
 		$formattedSalary = number_format($totalSalaryMillions, 2) . "M";
+		$sql = "SELECT d.deptName, COUNT(e.departmentID) AS marks_percentage_count
+		FROM department d
+		LEFT JOIN employee e ON d.deptID = e.departmentID
+		GROUP BY d.deptName";
+
+$result = $con->query($sql);
+
+$label = array("Engineering", "Production", "Warehouse", "LCS", "GHQ", "GSS");
+$percentage = array_fill_keys($label, 0);
+
+while ($row = $result->fetch_assoc()) {
+$percentage[$row["deptName"]] = $row["marks_percentage_count"];
+}
+
+$chartLabel = json_encode(array_keys($percentage));
+$chartData = json_encode(array_values($percentage));
+
 
 
 		// Close the database connection
@@ -146,42 +163,35 @@ include_once("includes/sidebar.php");
 						</div>
 					</div>
 					<div class="card-body">
-						<div id="invoice_chart"></div>
-						<div class="text-center text-muted">
-							<div class="row">
-								<div class="col-4">
-									<div class="mt-4">
-										<p class="mb-2 text-truncate"><i class="fas fa-circle text-primary mr-1"></i> Engineering</p>
-									</div>
-								</div>
-								<div class="col-4">
-									<div class="mt-4">
-										<p class="mb-2 text-truncate"><i class="fas fa-circle text-success mr-1"></i> Production</p>
-									</div>
-								</div>
-								<div class="col-4">
-									<div class="mt-4">
-										<p class="mb-2 text-truncate"><i class="fas fa-circle text-danger mr-1"></i> Warehouse</p>
-									</div>
-								</div>
-								<div class="col-4">
-									<div class="mt-4">
-										<p class="mb-2 text-truncate"><i class="fas fa-circle text-default mr-1"></i> LCS</p>
-									</div>
-								</div>
-								<div class="col-4">
-									<div class="mt-4">
-										<p class="mb-2 text-truncate"><i class="fas fa-circle text-warning mr-1"></i> GHQ</p>
-									</div>
-								</div>
-								<div class="col-4">
-									<div class="mt-4">
-										<p class="mb-2 text-truncate"><i class="fas fa-circle text-info mr-1"></i> GSS</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+    <canvas id="chartjs-doughnut"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+    <script>
+        var chartLabel = <?php echo $chartLabel; ?>;
+        var chartData = <?php echo $chartData; ?>;
+
+        new Chart(document.getElementById("chartjs-doughnut"), {
+            type: 'doughnut',
+            data: {
+                labels: chartLabel,
+                datasets: [{
+                    backgroundColor: ["#51EAEA", "#FCDDB0", "#FF9D76", "#FB3569", "#82CD47","#7638FF", "#22CC62"],
+                    data: chartData
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'bottom'
+                    }
+                },
+                cutout: '50%', // the portion of the doughnut that is cutout in the middle
+                radius: 180
+            }
+        });
+    </script>
+</div>
+
 				</div>
 			</div>
 			<div class="col-xl-6 d-flex">
