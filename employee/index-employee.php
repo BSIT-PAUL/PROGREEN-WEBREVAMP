@@ -122,13 +122,45 @@ include_once("includes/system_navbar.php");
 				</div>
 			</div>
 		</div>
+		<?php 
+		// Query to get the leave count
+		$sqlLeaveCount = "SELECT COUNT(*) as leave_count FROM `leave_application` WHERE employee_id=$userId ";
+		$resultLeaveCount = mysqli_query($con, $sqlLeaveCount);
+
+		// Fetch the result
+		$rowLeaveCount = mysqli_fetch_assoc($resultLeaveCount);
+		$leaveCount = $rowLeaveCount['leave_count'];
+		// Query to get the total salary
+		$sqlTotalSalary = "SELECT SUM(`salary`) as total_salary FROM `employee` WHERE employeeID=$userId ";
+		$resultTotalSalary = mysqli_query($con, $sqlTotalSalary);
+
+		// Fetch the result
+		$rowTotalSalary = mysqli_fetch_assoc($resultTotalSalary);
+		$totalSalary = $rowTotalSalary['total_salary'];
+
+				// Query to get the total present
+				$sqlTotalPresent = "SELECT COUNT( `attendance_status` ) as attendance FROM `attendance_records`   WHERE employee_id=$userId and attendance_status='Present' ";
+				$resultTotalPresent = mysqli_query($con, $sqlTotalPresent);
+		
+				// Fetch the result
+				$rowTotalPresent = mysqli_fetch_assoc($resultTotalPresent);
+				$totalPresent = $rowTotalPresent['attendance'];
+
+								// Query to get the total present
+								$sqlJobTitle = "SELECT j.`jobTitle` as job FROM `employee` e JOIN `job` j ON e.`jobID` = j.`jobID`WHERE e.`employeeID`=$userId";
+								$resultJobTitle  = mysqli_query($con, $sqlJobTitle );
+						
+								// Fetch the result
+								$rowJobTitle  = mysqli_fetch_assoc($resultJobTitle );
+								$JobTitle  = $rowJobTitle ['job'];
+							?>
 		<div class="row mb-4">
 			<div class="col-xl-3 col-sm-6 col-12">
 				<div class="card board1 fill1 ">
 					<div class="card-body">
 						<div class="card_widget_header">
-							<label>Employees</label>
-							<h4>700</h4>
+							<label>My Attendance</label>
+							<h4><?php echo $totalPresent; ?></h4>
 						</div>
 						<div class="card_widget_img">
 							<img src="assets/img/dash1.png" alt="card-img" />
@@ -140,8 +172,8 @@ include_once("includes/system_navbar.php");
 				<div class="card board1 fill2 ">
 					<div class="card-body">
 						<div class="card_widget_header">
-							<label>Companies</label>
-							<h4>30</h4>
+							<label>My Role</label>
+							<h5 style="color: white;"><?php echo $JobTitle; ?></h5>
 						</div>
 						<div class="card_widget_img">
 							<img src="assets/img/dash2.png" alt="card-img" />
@@ -153,8 +185,9 @@ include_once("includes/system_navbar.php");
 				<div class="card board1 fill3 ">
 					<div class="card-body">
 						<div class="card_widget_header">
-							<label>Leaves</label>
-							<h4>9</h4>
+						
+							<label>My Leaves</label>
+							<h4><?php echo $leaveCount; ?></h4>
 						</div>
 						<div class="card_widget_img">
 							<img src="assets/img/dash3.png" alt="card-img" />
@@ -166,8 +199,8 @@ include_once("includes/system_navbar.php");
 				<div class="card board1 fill4 ">
 					<div class="card-body">
 						<div class="card_widget_header">
-							<label>Salary</label>
-							<h4>$5.8M</h4>
+							<label>Current Salary</label>
+							<h4><?php echo $totalSalary; ?></h4>
 						</div>
 						<div class="card_widget_img">
 							<img src="assets/img/dash4.png" alt="card-img" />
@@ -212,12 +245,125 @@ include_once("includes/system_navbar.php");
 				<div class="card flex-fill">
 					<div class="card-header">
 						<div class="d-flex justify-content-between align-items-center">
-							<h5 class="card-title">Total Salary By Unit</h5>
+							<h5 class="card-title">HOliday List</h5>
 						</div>
 					</div>
-					<div class="card-body">
-						<div id="sales_chart"></div>
-					</div>
+					<div class="table table-responsive custimze-table" style="max-height: 500px; overflow-y: scroll;">
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Date</th>
+                <th>Leave Reason</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>01 Jan</td>
+                <td>New Year's Day</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>09 Feb</td>
+                <td>Chinese New Year</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>06 Apr</td>
+                <td>Maundy Thursday</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>07 Apr</td>
+                <td>Good Friday</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>01 May</td>
+                <td>Labor Day</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>12 Jun</td>
+                <td>Independence Day</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>26 Jun</td>
+                <td>Eid'l Fitr (tentative)</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>09 Aug</td>
+                <td>National Heroes Day</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>28 Aug</td>
+                <td>National Heroes Day (additional holiday)</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>25 Sep</td>
+                <td>Eid'l Adha (tentative)</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>23 Oct</td>
+                <td>Barangay Election Day</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>31 Oct</td>
+                <td>Halloween</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>30 Nov</td>
+                <td>Bonifacio Day</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>25 Dec</td>
+                <td>Christmas Day</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>26 Dec</td>
+                <td>Additional Christmas Holiday</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>31 Dec</td>
+                <td>New Year's Eve</td>
+            </tr>
+            <!-- Additional Holidays -->
+            <tr>
+                <td>17</td>
+                <td>01 Jan</td>
+                <td>New Year's Day (additional)</td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>25 Jan</td>
+                <td>Chinese New Year (additional)</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>23 Feb</td>
+                <td>EDSA People Power Revolution Anniversary</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>01 Apr</td>
+                <td>Maundy Thursday (additional)</td>
+            </tr>
+            <!-- Add more rows for additional holidays -->
+        </tbody>
+    </table>
+</div>
+
 				</div>
 			</div>
 		</div>
@@ -422,7 +568,22 @@ include_once("includes/system_navbar.php");
 
 </div>
 
+<style>
+    /* Style for the custom scroll bar */
+    .table-responsive::-webkit-scrollbar {
+        width: 12px;
+    }
 
+    .table-responsive::-webkit-scrollbar-thumb {
+        background-color: green;
+        border-radius: 8px;
+    }
+
+    .table-responsive::-webkit-scrollbar-track {
+        background-color: #f1f1f1;
+        border-radius: 10px;
+    }
+</style>
 <script src="assets/js/jquery-3.6.0.min.js"></script>
 
 <script src="assets/js/popper.min.js"></script>

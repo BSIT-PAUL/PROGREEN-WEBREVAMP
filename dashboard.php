@@ -155,45 +155,46 @@ $chartData = json_encode(array_values($percentage));
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xl-6 d-flex mobile-h">
-				<div class="card flex-fill">
-					<div class="card-header">
-						<div class="d-flex justify-content-between align-items-center">
-							<h5 class="card-title">Total Employees by Department</h5>
-						</div>
-					</div>
-					<div class="card-body">
-    <canvas id="chartjs-doughnut"></canvas>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
-    <script>
-        var chartLabel = <?php echo $chartLabel; ?>;
-        var chartData = <?php echo $chartData; ?>;
+		<div class="col-xl-6 col-lg-12 d-flex mobile-h">
+    <div class="card flex-fill">
+        <div class="card-header">
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="card-title">Total Employees by Department</h5>
+            </div>
+        </div>
+        <div class="card-body">
+            <canvas id="chartjs-doughnut"></canvas>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+            <script>
+                var chartLabel = <?php echo $chartLabel; ?>;
+                var chartData = <?php echo $chartData; ?>;
 
-        new Chart(document.getElementById("chartjs-doughnut"), {
-            type: 'doughnut',
-            data: {
-                labels: chartLabel,
-                datasets: [{
-                    backgroundColor: ["#7638FF", "#22CC62", "#EF3737", "#757575","#FFBC34","#009EFB","#1EC1B0"],
-                    data: chartData
-                }]
-            },
-            options: {
-                plugins: {
-                    legend: {
-                        display: true,
-                        position: 'bottom'
+                new Chart(document.getElementById("chartjs-doughnut"), {
+                    type: 'doughnut',
+                    data: {
+                        labels: chartLabel,
+                        datasets: [{
+                            backgroundColor: ["#7638FF", "#22CC62", "#EF3737", "#757575", "#FFBC34", "#009EFB", "#1EC1B0"],
+                            data: chartData
+                        }]
+                    },
+                    options: {
+											responsive: true,
+                        plugins: {
+                            legend: {
+                                display: true,
+                                position: 'bottom'
+                            }
+                        },
+                        cutout: '50%', // the portion of the doughnut that is cutout in the middle
+                        radius: 180
                     }
-                },
-                cutout: '50%', // the portion of the doughnut that is cutout in the middle
-                radius: 180
-            }
-        });
-    </script>
+                });
+            </script>
+        </div>
+    </div>
 </div>
 
-				</div>
-			</div>
 			<div class="col-xl-6 d-flex">
 				<div class="card flex-fill">
 					<div class="card-header">
