@@ -39,7 +39,7 @@
 								<a href="review.php"><img src="assets/img/review.svg" alt="sidebar_img"><span>Attendance</span></a>
 							</li>
 							<li>
-								<a href="profile.php"><img src="assets/img/profile.svg" alt="sidebar_img"> <span>Profile</span></a>
+								<a href="profile-detail.php"><img src="assets/img/profile.svg" alt="sidebar_img"> <span>Profile</span></a>
 							</li>
 						</ul>
 						<ul class="logout">
