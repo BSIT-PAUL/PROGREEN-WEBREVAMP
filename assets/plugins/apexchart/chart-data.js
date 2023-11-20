@@ -63,10 +63,14 @@ $(document).ready(function () {
       // Add series for each salary frequency
       for (var frequency in groupedData) {
         if (groupedData.hasOwnProperty(frequency)) {
+          var formattedData = groupedData[frequency].map(function(value) {
+            return (value / 1000).toFixed(2);
+          });
+      
           columnConfig.series.push({
             name: frequency,
             type: "column",
-            data: groupedData[frequency],
+            data: formattedData,
           });
         }
       }

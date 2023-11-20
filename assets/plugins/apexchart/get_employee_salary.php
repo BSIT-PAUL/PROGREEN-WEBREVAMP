@@ -18,8 +18,8 @@ $query = "SELECT
             DATE_FORMAT(startDate, '%b') AS Formatted_Date,
             salaryFrequency,
             SUM(salary) AS totalSalary
-          FROM employee
-          GROUP BY Formatted_Date, salaryFrequency";
+            FROM employee
+            GROUP BY Formatted_Date, salaryFrequency";
 
 $result = $con->query($query);
 
