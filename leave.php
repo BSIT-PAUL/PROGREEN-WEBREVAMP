@@ -63,29 +63,35 @@ include("includes/sidebar.php");
 
 									while ($row = mysqli_fetch_assoc($result)) {
 										$statusStyle = '';
+										$buttonClass = '';
+								
 										if ($row["Status"] == "Reject") {
-											$statusStyle = 'style="color: red;"';
+												$statusStyle = 'style="color: red;"';
+												$buttonClass = 'btn-outline-danger';
 										} elseif ($row["Status"] == "Approved") {
-											$statusStyle = 'style="color: green;"';
+												$statusStyle = 'style="color: green;"';
+												$buttonClass = 'btn-outline-success';
+										} elseif ($row["Status"] == "Pending") {
+												$statusStyle = 'style="color: orange;"';
+												$buttonClass = 'btn-outline-warning';
 										}
-
+								
 										echo "<tr class='text-center'>";
 										echo "<td><label>" . $row['firstName'] . " " . $row['lastName'] . "</label></td>";
 										echo "<td><label>" . $row['leave_type'] . "</label></td>";
 										echo "<td><label>" . $row["start_date"] . "</label></td>";
 										echo "<td><label>" . $row["end_date"] . "</label></td>";
 										echo '<td>';
-										echo '<button class="btn btn-info btn-sm show-description" data-toggle="modal" data-target="#description_leave" data-reason="' . htmlspecialchars($row['additional_reasons']) . '">Show Description</button>';
+										echo '<button class="btn ' . $buttonClass . ' btn-sm show-description" data-toggle="modal" data-target="#description_leave" data-reason="' . htmlspecialchars($row['additional_reasons']) . '">Show Description</button>';
 										echo '</td>';
 										echo '<td>';
-										echo '<button class="btn btn-info btn-sm show-reasons" data-toggle="modal" data-target="#response" data-reason="' . htmlspecialchars($row['reasons']) . '">Show Response</button>';
+										echo '<button class="btn ' . $buttonClass . ' btn-sm show-reasons" data-toggle="modal" data-target="#response" data-reason="' . htmlspecialchars($row['reasons']) . '">Show Response</button>';
 										echo '</td>';
 										echo "<td $statusStyle>" . $row["Status"] . "</td>";
-										echo '<td>';
-										echo '</div>';
-										echo '</td>';
-										echo "</tr>";
-									}
+										echo '</tr>';
+								}
+								
+								
 									?>
 								</tbody>
 
@@ -135,7 +141,7 @@ include("includes/sidebar.php");
 										echo "<td>" . $row["start_date"] . "</td>";
 										echo "<td>" . $row["end_date"] . "</td>";
 										echo '<td>';
-										echo '<button class="btn btn-info btn-sm show-description" data-toggle="modal" data-target="#description_leave" data-reason="' . htmlspecialchars($row['additional_reasons']) . '">Show Description</button>';
+										echo '<button class="btn btn-outline-warning  btn-sm show-description" data-toggle="modal" data-target="#description_leave" data-reason="' . htmlspecialchars($row['additional_reasons']) . '">Show Description</button>';
 										echo '</td>';
 
 										echo "<td $statusStyle>" . $row["Status"] . "</td>";

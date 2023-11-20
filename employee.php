@@ -54,10 +54,25 @@ include_once("includes/sidebar.php");
 			<div class="col-xl-12 col-sm-12 col-12 mb-4">
 				<div class="card">
 					<div class="table-heading">
-						<h2>Project Summery</h2>
-					</div>
-					<div class="table-responsive">
-						<table class="table  custom-table no-footer">
+						<h2>Progreen Members</h2>
+					</div><style>
+	/* Style for the custom scroll bar */
+	.table-responsive::-webkit-scrollbar {
+		width: 12px;
+	}
+
+	.table-responsive::-webkit-scrollbar-thumb {
+		background-color: #888;
+		border-radius: 8px;
+	}
+
+	.table-responsive::-webkit-scrollbar-track {
+		background-color: #f1f1f1;
+		border-radius: 10px;
+	}
+</style>
+					<div class="table-responsive" style="max-height: 500px; overflow-y: auto; overflow-x: auto;">
+						<table class="table custom-table no-footer" >
 							<thead>
 								<tr class="text-center">
 									<th>Full Name</th>
