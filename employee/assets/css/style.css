@@ -4086,6 +4086,10 @@ span.leave-inactive {
     background: #DC3545;
 }
 
+.leave-pending {
+	background-color: orange;
+}
+
 .leave-set img {
 	width: 12px;
 }
