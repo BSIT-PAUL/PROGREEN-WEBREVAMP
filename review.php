@@ -23,9 +23,9 @@
 							<ul class="breadcrumb">
 								<li class="breadcrumb-item"><a href="index.php"><img src="assets/img/dash.png" class="mr-2" alt="breadcrumb">Home</a>
 								</li>
-								<li class="breadcrumb-item active"> Reviews</li>
+								<li class="breadcrumb-item active"> Attendance</li>
 							</ul>
-							<h3>Reviews</h3>
+							<h3>Attendance</h3>
 						</div>
 					</div>
 					<div class="col-xl-12 col-sm-12 col-12 mb-4">
@@ -33,7 +33,7 @@
 							<ul>
 								<li><a class="active" href="#">Overview</a></li>
 							</ul>
-							<a class="btn-add" href="add-Review.php">Create Review</a>
+						
 						</div>
 					</div>
 					<div class="col-xl-12 col-sm-12 col-12">
@@ -86,21 +86,7 @@ mysqli_close($con);
 			</div>
 		</div>
 
-		<div class="customize_popup">
-			<div class="modal fade" id="delete" tabindex="-1" aria-labelledby="staticBackdropLabels1" aria-hidden="true">
-				<div class="modal-dialog modal-dialog-centered">
-					<div class="modal-content">
-						<div class="modal-header text-centers border-0">
-							<h5 class="modal-title text-center" id="staticBackdropLabels1">Are You Sure Want to Delete?</h5>
-						</div>
-						<div class="modal-footer text-centers">
-							<button type="button" class="btn btn-primary">Delete</button>
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		
 	</div>
 
 
