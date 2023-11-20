@@ -1,7 +1,7 @@
 <?php 
-    include("header.php");
-    include("spinner.php");
-    include("navbar.php");
+    include("includes/header.php");
+    include("includes/spinner.php");
+    include("includes/navbar.php");
 ?>
 
 

@@ -3,8 +3,8 @@
         <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item">
+  <div class="carousel-inner ">
+    <div class="carousel-item active">
       <img class="w-100" src="img/bgto.jpg" alt="Image">
       <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.4);"></div>
       <div class="carousel-caption">
@@ -20,7 +20,7 @@
         </div>
       </div>
     </div>
-    <div class="carousel-item active">
+    <!-- <div class="carousel-item active">
       <img class="w-100" src="img/bgto5.jpg" alt="Image">
       <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.3);"></div>
       <div class="carousel-caption">
@@ -34,7 +34,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
 
