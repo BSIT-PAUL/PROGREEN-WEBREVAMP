@@ -69,10 +69,10 @@ $(document).ready(function () {
   columnChart.render();
   var pieCtx = document.getElementById("invoice_chart"),
     pieConfig = {
-      colors: ["#7638ff", "#ff737b", "#fda600", "#1ec1b0"],
-      series: [55, 40, 20, 10],
+      colors: ["#7638FF", "#22CC62", "#EF3737", "#757575","#FFBC34","#009EFB","#1EC1B0"],
+      series: [55, 40, 20, 10, 12, 12, 13],
       chart: { fontFamily: "Poppins, sans-serif", height: 350, type: "donut" },
-      labels: ["Paid", "Unpaid", "Overdue", "Draft"],
+      labels: ["Engineering", "Production", "Warehouse", "LCS","GHQ","GSS","None"],
       legend: { show: false },
       responsive: [
         {

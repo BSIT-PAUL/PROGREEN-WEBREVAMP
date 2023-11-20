@@ -142,7 +142,7 @@ include_once("includes/sidebar.php");
 				<div class="card flex-fill">
 					<div class="card-header">
 						<div class="d-flex justify-content-between align-items-center">
-							<h5 class="card-title">Total Employees</h5>
+							<h5 class="card-title">Total Employees by Department</h5>
 						</div>
 					</div>
 					<div class="card-body">
@@ -151,17 +151,32 @@ include_once("includes/sidebar.php");
 							<div class="row">
 								<div class="col-4">
 									<div class="mt-4">
-										<p class="mb-2 text-truncate"><i class="fas fa-circle text-primary mr-1"></i> Business</p>
+										<p class="mb-2 text-truncate"><i class="fas fa-circle text-primary mr-1"></i> Engineering</p>
 									</div>
 								</div>
 								<div class="col-4">
 									<div class="mt-4">
-										<p class="mb-2 text-truncate"><i class="fas fa-circle text-success mr-1"></i> Testing</p>
+										<p class="mb-2 text-truncate"><i class="fas fa-circle text-success mr-1"></i> Production</p>
 									</div>
 								</div>
 								<div class="col-4">
 									<div class="mt-4">
-										<p class="mb-2 text-truncate"><i class="fas fa-circle text-danger mr-1"></i> Development</p>
+										<p class="mb-2 text-truncate"><i class="fas fa-circle text-danger mr-1"></i> Warehouse</p>
+									</div>
+								</div>
+								<div class="col-4">
+									<div class="mt-4">
+										<p class="mb-2 text-truncate"><i class="fas fa-circle text-default mr-1"></i> LCS</p>
+									</div>
+								</div>
+								<div class="col-4">
+									<div class="mt-4">
+										<p class="mb-2 text-truncate"><i class="fas fa-circle text-warning mr-1"></i> GHQ</p>
+									</div>
+								</div>
+								<div class="col-4">
+									<div class="mt-4">
+										<p class="mb-2 text-truncate"><i class="fas fa-circle text-info mr-1"></i> GSS</p>
 									</div>
 								</div>
 							</div>
