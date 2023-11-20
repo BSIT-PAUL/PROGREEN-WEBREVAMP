@@ -149,7 +149,7 @@ include("database/dbcon.php");
                     ?></span>
         </a>
         <div class="dropdown-menu">
-            <a class="dropdown-item" href="profile.php"><i data-feather="user" class="mr-1"></i> Profile</a>
+            <a class="dropdown-item" href="profile-detail.php"><i data-feather="user" class="mr-1"></i> Profile</a>
             <a class="dropdown-item" href="settings.php"><i data-feather="settings" class="mr-1"></i> Settings</a>
             <a class="dropdown-item" href="login.php"><i data-feather="log-out" class="mr-1"></i> Logout</a>
         </div>
@@ -159,7 +159,7 @@ include("database/dbcon.php");
 <div class="dropdown mobile-user-menu show">
     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
     <div class="dropdown-menu dropdown-menu-right ">
-        <a class="dropdown-item" href="profile.php">My Profile</a>
+        <a class="dropdown-item" href="profile-detail.php">My Profile</a>
         <a class="dropdown-item" href="settings.php">Settings</a>
         <a class="dropdown-item" href="../../login.php">Logout</a>
     </div>
