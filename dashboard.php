@@ -155,7 +155,7 @@ $chartData = json_encode(array_values($percentage));
 			</div>
 		</div>
 		<div class="row">
-		<div class="col-xl-6 col-lg-12 d-flex mobile-h">
+		<div class="col-xl-4 col-lg-12 d-flex mobile-h">
     <div class="card flex-fill">
         <div class="card-header">
             <div class="d-flex justify-content-between align-items-center">
@@ -186,8 +186,8 @@ $chartData = json_encode(array_values($percentage));
                                 position: 'bottom'
                             }
                         },
-                        cutout: '50%', // the portion of the doughnut that is cutout in the middle
-                        radius: 180
+                        cutout: '60%', // the portion of the doughnut that is cutout in the middle
+                        radius: 150
                     }
                 });
             </script>
@@ -195,7 +195,7 @@ $chartData = json_encode(array_values($percentage));
     </div>
 </div>
 
-			<div class="col-xl-6 d-flex">
+			<div class="col-xl-8 d-flex">
 				<div class="card flex-fill">
 					<div class="card-header">
 						<div class="d-flex justify-content-between align-items-center">
