@@ -31,12 +31,12 @@ $(document).ready(function () {
           "Dec"
         ],
       },
-      yaxis: { title: { text: "$ (thousands)" } },
+      yaxis: { title: { text: "₱ (thousands)" } },
       fill: { opacity: 1 },
       tooltip: {
         y: {
           formatter: function (val) {
-            return "$ " + val + " thousands";
+            return "₱ " + val + " thousands";
           },
         },
       },
@@ -63,14 +63,10 @@ $(document).ready(function () {
       // Add series for each salary frequency
       for (var frequency in groupedData) {
         if (groupedData.hasOwnProperty(frequency)) {
-          var formattedData = groupedData[frequency].map(function(value) {
-            return (value / 1000).toFixed(2);
-          });
-      
           columnConfig.series.push({
             name: frequency,
             type: "column",
-            data: formattedData,
+            data: groupedData[frequency],
           });
         }
       }
