@@ -1,35 +1,9 @@
 "use strict";
 $(document).ready(function () {
-  function generateData(baseval, count, yrange) {
-    var i = 0;
-    var series = [];
-    while (i < count) {
-      var x = Math.floor(Math.random() * (750 - 1 + 1)) + 1;
-      var y =
-        Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min;
-      var z = Math.floor(Math.random() * (75 - 15 + 1)) + 15;
-      series.push([x, y, z]);
-      baseval += 86400000;
-      i++;
-    }
-    return series;
-  }
   var columnCtx = document.getElementById("sales_chart"),
     columnConfig = {
-      colors: ["#7638ff", "#fda600"],
-      series: [
-        {
-          name: "Received",
-          type: "column",
-          data: [70, 150, 80, 180, 150, 175, 201, 60, 200, 120, 190, 160, 50],
-        },
-        {
-          name: "Pending",
-          type: "column",
-          data: [23, 42, 35, 27, 43, 22, 17, 31, 22, 22, 12, 16, 80],
-          data: [99, 42, 35, 27, 43, 22, 17, 31, 22, 22, 12, 16, 80],
-        },
-      ],
+      colors: ["#7638ff", "#fda600", "#4183fd", "#4da290"],
+      series: [],
       chart: {
         type: "bar",
         fontFamily: "Poppins, sans-serif",
@@ -53,6 +27,8 @@ $(document).ready(function () {
           "Aug",
           "Sep",
           "Oct",
+          "Nov",
+          "Dec"
         ],
       },
       yaxis: { title: { text: "$ (thousands)" } },
@@ -65,46 +41,61 @@ $(document).ready(function () {
         },
       },
     };
-  var columnChart = new ApexCharts(columnCtx, columnConfig);
-  columnChart.render();
-  var pieCtx = document.getElementById("invoice_chart"),
-    pieConfig = {
-      colors: ["#7638FF", "#22CC62", "#EF3737", "#757575","#FFBC34","#009EFB","#1EC1B0"],
-      series: [55, 40, 20, 10, 12, 12, 13],
-      chart: { fontFamily: "Poppins, sans-serif", height: 350, type: "donut" },
-      labels: ["Engineering", "Production", "Warehouse", "LCS","GHQ","GSS","None"],
-      legend: { show: false },
-      responsive: [
-        {
-          breakpoint: 480,
-          options: { chart: { width: 200 }, legend: { position: "bottom" } },
-        },
-      ],
-    };
-  var pieChart = new ApexCharts(pieCtx, pieConfig);
-  pieChart.render();
+
+  // Use AJAX to fetch data from PHP script
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "assets/plugins/apexchart/get_employee_salary.php", true);
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      var responseData = JSON.parse(xhr.responseText);
+
+      // Group the data by salary frequency
+      var groupedData = responseData.reduce(function (acc, item) {
+        var key = item.salaryFrequency;
+        if (!acc[key]) {
+          acc[key] = [];
+        }
+        acc[key].push(item.totalSalary);
+        return acc;
+      }, {});
+
+      // Add series for each salary frequency
+      for (var frequency in groupedData) {
+        if (groupedData.hasOwnProperty(frequency)) {
+          columnConfig.series.push({
+            name: frequency,
+            type: "column",
+            data: groupedData[frequency],
+          });
+        }
+      }
+
+      var chart = new ApexCharts(columnCtx, columnConfig);
+      chart.render();
+    }
+  };
+
+  xhr.send();
 });
 
 
-// let monthArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-// let categories = [
-//     "Jan",
-//     "Feb",
-//     "Mar",
-//     "Apr",
-//     "May",
-//     "Jun",
-//     "Jul",
-//     "Aug",
-//     "Sep",
-//     "Oct",
-//     "Nov",
-//     "Dec"
-// ];
-
-// for (let i = 0; i < monthArr.length; i++) {
-//     if (month === monthArr[i]) {
-//         console.log(categories[i]);
-//         break;
-//     }
-// }
+//   var columnChart = new ApexCharts(columnCtx, columnConfig);
+//   columnChart.render();
+//   var pieCtx = document.getElementById("invoice_chart"),
+//     pieConfig = {
+//       colors: ["#7638FF", "#22CC62", "#EF3737", "#757575","#FFBC34","#009EFB","#1EC1B0"],
+//       series: [55, 40, 20, 10, 12, 12, 13],
+//       chart: { fontFamily: "Poppins, sans-serif", height: 350, type: "donut" },
+//       labels: ["Engineering", "Production", "Warehouse", "LCS","GHQ","GSS","None"],
+//       legend: { show: false },
+//       responsive: [
+//         {
+//           breakpoint: 480,
+//           options: { chart: { width: 200 }, legend: { position: "bottom" } },
+//         },
+//       ],
+//     };
+//   var pieChart = new ApexCharts(pieCtx, pieConfig);
+//   pieChart.render();
+// });
