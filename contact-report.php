@@ -230,7 +230,7 @@ echo $welcomeMessage;
 <a href="leave.php"><img src="assets/img/leave.svg" alt="sidebar_img"> <span>Leave</span></a>
 </li>
 <li>
-<a href="review.php"><img src="assets/img/review.svg" alt="sidebar_img"><span>Review</span></a>
+<a href="review.php"><img src="assets/img/review.svg" alt="sidebar_img"><span>Attendance</span></a>
 </li>
 <li class="active">
 <a href="report.php"><img src="assets/img/report.svg" alt="sidebar_img"><span>Report</span></a>

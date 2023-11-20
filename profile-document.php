@@ -44,7 +44,7 @@
 								<a href="leave.php"><img src="assets/img/leave.svg" alt="sidebar_img"> <span>Leave</span></a>
 							</li>
 							<li>
-								<a href="review.php"><img src="assets/img/review.svg" alt="sidebar_img"><span>Review</span></a>
+								<a href="review.php"><img src="assets/img/review.svg" alt="sidebar_img"><span>Attendance</span></a>
 							</li>
 							<li>
 								<a href="report.php"><img src="assets/img/report.svg" alt="sidebar_img"><span>Report</span></a>
@@ -91,7 +91,7 @@
 								<li><a href="#" class="active">Document</a></li>
 								<li><a href="profile-payroll.php">Payroll</a></li>
 								<li><a href="profile-timeoff.php">Timeoff</a></li>
-								<li><a href="profile-review.php">Reviews</a></li>
+								<li><a href="profile-review.php">Attendances</a></li>
 								<li><a href="profile-setting.php">Settings</a></li>
 							</ul>
 						</div>

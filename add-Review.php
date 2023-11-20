@@ -54,7 +54,7 @@
 								<a href="leave.php"><img src="assets/img/leave.svg" alt="sidebar_img"> <span>Leave</span></a>
 							</li>
 							<li class="active">
-								<a href="review.php"><img src="assets/img/review.svg" alt="sidebar_img"><span>Review</span></a>
+								<a href="review.php"><img src="assets/img/review.svg" alt="sidebar_img"><span>Attendance</span></a>
 							</li>
 							<li>
 								<a href="report.php"><img src="assets/img/report.svg" alt="sidebar_img"><span>Report</span></a>
@@ -88,9 +88,9 @@
 							<ul class="breadcrumb">
 								<li class="breadcrumb-item"><a href="index.php"><img src="assets/img/dash.png" class="mr-2" alt="breadcrumb">Home</a>
 								</li>
-								<li class="breadcrumb-item active"> Reviews</li>
+								<li class="breadcrumb-item active"> Attendances</li>
 							</ul>
-							<h3>Create Review</h3>
+							<h3>Create Attendance</h3>
 						</div>
 					</div>
 					<div class="col-xl-12 col-sm-12 col-12 ">
@@ -102,8 +102,8 @@
 								<div class="row">
 									<div class="col-xl-12 col-sm-12 col-12 ">
 										<div class="form-group">
-											<label>Review Name <span class="mandatory">*</span> </label>
-											<input type="text" placeholder="Review Name">
+											<label>Attendance Name <span class="mandatory">*</span> </label>
+											<input type="text" placeholder="Attendance Name">
 										</div>
 									</div>
 								</div>
@@ -124,7 +124,7 @@
 								<div class="row">
 									<div class="col-xl-12 col-sm-12 col-12 ">
 										<div class="form-group">
-											<label>Review Frequency</label>
+											<label>Attendance Frequency</label>
 											<input type="text">
 										</div>
 									</div>
@@ -172,14 +172,14 @@
 								<div class="row">
 									<div class="col-xl-12 col-sm-12 col-12 ">
 										<div class="form-group">
-											<textarea rows="4" cols="50">Explain What This Review Is To, How It's Going To Be Run, How Everyone Can Prepare.	</textarea>
+											<textarea rows="4" cols="50">Explain What This Attendance Is To, How It's Going To Be Run, How Everyone Can Prepare.	</textarea>
 										</div>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-xl-12 col-sm-12 col-12">
 										<div class="form-group">
-											<textarea rows="4" cols="50">Add Questions For The People Being Reviewed.	</textarea>
+											<textarea rows="4" cols="50">Add Questions For The People Being Attendanceed.	</textarea>
 										</div>
 									</div>
 								</div>
