@@ -4082,6 +4082,10 @@ a.manage-link {
     color: #fff;
     font-size: 10px;
 }
+span.leave-pending {
+	background: #FFA500;
+}
+
 span.leave-inactive {
     background: #DC3545;
 }

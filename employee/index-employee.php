@@ -16,7 +16,8 @@ include_once("includes/system_navbar.php");
 							<span class="lnr lnr-cross  text-white" id="mobile_btn_close">X</span>
 							<a href="javascript:void(0)" class="d-block menu-style text-white">
 								<div class="user-avatar d-inline-block mr-3">
-									<img src="assets/img/profiles/avatar-18.jpg" alt="user avatar" class="rounded-circle" width="50">
+									<img src="assets/img/profiles/avatar-18.jpg" alt="user avatar"
+										class="rounded-circle" width="50">
 								</div>
 							</a>
 						</div>
@@ -32,21 +33,25 @@ include_once("includes/system_navbar.php");
 				</div>
 				<ul>
 					<li>
-						<a href="index-employee.php"><img src="assets/img/home.svg" alt="sidebar_img"> <span>Dashboard</span></a>
+						<a href="index-employee.php"><img src="assets/img/home.svg" alt="sidebar_img">
+							<span>Dashboard</span></a>
 					</li>
 					<li>
 						<a href="leave.php"><img src="assets/img/leave.svg" alt="sidebar_img"> <span>Leave</span></a>
 					</li>
 					<li>
-						<a href="review.php"><img src="assets/img/review.svg" alt="sidebar_img"><span>Attendance</span></a>
+						<a href="review.php"><img src="assets/img/review.svg"
+								alt="sidebar_img"><span>Attendance</span></a>
 					</li>
 					<li>
-						<a href="profile.php"><img src="assets/img/profile.svg" alt="sidebar_img"> <span>Profile</span></a>
+						<a href="profile.php"><img src="assets/img/profile.svg" alt="sidebar_img">
+							<span>Profile</span></a>
 					</li>
 				</ul>
 				<ul class="logout">
 					<li>
-						<a href="../login.php"><img src="assets/img/logout.svg" alt="sidebar_img"><span>Log out</span></a>
+						<a href="../login.php"><img src="assets/img/logout.svg" alt="sidebar_img"><span>Log
+								out</span></a>
 					</li>
 				</ul>
 			</div>
@@ -83,12 +88,13 @@ include_once("includes/system_navbar.php");
 					// Handle the case where the query execution fails
 					echo "Error executing the query: " . mysqli_error($con);
 				} ?>
-				<img src="data:image/jpeg;base64,<?php echo base64_encode($profilePicture); ?>" class="mr-2 employeeprofile" name="employeeprofile" alt="profile" />
+				<img src="data:image/jpeg;base64,<?php echo base64_encode($profilePicture); ?>"
+					class="mr-2 employeeprofile" name="employeeprofile" alt="profile" />
 				<label class="small-text">
 					<?php
 
 					// Get the name of the user from the session
-					$welcomeMessage = "Welcome " .  $_SESSION['user_firstname'];
+					$welcomeMessage = "Welcome " . $_SESSION['user_firstname'];
 					echo $welcomeMessage;
 					?>
 				</label>
@@ -104,7 +110,8 @@ include_once("includes/system_navbar.php");
 			<div class="col-xl-6 col-sm-12 col-12">
 				<div class="breadcrumb-path ">
 					<ul class="breadcrumb">
-						<li class="breadcrumb-item"><a href="index.php"><img src="assets/img/dash.png" class="mr-3" alt="breadcrumb" />Home</a>
+						<li class="breadcrumb-item"><a href="index.php"><img src="assets/img/dash.png" class="mr-3"
+									alt="breadcrumb" />Home</a>
 						</li>
 						<li class="breadcrumb-item active">Dashboard</li>
 					</ul>
@@ -122,7 +129,7 @@ include_once("includes/system_navbar.php");
 				</div>
 			</div>
 		</div>
-		<?php 
+		<?php
 		// Query to get the leave count
 		$sqlLeaveCount = "SELECT COUNT(*) as leave_count FROM `leave_application` WHERE employee_id=$userId ";
 		$resultLeaveCount = mysqli_query($con, $sqlLeaveCount);
@@ -138,29 +145,31 @@ include_once("includes/system_navbar.php");
 		$rowTotalSalary = mysqli_fetch_assoc($resultTotalSalary);
 		$totalSalary = $rowTotalSalary['total_salary'];
 
-				// Query to get the total present
-				$sqlTotalPresent = "SELECT COUNT( `attendance_status` ) as attendance FROM `attendance_records`   WHERE employee_id=$userId and attendance_status='Present' ";
-				$resultTotalPresent = mysqli_query($con, $sqlTotalPresent);
-		
-				// Fetch the result
-				$rowTotalPresent = mysqli_fetch_assoc($resultTotalPresent);
-				$totalPresent = $rowTotalPresent['attendance'];
+		// Query to get the total present
+		$sqlTotalPresent = "SELECT COUNT( `attendance_status` ) as attendance FROM `attendance_records`   WHERE employee_id=$userId and attendance_status='Present' ";
+		$resultTotalPresent = mysqli_query($con, $sqlTotalPresent);
 
-								// Query to get the total present
-								$sqlJobTitle = "SELECT j.`jobTitle` as job FROM `employee` e JOIN `job` j ON e.`jobID` = j.`jobID`WHERE e.`employeeID`=$userId";
-								$resultJobTitle  = mysqli_query($con, $sqlJobTitle );
-						
-								// Fetch the result
-								$rowJobTitle  = mysqli_fetch_assoc($resultJobTitle );
-								$JobTitle  = $rowJobTitle ['job'];
-							?>
+		// Fetch the result
+		$rowTotalPresent = mysqli_fetch_assoc($resultTotalPresent);
+		$totalPresent = $rowTotalPresent['attendance'];
+
+		// Query to get the total present
+		$sqlJobTitle = "SELECT j.`jobTitle` as job FROM `employee` e JOIN `job` j ON e.`jobID` = j.`jobID`WHERE e.`employeeID`=$userId";
+		$resultJobTitle = mysqli_query($con, $sqlJobTitle);
+
+		// Fetch the result
+		$rowJobTitle = mysqli_fetch_assoc($resultJobTitle);
+		$JobTitle = $rowJobTitle['job'];
+		?>
 		<div class="row mb-4">
 			<div class="col-xl-3 col-sm-6 col-12">
 				<div class="card board1 fill1 ">
 					<div class="card-body">
 						<div class="card_widget_header">
 							<label>My Attendance</label>
-							<h4><?php echo $totalPresent; ?></h4>
+							<h4>
+								<?php echo $totalPresent; ?>
+							</h4>
 						</div>
 						<div class="card_widget_img">
 							<img src="assets/img/dash1.png" alt="card-img" />
@@ -173,7 +182,9 @@ include_once("includes/system_navbar.php");
 					<div class="card-body">
 						<div class="card_widget_header">
 							<label>My Role</label>
-							<h5 style="color: white;"><?php echo $JobTitle; ?></h5>
+							<h5 style="color: white;">
+								<?php echo $JobTitle; ?>
+							</h5>
 						</div>
 						<div class="card_widget_img">
 							<img src="assets/img/dash2.png" alt="card-img" />
@@ -185,9 +196,11 @@ include_once("includes/system_navbar.php");
 				<div class="card board1 fill3 ">
 					<div class="card-body">
 						<div class="card_widget_header">
-						
+
 							<label>My Leaves</label>
-							<h4><?php echo $leaveCount; ?></h4>
+							<h4>
+								<?php echo $leaveCount; ?>
+							</h4>
 						</div>
 						<div class="card_widget_img">
 							<img src="assets/img/dash3.png" alt="card-img" />
@@ -200,7 +213,9 @@ include_once("includes/system_navbar.php");
 					<div class="card-body">
 						<div class="card_widget_header">
 							<label>Current Salary</label>
-							<h4><?php echo $totalSalary; ?></h4>
+							<h4>
+								<?php echo $totalSalary; ?>
+							</h4>
 						</div>
 						<div class="card_widget_img">
 							<img src="assets/img/dash4.png" alt="card-img" />
@@ -223,17 +238,20 @@ include_once("includes/system_navbar.php");
 							<div class="row">
 								<div class="col-4">
 									<div class="mt-4">
-										<p class="mb-2 text-truncate"><i class="fas fa-circle text-primary mr-1"></i> Business</p>
+										<p class="mb-2 text-truncate"><i class="fas fa-circle text-primary mr-1"></i>
+											Business</p>
 									</div>
 								</div>
 								<div class="col-4">
 									<div class="mt-4">
-										<p class="mb-2 text-truncate"><i class="fas fa-circle text-success mr-1"></i> Development</p>
+										<p class="mb-2 text-truncate"><i class="fas fa-circle text-success mr-1"></i>
+											Development</p>
 									</div>
 								</div>
 								<div class="col-4">
 									<div class="mt-4">
-										<p class="mb-2 text-truncate"><i class="fas fa-circle text-danger mr-1"></i> Testing</p>
+										<p class="mb-2 text-truncate"><i class="fas fa-circle text-danger mr-1"></i>
+											Testing</p>
 									</div>
 								</div>
 							</div>
@@ -249,120 +267,120 @@ include_once("includes/system_navbar.php");
 						</div>
 					</div>
 					<div class="table table-responsive custimze-table" style="max-height: 500px; overflow-y: scroll;">
-    <table>
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Date</th>
-                <th>Leave Reason</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>01 Jan</td>
-                <td>New Year's Day</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>09 Feb</td>
-                <td>Chinese New Year</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>06 Apr</td>
-                <td>Maundy Thursday</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>07 Apr</td>
-                <td>Good Friday</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>01 May</td>
-                <td>Labor Day</td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>12 Jun</td>
-                <td>Independence Day</td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>26 Jun</td>
-                <td>Eid'l Fitr (tentative)</td>
-            </tr>
-            <tr>
-                <td>8</td>
-                <td>09 Aug</td>
-                <td>National Heroes Day</td>
-            </tr>
-            <tr>
-                <td>9</td>
-                <td>28 Aug</td>
-                <td>National Heroes Day (additional holiday)</td>
-            </tr>
-            <tr>
-                <td>10</td>
-                <td>25 Sep</td>
-                <td>Eid'l Adha (tentative)</td>
-            </tr>
-            <tr>
-                <td>11</td>
-                <td>23 Oct</td>
-                <td>Barangay Election Day</td>
-            </tr>
-            <tr>
-                <td>12</td>
-                <td>31 Oct</td>
-                <td>Halloween</td>
-            </tr>
-            <tr>
-                <td>13</td>
-                <td>30 Nov</td>
-                <td>Bonifacio Day</td>
-            </tr>
-            <tr>
-                <td>14</td>
-                <td>25 Dec</td>
-                <td>Christmas Day</td>
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>26 Dec</td>
-                <td>Additional Christmas Holiday</td>
-            </tr>
-            <tr>
-                <td>16</td>
-                <td>31 Dec</td>
-                <td>New Year's Eve</td>
-            </tr>
-            <!-- Additional Holidays -->
-            <tr>
-                <td>17</td>
-                <td>01 Jan</td>
-                <td>New Year's Day (additional)</td>
-            </tr>
-            <tr>
-                <td>18</td>
-                <td>25 Jan</td>
-                <td>Chinese New Year (additional)</td>
-            </tr>
-            <tr>
-                <td>19</td>
-                <td>23 Feb</td>
-                <td>EDSA People Power Revolution Anniversary</td>
-            </tr>
-            <tr>
-                <td>20</td>
-                <td>01 Apr</td>
-                <td>Maundy Thursday (additional)</td>
-            </tr>
-            <!-- Add more rows for additional holidays -->
-        </tbody>
-    </table>
-</div>
+						<table>
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>Date</th>
+									<th>Leave Reason</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>01 Jan</td>
+									<td>New Year's Day</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>09 Feb</td>
+									<td>Chinese New Year</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>06 Apr</td>
+									<td>Maundy Thursday</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>07 Apr</td>
+									<td>Good Friday</td>
+								</tr>
+								<tr>
+									<td>5</td>
+									<td>01 May</td>
+									<td>Labor Day</td>
+								</tr>
+								<tr>
+									<td>6</td>
+									<td>12 Jun</td>
+									<td>Independence Day</td>
+								</tr>
+								<tr>
+									<td>7</td>
+									<td>26 Jun</td>
+									<td>Eid'l Fitr (tentative)</td>
+								</tr>
+								<tr>
+									<td>8</td>
+									<td>09 Aug</td>
+									<td>National Heroes Day</td>
+								</tr>
+								<tr>
+									<td>9</td>
+									<td>28 Aug</td>
+									<td>National Heroes Day (additional holiday)</td>
+								</tr>
+								<tr>
+									<td>10</td>
+									<td>25 Sep</td>
+									<td>Eid'l Adha (tentative)</td>
+								</tr>
+								<tr>
+									<td>11</td>
+									<td>23 Oct</td>
+									<td>Barangay Election Day</td>
+								</tr>
+								<tr>
+									<td>12</td>
+									<td>31 Oct</td>
+									<td>Halloween</td>
+								</tr>
+								<tr>
+									<td>13</td>
+									<td>30 Nov</td>
+									<td>Bonifacio Day</td>
+								</tr>
+								<tr>
+									<td>14</td>
+									<td>25 Dec</td>
+									<td>Christmas Day</td>
+								</tr>
+								<tr>
+									<td>15</td>
+									<td>26 Dec</td>
+									<td>Additional Christmas Holiday</td>
+								</tr>
+								<tr>
+									<td>16</td>
+									<td>31 Dec</td>
+									<td>New Year's Eve</td>
+								</tr>
+								<!-- Additional Holidays -->
+								<tr>
+									<td>17</td>
+									<td>01 Jan</td>
+									<td>New Year's Day (additional)</td>
+								</tr>
+								<tr>
+									<td>18</td>
+									<td>25 Jan</td>
+									<td>Chinese New Year (additional)</td>
+								</tr>
+								<tr>
+									<td>19</td>
+									<td>23 Feb</td>
+									<td>EDSA People Power Revolution Anniversary</td>
+								</tr>
+								<tr>
+									<td>20</td>
+									<td>01 Apr</td>
+									<td>Maundy Thursday (additional)</td>
+								</tr>
+								<!-- Add more rows for additional holidays -->
+							</tbody>
+						</table>
+					</div>
 
 				</div>
 			</div>
@@ -373,7 +391,8 @@ include_once("includes/system_navbar.php");
 					<div class="card-header ">
 						<h4 class="card-title-dash">Your Upcoming Leave</h4>
 						<div class="dropdown">
-							<button class="btn btn-action " type="button" id="roomsBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<button class="btn btn-action " type="button" id="roomsBtn" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false">
 								<i class="fas fa-ellipsis-h"></i>
 							</button>
 							<div class="dropdown-menu" aria-labelledby="roomsBtn">
@@ -381,44 +400,48 @@ include_once("includes/system_navbar.php");
 							</div>
 						</div>
 					</div>
-					<div class="card-body p-0">
-						<div class="leave-set">
-							<span class="leave-inactive">
-								<i class="fas fa-briefcase"></i>
-							</span>
-							<label>Mon, 16 Dec 2021</label>
-						</div>
-						<div class="leave-set">
-							<span class="leave-active">
-								<i class="fas fa-briefcase"></i>
-							</span>
-							<label>Fri, 20 Dec 2021</label>
-						</div>
-						<div class="leave-set">
-							<span class="leave-active">
-								<i class="fas fa-briefcase"></i>
-							</span>
-							<label>Wed, 25 Dec 2021</label>
-						</div>
-						<div class="leave-set">
-							<span class="leave-active">
-								<i class="fas fa-briefcase"></i>
-							</span>
-							<label>Fri, 27 Dec 2021</label>
-						</div>
-						<div class="leave-set">
-							<span class="leave-active">
-								<i class="fas fa-briefcase"></i>
-							</span>
-							<label>Tue, 31 Dec 2021</label>
-						</div>
-						<div class="leave-viewall">
-							<a href="leave.php">View all <img src="assets/img/right-arrow.png" class="ml-2" alt="arrow" /></a>
-						</div>
-					</div>
+					<?php
+					$query = "SELECT * FROM leave_application";
+					$result = mysqli_query($con, $query);
+
+					if ($result) {
+						echo '<div class="card-body p-0">';
+						while ($row = mysqli_fetch_assoc($result)) {
+							$statusClass = '';
+
+							switch ($row['Status']) {
+								case 'Pending':
+									$statusClass = 'leave-pending';
+									break;
+								case 'Approved':
+									$statusClass = 'leave-active';
+									break;
+								case 'Reject':
+									$statusClass = 'leave-inactive';
+									break;
+							}
+							$formattedDate = date("M d, Y", strtotime($row['start_date']));
+
+							echo '<div class="leave-set">';
+							echo '<span class="' . $statusClass . '">';
+							echo '<i class="fas fa-briefcase"></i>';
+							echo '</span>';
+							echo '<label>' . $formattedDate . '</label>';
+							echo '</div>';
+						}
+
+						echo '<div class="leave-viewall">';
+						echo '<a href="leave.php"> Add Leave <img src="assets/img/right-arrow.png" class="ml-2" alt="arrow" /></a>';
+						echo '</div>';
+						echo '</div>';
+					} else {
+						echo "Error: " . $query . "<br>" . mysqli_error($con);
+					}
+					mysqli_close($con);
+					?>
 				</div>
 			</div>
-			<div class="col-xl-3 col-sm-12 col-12 d-flex">
+			<div class="col-xl-6 col-sm-12 col-12 d-flex">
 				<div class="card card-list flex-fill">
 					<div class="card-header">
 						<div class="p-0  ">
@@ -506,62 +529,6 @@ include_once("includes/system_navbar.php");
 					</div>
 				</div>
 			</div>
-			<div class="col-xl-3 col-sm-12 col-12 d-flex">
-				<div class="card card-list flex-fill ">
-					<div class="card-header">
-						<h2 class="card-titles">Team Leads</h2>
-						<a class="manage-link">Manage Team</a>
-					</div>
-					<div class="card-body p-0">
-						<div class="manage-set">
-							<div class="manage-name">
-								<label>John Gibbs</label>
-								<span>PHP</span>
-							</div>
-							<div class="manage-img">
-								<img src="assets/img/profiles/avatar-21.jpg" alt="profile">
-							</div>
-						</div>
-						<div class="manage-set">
-							<div class="manage-name">
-								<label>Danny Ward</label>
-								<span>Design</span>
-							</div>
-							<div class="manage-img">
-								<img src="assets/img/profiles/avatar-20.jpg" alt="profile">
-							</div>
-						</div>
-						<div class="manage-set">
-							<div class="manage-name">
-								<label>Graciella Relevo
-								</label>
-								<span>IOS</span>
-							</div>
-							<div class="manage-img">
-								<img src="assets/img/profiles/avatar-19.jpg" alt="profile">
-							</div>
-						</div>
-						<div class="manage-set">
-							<div class="manage-name">
-								<label>Jenni Sims</label>
-								<span>Android</span>
-							</div>
-							<div class="manage-img">
-								<img src="assets/img/profiles/avatar-18.jpg" alt="profile">
-							</div>
-						</div>
-						<div class="manage-set border-0">
-							<div class="manage-name">
-								<label>Maria Cotton</label>
-								<span>Business</span>
-							</div>
-							<div class="manage-img">
-								<img src="assets/img/profiles/avatar-17.jpg" alt="profile">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
 	</div>
 </div>
@@ -569,20 +536,20 @@ include_once("includes/system_navbar.php");
 </div>
 
 <style>
-    /* Style for the custom scroll bar */
-    .table-responsive::-webkit-scrollbar {
-        width: 12px;
-    }
+	/* Style for the custom scroll bar */
+	.table-responsive::-webkit-scrollbar {
+		width: 12px;
+	}
 
-    .table-responsive::-webkit-scrollbar-thumb {
-        background-color: green;
-        border-radius: 8px;
-    }
+	.table-responsive::-webkit-scrollbar-thumb {
+		background-color: green;
+		border-radius: 8px;
+	}
 
-    .table-responsive::-webkit-scrollbar-track {
-        background-color: #f1f1f1;
-        border-radius: 10px;
-    }
+	.table-responsive::-webkit-scrollbar-track {
+		background-color: #f1f1f1;
+		border-radius: 10px;
+	}
 </style>
 <script src="assets/js/jquery-3.6.0.min.js"></script>
 
