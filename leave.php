@@ -85,7 +85,8 @@ include("includes/sidebar.php");
 										<th>Leave Type</th>
 										<th>Start Date</th>
 										<th>End Date</th>
-										<th>Desc</th>
+										<th>Leave Reason</th>
+										<th>Response</th>
 										<th>Status</th>
 									</tr>
 								</thead>
@@ -109,7 +110,12 @@ include("includes/sidebar.php");
 										echo "<td><label>" . $row['leave_type'] . "</label></td>";
 										echo "<td><label>" . $row["start_date"] . "</label></td>";
 										echo "<td><label>" . $row["end_date"] . "</label></td>";
-										echo "<td><label>" . $row["additional_reasons"] . "</label></td>";
+										echo '<td>';
+										echo '<button class="btn btn-info btn-sm show-description" data-toggle="modal" data-target="#description_leave" data-reason="' . htmlspecialchars($row['additional_reasons']) . '">Show Description</button>';
+										echo '</td>';
+										echo '<td>';
+										echo '<button class="btn btn-info btn-sm show-reasons" data-toggle="modal" data-target="#response" data-reason="' . htmlspecialchars($row['reasons']) . '">Show Response</button>';
+										echo '</td>';
 										echo "<td $statusStyle>" . $row["Status"] . "</td>";
 										echo '<td>';
 										echo '</div>';
@@ -164,7 +170,10 @@ include("includes/sidebar.php");
 										echo "<td>" . $row['leave_type'] . "</td>";
 										echo "<td>" . $row["start_date"] . "</td>";
 										echo "<td>" . $row["end_date"] . "</td>";
-										echo "<td>" . $row["additional_reasons"] . "</td>";
+										echo '<td>';
+										echo '<button class="btn btn-info btn-sm show-description" data-toggle="modal" data-target="#description_leave" data-reason="' . htmlspecialchars($row['additional_reasons']) . '">Show Description</button>';
+										echo '</td>';
+
 										echo "<td $statusStyle>" . $row["Status"] . "</td>";
 										echo '<td>';
 										echo '<div class="actionset" style="padding: 10px; margin-top: 10px;">';
@@ -229,14 +238,65 @@ include("includes/sidebar.php");
 	</div>
 </div>
 <div class="customize_popup">
-	<div class="modal fade" id="delete" tabindex="-1" aria-labelledby="staticBackdropLabels1" aria-hidden="true">
+	<div class="modal fade" id="delete" tabindex="-1" aria-labelledby="staticBackdropLa" aria-hidden="true">
+		<div class="modal-dialog modal-lg modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="staticBackdropLa">State Your Reason For Rejecting</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class=" col-md-12 p-0">
+						<div class=" form-popup">
+							<textarea name="reasons" rows="10" cols="75"
+								placeholder="Enter Your Reason For Rejecting"></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" id="confirmReject">Reject</button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="customize_popup">
+	<div class="modal fade" id="description_leave" tabindex="-1" aria-labelledby="staticBackdropLabels" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered">
 			<div class="modal-content">
 				<div class="modal-header text-centers border-0">
-					<h5 class="modal-title text-center" id="staticBackdropLabels1">Are You Sure Want to Reject?</h5>
+					<h5 class="modal-title text-center" id="staticBackdropLabels1">Reason For Ask of Leave</h5>
 				</div>
+				
+				<div class="modal-body">
+					<p class="text-center"></p>
+				</div>
+
 				<div class="modal-footer text-centers">
-					<button type="submit" class="btn btn-primary" id="confirmReject">Reject</button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="customize_popup">
+	<div class="modal fade" id="response" tabindex="-1" aria-labelledby="staticBackdropLabels" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header text-centers border-0">
+					<h5 class="modal-title text-center" id="staticBackdropLabels1">Reason For Acceptance/Rejection</h5>
+				</div>
+				
+				<div class="modal-body">
+					<p class="text-center"></p>
+				</div>
+
+				<div class="modal-footer text-centers">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 				</div>
 			</div>
@@ -260,6 +320,24 @@ include("includes/sidebar.php");
 <script src="js/activePage.js"></script>
 <script src="assets/js/script.js"></script>
 <script src="assets/js/ajax.js"></script>
+
+<script>
+	$(document).ready(function () {
+    $('.show-description').on('click', function () {
+        var reason = $(this).data('reason');
+        $('#description_leave .modal-body p').text(reason);
+    });
+});
+
+$(document).ready(function () {
+    $('.show-reasons').on('click', function () {
+        var reason = $(this).data('reason');
+        $('#response .modal-body p').text(reason);
+    });
+});
+
+</script>
+
 </body>
 
 </html>

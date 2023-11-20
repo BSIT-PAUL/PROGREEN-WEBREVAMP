@@ -145,11 +145,13 @@ $(document).ready(function () {
 
     $("#confirmReject").on("click", function () {
         var leaveID = $(this).data("decline-leave-id");
+        var rejectionReason = $("textarea[name='reasons']").val(); 
 
         $.ajax({
             type: "POST",
             url: "reject_leave.php",
-            data: { id: leaveID },
+            data: { id: leaveID ,
+                    reasons: rejectionReason },
             success: function (data) {
                 if (data === 'Leave rejected successfully') {
                     location.reload();

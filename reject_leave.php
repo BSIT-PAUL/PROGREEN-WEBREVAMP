@@ -3,8 +3,9 @@ include("database/dbcon.php");
 
 if (isset($_POST['id'])) {
     $leaveID = $_POST['id'];
+    $reason = $_POST['reasons'];
 
-    $updateQuery = "UPDATE leave_application SET `Status` = 'Reject' WHERE id = $leaveID";
+    $updateQuery = "UPDATE leave_application SET reasons = '$reason', `Status` = 'Reject' WHERE id = $leaveID";
 
     $result = mysqli_query($con, $updateQuery);
 
