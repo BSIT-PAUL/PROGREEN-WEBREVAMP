@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2023 at 08:27 PM
+-- Generation Time: Nov 20, 2023 at 12:38 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 7.1.32
 
@@ -88,7 +88,8 @@ CREATE TABLE `attendance_records` (
 INSERT INTO `attendance_records` (`record_id`, `employee_id`, `check_in_time`, `check_out_time`, `attendance_status`) VALUES
 (1, 7, '2023-11-13 13:46:26', '2023-11-13 13:46:34', 'Present'),
 (2, 8, '2023-11-16 09:41:24', NULL, 'Present'),
-(3, 8, '2023-11-16 09:41:34', NULL, 'Present');
+(3, 8, '2023-11-16 09:41:34', NULL, 'Present'),
+(4, 7, '2023-11-20 11:15:24', NULL, 'Present');
 
 -- --------------------------------------------------------
 
@@ -158,7 +159,48 @@ CREATE TABLE `employee` (
 
 INSERT INTO `employee` (`employeeID`, `firstName`, `lastName`, `email`, `username`, `password`, `departmentID`, `jobID`, `startDate`, `employmentType`, `salary`, `salaryFrequency`, `profilePictureID`) VALUES
 (7, 'John Paul', 'Bayoneto', 'bayonetojohnpaul@gmail.com', 'bayoneto', '202cb962ac59075b964b07152d234b70', 1, 1, '2023-11-02', 'Regular', '10000.00', 'Annualy', NULL),
-(8, 'Arvin Jade', 'Villaluna', 'arvin.villaluna@yahoo.com.ph', 'Nightwalker5373', '7215bceb852a1d0fea095bf8f0471f88', 3, 4, '2023-11-16', 'Casual', '6999.00', 'Monthly', NULL);
+(8, 'Arvin Jade', 'Villaluna', 'arvin.villaluna@yahoo.com.ph', 'Nightwalker5373', '7215bceb852a1d0fea095bf8f0471f88', 3, 4, '2023-11-16', 'Casual', '6999.00', 'Monthly', NULL),
+(9, 'Elle', 'Rovira', 'ellerovira@gmail.com', 'imelle123', 'e5db8794d2115a2d465aa88c5d99ad58', 2, 5, '2023-11-06', 'Casual', '15500.00', 'Monthly', NULL),
+(10, 'Ronnel', 'Lopez', 'ronnel123@gmail.com', 'ronnel123', '76da5367e1de8ffa1ac423ba8f6f7d01', 1, 2, '2023-09-20', 'Casual', '15000.00', 'Monthly', NULL),
+(11, 'Graciella', 'Relevo', 'graciella123@gmail.com', 'graciellarelevo123', 'c00d56f2ebba06479d338822ab941725', 1, 3, '2023-07-12', 'Regular', '15000.00', 'Monthly', NULL),
+(12, 'Chester', 'Tayas', 'chester123@gmail.com', 'chestertayas123', '0c9a4ef483a50e13e550e8f0e7ffe8ac', 1, 4, '2023-10-25', 'Casual', '15000.00', 'Monthly', NULL),
+(13, 'Lovely', 'Nasol', 'lovely123@gmail.com', 'lovelynasol123', 'cac833d2935427f349ac26abffd1639e', 2, 5, '2023-07-27', 'Regular', '25000.00', 'Monthly', NULL),
+(14, 'Jonald', 'Bulaklak', 'jonald123@gmail.com', 'jonaldbulaklak123', 'c369d22bdeb68f5a81029b4b491087bb', 2, 6, '2023-09-13', 'Regular', '15000.00', 'Monthly', NULL),
+(15, 'Rai', 'Dimaala', 'Rai123@gmail.com', 'raidimaala123', 'b2c3ff48fd99093328083cf69ae8e48d', 2, 7, '2023-06-13', 'Regular', '25000.00', 'Monthly', NULL),
+(16, 'Joshua', 'Berbie', 'joshua123@gmail.com', 'joshua123', '1799a385299601a9b4de7a58911e982e', 1, 1, '2023-04-21', 'Regular', '50000.00', 'Monthly', NULL),
+(17, 'Jairus', 'Cubilla', 'Jairus123@gmail.com', 'jairus123', '83ab96629f21dbcd04f2c24a449d5b97', 1, 2, '2023-03-15', 'Regular', '30000.00', 'Monthly', NULL),
+(18, 'Randy', 'Feliciano', 'randy123@gmail.com', 'randy123', '389f093d1291173c739431eaa95086d9', 1, 3, '2023-08-23', 'Regular', '25000.00', 'Monthly', NULL),
+(19, 'Angela', 'Sevilla', 'angela123@gmail.com', 'angelasevilla123', 'f495b400db54e6dec5bf2a7f6d40fd56', 1, 4, '2023-06-13', 'Regular', '30000.00', 'Monthly', NULL),
+(20, 'Harold', 'Mendoza', 'harold123@gmail.com', 'haroldmendoza123', 'e9b400beedf2b9bb02ab3d99cc5db65a', 2, 5, '2023-02-17', 'Regular', '15000.00', 'Monthly', NULL),
+(21, 'Jose', 'Mendoza', 'jose123@gmail.com', 'josemendoza123', '90e528618534d005b1a7e7b7a367813f', 2, 6, '2023-08-22', 'Regular', '25000.00', 'Monthly', NULL),
+(22, 'Winzelle', 'De Jesus', 'winzelle123@gmail.com', 'winzelledejesus123', '009a29f84c74e0342c8a863bcf5ee90b', 2, 7, '2023-06-20', 'Regular', '15000.00', 'Monthly', NULL),
+(23, 'Ceejay', 'Custodio', 'ceejay123@gmail.com', 'ceejaycustodio123', '6838fad56966d3b4eeaee34a23d50c2f', 1, 2, '2023-07-05', 'Regular', '30000.00', 'Monthly', NULL),
+(24, 'Genrev', 'Oredo', 'genrev123@gmail.com', 'genrevoredo123', '17e1bdc0132c88c26703c0f44b341e73', 1, 4, '2023-05-23', 'Regular', '30000.00', 'Monthly', NULL),
+(25, 'Genrev', 'Oredo', 'genrev123@gmail.com', 'genrevoredo123', '17e1bdc0132c88c26703c0f44b341e73', 1, 4, '2023-05-23', 'Regular', '30000.00', 'Monthly', NULL),
+(26, 'John', 'Doe', 'johndoe123@gmail.com', 'jd', '6e0b7076126a29d5dfcbd54835387b7b', 1, 2, '2020-09-07', 'Casual', '17000.00', 'Monthly', NULL),
+(27, 'Billy', 'Joe', 'billyjoe123@gmail.com', 'bj', '60bb4fd53777ab126acb6447eac5434a', 2, 5, '2018-12-03', 'Regular', '20000.00', 'Monthly', NULL),
+(28, 'Teodore', 'Simons', 'Teodoresimons123@yahoo.com', 'teodore123', '6c0acd84eb08b2d50e67e03bf5b52fb6', 1, 2, '2017-10-02', 'Regular', '25000.00', 'Monthly', NULL),
+(29, 'Jerome', 'Perkins', 'perkinsjerome123@rocketmail.com', 'perkins1', '8f304215861a1e8f79dc6a7b5469ac5f', 2, 5, '2019-10-28', 'Regular', '20000.00', 'Monthly', NULL),
+(30, 'Dorothy', 'Williams', 'dothywilliams123@yahoo.com', 'Dwilliams', '59f9ef326eb3637fced5ea6258b38e3e', 1, 1, '2021-01-04', 'Regular', '20000.00', 'Monthly', NULL),
+(31, 'Wilma', 'Sinon', 'sinonwilma@yahoo.com', 'sinonwilma123', 'dbcceeb073fa55610361de03342c20a7', 1, 2, '2023-01-30', 'Casual', '15000.00', 'Monthly', NULL),
+(32, 'Joshua', 'Ramos', 'joshuaramos123@gmail.com', 'joshuar123', 'bbee168538cd29507cefacf48c986e3c', 3, 7, '2023-02-06', 'Casual', '10000.00', 'Monthly', NULL),
+(33, 'John', 'Deer', 'deerjohn123@gmail.com', 'deerjohn123', '24d26a55a7d8b4c1fcdcd7a0c93741ea', 1, 2, '2022-12-12', 'Casual', '15000.00', 'Monthly', NULL),
+(34, 'Luzielle', 'Fuerte', 'luziellefuerte123@gmail.com', 'luzielle123', '294226147964f2c0d73fd004d1ca8277', 2, 5, '2021-08-30', 'Casual', '15000.00', 'Monthly', NULL),
+(35, 'Dianne', 'Bacual', 'bacualdianne123@gmail.com', 'Dianne123', 'd7559038a341a94c623d0a6e0fc2cb34', 1, 2, '2021-10-25', 'Casual', '17500.00', 'Monthly', NULL),
+(36, 'Angelie', 'Willies', 'angeliewillies123@yahoo.com', 'Angelie123', 'f4e0649406b1657b8795b5f957e73556', 2, 5, '2021-07-12', 'Casual', '20000.00', 'Monthly', NULL),
+(37, 'Emily', 'Duhan', 'emilyduhan123@gmail.com', 'emily123', '29e1448ae02b6fd112fcf3618e1be9f5', 1, 1, '2023-01-16', 'Casual', '15500.00', 'Monthly', NULL),
+(38, 'Kaye', 'Katanuan', 'kayekatanuan123@gmail.com', 'Kaye123', '22ac164bbc0019851c200702bf1503b1', 2, 5, '2023-01-16', 'Casual', '15000.00', 'Monthly', NULL),
+(39, 'Harry', 'Potter', 'potterharry123@gmail.com', 'Pottery123', 'd0d2b883ffe11676af7e678cf45a36fa', 1, 1, '2023-09-25', 'Casual', '15000.00', 'Monthly', NULL),
+(40, 'Ron', 'Winsley', 'winsleyron123@gmail.com', 'ron123', 'e039a1e0a0bc34fc2ed91546185111f8', 2, 5, '2023-05-22', 'Casual', '20000.00', 'Monthly', NULL),
+(41, 'Michael', 'Myers', 'michaelmyers123@gmail.com', 'myers123', '56cf01f6edfe9598b5e23407fe290990', 1, 2, '2022-12-05', 'Casual', '25500.00', 'Monthly', NULL),
+(42, 'Arianne', 'Dimaano', 'ariannedimaano@gmail.com', 'ArianneD123', '2fa606c8cba21b1e2c0063556ba2cdcf', 2, 5, '2021-07-05', 'Regular', '50000.00', 'Monthly', NULL),
+(43, 'Roselene', 'Erilla', 'imroseleneerilla@gmail.com', 'roselene123', '88a449f7c60f2a4c26977ab874ce7b8f', 1, 1, '2020-10-19', 'Regular', '45000.00', 'Monthly', NULL),
+(44, 'Sandy', 'Cheeks', 'sandycheeks@yahoo.com', 'Sandy123', 'ba853c550a1687d3cc912aef79f857c3', 1, 2, '2023-02-20', 'Casual', '20000.00', 'Monthly', NULL),
+(45, 'Nhicole', 'Calo', 'nhicolecalo123@gmail.com', 'Nhicole', 'e4ef4c3ee5586b7498cd536312f376a1', 1, 2, '2023-01-30', 'Casual', '20000.00', 'Monthly', NULL),
+(46, 'Angelica', 'Narciso', 'narcisoangelica123@rocketmail.com', 'Angge12', 'fc536e00733a9fb7b8cc2e8d3727fced', 1, 2, '2022-12-05', 'Casual', '17000.00', 'Monthly', NULL),
+(47, 'Elle', 'Rovira', 'ellerovira@gmail.com', 'imelle123', 'e5db8794d2115a2d465aa88c5d99ad58', 2, 5, '2023-11-06', 'Casual', '15500.00', 'Monthly', NULL),
+(48, 'Ellie', 'Tumbaga', 'tumbagaellie@yahoo.com', 'Ellie123', 'ce33397f0e2fdb6e5c7e83da88bf823f', 1, 1, '2023-01-09', 'Casual', '15500.00', 'Monthly', NULL),
+(49, 'John Louie', 'Seguente', 'johnlouie123@gmail.com', 'johnlouie123', '93ddbe6e5f8388f95e3b56092d59164f', 3, 2, '2023-11-18', 'Seasonal', '9907.00', 'Weekly', NULL);
 
 -- --------------------------------------------------------
 
@@ -349,13 +391,13 @@ ALTER TABLE `admin_basic_info`
 -- AUTO_INCREMENT for table `attendance_records`
 --
 ALTER TABLE `attendance_records`
-  MODIFY `record_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `record_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `company`
 --
 ALTER TABLE `company`
-  MODIFY `companyID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `companyID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `department`
@@ -367,7 +409,7 @@ ALTER TABLE `department`
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `employeeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `employeeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `employee_basic_info`
