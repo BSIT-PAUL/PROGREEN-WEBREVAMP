@@ -16,10 +16,7 @@
                 <!-- This need backend -->
                 <div class="head-link-set">
                     <ul>
-                        <li><a class="active" href="#">Employement</a></li>
                         <li><a href="profile-detail.php">Detail</a></li>
-                        <li><a href="profile-payroll.php">Payroll</a></li>
-                        <li><a href="profile-timeoff.php">Timeoff</a></li>
                         <li><a href="profile-setting.php">Settings</a></li>
                     </ul>
                 </div>

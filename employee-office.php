@@ -43,25 +43,16 @@ include_once("includes/system_navbar.php");
 						<a href="employee.php"><img src="assets/img/employee.svg" alt="sidebar_img"><span>
 								Employees</span></a>
 					</li>
-					<li>
-						<a href="company.php"><img src="assets/img/company.svg" alt="sidebar_img"> <span>
-								Company</span></a>
-					</li>
+
 					<li>
 						<a href="leave.php"><img src="assets/img/leave.svg" alt="sidebar_img"> <span>Leave</span></a>
 					</li>
 					<li>
 						<a href="review.php"><img src="assets/img/review.svg" alt="sidebar_img"><span>Attendance</span></a>
 					</li>
+
 					<li>
-						<a href="report.php"><img src="assets/img/report.svg" alt="sidebar_img"><span>Report</span></a>
-					</li>
-					<li>
-						<a href="settings.php"><img src="assets/img/settings.svg"
-								alt="sidebar_img"><span>Settings</span></a>
-					</li>
-					<li>
-						<a href="profile.php"><img src="assets/img/profile.svg" alt="sidebar_img">
+						<a href="profile-detail.php"><img src="assets/img/profile.svg" alt="sidebar_img">
 							<span>Profile</span></a>
 					</li>
 				</ul>

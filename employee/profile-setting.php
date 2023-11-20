@@ -22,7 +22,6 @@ include("database/dbcon.php");
 					<div class="col-xl-12 col-sm-12 col-12 mb-4">
 						<div class="head-link-set">
 							<ul>
-								<li><a href="profile.php">Employement</a></li>
 								<li><a href="profile-detail.php">Detail</a></li>
 								<li><a class="active" href="#">Settings</a></li>
 							</ul>

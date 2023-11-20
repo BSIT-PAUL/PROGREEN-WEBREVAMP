@@ -80,7 +80,7 @@ if ($row = $result->fetch_assoc()) {
 								<a href="review.php"><img src="assets/img/review.svg" alt="sidebar_img"><span>Attendance</span></a>
 							</li>
 							<li>
-								<a href="profile.php"><img src="assets/img/profile.svg" alt="sidebar_img"> <span>Profile</span></a>
+								<a href="profile-detail.php"><img src="assets/img/profile.svg" alt="sidebar_img"> <span>Profile</span></a>
 							</li>
 						</ul>
 						<ul class="logout">
@@ -110,8 +110,7 @@ if ($row = $result->fetch_assoc()) {
 					<div class="col-xl-12 col-sm-12 col-12 mb-4">
 						<div class="head-link-set">
 							<ul>
-								<li><a href="profile.php">Employement</a></li>
-								<li><a class="active" href="#">Detail</a></li>
+								<li><a class="active" href="profile-detail.php">Detail</a></li>
 								<li><a href="profile-setting.php">Settings</a></li>
 							</ul>
 						</div>

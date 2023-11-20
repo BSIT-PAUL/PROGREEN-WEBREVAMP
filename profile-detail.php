@@ -58,29 +58,17 @@
 							<li>
 								<a href="employee.php"><img src="assets/img/employee.svg" alt="sidebar_img"><span> Employees</span></a>
 							</li>
-							<li>
-								<a href="company.php"><img src="assets/img/company.svg" alt="sidebar_img"> <span> Company</span></a>
-							</li>
-							<li>
-								<a href="calendar.php"><img src="assets/img/calendar.svg" alt="sidebar_img"> <span>Calendar</span></a>
-							</li>
+
+
 							<li>
 								<a href="leave.php"><img src="assets/img/leave.svg" alt="sidebar_img"> <span>Leave</span></a>
 							</li>
 							<li>
 								<a href="review.php"><img src="assets/img/review.svg" alt="sidebar_img"><span>Attendance</span></a>
 							</li>
-							<li>
-								<a href="report.php"><img src="assets/img/report.svg" alt="sidebar_img"><span>Report</span></a>
-							</li>
-							<li>
-								<a href="manage.php"><img src="assets/img/manage.svg" alt="sidebar_img"> <span>Manage</span></a>
-							</li>
-							<li>
-								<a href="settings.php"><img src="assets/img/settings.svg" alt="sidebar_img"><span>Settings</span></a>
-							</li>
+
 							<li class="active">
-								<a href="profile.php"><img src="assets/img/profile.svg" alt="sidebar_img"> <span>Profile</span></a>
+								<a href="profile-detail.php"><img src="assets/img/profile.svg" alt="sidebar_img"> <span>Profile</span></a>
 							</li>
 						</ul>
 						<ul class="logout">
@@ -110,10 +98,7 @@
 					<div class="col-xl-12 col-sm-12 col-12 mb-4">
 						<div class="head-link-set">
 							<ul>
-								<li><a href="profile.php">Employement</a></li>
-								<li><a class="active" href="#">Detail</a></li>
-								<li><a href="profile-payroll.php">Payroll</a></li>
-								<li><a href="profile-timeoff.php">Timeoff</a></li>
+								<li><a class="active" href="profile-detail.php">Detail</a></li>
 								<li><a href="profile-setting.php">Settings</a></li>
 							</ul>
 						</div>
@@ -195,51 +180,24 @@
 								</div>
 							</div>
 							<div class="col-xl-4 col-sm-12 col-12 ">
-								<div class="card card-lists flex-fill">
-									<div class="card-header">
-										<h2 class="card-titles">Dates</h2>
-										<a class="edit-link"><i data-feather="edit"></i></a>
-									</div>
-									<div class="card-body">
-										<div class="member-info">
-											<ul>
-												<li>
-													<label>Phone Number </label>
-													<span><?php echo $_SESSION['phoneNumber'] ?></span>
-												</li>
-												<li>
-													<label>Personal Email</label>
-													<span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e984889b80888a869d9d8687a98c91888499858cc78a8684">[email&#160;protected]</a></span>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-								<div class="card card-lists flex-fill">
-									<div class="card-header">
-										<h2 class="card-titles">Contact</h2>
-										<label>New Type</label>
-									</div>
-									<div class="member-formcontent-path p-4">
-										<div class="member-date  member-newformat">
-											<ul>
-												<li>
-													<div class="form-group">
-														<input type="text" placeholder="Add Start Date">
-														<div class="addon"><i data-feather="calendar"></i></div>
-													</div>
-												</li>
-												<li>
-													<div class="form-group">
-														<input type="text" placeholder="Add Visa Expiry Date ">
-														<div class="addon"><i data-feather="calendar"></i></div>
-													</div>
-												</li>
-											</ul>
-											<a class="btn my-3 btn-primary w-100 ">Add A Key Date</a>
-										</div>
-									</div>
-								</div>
+							<div class="card card-lists flex-fill">
+        <div id="alertContainer"></div> <!-- Container for the alert -->
+        <div class="card-header">
+            <h2 class="card-titles">Profile Picture</h2>
+            <!-- Use a button type "button" instead of "submit" to allow custom validation -->
+        </div>
+        <div class="card-body">
+            <div class="company-logo" style="position: relative;">
+                <div id="imagePreview">
+                    <?php
+
+                        echo '<img style="max-width: 100%; max-height: 300px;" src="assets/img/profile.jpg" alt="default_profile_picture" />';
+                    
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
 							</div>
 						</div>
 					</div>

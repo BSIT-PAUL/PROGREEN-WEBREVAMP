@@ -22,14 +22,7 @@ include_once("includes/system_navbar.php");
 							</a>
 						</div>
 					</div>
-					<div class="sidebar-input">
-						<div class="top-nav-search">
-							<form>
-								<input type="text" class="form-control" placeholder="Search here">
-								<button class="btn" type="submit"><i class="fas fa-search"></i></button>
-							</form>
-						</div>
-					</div>
+				
 				</div>
 				<ul>
 					<li>
@@ -44,7 +37,7 @@ include_once("includes/system_navbar.php");
 								alt="sidebar_img"><span>Attendance</span></a>
 					</li>
 					<li>
-						<a href="profile.php"><img src="assets/img/profile.svg" alt="sidebar_img">
+						<a href="profile-detail.php"><img src="assets/img/profile.svg" alt="sidebar_img">
 							<span>Profile</span></a>
 					</li>
 				</ul>
@@ -228,36 +221,55 @@ include_once("includes/system_navbar.php");
 		<div class="row">
 			<div class="col-xl-6 d-flex mobile-h">
 				<div class="card flex-fill">
-					<div class="card-header">
-						<div class="d-flex justify-content-between align-items-center">
-							<h5 class="card-title">Total Employees</h5>
-						</div>
-					</div>
-					<div class="card-body">
-						<div id="invoice_chart"></div>
-						<div class="text-center text-muted">
-							<div class="row">
-								<div class="col-4">
-									<div class="mt-4">
-										<p class="mb-2 text-truncate"><i class="fas fa-circle text-primary mr-1"></i>
-											Business</p>
-									</div>
-								</div>
-								<div class="col-4">
-									<div class="mt-4">
-										<p class="mb-2 text-truncate"><i class="fas fa-circle text-success mr-1"></i>
-											Development</p>
-									</div>
-								</div>
-								<div class="col-4">
-									<div class="mt-4">
-										<p class="mb-2 text-truncate"><i class="fas fa-circle text-danger mr-1"></i>
-											Testing</p>
-									</div>
-								</div>
+				<div class="card-header ">
+						<h4 class="card-title-dash">Leave History</h4>
+						<div class="dropdown">
+
+							<div class="dropdown-menu" aria-labelledby="roomsBtn">
+								<a class="dropdown-item" href="#">Action</a>
 							</div>
 						</div>
 					</div>
+					<?php
+					$query = "SELECT * FROM leave_application WHERE employee_id = $userId";
+					$result = mysqli_query($con, $query);
+
+					if ($result) {
+						echo '<div class="card-body p-0">';
+						while ($row = mysqli_fetch_assoc($result)) {
+							$statusClass = '';
+
+							switch ($row['Status']) {
+								case 'Pending':
+									$statusClass = 'leave-pending';
+									break;
+								case 'Approved':
+									$statusClass = 'leave-active';
+									break;
+								case 'Reject':
+									$statusClass = 'leave-inactive';
+									break;
+							}
+							$formattedDate = date("M d, Y", strtotime($row['start_date']));
+
+							echo '<div class="leave-set">';
+							echo '<span class="' . $statusClass . '">';
+							echo '<i class="fas fa-briefcase"></i>';
+							echo '</span>';
+							echo '<label style="margin-right: 10px">' . $formattedDate . '</label>';
+							echo '<label style="margin-right: 10px">' . $row['leave_type'] . '</label>';
+							echo '</div>';
+						}
+
+						echo '<div class="leave-viewall">';
+						echo '<a href="leave.php"> Add Leave <img src="assets/img/right-arrow.png" class="ml-2" alt="arrow" /></a>';
+						echo '</div>';
+						echo '</div>';
+					} else {
+						echo "Error: " . $query . "<br>" . mysqli_error($con);
+					}
+					mysqli_close($con);
+					?>
 				</div>
 			</div>
 			<div class="col-xl-6 d-flex">
@@ -267,7 +279,7 @@ include_once("includes/system_navbar.php");
 							<h5 class="card-title">HOliday List</h5>
 						</div>
 					</div>
-					<div class="table table-responsive custimze-table" style="max-height: 500px; overflow-y: scroll;">
+					<div class="table table-responsive custimze-table" style="max-height: 200px; overflow-y: scroll;">
 						<table>
 							<thead>
 								<tr>
@@ -386,152 +398,7 @@ include_once("includes/system_navbar.php");
 				</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-xl-6 col-sm-12 col-12 d-flex">
-				<div class="card card-list flex-fill">
-					<div class="card-header ">
-						<h4 class="card-title-dash">Leave History</h4>
-						<div class="dropdown">
-							<button class="btn btn-action " type="button" id="roomsBtn" data-toggle="dropdown"
-								aria-haspopup="true" aria-expanded="false">
-								<i class="fas fa-ellipsis-h"></i>
-							</button>
-							<div class="dropdown-menu" aria-labelledby="roomsBtn">
-								<a class="dropdown-item" href="#">Action</a>
-							</div>
-						</div>
-					</div>
-					<?php
-					$query = "SELECT * FROM leave_application WHERE employee_id = $userId";
-					$result = mysqli_query($con, $query);
 
-					if ($result) {
-						echo '<div class="card-body p-0">';
-						while ($row = mysqli_fetch_assoc($result)) {
-							$statusClass = '';
-
-							switch ($row['Status']) {
-								case 'Pending':
-									$statusClass = 'leave-pending';
-									break;
-								case 'Approved':
-									$statusClass = 'leave-active';
-									break;
-								case 'Reject':
-									$statusClass = 'leave-inactive';
-									break;
-							}
-							$formattedDate = date("M d, Y", strtotime($row['start_date']));
-
-							echo '<div class="leave-set">';
-							echo '<span class="' . $statusClass . '">';
-							echo '<i class="fas fa-briefcase"></i>';
-							echo '</span>';
-							echo '<label style="margin-right: 10px">' . $formattedDate . '</label>';
-							echo '<label style="margin-right: 10px">' . $row['leave_type'] . '</label>';
-							echo '</div>';
-						}
-
-						echo '<div class="leave-viewall">';
-						echo '<a href="leave.php"> Add Leave <img src="assets/img/right-arrow.png" class="ml-2" alt="arrow" /></a>';
-						echo '</div>';
-						echo '</div>';
-					} else {
-						echo "Error: " . $query . "<br>" . mysqli_error($con);
-					}
-					mysqli_close($con);
-					?>
-				</div>
-			</div>
-			<div class="col-xl-6 col-sm-12 col-12 d-flex">
-				<div class="card card-list flex-fill">
-					<div class="card-header">
-						<div class="p-0  ">
-							<h4 class="card-title">Recent Activities</h4>
-						</div>
-					</div>
-					<div class="card-body dash-activity">
-						<div class="slimscroll activity_scroll">
-							<div class="activity-set">
-								<div class="activity-img">
-									<img src="assets/img/profiles/avatar-02.jpg" alt="avatar">
-								</div>
-								<div class="activity-content">
-									<label>Lorem ipsum dolor sit amet,</label>
-									<span>2 hours ago</span>
-								</div>
-							</div>
-							<div class="activity-set">
-								<div class="activity-img">
-									<img src="assets/img/profiles/avatar-05.jpg" alt="avatar">
-								</div>
-								<div class="activity-content">
-									<label>Lorem ipsum dolor sit amet,</label>
-									<span>3 hours ago</span>
-								</div>
-							</div>
-							<div class="activity-set">
-								<div class="activity-img">
-									<img src="assets/img/profiles/avatar-07.jpg" alt="avatar">
-								</div>
-								<div class="activity-content">
-									<label>Lorem ipsum dolor sit amet,</label>
-									<span>4 hours ago</span>
-								</div>
-							</div>
-							<div class="activity-set">
-								<div class="activity-img">
-									<img src="assets/img/profiles/avatar-08.jpg" alt="avatar">
-								</div>
-								<div class="activity-content">
-									<label>Lorem ipsum dolor sit amet,</label>
-									<span>5 hours ago</span>
-								</div>
-							</div>
-							<div class="activity-set">
-								<div class="activity-img">
-									<img src="assets/img/profiles/avatar-09.jpg" alt="avatar">
-								</div>
-								<div class="activity-content">
-									<label>Lorem ipsum dolor sit amet,</label>
-									<span>6 hours ago</span>
-								</div>
-							</div>
-							<div class="activity-set">
-								<div class="activity-img">
-									<img src="assets/img/profiles/avatar-10.jpg" alt="avatar">
-								</div>
-								<div class="activity-content">
-									<label>Lorem ipsum dolor sit amet,</label>
-									<span>2 hours ago</span>
-								</div>
-							</div>
-							<div class="activity-set">
-								<div class="activity-img">
-									<img src="assets/img/profiles/avatar-12.jpg" alt="avatar">
-								</div>
-								<div class="activity-content">
-									<label>Lorem ipsum dolor sit amet,</label>
-									<span>3 hours ago</span>
-								</div>
-							</div>
-							<div class="activity-set">
-								<div class="activity-img">
-									<img src="assets/img/profiles/avatar-13.jpg" alt="avatar">
-								</div>
-								<div class="activity-content">
-									<label>Lorem ipsum dolor sit amet,</label>
-									<span>4 hours ago</span>
-								</div>
-							</div>
-						</div>
-						<div class="leave-viewall activit">
-							<a>View all <img src="assets/img/right-arrow.png" class="ml-2" alt="arrow"></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 	</div>
 </div>
 

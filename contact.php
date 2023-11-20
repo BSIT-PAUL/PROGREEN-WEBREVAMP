@@ -87,14 +87,37 @@
 
 
     <!-- Google Map Start -->
-    <div class="container-xxl px-0 wow fadeIn" data-wow-delay="0.1s" style="margin-bottom: -6px;">
+    <!-- <div class="container-xxl px-0 wow fadeIn" data-wow-delay="0.1s" style="margin-bottom: -6px; ">
         <iframe class="w-100" style="height: 450px;"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
             frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-    </div>
+    </div> -->
     <!-- Google Map End -->
 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3_BdM7vS8GQB4TIIpkeeaYTifJCSHrUo&callback=initMap" async defer></script>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style> <div id="map"></div>
 
+<script>
+    function initMap() {
+        var location = { lat: 14.049206253383234, lng: 120.64969598465662 };
+        
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: location,
+            zoom: 15
+        });
+        
+        var marker = new google.maps.Marker({
+            position: location,
+            map: map,
+            title: 'Your Location'
+        });
+    }
+</script>
     <!-- Footer Start -->
     <div class="container-fluid bg-dark footer pt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
