@@ -33,43 +33,7 @@ include("includes/sidebar.php");
 		</div>
 
 
-		<div class="row">
-			<div class="col-xl-12 col-sm-12 col-12 ">
-				<div class="card">
-					<div class="card-header">
-						<h2 class="card-titles">Leave Details</h2>
-					</div>
-					<div class="card-body p-0">
-						<div class="table-responsive">
-							<table class="table  custom-table  no-footer">
-								<thead>
-									<tr>
-										<th>Date</th>
-										<th>Total Employees </th>
-										<th>First Half </th>
-										<th>Second Half </th>
-										<th>Working From Home </th>
-										<th>Absent</th>
-										<th>Today Aways</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td><label>05 May 2019 </label></td>
-										<td><label>7 </label></td>
-										<td><label>6 </label></td>
-										<td><label>6 </label></td>
-										<td><label>1 </label></td>
-										<td><label>0 </label></td>
-										<td><label>1 </label></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+
 		<div class="row">
 			<div class="col-xl-12 col-sm-12 col-12 ">
 				<div class="card ">
