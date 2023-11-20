@@ -36,7 +36,7 @@ include_once("includes/sidebar.php");
 			</div>
 			<div class="col-xl-12 col-sm-12 col-12 mb-4">
 				<div class="row">
-					<div class="col-xl-10 col-sm-8 col-12 ">
+					<div class="col-xl-11 col-sm-8 col-12 ">
 					<?php
 						// Count the number of employees
 						$countQuery = "SELECT COUNT(*) AS employeeCount FROM employee";
@@ -45,9 +45,7 @@ include_once("includes/sidebar.php");
 					?>
 					<label class="employee_count"><?php echo $employeeCount; ?> People</label>
 					</div>
-					<div class="col-xl-1 col-sm-2 col-12 ">
-						<a href="employee-grid.php" class="btn-view "><i data-feather="grid"></i> </a>
-					</div>
+				
 					<div class="col-xl-1 col-sm-2 col-12 ">
 						<a href="#" class="btn-view active"><i data-feather="list"></i> </a>
 					</div>

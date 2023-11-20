@@ -55,9 +55,6 @@ include_once("includes/system_navbar.php");
 						<a href="report.php"><img src="assets/img/report.svg" alt="sidebar_img"><span>Report</span></a>
 					</li>
 					<li>
-						<a href="manage.php"><img src="assets/img/manage.svg" alt="sidebar_img"> <span>Manage</span></a>
-					</li>
-					<li>
 						<a href="settings.php"><img src="assets/img/settings.svg"
 								alt="sidebar_img"><span>Settings</span></a>
 					</li>
@@ -93,7 +90,7 @@ include_once("includes/system_navbar.php");
 				<div class="head-link-set">
 					<ul>
 						<li><a href="employee.php">All</a></li>
-						<li><a href="employee-office.php">Offices</a></li>
+						<li><a href="employee-office.php">Department</a></li>
 						<li><a class="active" href="#">Job</a></li>
 					</ul>
 					<a class="btn-add" href="add-employee.php"><i data-feather="plus"></i> Add Employee</a>
@@ -101,14 +98,22 @@ include_once("includes/system_navbar.php");
 			</div>
 		</div>
 		<div class="row mb-3">
-			<div class="col-xl-10 col-sm-8 col-12 ">
-				<label class="employee_count">1 Job</label>
+			<div class="col-xl-11 col-sm-8 col-12 ">
+				<?php 
+				// Query to get the leave count
+		$sqlJob = "SELECT COUNT(*) as Job_count FROM `Job`";
+		$resultJob = mysqli_query($con, $sqlJob);
+
+		// Fetch the result
+		$rowJob = mysqli_fetch_assoc($resultJob);
+		$JobCount = $rowJob['Job_count'];
+				?>
+				<label class="employee_count">							<h4><?php echo $JobCount; ?> Job</h4>
+</label>
 			</div>
+
 			<div class="col-xl-1 col-sm-2 col-12 ">
-				<a href="#" class="btn-view active "><i data-feather="grid"></i> </a>
-			</div>
-			<div class="col-xl-1 col-sm-2 col-12 ">
-				<a href="employee.php" class="btn-view "><i data-feather="list"></i> </a>
+				<a href="employee.php" class="btn-view active"><i data-feather="list"></i> </a>
 			</div>
 		</div>
 		<div class="row">
@@ -189,39 +194,40 @@ include_once("includes/system_navbar.php");
 			<div class="col-xl-12 col-sm-12 col-12 ">
 				<div class="card">
 					<div class="card-header create-formhead">
-						<h2 class="card-titles">Focus Technologies<span>Head Office</span></h2>
-						<a data-toggle="modal" data-target="#edit" class="edit-link"><i data-feather="edit"></i> </a>
+						<h2 class="card-titles">Progreen<span>Job</span></h2>
 					</div>
 					<div class="card-body">
 						<div class="member-formcontent member-row">
 							<div class="member-head">
 								<h2>Members</h2>
-								<div class="avatar-group">
-									<div class="avatar avatar-xs group_img group_header">
-										<img class="avatar-img rounded-circle" alt="User Image"
-											src="assets/img/profiles/avatar-10.jpg">
-									</div>
-									<div class="avatar avatar-xs group_img group_header">
-										<img class="avatar-img rounded-circle" alt="User Image"
-											src="assets/img/profiles/avatar-15.jpg">
-									</div>
-									<div class="avatar avatar-xs group_img group_header">
-										<img class="avatar-img rounded-circle" alt="User Image"
-											src="assets/img/profiles/avatar-16.jpg">
-									</div>
-									<div class="avatar avatar-xs group_img group_header">
-										<img class="avatar-img rounded-circle" alt="User Image"
-											src="assets/img/profiles/avatar-17.jpg">
-									</div>
-									<div class="avatar avatar-xs group_img group_header">
-										<img class="avatar-img rounded-circle" alt="User Image"
-											src="assets/img/profiles/avatar-14.jpg">
-									</div>
-									<div class="avatar avatar-xs group_img group_header">
-										<img class="avatar-img rounded-circle" alt="User Image"
-											src="assets/img/profiles/avatar-18.jpg">
-									</div>
-								</div>
+	<?php 
+	// Fetch data from the database
+$sql = "SELECT `UserID`, `UserName`, `ProfilePicture` FROM `userprofile`";
+$result = $con->query($sql);
+
+// Generate HTML based on the database data
+if ($result->num_rows > 0) {
+	echo '<div class="avatar-group">';
+
+	while ($row = $result->fetch_assoc()) {
+			$userID = $row['UserID'];
+			$userName = $row['UserName'];
+			$profilePicture = base64_encode($row['ProfilePicture']); // Assuming ProfilePicture is a BLOB
+
+			echo '<div class="avatar avatar-xs group_img group_header">';
+			echo '<img class="avatar-img rounded-circle" alt="' . $userName . '" src="data:image/jpeg;base64,' . $profilePicture . '">';
+			echo '</div>';
+	}
+
+	echo '</div>';
+} else {
+	echo 'No users found in the database.';
+}
+
+
+
+	
+	?>
 							</div>
 							<div class="member_link">
 								<a data-toggle="collapse" href="#table" role="button" aria-expanded="false"
