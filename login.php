@@ -45,7 +45,7 @@ include 'database/dbcon.php';
                   <label class="form-control-label">Password</label>
                   <div class="pass-group">
                     <input type="password" class="form-control pass-input" name="pass" id="passwordInput" required />
-<span class="fas fa-eye toggle-password" id="togglePassword"></span>
+                    <span class="fas fa-eye toggle-password" id="togglePassword"></span>
                   </div>
                 </div>
                 <div class="form-group">
@@ -118,10 +118,10 @@ include 'database/dbcon.php';
 
                     $imageData = $row['ProfilePicture'];
                     $_SESSION['imageData'] = $imageData;
-                    $employee_info_query = mysqli_query($con, "SELECT * FROM employee_basic_info WHERE employeeID=". $row_employee['employeeID']);
+                    $employee_info_query = mysqli_query($con, "SELECT * FROM employee_basic_info WHERE employeeID=" . $row_employee['employeeID']);
                     $employee_info = mysqli_fetch_array($employee_info_query);
-                    
-                    if($employee_info){
+
+                    if ($employee_info) {
                       $_SESSION['user_preferredName'] = $employee_info['preferredName'];
                       $_SESSION['nationality'] = $employee_info['nationality'];
                       $_SESSION['dateOfBirth'] = $employee_info['dateOfBirth'];
@@ -151,21 +151,21 @@ include 'database/dbcon.php';
     </div>
   </div>
   <script>
-document.addEventListener('DOMContentLoaded', function () {
-  const passwordInput = document.getElementById('passwordInput');
-  const togglePassword = document.getElementById('togglePassword');
+    document.addEventListener('DOMContentLoaded', function () {
+      const passwordInput = document.getElementById('passwordInput');
+      const togglePassword = document.getElementById('togglePassword');
 
-  // Add click event listener to the eye icon
-  togglePassword.addEventListener('click', function () {
-    // Toggle the password input type between "password" and "text"
-    if (passwordInput.type === 'password') {
-      passwordInput.type = 'text';
-    } else {
-      passwordInput.type = 'password';
-    }
-  });
-});
-</script>
+      // Add click event listener to the eye icon
+      togglePassword.addEventListener('click', function () {
+        // Toggle the password input type between "password" and "text"
+        if (passwordInput.type === 'password') {
+          passwordInput.type = 'text';
+        } else {
+          passwordInput.type = 'password';
+        }
+      });
+    });
+  </script>
 
   <script src="assets/js/jquery-3.5.1.min.js"></script>
 

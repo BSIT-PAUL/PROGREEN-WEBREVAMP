@@ -14,13 +14,14 @@ include_once("includes/sidebar.php");
 			$currentDate = date("D, d M Y"); // Format: "Day, DD Month YYYY"
 			echo "<label class='small-text'>$currentDate</label>";
 			?>
-			
+
 		</div>
 		<div class="row mb-4">
 			<div class="col-xl-6 col-sm-12 col-12">
 				<div class="breadcrumb-path ">
 					<ul class="breadcrumb">
-						<li class="breadcrumb-item"><a href="index.php"><img src="assets/img/dash.png" class="mr-3" alt="breadcrumb" />Home</a>
+						<li class="breadcrumb-item"><a href="index.php"><img src="assets/img/dash.png" class="mr-3"
+									alt="breadcrumb" />Home</a>
 						</li>
 						<li class="breadcrumb-item active">Dashboard</li>
 					</ul>
@@ -84,17 +85,17 @@ include_once("includes/sidebar.php");
 		LEFT JOIN employee e ON d.deptID = e.departmentID
 		GROUP BY d.deptName";
 
-$result = $con->query($sql);
+		$result = $con->query($sql);
 
-$label = array("Engineering", "Production", "Warehouse", "LCS", "GHQ", "GSS");
-$percentage = array_fill_keys($label, 0);
+		$label = array("Engineering", "Production", "Warehouse", "LCS", "GHQ", "GSS");
+		$percentage = array_fill_keys($label, 0);
 
-while ($row = $result->fetch_assoc()) {
-$percentage[$row["deptName"]] = $row["marks_percentage_count"];
-}
+		while ($row = $result->fetch_assoc()) {
+			$percentage[$row["deptName"]] = $row["marks_percentage_count"];
+		}
 
-$chartLabel = json_encode(array_keys($percentage));
-$chartData = json_encode(array_values($percentage));
+		$chartLabel = json_encode(array_keys($percentage));
+		$chartData = json_encode(array_values($percentage));
 
 
 
@@ -108,7 +109,9 @@ $chartData = json_encode(array_values($percentage));
 					<div class="card-body">
 						<div class="card_widget_header">
 							<label>Employees</label>
-							<h4><?php echo $employeeCount; ?></h4>
+							<h4>
+								<?php echo $employeeCount; ?>
+							</h4>
 
 
 						</div>
@@ -123,7 +126,9 @@ $chartData = json_encode(array_values($percentage));
 					<div class="card-body">
 						<div class="card_widget_header">
 							<label>Department</label>
-							<h4><?php echo $departmentCount; ?></h4>
+							<h4>
+								<?php echo $departmentCount; ?>
+							</h4>
 						</div>
 						<div class="card_widget_img">
 							<img src="assets/img/dash2.png" alt="card-img" />
@@ -136,7 +141,9 @@ $chartData = json_encode(array_values($percentage));
 					<div class="card-body">
 						<div class="card_widget_header">
 							<label>Leaves</label>
-							<h4><?php echo $leaveCount; ?></h4>
+							<h4>
+								<?php echo $leaveCount; ?>
+							</h4>
 						</div>
 						<div class="card_widget_img">
 							<img src="assets/img/dash3.png" alt="card-img" />
@@ -149,7 +156,9 @@ $chartData = json_encode(array_values($percentage));
 					<div class="card-body">
 						<div class="card_widget_header">
 							<label>Salary</label>
-							<h4>$<?php echo $formattedSalary; ?></h4>
+							<h4>$
+								<?php echo $formattedSalary; ?>
+							</h4>
 						</div>
 						<div class="card_widget_img">
 							<img src="assets/img/dash4.png" alt="card-img" />
@@ -159,45 +168,45 @@ $chartData = json_encode(array_values($percentage));
 			</div>
 		</div>
 		<div class="row">
-		<div class="col-xl-4 col-lg-12 d-flex mobile-h">
-    <div class="card flex-fill">
-        <div class="card-header">
-            <div class="d-flex justify-content-between align-items-center">
-                <h5 class="card-title">Total Employees by Department</h5>
-            </div>
-        </div>
-        <div class="card-body">
-            <canvas id="chartjs-doughnut"></canvas>
-            <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
-            <script>
-                var chartLabel = <?php echo $chartLabel; ?>;
-                var chartData = <?php echo $chartData; ?>;
+			<div class="col-xl-4 col-lg-12 d-flex mobile-h">
+				<div class="card flex-fill">
+					<div class="card-header">
+						<div class="d-flex justify-content-between align-items-center">
+							<h5 class="card-title">Total Employees by Department</h5>
+						</div>
+					</div>
+					<div class="card-body">
+						<canvas id="chartjs-doughnut"></canvas>
+						<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+						<script>
+							var chartLabel = <?php echo $chartLabel; ?>;
+							var chartData = <?php echo $chartData; ?>;
 
-                new Chart(document.getElementById("chartjs-doughnut"), {
-                    type: 'doughnut',
-                    data: {
-                        labels: chartLabel,
-                        datasets: [{
-                            backgroundColor: ["#7638FF", "#22CC62", "#EF3737", "#757575", "#FFBC34", "#009EFB", "#1EC1B0"],
-                            data: chartData
-                        }]
-                    },
-                    options: {
-											responsive: true,
-                        plugins: {
-                            legend: {
-                                display: true,
-                                position: 'bottom'
-                            }
-                        },
-                        cutout: '60%', // the portion of the doughnut that is cutout in the middle
-                        radius: 125
-                    }
-                });
-            </script>
-        </div>
-    </div>
-</div>
+							new Chart(document.getElementById("chartjs-doughnut"), {
+								type: 'doughnut',
+								data: {
+									labels: chartLabel,
+									datasets: [{
+										backgroundColor: ["#7638FF", "#22CC62", "#EF3737", "#757575", "#FFBC34", "#009EFB", "#1EC1B0"],
+										data: chartData
+									}]
+								},
+								options: {
+									responsive: true,
+									plugins: {
+										legend: {
+											display: true,
+											position: 'bottom'
+										}
+									},
+									cutout: '60%', // the portion of the doughnut that is cutout in the middle
+									radius: 125
+								}
+							});
+						</script>
+					</div>
+				</div>
+			</div>
 
 			<div class="col-xl-8 d-flex">
 				<div class="card flex-fill">
@@ -212,8 +221,8 @@ $chartData = json_encode(array_values($percentage));
 				</div>
 			</div>
 		</div>
-	
-					
+
+
 	</div>
 </div>
 
