@@ -191,7 +191,7 @@ $chartData = json_encode(array_values($percentage));
                             }
                         },
                         cutout: '60%', // the portion of the doughnut that is cutout in the middle
-                        radius: 150
+                        radius: 125
                     }
                 });
             </script>
