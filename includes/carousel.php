@@ -12,8 +12,7 @@
           <div class="row text-left">
             <div class="col-lg-7">
               <h5 class="display-4 mb-5 animated slideInDown">A GLOBAL PARTNERSHIP FOR SUSTAINABLE AND RESILIENT LANDSCAPES</h5>
-              <a href="product.html" class="btn btn-outline-primary square-pill py-sm-3 px-sm-5">Products</a>
-              <a href="product.html" class="btn btn-outline-primary square-pill py-sm-3 px-sm-5 ms-3">Services</a>
+              <a href="about.php" class="btn btn-outline-primary square-pill py-sm-3 px-sm-5">Know more</a>
 
             </div>
           </div>

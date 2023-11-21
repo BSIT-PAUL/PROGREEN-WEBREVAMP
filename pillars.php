@@ -25,6 +25,7 @@
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
+    
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
@@ -112,7 +113,7 @@
 <div class="container-fluid bg-light bg-icon my-5 py-6">
     <div class="container">
         <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-            <h1 class="display-5 mb-3">Cross-Cutting Themes</h1>
+            <h1 class="display-5 mb-3">Pillars</h1>
         </div>
         <div class="row g-4">
             <!-- Feature 1 -->
@@ -120,10 +121,22 @@
                 <div class="bg-white text-justify h-100 p-4 p-xl-3">
                     <h2 class="mb-2">
                         <img class="img-fluid rounded-circle mr-2" width="150" height="150" src="img/icon_CC_Woman_Youth_1.png" alt="Engaging Communities and Vulnerable Groups">
-                        Engaging Communities and Vulnerable Groups
+                        Pillar 1: Strengthening Forest and Landscape Management
                     </h2>
+                    
                     <!-- Add a margin-top to separate image and text -->
-                    <p class="mb-4 mt-2">PROGREEN actively engages with and encourages the participation of vulnerable groups, including women, youth, indigenous peoples, and marginalized populations—through project assessments and diagnostics, and participatory consultations during project preparation. PROGREEN will ensure that funded activities address project-specific gaps in engaging women, youth and indigenous peoples, and indicators to monitor progress towards these outcomes. Grant recipients are required to engage communities and vulnerable groups in areas such as decision–making, transparency, income generating activities, and benefit–sharing, and all proposed projects will be screened for their potential to increase this participation. Opportunities for involvement by communities and vulnerable groups include employment as service providers, trainers, and third–party project monitors. PROGREEN can also finance project interventions, trainings, and capacity building activities that target women, youth, and indigenous peoples. <br><br>  PROGREEN activities are aligned with the World Bank’s Environmental and Social Framework to inclusively promote sustainable development benefits and opportunities, and the Gender Equality Strategy , which emphasizes that development results are enhanced when both women and men are afforded equal participation. Women potentially represent a large share of the direct and indirect beneficiaries from PROGREEN, as they are active participants in rural economies as farmers, workers and entrepreneurs. On average, women make up almost half of the agricultural workforce but, compared to men, they possess fewer agricultural assets, such as land, livestock, and human capital, and have less access to inputs and services, such as seed, fertilizer, finance, and insurance. Mainstreaming gender considerations in landscape development approaches will be key to achieving global environmental benefits and meet the challenge of reducing deforestation.</p>
+                    <p class="mb-4 mt-2">PROGREEN is working to increase the use of integrated landscape management to improve livelihoods, support economic development, and maintain and restore ecosystem services.</p>
+                    <p class="mb-4 mt-2">Activities supported under this Pillar will:</p>
+                    <ul>
+                        <li>promote sustainable land and natural resource management practices</li>
+                        <li>restore land to improve ecosystem services</li>
+                        <li>protect ecosystems that have a high conservation value</li>
+                        <li>advance forest tenure security</li>
+                        <li>improve livelihoods</li>
+                        <li>strengthen management of protected areas</li>
+                        <li>encourage nature-based tourism</li>
+                        <li>engage indigenous peoples and local communities</li>
+                    </ul>
                 </div>
             </div>
 
@@ -131,10 +144,21 @@
             <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="bg-white text-justify h-100 p-4 p-xl-3">
                     <h2 class="mb-2">
-                        <img class="img-fluid rounded-circle mr-2" width="150" height="150" src="img/icon_CC_Climate_Change_2.png" alt="Nature–Based Solutions: Climate Change Mitigation & Adaptation">
-                        Nature–Based Solutions: Climate Change Mitigation & Adaptation
+                        <img class="img-fluid rounded-circle mr-2" width="150" height="150" src="img/icon_CC_Woman_Youth_1.png" alt="Engaging Communities and Vulnerable Groups">
+                        Pillar 2: Promoting Sustainable Landscape Practices
                     </h2>
-                    <p class="mb-4">All PROGREEN’s financed activities align with and contribute towards the climate change related priorities, initiatives, and targets of the specific countries. Climate adaptation and resilience considerations are integrated into PROGREEN’s program development, implementation priorities, and project design, and all activities build on existing plans and responses to specific climate risks within the local landscapes or habitats. <br><br> ROGREEN engages with government counterparts and provides training in the use of analytical and assessment tools for project screening, scenario modeling, and project design. PROGREEN can also assist countries with their emissions reductions goals by helping them make the jump from preparing for Emission Reductions Programs to successfully implementing the on-ground activities and forest monitoring needed to receive the performance-based payments.</p>
+                    
+                    <!-- Add a margin-top to separate image and text -->
+                    <p class="mb-4 mt-2">PROGREEN is working to reduce agricultural land conversion through improved management of agriculture lands.</p>
+                    <p class="mb-4 mt-2">Activities supported under this Pillar will:</p>
+                    <ul>
+                        <li>increase sustainable food production</li>
+                        <li>restore degraded landscapes for conservation and production</li>
+                        <li>slow biodiversity loss</li>
+                        <li>increase habitat for wildlife in agriculture landscapes</li>
+                        <li>help farmers meet responsible commodity value chain sourcing and quality requirements</li>
+                        <li>promote climate-smart agriculture techniques, agroforestry approaches, and sustainable pasture management practices</li>
+                    </ul>
                 </div>
             </div>
 
@@ -142,18 +166,19 @@
             <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="bg-white text-justify h-100 p-4 p-xl-3">
                     <h2 class="mb-2">
-                        <img class="img-fluid rounded-circle mr-2" width="150" height="150" src="img/icon_CC_Maximizing_Finance_1.png" alt="Maximizing Finance for Development">
-                        Maximizing Finance for Development
+                        <img class="img-fluid rounded-circle mr-2" width="150" height="150" src="img/icon_CC_Woman_Youth_1.png" alt="Engaging Communities and Vulnerable Groups">
+                        Pillar 3: Supporting Cross-sectoral Landscape Solutions
                     </h2>
-                    <p class="mb-4">PROGREEN aims to increase private sector collaboration and investment in reducing deforestation and habitat loss. Through in-depth analysis and outreach activities, PROGREEN identifies and supports leveraging private sector investment in projects and value chains, including:</p>
-                    <ul>
-    <li>Policy analysis and technical assistance to strengthen the enabling environment for green investment and remove incentives for production practices that degrade sensitive habitats or ecosystem services.</li>
-    <li>Models and evidence that support the business case for commercial enterprises and sectors, such as tourism, in employing nature-based products and services.</li>
-    <li>Trainings for banking sector officials or efforts to strengthen disclosure requirements, regulation, and supervision of the financial sector to mainstream environmental and social sustainability considerations.</li>
-    <li>Support multi-sector platforms and knowledge sharing events for private sector investment in sustainable production practices, such as timber plantations, agroforestry, timber processing, and the production and marketing of non¬–¬timber forest products.</li>
-    <li>Technological trainings for private investors on implementing and assessing on–ground investments, including management information systems, monitoring systems, and remote sensing.</li>
-</ul>
-
+                    
+                    <!-- Add a margin-top to separate image and text -->
+                    <p class="mb-4 mt-2">PROGREEN aims to reduce land-use change driven by sectors such as infrastructure, mining, and transport through activities that:   </p>
+                    <p class="mb-4 mt-2">Activities supported under this Pillar will:</p>
+                    <ul >
+                        <li>improve methods and approaches for reducing the impact from other sectors on forests and for restoring areas degraded by those sectors</li>
+                        <li>develop tools for spatial land use planning and development, including socio-economic cost benefit analysis</li>
+                        <li>facilitate participatory landscape planning across sectors</li>
+                        <li>promote the design of green large-scale infrastructure and the establishment of green infrastructure networks</li>
+                    </ul>
                 </div>
             </div>
         </div>

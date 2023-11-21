@@ -24,29 +24,26 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="index.php" class="nav-item nav-link active">Home</a>
-                <a href="about.php" class="nav-item nav-link">About Us</a>
-                <a href="product.php" class="nav-item nav-link">Products</a>
+                <a href="about.php" class="nav-item nav-link">About</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">How We Work</a>
                     <div class="dropdown-menu m-0">
-                        <a href="blog.php" class="dropdown-item">Blog Grid</a>
+                        <a href="feature.php" class="dropdown-item">Cross-Cutting Themes</a>
                         <a href="feature.php" class="dropdown-item">Our Features</a>
                         <a href="testimonial.php" class="dropdown-item">Testimonial</a>
                         <a href="404.php" class="dropdown-item">404 Page</a>
                     </div>
                 </div>
+
+
                 <a href="contact.php" class="nav-item nav-link">Contact Us</a>
             </div>
             <div class="d-none d-lg-flex ms-2">
-                <a class="btn-sm-square bg-white rounded-circle ms-3" href="login.php">
-                    <small class="fa fa-search text-body"></small>
-                </a>
+
                 <a class="btn-sm-square bg-white rounded-circle ms-3" href="login.php">
                     <small class="fa fa-user text-body"></small>
                 </a>
-                <a class="btn-sm-square bg-white rounded-circle ms-3" href="login.php">
-                    <small class="fa fa-shopping-bag text-body"></small>
-                </a>
+
             </div>
         </div>
     </nav>

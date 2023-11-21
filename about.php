@@ -59,7 +59,7 @@
                         <img class="img-fluid mb-4" src="img/icon_PP_Managing_Forests.png" alt="">
                         <h4 class="mb-3">Pillar 1</h4>
                         <p class="mb-4">Strengthening Forest and Landscape Management</p>
-                        <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Read More</a>
+                        <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="pillars.php">Read More</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -67,7 +67,7 @@
                         <img class="img-fluid mb-4" src="img/icon_PP_Reducing_Agriculture.png" alt="">
                         <h4 class="mb-3">Pillar 2</h4>
                         <p class="mb-4">Promoting Sustainable Landscape Practices</p>
-                        <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Read More</a>
+                        <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="pillars.php">Read More</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -75,7 +75,7 @@
                         <img class="img-fluid mb-4" src="img/icon_PP_Supporting_Industry.png" alt="">
                         <h4 class="mb-3">Pillar 3</h4>
                         <p class="mb-4">Supporting Cross-sectoral Landscape Solutions</p>
-                        <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="">Read More</a>
+                        <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill" href="pillars.php">Read More</a>
                     </div>
                 </div>
             </div>
@@ -95,21 +95,21 @@
                     <div class="green text-center h-100 p-4 p-xl-5 text-white">
                         <img class="img-fluid mb-4" src="img/icon_CC_Woman_Youth_0.png" alt="">
                         <p class="mb-4">Engaging Communities and Vulnerable Groups</p>
-                        <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill lime-green" href="">Read More</a>
+                        <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill lime-green" href="feature.php">Read More</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="green text-center h-100 p-4 p-xl-5 text-white">
                         <img class="img-fluid mb-4" src="img/icon_CC_Climate_Change_1.png" alt="">
                         <p class="mb-4">Nature–Based Solutions: Climate Change Mitigation & Adaptation</p>
-                        <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill lime-green" href="">Read More</a>
+                        <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill lime-green" href="feature.php">Read More</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="green text-center h-100 p-4 p-xl-5 text-white">
                         <img class="img-fluid mb-4" src="img/icon_CC_Maximizing_Finance_0.png" alt="">
                         <p class="mb-4">Maximizing Finance for Development</p>
-                        <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill lime-green" href="">Read More</a>
+                        <a class="btn btn-outline-primary border-2 py-2 px-4 rounded-pill lime-green" href="feature.php">Read More</a>
                     </div>
                 </div>
             </div>
