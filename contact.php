@@ -34,7 +34,7 @@
                         <h5 class="text-white">Call Us</h5>
                         <p class="mb-5"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
                         <h5 class="text-white">Email Us</h5>
-                        <p class="mb-5"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                        <p class="mb-5"><i class="fa fa-envelope me-3"></i>lmullins@worldbank.org</p>
                         <h5 class="text-white">Office Address</h5>
                         <p class="mb-5"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
                         <h5 class="text-white">Follow Us</h5>
@@ -136,7 +136,7 @@
                     <h4 class="text-light mb-4">Address</h4>
                     <p><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
                     <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                    <p><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <p><i class="fa fa-envelope me-3"></i>lmullins@worldbank.org</p>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Quick Links</h4>
@@ -164,7 +164,7 @@
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a href="https://htmlcodex.com">HTML Codex</a>
+                        Designed By <a href="https://htmlcodex.com">Progreen Webrevamp</a>
                     </div>
                 </div>
             </div>
