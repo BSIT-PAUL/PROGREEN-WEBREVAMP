@@ -219,30 +219,30 @@
 						<div class="modal-body">
 							<div class=" col-md-12 p-0">
 								<div class=" form-popup">
-									<input type="text" placeholder="Add Preferred Name">
+								<input type="text" id="preferredName" placeholder="Add Preferred Name">
 								</div>
 								<div class=" form-popup">
-									<input type="text" placeholder="First Name">
+								<input type="text" id="firstName" placeholder="First Name">
 								</div>
 								<div class=" form-popup">
-									<input type="text" placeholder="Last Name">
+								<input type="text" id="lastName" placeholder="Last Name">
 								</div>
 								<div class=" form-popup">
-									<input type="text" placeholder="Add Nationality">
+								<input type="text" id="nationality" placeholder="Add Nationality">
 								</div>
 								<div class=" form-popup">
-									<input type="text" placeholder="Add Date of Birth">
+								<input type="text" id="dateOfBirth" placeholder="Add Date of Birth">
 								</div>
 								<div class=" form-popup">
-									<input type="text" placeholder="Add Gender">
+								<input type="text" id="gender" placeholder="Add Gender">
 								</div>
 								<div class=" form-popup">
-									<input type="text" placeholder="Add Blood Group">
+								<input type="text" id="bloodGroup" placeholder="Add Blood Group">
 								</div>
 							</div>
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-primary">Add</button>
+						<button type="button" class="btn btn-primary" onclick="addEmployee()">Add</button>
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 						</div>
 					</div>

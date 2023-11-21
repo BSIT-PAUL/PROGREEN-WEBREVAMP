@@ -22,6 +22,18 @@ if ($row = $result->fetch_assoc()) {
 		// Display a default image if no image is available
 		$imageData = null;
 }
+$employee_info_query = mysqli_query($con, "SELECT * FROM employee_basic_info WHERE employeeID=$userID");
+$employee_info = mysqli_fetch_array($employee_info_query);
+
+if($employee_info){
+	$_SESSION['user_preferredName'] = $employee_info['preferredName'];
+	$_SESSION['nationality'] = $employee_info['nationality'];
+	$_SESSION['dateOfBirth'] = $employee_info['dateOfBirth'];
+	$_SESSION['gender'] = $employee_info['gender'];
+	$_SESSION['bloodgroup'] = $employee_info['bloodgroup'];
+	$_SESSION['phoneNumber'] = $employee_info['phoneNumber'];
+	$_SESSION['secondaryNumber'] = $employee_info['secondaryNumber'];
+}
 ?>
 
 		<div class="sidebar" id="sidebar">
@@ -123,7 +135,6 @@ if ($row = $result->fetch_assoc()) {
 										<h2 class="card-titles">Basic Information</h2>
 										<ul>
 											<li><a class="add-link" data-toggle="modal" data-target="#editinformation"><i data-feather="plus"></i></a></li>
-											<li><a class="delete-link" data-toggle="modal" data-target="#delete"><i data-feather="trash-2"></i></a></li>
 										</ul>
 									</div>
 									<div class="card-body">
@@ -165,10 +176,9 @@ if ($row = $result->fetch_assoc()) {
 							<div class="col-xl-4 col-sm-12 col-12 d-flex">
 								<div class="card card-lists flex-fill">
 									<div class="card-header">
-										<h2 class="card-titles">Basic Information</h2>
+										<h2 class="card-titles">Contact Information</h2>
 										<ul>
-											<li><a class="add-link" data-toggle="modal" data-target="#editinformations"><i data-feather="plus"></i></a></li>
-											<li><a class="delete-link" data-toggle="modal" data-target="#delete"><i data-feather="trash-2"></i></a></li>
+										<li><a class="add-link" data-toggle="modal" data-target="#editinformation"><i data-feather="plus"></i></a></li>
 										</ul>
 									</div>
 									<div class="card-body">
@@ -228,7 +238,7 @@ if ($row = $result->fetch_assoc()) {
         var reader = new FileReader();
 
         reader.onloadend = function () {
-            preview.innerHTML = '<img style="max-width: 100%; max-height: 200px;" src="' + reader.result + '" alt="preview_image" />';
+preview.innerHTML = '<img style="max-width: 100%; max-height: 200px; border-radius: 50%;" src="' + reader.result + '" alt="preview_image" />';
         }
 
         if (file) {
@@ -317,49 +327,103 @@ if ($row = $result->fetch_assoc()) {
 
 
 		<div class="customize_popup">
-			<div class="modal fade" id="editinformation" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-				<div class="modal-dialog modal-lg modal-dialog-centered">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="staticBackdropLabel">Basic Information</h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<div class="modal-body">
-							<div class=" col-md-12 p-0">
-								<div class=" form-popup">
-									<input type="text" placeholder="Add Preferred Name">
-								</div>
-								<div class=" form-popup">
-									<input type="text" placeholder="First Name">
-								</div>
-								<div class=" form-popup">
-									<input type="text" placeholder="Last Name">
-								</div>
-								<div class=" form-popup">
-									<input type="text" placeholder="Add Nationality">
-								</div>
-								<div class=" form-popup">
-									<input type="text" placeholder="Add Date of Birth">
-								</div>
-								<div class=" form-popup">
-									<input type="text" placeholder="Add Gender">
-								</div>
-								<div class=" form-popup">
-									<input type="text" placeholder="Add Blood Group">
-								</div>
-							</div>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-primary">Add</button>
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+    <div class="modal fade" id="editinformation" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Basic Information</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="employeeForm" action="profile-info.php" method="POST">
+                    <div class="modal-body">
+                        <div class="col-md-12 p-0">
+                            <div class="form-popup">
+                                <input type="text" id="preferredName" name="preferredName" placeholder="Add Preferred Name" required>
+                            </div>
+                            <!-- Add 'name' attribute to each input field -->
+                            <div class="form-popup">
+                                <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" required>
+                            </div>
+                            <div class="form-popup">
+                                <input type="text" id="secondaryNumber" name="secondaryNumber" placeholder="Secondary Phone Number" required>
+                            </div>
+                            <div class="form-popup">
+                                <input type="text" id="nationality" name="nationality" placeholder="Add Nationality" required>
+                            </div>
+                            <div class="form-popup">
+                                <input type="date" id="dateOfBirth" name="dateOfBirth" placeholder="Add Date of Birth" required>
+                            </div>
+                            <div class="form-popup">
+                                <input type="text" id="gender" name="gender" placeholder="Add Gender" required>
+                            </div>
+                            <div class="form-popup">
+                                <input type="text" id="bloodGroup" name="bloodGroup" placeholder="Add Blood Group" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="addEmployee()" data-dismiss="modal">Add</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Include jQuery library -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
+<!-- Add this script to handle form submission -->
+<script>
+function addEmployee() {
+    // Validate the form
+    if ($("#employeeForm")[0].checkValidity()) {
+        // Get values from input fields
+        var preferredName = $("#preferredName").val();
+        var phoneNumber = $("#phoneNumber").val();
+        var secondaryNumber = $("#secondaryNumber").val();
+        var nationality = $("#nationality").val();
+        var dateOfBirth = $("#dateOfBirth").val();
+        var gender = $("#gender").val();
+        var bloodGroup = $("#bloodGroup").val();
+
+        // Make AJAX request to insert data into the database
+        $.ajax({
+            type: "POST",
+            url: "profile-info.php", // Replace with the actual backend script
+            data: {
+                preferredName: preferredName,
+                phoneNumber: phoneNumber,
+                secondaryNumber: secondaryNumber,
+                nationality: nationality,
+                dateOfBirth: dateOfBirth,
+                gender: gender,
+                bloodGroup: bloodGroup
+            },
+            success: function(response) {
+                // Handle the response from the server if needed
+                console.log(response);
+
+                // Check if the response contains a success message
+                if (response.message) {
+                    // Display an alert for success
+                    alert(response.message);
+                }
+            },
+            error: function(error) {
+                // Handle the error if the request fails
+                console.error(error);
+            }
+        });
+    } else {
+        // Form is invalid, handle accordingly (e.g., display error messages)
+    }
+}
+</script>
+
+ 
 		<div class="customize_popup">
 			<div class="modal fade" id="editinformations" tabindex="-1" aria-labelledby="staticBackdropLabels" aria-hidden="true">
 				<div class="modal-dialog modal-lg modal-dialog-centered">
@@ -386,9 +450,6 @@ if ($row = $result->fetch_assoc()) {
 								</div>
 								<div class=" form-popup">
 									<input type="text" placeholder="Add Web Site">
-								</div>
-								<div class=" form-popup">
-									<input type="text" placeholder="Connect Your Linkedin">
 								</div>
 							</div>
 						</div>
