@@ -1,4 +1,5 @@
 <!-- Navbar Start -->
+
 <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
     <div class="top-bar row gx-0 align-items-center d-none d-lg-flex">
         <div class="col-lg-6 px-5 text-start">
@@ -18,31 +19,26 @@
         <a href="index.php" class="navbar-brand ">
             <img src="img/logo_0.png" width="200" height="20" alt="">
         </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <button type="button" class="navbar-toggler me-4" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
+            <div class="navbar-nav ms-auto p-4 p-lg-0"> <!-- Changed ml-auto to mr-auto -->
                 <a href="index.php" class="nav-item nav-link active">Home</a>
                 <a href="about.php" class="nav-item nav-link">About</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">How We Work</a>
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">How We Work</a>
                     <div class="dropdown-menu m-0">
                         <a href="feature.php" class="dropdown-item">Cross-Cutting Themes</a>
                         <a href="pillars.php" class="dropdown-item">Pillars</a>
                     </div>
                 </div>
-
-
-
                 <a href="contact.php" class="nav-item nav-link">Contact Us</a>
             </div>
             <div class="d-none d-lg-flex ms-2">
-
                 <a class="btn-sm-square bg-white rounded-circle ms-3" href="login.php">
                     <small class="fa fa-user text-body"></small>
                 </a>
-
             </div>
         </div>
     </nav>

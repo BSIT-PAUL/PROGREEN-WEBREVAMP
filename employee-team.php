@@ -21,12 +21,7 @@ include_once("includes/system_navbar.php");
 								</div>
 							</div>
 							<div class="sidebar-input">
-								<div class="top-nav-search">
-									<form>
-										<input type="text" class="form-control" placeholder="Search here">
-										<button class="btn" type="submit"><i class="fas fa-search"></i></button>
-									</form>
-								</div>
+								 
 							</div>
 						</div>
 						<ul>

@@ -23,12 +23,7 @@
 								</div>
 							</div>
 							<div class="sidebar-input">
-								<div class="top-nav-search">
-									<form>
-										<input type="text" class="form-control" placeholder="Search here">
-										<button class="btn" type="submit"><i class="fas fa-search"></i></button>
-									</form>
-								</div>
+								 
 							</div>
 						</div>
 						<div class="mobile-show">
@@ -43,12 +38,7 @@
 								</div>
 							</div>
 							<div class="sidebar-input">
-								<div class="top-nav-search">
-									<form>
-										<input type="text" class="form-control" placeholder="Search here">
-										<button class="btn" type="submit"><i class="fas fa-search"></i></button>
-									</form>
-								</div>
+								 
 							</div>
 						</div>
 						<ul>
