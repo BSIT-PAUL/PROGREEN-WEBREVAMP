@@ -46,7 +46,7 @@ if($employee_info){
 									<span class="lnr lnr-cross  text-white" id="mobile_btn_close">X</span>
 									<a href="javascript:void(0)" class="d-block menu-style text-white">
 										<div class="user-avatar d-inline-block mr-3">
-											<img src="assets/img/profiles/avatar-18.jpg" alt="user avatar" class="rounded-circle" width="50">
+											 <img src="assets/img/profile.jpg" alt="user avatar" class="rounded-circle" width="50">
 										</div>
 									</a>
 								</div>
@@ -61,7 +61,7 @@ if($employee_info){
 									<span class="lnr lnr-cross  text-white" id="mobile_btn_close">X</span>
 									<a href="javascript:void(0)" class="d-block menu-style text-white">
 										<div class="user-avatar d-inline-block mr-3">
-											<img src="assets/img/profiles/avatar-18.jpg" alt="user avatar" class="rounded-circle" width="50">
+											 <img src="assets/img/profile.jpg" alt="user avatar" class="rounded-circle" width="50">
 										</div>
 									</a>
 								</div>
