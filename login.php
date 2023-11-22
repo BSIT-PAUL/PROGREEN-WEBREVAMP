@@ -53,9 +53,7 @@ include 'database/dbcon.php';
                     <div class="col-6">
 
                     </div>
-                    <div class="col-6 text-right">
-                      <a class="forgot-link" href="forgot-password.php">Forgot Password ?</a>
-                    </div>
+
                   </div>
                 </div>
                 <button class="btn btn-lg btn-block btn-primary" type="submit" name="login">
@@ -64,10 +62,7 @@ include 'database/dbcon.php';
 
 
 
-                <div class="text-center dont-have">
-                  Don't have an account yet?
-                  <a href="register.php">Register</a>
-                </div>
+               
               </form>
               <?php
               if (isset($_POST['login'])) {
