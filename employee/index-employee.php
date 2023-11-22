@@ -8,7 +8,7 @@ include_once("includes/system_navbar.php");
 	<?php // Replace 'userprofile' with your actual table name
 				// Use prepared statement to prevent SQL injection
 				$query = "SELECT `UserID`, `ProfilePicture` FROM `userprofile` WHERE `UserID` = ?";
-				$employeeId = $_SESSION['employee_id'];
+				$employeeId =$_SESSION['user_id'];;
 
 				$stmt = mysqli_prepare($con, $query);
 				mysqli_stmt_bind_param($stmt, 'i', $employeeId);
@@ -125,14 +125,14 @@ include_once("includes/system_navbar.php");
 		<?php
 
 		// Query to get the leave count
-		$sqlLeaveCount = "SELECT COUNT(*) as leave_count FROM `leave_application` WHERE employee_id=$userId ";
+		$sqlLeaveCount = "SELECT COUNT(*) as leave_count FROM `leave_application` WHERE employee_id=" . $_SESSION['user_id'];
 		$resultLeaveCount = mysqli_query($con, $sqlLeaveCount);
 
 		// Fetch the result
 		$rowLeaveCount = mysqli_fetch_assoc($resultLeaveCount);
 		$leaveCount = $rowLeaveCount['leave_count'];
 		// Query to get the total salary
-		$sqlTotalSalary = "SELECT SUM(`salary`) as total_salary FROM `employee` WHERE employeeID=$userId ";
+		$sqlTotalSalary = "SELECT SUM(`salary`) as total_salary FROM `employee` WHERE employeeID= ". $_SESSION['user_id'];
 		$resultTotalSalary = mysqli_query($con, $sqlTotalSalary);
 
 		// Fetch the result
@@ -140,7 +140,7 @@ include_once("includes/system_navbar.php");
 		$totalSalary = $rowTotalSalary['total_salary'];
 
 		// Query to get the total present
-		$sqlTotalPresent = "SELECT COUNT( `attendance_status` ) as attendance FROM `attendance_records`   WHERE employee_id=$userId and attendance_status='Present' ";
+		$sqlTotalPresent = "SELECT COUNT( `attendance_status` ) as attendance FROM `attendance_records`   WHERE attendance_status='Present'  and employee_id= ". $_SESSION['user_id'];
 		$resultTotalPresent = mysqli_query($con, $sqlTotalPresent);
 
 		// Fetch the result
@@ -148,7 +148,7 @@ include_once("includes/system_navbar.php");
 		$totalPresent = $rowTotalPresent['attendance'];
 
 		// Query to get the total present
-		$sqlJobTitle = "SELECT j.`jobTitle` as job FROM `employee` e JOIN `job` j ON e.`jobID` = j.`jobID`WHERE e.`employeeID`=$userId";
+		$sqlJobTitle = "SELECT j.`jobTitle` as job FROM `employee` e JOIN `job` j ON e.`jobID` = j.`jobID`WHERE e.`employeeID`=". $_SESSION['user_id'];
 		$resultJobTitle = mysqli_query($con, $sqlJobTitle);
 
 		// Fetch the result
@@ -231,7 +231,7 @@ include_once("includes/system_navbar.php");
 						</div>
 					</div>
 					<?php
-					$query = "SELECT * FROM leave_application WHERE employee_id = $userId";
+					$query = "SELECT * FROM leave_application WHERE employee_id = ". $_SESSION['user_id'];
 					$result = mysqli_query($con, $query);
 
 					if ($result) {
