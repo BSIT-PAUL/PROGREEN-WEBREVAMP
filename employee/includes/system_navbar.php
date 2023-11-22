@@ -18,28 +18,28 @@ include("database/dbcon.php");
        
     </li>
     <?php // Replace 'userprofile' with your actual table name
-    // Use prepared statement to prevent SQL injection
-    $query = "SELECT `UserID`, `ProfilePicture` FROM `userprofile` WHERE `UserID` = ?";
-    $employeeId = $_SESSION['employee_id'];
+				// Use prepared statement to prevent SQL injection
+				$query = "SELECT `UserID`, `ProfilePicture` FROM `userprofile` WHERE `UserID` = ?";
+				$employeeId =$_SESSION['user_id'];;
 
-    $stmt = mysqli_prepare($con, $query);
-    mysqli_stmt_bind_param($stmt, 'i', $employeeId);
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
+				$stmt = mysqli_prepare($con, $query);
+				mysqli_stmt_bind_param($stmt, 'i', $employeeId);
+				mysqli_stmt_execute($stmt);
+				$result = mysqli_stmt_get_result($stmt);
 
-    if ($result) {
-        // Check if any rows were returned
-        if ($row = mysqli_fetch_assoc($result)) {
-            $userId = $row['UserID'];
-            $profilePicture = $row['ProfilePicture'];
-        } else {
-            // Handle the case where no rows are returned
-            echo "No user found with the provided ID.";
-        }
-    } else {
-        // Handle the case where the query execution fails
-        echo "Error executing the query: " . mysqli_error($con);
-    } ?>
+				if ($result) {
+					// Check if any rows were returned
+					if ($row = mysqli_fetch_assoc($result)) {
+						$userId = $row['UserID'];
+						$profilePicture = $row['ProfilePicture'];
+					} else {
+						// Handle the case where no rows are returned
+						echo "No user found with the provided ID.";
+					}
+				} else {
+					// Handle the case where the query execution fails
+					echo "Error executing the query: " . mysqli_error($con);
+				} ?>
 
     <li class="nav-item dropdown has-arrow main-drop">
         <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
