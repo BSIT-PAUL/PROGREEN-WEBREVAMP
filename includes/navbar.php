@@ -29,11 +29,10 @@
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">How We Work</a>
                     <div class="dropdown-menu m-0">
                         <a href="feature.php" class="dropdown-item">Cross-Cutting Themes</a>
-                        <a href="feature.php" class="dropdown-item">Our Features</a>
-                        <a href="testimonial.php" class="dropdown-item">Testimonial</a>
-                        <a href="404.php" class="dropdown-item">404 Page</a>
+                        <a href="pillars.php" class="dropdown-item">Pillars</a>
                     </div>
                 </div>
+
 
 
                 <a href="contact.php" class="nav-item nav-link">Contact Us</a>

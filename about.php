@@ -25,20 +25,17 @@
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                     <div class="about-img position-relative overflow-hidden p-5 pe-0">
-                        <img class="img-fluid w-100" src="img/about-pic.jpeg" style="height: 500px; width: 450px;">
+                        <img class="img-fluid w-100" src="img/PROGREEN-Overview-Grn-sml.png" style="height: 500px; width: 450px;">
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                    <h1 class="display-5 mb-4">PROGREEN WEED CONTROL SOLUTIONS</h1>
-                    <p class="mb-4">Progreen supply a wide range of weed killers, moss and algae control products, fertilisers and grass seed.  We also specialise in providing a comprehensive range of sprayers, including Cooper Pegler knapsack sprayers, granule application equipment and accessories.  In terms of education and training, we offer both conventional classroom based training on the safe use of pesticides and e-learning courses in many of the sectors listed above.
+                    <h1 class="display-5 mb-4">Global Partnership for Sustainable and Resilient Landscapes (PROGREEN)</h1>
+                    <p class="mb-4">The Global Partnership for Sustainable and Resilient Landscapes (PROGREEN) supports rural livelihood development and landscape restoration while tackling declining biodiversity, forest loss, and deteriorating land fertility.</p>
+                    <p class="mb-4">A World Bank administered Multi-Donor Trust Fund, PROGREEN provides tools and knowledge to support countries’ efforts to reduce poverty while tackling deforestation and landscape degradation, and increasing risks exacerbated by a changing climate, such as uncontrolled forest fires and drought. </p>
+                    <p class="mb-4">Healthy forests and land-based ecosystems are essential to life on Earth. Ecosystem services—such as water cycle regulation, carbon sequestration, and biodiversity habitat—sustain livelihoods by providing food, fuel, shelter, and jobs. Forests and landscapes, however, are under significant and increasing threat. Unsustainable resource management is leading to deforestation and land degradation driven by land conversion for agriculture, infrastructure, mining, and other such activities. This loss is impacting economies and environments around the world, most notably in rural areas, where 78 percent of the world’s poor live.</p>
+                    <p class="mb-4">Through an integrated landscape approach, PROGREEN is helping regions and countries reverse these trends and meet their national and global sustainable development goals and commitments in a cost-effective manner.</p>
+                    <p class="mb-4">PROGREEN focuses on three priority areas and three cross-cutting themes.</p>
 
-                        We pride ourselves in offering “trusted expertise” where our customers receive the optimum product or service for their needs at the best possible price. This is why we regularly monitor our prices to ensure you get a fair and square price. All our expert advice is provided free of charge from our team of professionally qualified FACTS & BASIS advisers.
-                        
-                        We hope you find what you’re looking from our website, but if you can’t find a particular product we can often source it. If you are not sure what you want you can always call us on 01778 394052 or email us and we’ll be more than happy to help.</p>
-                    <p><i class="fa fa-check text-primary me-3"></i>Wide Range of Products</p>
-                    <p><i class="fa fa-check text-primary me-3"></i>Competitive Pricing</p>
-                    <p><i class="fa fa-check text-primary me-3"></i>Customer Support</p>
-                    <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="">Read More</a>
                 </div>
             </div>
         </div>

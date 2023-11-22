@@ -146,13 +146,12 @@
                         Maximizing Finance for Development
                     </h2>
                     <p class="mb-4">PROGREEN aims to increase private sector collaboration and investment in reducing deforestation and habitat loss. Through in-depth analysis and outreach activities, PROGREEN identifies and supports leveraging private sector investment in projects and value chains, including:</p>
-                    <ul>
-    <li>Policy analysis and technical assistance to strengthen the enabling environment for green investment and remove incentives for production practices that degrade sensitive habitats or ecosystem services.</li>
-    <li>Models and evidence that support the business case for commercial enterprises and sectors, such as tourism, in employing nature-based products and services.</li>
-    <li>Trainings for banking sector officials or efforts to strengthen disclosure requirements, regulation, and supervision of the financial sector to mainstream environmental and social sustainability considerations.</li>
-    <li>Support multi-sector platforms and knowledge sharing events for private sector investment in sustainable production practices, such as timber plantations, agroforestry, timber processing, and the production and marketing of non¬–¬timber forest products.</li>
-    <li>Technological trainings for private investors on implementing and assessing on–ground investments, including management information systems, monitoring systems, and remote sensing.</li>
-</ul>
+                    <p><i class="fa fa-check text-primary me-3"></i>Policy analysis and technical assistance to strengthen the enabling environment for green investment and remove incentives for production practices that degrade sensitive habitats or ecosystem services.</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>Models and evidence that support the business case for commercial enterprises and sectors, such as tourism, in employing nature-based products and services.</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>Trainings for banking sector officials or efforts to strengthen disclosure requirements, regulation, and supervision of the financial sector to mainstream environmental and social sustainability considerations.</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>Support multi-sector platforms and knowledge sharing events for private sector investment in sustainable production practices, such as timber plantations, agroforestry, timber processing, and the production and marketing of non¬–¬timber forest products.</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>Technological trainings for private investors on implementing and assessing on–ground investments, including management information systems, monitoring systems, and remote sensing.</p>
+
 
                 </div>
             </div>

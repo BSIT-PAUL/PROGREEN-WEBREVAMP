@@ -127,16 +127,14 @@
                     <!-- Add a margin-top to separate image and text -->
                     <p class="mb-4 mt-2">PROGREEN is working to increase the use of integrated landscape management to improve livelihoods, support economic development, and maintain and restore ecosystem services.</p>
                     <p class="mb-4 mt-2">Activities supported under this Pillar will:</p>
-                    <ul>
-                        <li>promote sustainable land and natural resource management practices</li>
-                        <li>restore land to improve ecosystem services</li>
-                        <li>protect ecosystems that have a high conservation value</li>
-                        <li>advance forest tenure security</li>
-                        <li>improve livelihoods</li>
-                        <li>strengthen management of protected areas</li>
-                        <li>encourage nature-based tourism</li>
-                        <li>engage indigenous peoples and local communities</li>
-                    </ul>
+                    <p><i class="fa fa-check text-primary me-3"></i>Promote sustainable land and natural resource management practices</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>Restore land to improve ecosystem services</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>Protect ecosystems that have a high conservation value</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>Advance forest tenure security</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>Improve livelihoods</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>Strengthen management of protected areas</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>Encourage nature-based tourism</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>Engage indigenous peoples and local communities</p>
                 </div>
             </div>
 
@@ -151,14 +149,12 @@
                     <!-- Add a margin-top to separate image and text -->
                     <p class="mb-4 mt-2">PROGREEN is working to reduce agricultural land conversion through improved management of agriculture lands.</p>
                     <p class="mb-4 mt-2">Activities supported under this Pillar will:</p>
-                    <ul>
-                        <li>increase sustainable food production</li>
-                        <li>restore degraded landscapes for conservation and production</li>
-                        <li>slow biodiversity loss</li>
-                        <li>increase habitat for wildlife in agriculture landscapes</li>
-                        <li>help farmers meet responsible commodity value chain sourcing and quality requirements</li>
-                        <li>promote climate-smart agriculture techniques, agroforestry approaches, and sustainable pasture management practices</li>
-                    </ul>
+                    <p><i class="fa fa-check text-primary me-3"></i>Increase sustainable food production</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>Restore degraded landscapes for conservation and production</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>Slow biodiversity loss</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>Increase habitat for wildlife in agriculture landscapes</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>Help farmers meet responsible commodity value chain sourcing and quality requirements</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>Promote climate-smart agriculture techniques, agroforestry approaches, and sustainable pasture management practices</p>
                 </div>
             </div>
 
@@ -173,12 +169,10 @@
                     <!-- Add a margin-top to separate image and text -->
                     <p class="mb-4 mt-2">PROGREEN aims to reduce land-use change driven by sectors such as infrastructure, mining, and transport through activities that:   </p>
                     <p class="mb-4 mt-2">Activities supported under this Pillar will:</p>
-                    <ul >
-                        <li>improve methods and approaches for reducing the impact from other sectors on forests and for restoring areas degraded by those sectors</li>
-                        <li>develop tools for spatial land use planning and development, including socio-economic cost benefit analysis</li>
-                        <li>facilitate participatory landscape planning across sectors</li>
-                        <li>promote the design of green large-scale infrastructure and the establishment of green infrastructure networks</li>
-                    </ul>
+                    <p><i class="fa fa-check text-primary me-3"></i>Improve methods and approaches for reducing the impact from other sectors on forests and for restoring areas degraded by those sectors</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>Develop tools for spatial land use planning and development, including socio-economic cost benefit analysis</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>Facilitate participatory landscape planning across sectors</p>
+                    <p><i class="fa fa-check text-primary me-3"></i>Promote the design of green large-scale infrastructure and the establishment of green infrastructure networks</p>
                 </div>
             </div>
         </div>

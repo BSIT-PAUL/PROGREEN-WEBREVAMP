@@ -10,20 +10,13 @@
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                     <div class="about-img position-relative overflow-hidden p-5 pe-0">
-                        <img class="img-fluid w-100" src="img/about-pic.jpeg" style="height: 500px; width: 450px;">
+                        <img class="img-fluid w-100" src="img/ktf_innovation_blog_1140x500.jpg.webp" style="height: 500px; width: 450px;">
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                    <h1 class="display-5 mb-4">PROGREEN WEED CONTROL SOLUTIONS</h1>
-                    <p class="mb-4">Progreen supply a wide range of weed killers, moss and algae control products, fertilisers and grass seed.  We also specialise in providing a comprehensive range of sprayers, including Cooper Pegler knapsack sprayers, granule application equipment and accessories.  In terms of education and training, we offer both conventional classroom based training on the safe use of pesticides and e-learning courses in many of the sectors listed above.
+                    <h2 class="display-5 mb-5">Tenure Security: Underpinning Sustainable Landscape Management in the Philippines</h2>
+                    <p class="mb-4">The Philippines is considered a low forest cover country with about 24% forest cover. Illegal logging, volcanic activity, forest fires, extreme climate events, slash-and-burn agriculture are some of the many causes of forest loss.  Ensuring clear and sustainable custodianship of forests is a key factor in addressing these threats. In 2019, the Intergovernmental Panel on Climate Change (IPCC) reported that insecure land tenure affects the ability of people, communities, and organizations to invest in land and most importantly make changes that advance adaptation and mitigation. Rigorous scientific studies have further demonstrated that increased tenure security helped reduce deforestation by 10% in Brazilian Amazon and by 20% in Benin, and has shown to stimulate small-holder tree planting. Land administration and forest management in the Philippines is fragmented and hampered by inefficiencies. Conflicting systems and lack of coordination has resulted in unclear forest boundaries, long standing overlapping land claims as well as unclear and insecure tenure. Without clearly titled land, indigenous communities and small holder farmers are not incentivized to invest in long term sustainable management and are more likely to opt for excessive pesticide use or deforestation.</p>
 
-                        We pride ourselves in offering “trusted expertise” where our customers receive the optimum product or service for their needs at the best possible price. This is why we regularly monitor our prices to ensure you get a fair and square price. All our expert advice is provided free of charge from our team of professionally qualified FACTS & BASIS advisers.
-                        
-                        We hope you find what you’re looking from our website, but if you can’t find a particular product we can often source it. If you are not sure what you want you can always call us on 01778 394052 or email us and we’ll be more than happy to help.</p>
-                    <p><i class="fa fa-check text-primary me-3"></i>Wide Range of Products</p>
-                    <p><i class="fa fa-check text-primary me-3"></i>Competitive Pricing</p>
-                    <p><i class="fa fa-check text-primary me-3"></i>Customer Support</p>
-                    <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="">Read More</a>
                 </div>
             </div>
         </div>
@@ -72,7 +65,7 @@
      <div class="container-fluid bg-primary bg-icon mt-0 py-6 green" style="max-width: 100%; height: 100%;">
         <div class="container-xl">
         <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <h1 class="display-5 mb-3 text-white">Cross-Cutting Themes</h1>
+                <h2 class="display-5 mb-3 text-white">Cross-Cutting Themes</h2>
                 <br>
             </div>
         <div class="row g-4">
@@ -102,391 +95,7 @@
     </div>
     <!-- Firm Visit End -->
 
-    <!-- Product Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-0 gx-5 align-items-end">
-                <div class="col-lg-6">
-                    <div class="section-header text-start mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                        <h1 class="display-5 mb-3">Our Products</h1>
-                        <p>Explore our diverse range of high-quality products, each designed to meet your unique needs and deliver exceptional value.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 text-start text-lg-end wow slideInRight" data-wow-delay="0.1s">
-                    <ul class="nav nav-pills d-inline-flex justify-content-end mb-5">
-                        <li class="nav-item me-2">
-                            <a class="btn btn-outline-primary border-2 active" data-bs-toggle="pill" href="#tab-1">Best Seller</a>
-                        </li>
-                        <li class="nav-item me-2">
-                            <a class="btn btn-outline-primary border-2" data-bs-toggle="pill" href="#tab-2">Cleaning Hard Surface </a>
-                        </li>
-                        <li class="nav-item me-0">
-                            <a class="btn btn-outline-primary border-2" data-bs-toggle="pill" href="#tab-3">Seasonal Products</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="tab-content">
-                <div id="tab-1" class="tab-pane fade show p-0 active">
-                    <div class="row g-5">
-                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="img/best-seller-1.jpeg" alt="">
-                                    <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">Best Seller</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href=""><br>ALGOCLEAR PRO - HARD SURFACE CLEANER</a>
-                                    
-                                    <span class="text-primary me-1">£74.95 EX VAT</span>
-                                    <span class="text-body text-decoration-line-through">£89.94 INC VAT</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="img/best-seller-2.jpeg" alt="">
-                                    <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">Best Seller</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href=""><br>ROUNDUP PROACTIVE 5 L - GLYPHOSATE WEEDKILLER </a>
-                                    <span class="text-primary me-1">£58.50 EX VAT</span>
-                                    <span class="text-body text-decoration-line-through">
-                                        £70.20 INC VAT</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="img/best-seller-3.jpeg" alt="">
-                                    <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">Best Seller</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href=""><br>GRAZON PRO 1 L - PASTURE WEED KILLER FOR SPOT SPRAYING</a>
-                                    <span class="text-primary me-1">£41.50 EX VAT</span>
-                                    <span class="text-body text-decoration-line-through">£49.80 INC VAT</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="img/best-seller-4.jpeg" alt="">
-                                    <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href=""><br>MAXICROP NO 2 MOSS KILLER & CONDITIONER - 10L</a>
-                                    <span class="text-primary me-1">£41.50 EX VAT</span>
-                                    <span class="text-body text-decoration-line-through">
-                                        £49.80 INC VAT</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="img/best-seller-5.jpeg" alt="">
-                                    <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">Best Seller</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href=""><br>AMVISTA G4 20KG (10-2-2+8FE) ADVANCED FEED, WEED & MOSS KILLER</a>
-                                    <span class="text-primary me-1">£31.19 EX VAT</span>
-                                    <span class="text-body text-decoration-line-through">£69.00 INC VAT</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
-                            <a class="btn btn-primary rounded-pill py-3 px-5" href="">Browse More Products</a>
-                        </div>
-                    </div>
-                </div>
-                <div id="tab-2" class="tab-pane fade show p-0">
-                    <div class="row g-4">
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="img/cleaning-hard-surface-2.jpeg" alt="">
-                                    <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">MAC HI POWER - HARD SURFACE CLEANER</a>
-                                    <br><br><br>
-                                    <span class="text-primary me-1">£16.95 EX VAT</span>
-                                    <span class="text-body text-decoration-line-through">
-                                        £20.34 INC VAT</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="img/cleaning-hard-surface-1.jpeg" alt="">
-                                    <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">METACLEAR - REMOVES BLACK FUNGAL STAINING ON WALLS, RENDER & MASONRY</a>
-                                    <br>
-                                    <span class="text-primary me-1">£15.81 EX VAT</span>
-                                    <span class="text-body text-decoration-line-through">
-                                        £18.97 INC VAT</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="img/cleaning-hard-surface-3.jpeg" alt="">
-                                    <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">SOFTWASH STARTER KIT: EXTENDED REACH CLEANING SYSTEM</a>
-                                    <br><br>
-                                    <span class="text-primary me-1">£317.00 EX VAT</span>
-                                    <span class="text-body text-decoration-line-through">£380.40 INC VAT</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="img/cleaning-hard-surface-4.jpeg" alt="">
-                                    <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">OXICLEAR -REMOVE IRON, COPPER & LEAD METAL OXIDATION STAINS FROM WALLS, ROOFS & WOOD</a>
-                                    <span class="text-primary me-1">£27.50 EX VAT</span>
-                                    <span class="text-body text-decoration-line-through">
-                                        £33.00 INC VAT</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="img/cleaning-hard-surface-5.jpeg" alt="">
-                                    <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">ALGOCLEAR PRO - HARD SURFACE CLEANER</a>
-                                    <span class="text-primary me-1">£74.95 EX VAT</span>
-                                    <span class="text-body text-decoration-line-through">
-                                        £89.94 INC VAT</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-12 text-center">
-                            <a class="btn btn-primary rounded-pill py-3 px-5" href="">Browse More Products</a>
-                        </div>
-                    </div>
-                </div>
-                <div id="tab-3" class="tab-pane fade show p-0">
-                    <div class="row g-4">
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="img/seasonal-1.jpeg" alt="">
-                                    <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">ROUNDUP PROACTIVE 5L + CHIKARA 50G – LONG LASTING & GLYPHOSATE BUNDLE</a>
-                                    <span class="text-primary me-1">£129.10 EX VAT</span>
-                                    <span class="text-body text-decoration-line-through">
-                                        £154.92 INC VAT</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="img/seasonal-2.jpeg" alt="">
-                                    <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">AMVISTA G0 KICK-START FERTILISER 20KG (10-4-4) + SEAWEED</a>
-                                    <br>
-                                    <span class="text-primary me-1">£29.95 EX VAT</span>
-                                    <span class="text-body text-decoration-line-through">
-                                        £35.94 INC VAT</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="img/seasonal-3.jpeg" alt="">
-                                    <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">MAC HI POWER - HARD SURFACE CLEANER</a>
-                                    <br><br>
-                                    <span class="text-primary me-1">£16.95 EX VAT</span>
-                                    <span class="text-body text-decoration-line-through">£20.34 INC VAT</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="img/seasonal-4.jpeg" alt="">
-                                    <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">GRAZON PRO 1 L - PASTURE WEED KILLER FOR SPOT SPRAYING</a>
-                                    <br>
-                                    <span class="text-primary me-1">£57.50 EX VAT</span>
-                                    <span class="text-body text-decoration-line-through">£69.00 INC VAT</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6">
-                            <div class="product-item">
-                                <div class="position-relative bg-light overflow-hidden">
-                                    <img class="img-fluid w-100" src="img/seasonal-5.jpeg" alt="">
-                                    <div class="bg-secondary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">New</div>
-                                </div>
-                                <div class="text-center p-4">
-                                    <a class="d-block h5 mb-2" href="">PADDOCK SOIL ANALYSIS FOR HORSE GRAZING - ALL NUTRIENTS</a>
-                                    <span class="text-primary me-1">£39.95 EX VAT</span>
-                                    <span class="text-body text-decoration-line-through">£47.94 INC VAT</span>
-                                </div>
-                                <div class="d-flex border-top">
-                                    <small class="w-50 text-center border-end py-2">
-                                        <a class="text-body" href=""><i class="fa fa-eye text-primary me-2"></i>View detail</a>
-                                    </small>
-                                    <small class="w-50 text-center py-2">
-                                        <a class="text-body" href=""><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-12 text-center">
-                            <a class="btn btn-primary rounded-pill py-3 px-5" href="">Browse More Products</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Product End -->
-
+   
 
    
 
@@ -495,51 +104,50 @@
     <div class="container-fluid bg-light bg-icon py-6 mb-5">
         <div class="container">
             <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <h1 class="display-5 mb-3">Customer Review</h1>
-                <p>Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
+                <h1 class="display-5 mb-3">Where We Work</h1>
             </div>
             <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
                 <div class="testimonial-item position-relative bg-white p-5 mt-4">
                     <i class="fa fa-quote-left fa-3x text-primary position-absolute top-0 start-0 mt-n4 ms-5"></i>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                    <p class="mb-4">This activity diagnosed drivers of fragility in Burundi’s colline landscapes and informed multi-sector investment plans to scale up landscape restoration and climate resilience post COVID-19 in Burundi.  </p>
                     <div class="d-flex align-items-center">
-                        <img class="flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg" alt="">
+                        <img class="flex-shrink-0 rounded-circle" src="img/burundi.png" alt="">
                         <div class="ms-3">
-                            <h5 class="mb-1">Client Name</h5>
-                            <span>Profession</span>
+                            <h5 class="mb-1">Burundi</h5>
+                            <span>AFRICA</span>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-item position-relative bg-white p-5 mt-4">
                     <i class="fa fa-quote-left fa-3x text-primary position-absolute top-0 start-0 mt-n4 ms-5"></i>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                    <p class="mb-4"><br>This activity supports the Government of Philippines to inform the procedures for clarifying tenure rights in forest landscapes.</p>
                     <div class="d-flex align-items-center">
-                        <img class="flex-shrink-0 rounded-circle" src="img/testimonial-2.jpg" alt="">
+                        <img class="flex-shrink-0 rounded-circle" src="img/philippines.png" alt="">
                         <div class="ms-3">
-                            <h5 class="mb-1">Client Name</h5>
-                            <span>Profession</span>
+                            <h5 class="mb-1">Philippines</h5>
+                            <span>EAST ASIA AND PACIFIC</span>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-item position-relative bg-white p-5 mt-4">
                     <i class="fa fa-quote-left fa-3x text-primary position-absolute top-0 start-0 mt-n4 ms-5"></i>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                    <p class="mb-4">This activity will improve the enabling conditions for ecosystem services restoration, sustainable landscape management and resilient food systems, in the Chiquitania ecoregion of Bolivia.</p>
                     <div class="d-flex align-items-center">
-                        <img class="flex-shrink-0 rounded-circle" src="img/testimonial-3.jpg" alt="">
+                        <img class="flex-shrink-0 rounded-circle" src="img/bolivia.png" alt="">
                         <div class="ms-3">
-                            <h5 class="mb-1">Client Name</h5>
-                            <span>Profession</span>
+                            <h5 class="mb-1">Bolivia</h5>
+                            <span>AMERICA AND THE CARIBBEAN</span>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-item position-relative bg-white p-5 mt-4">
                     <i class="fa fa-quote-left fa-3x text-primary position-absolute top-0 start-0 mt-n4 ms-5"></i>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                    <p class="mb-4"><BR>Under this program, PROGREEN supports sustainable forest landscape planning and management to address the risks associated with forest fires in Algeria.</p>
                     <div class="d-flex align-items-center">
-                        <img class="flex-shrink-0 rounded-circle" src="img/testimonial-4.jpg" alt="">
+                        <img class="flex-shrink-0 rounded-circle" src="img/algeria.png" alt="">
                         <div class="ms-3">
-                            <h5 class="mb-1">Client Name</h5>
-                            <span>Profession</span>
+                            <h5 class="mb-1">Algeria</h5>
+                            <span>MIDDLE EAST</span>
                         </div>
                     </div>
                 </div>
@@ -549,48 +157,49 @@
     <!-- Testimonial End -->
 
 
-    <!-- Blog Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <h1 class="display-5 mb-3">Latest Blog</h1>
-                <p>Tempor ut dolore lorem kasd vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
+<!-- Blog Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="section-header text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 700px;">
+            <h1 class="display-5 mb-3">News and Events</h1>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <img class="img-fluid" src="img/Thumbnail.png" alt="" width="500px">
+                <div class="bg-light p-4">
+                    <a class="d-block h5 lh-base mb-4" href="">Integrated Landscape Management Program </a>
+                    <div class="text-muted border-top pt-4">
+                        <small class="me-3"><i class="fa fa-user text-primary me-2"></i>FEATURE STORY</small>
+                        <small class="me-3"><i class="fa fa-calendar text-primary me-2"></i>25 October 2023</small>
+                    </div>
+                </div>
             </div>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <img class="img-fluid" src="img/blog-1.jpg" alt="">
-                    <div class="bg-light p-4">
-                        <a class="d-block h5 lh-base mb-4" href="">How to cultivate organic fruits and vegetables in own firm</a>
-                        <div class="text-muted border-top pt-4">
-                            <small class="me-3"><i class="fa fa-user text-primary me-2"></i>Admin</small>
-                            <small class="me-3"><i class="fa fa-calendar text-primary me-2"></i>01 Jan, 2045</small>
-                        </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <img class="img-fluid" src="img/image 39.png" alt="" width="500px" height="700px">
+                <div class="bg-light p-4">
+                    <a class="d-block h5 lh-base mb-4" href="">Restoration Revolution: Challenges and Opportunities for Scaling up Financing for Restoration</a>
+                    <div class="text-muted border-top pt-4">
+                        <small class="me-3"><i class="fa fa-user text-primary me-2"></i>EVENT</small>
+                        <small class="me-3"><i class="fa fa-calendar text-primary me-2"></i>13 December 2022</small>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <img class="img-fluid" src="img/blog-2.jpg" alt="">
-                    <div class="bg-light p-4">
-                        <a class="d-block h5 lh-base mb-4" href="">How to cultivate organic fruits and vegetables in own firm</a>
-                        <div class="text-muted border-top pt-4">
-                            <small class="me-3"><i class="fa fa-user text-primary me-2"></i>Admin</small>
-                            <small class="me-3"><i class="fa fa-calendar text-primary me-2"></i>01 Jan, 2045</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <img class="img-fluid" src="img/blog-3.jpg" alt="">
-                    <div class="bg-light p-4">
-                        <a class="d-block h5 lh-base mb-4" href="">How to cultivate organic fruits and vegetables in own firm</a>
-                        <div class="text-muted border-top pt-4">
-                            <small class="me-3"><i class="fa fa-user text-primary me-2"></i>Admin</small>
-                            <small class="me-3"><i class="fa fa-calendar text-primary me-2"></i>01 Jan, 2045</small>
-                        </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <img class="img-fluid" src="img/thumbnail (1).png" alt="">
+                <div class="bg-light p-4">
+                    <a class="d-block h5 lh-base mb-4" href="">Unlocking Solutions to Finance Ecosystem Restoration</a>
+                    <div class="text-muted border-top pt-4">
+                        <small class="me-3"><i class="fa fa-user text-primary me-2"></i>EVENT</small>
+                        <small class="me-3"><i class="fa fa-calendar text-primary me-2"></i>11 November 2022</small>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Blog End -->
+</div>
+<!-- Blog End -->
+
+
 
     <!-- Footer Start -->
     <?php 
