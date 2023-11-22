@@ -213,7 +213,7 @@ if($employee_info){
                         echo '<img style="max-width: 100%; max-height: 300px;" src="data:image/jpeg;base64,' . base64_encode($imageData) . '" alt="profile_picture" />';
                     } else {
                         // Display a default image if no image is available
-                        echo '<img style="max-width: 100%; max-height: 300px;" src="img/default_profile_picture.png" alt="default_profile_picture" />';
+                        echo '<img style="max-width: 100%; max-height: 300px;" src="img/facebook default profile picture.jpeg" alt="default_profile_picture" />';
                     }
                     ?>
                 </div>
