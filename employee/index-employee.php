@@ -5,7 +5,29 @@ include_once("includes/system_header.php");
 include_once("includes/system_main_wraper.php");
 include_once("includes/system_navbar.php");
 ?>
+	<?php // Replace 'userprofile' with your actual table name
+				// Use prepared statement to prevent SQL injection
+				$query = "SELECT `UserID`, `ProfilePicture` FROM `userprofile` WHERE `UserID` = ?";
+				$employeeId = $_SESSION['employee_id'];
 
+				$stmt = mysqli_prepare($con, $query);
+				mysqli_stmt_bind_param($stmt, 'i', $employeeId);
+				mysqli_stmt_execute($stmt);
+				$result = mysqli_stmt_get_result($stmt);
+
+				if ($result) {
+					// Check if any rows were returned
+					if ($row = mysqli_fetch_assoc($result)) {
+						$userId = $row['UserID'];
+						$profilePicture = $row['ProfilePicture'];
+					} else {
+						// Handle the case where no rows are returned
+						echo "No user found with the provided ID.";
+					}
+				} else {
+					// Handle the case where the query execution fails
+					echo "Error executing the query: " . mysqli_error($con);
+				} ?>
 <div class="sidebar" id="sidebar">
 	<div class="sidebar-inner slimscroll">
 		<div class="sidebar-contents">
@@ -16,7 +38,7 @@ include_once("includes/system_navbar.php");
 							<span class="lnr lnr-cross  text-white" id="mobile_btn_close">X</span>
 							<a href="javascript:void(0)" class="d-block menu-style text-white">
 								<div class="user-avatar d-inline-block mr-3">
-									<img src="assets/img/profiles/avatar-18.jpg" alt="user avatar"
+									<img src="data:image/jpeg;base64,<?php echo base64_encode($profilePicture); ?>" alt="user avatar"
 										class="rounded-circle" width="50">
 								</div>
 							</a>
@@ -58,29 +80,7 @@ include_once("includes/system_navbar.php");
 		<div class="page-name mb-4">
 			<h4 class="d-flex align-items-center">
 
-				<?php // Replace 'userprofile' with your actual table name
-				// Use prepared statement to prevent SQL injection
-				$query = "SELECT `UserID`, `ProfilePicture` FROM `userprofile` WHERE `UserID` = ?";
-				$employeeId = $_SESSION['employee_id'];
-
-				$stmt = mysqli_prepare($con, $query);
-				mysqli_stmt_bind_param($stmt, 'i', $employeeId);
-				mysqli_stmt_execute($stmt);
-				$result = mysqli_stmt_get_result($stmt);
-
-				if ($result) {
-					// Check if any rows were returned
-					if ($row = mysqli_fetch_assoc($result)) {
-						$userId = $row['UserID'];
-						$profilePicture = $row['ProfilePicture'];
-					} else {
-						// Handle the case where no rows are returned
-						echo "No user found with the provided ID.";
-					}
-				} else {
-					// Handle the case where the query execution fails
-					echo "Error executing the query: " . mysqli_error($con);
-				} ?>
+			
 				<img src="data:image/jpeg;base64,<?php echo base64_encode($profilePicture); ?>"
 					class="mr-2 employeeprofile" name="employeeprofile" alt="profile" />
 				<label class="small-text">
