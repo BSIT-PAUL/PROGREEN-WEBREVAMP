@@ -156,7 +156,7 @@ include_once("includes/sidebar.php");
 					<div class="card-body">
 						<div class="card_widget_header">
 							<label>Salary</label>
-							<h4>$
+							<h4>₱
 								<?php echo $formattedSalary; ?>
 							</h4>
 						</div>

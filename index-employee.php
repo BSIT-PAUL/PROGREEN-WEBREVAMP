@@ -134,7 +134,7 @@
 							<div class="card-body">
 								<div class="card_widget_header">
 									<label>Salary</label>
-									<h4>$5.8M</h4>
+									<h4>₱5.8M</h4>
 								</div>
 								<div class="card_widget_img">
 									<img src="assets/img/dash4.png" alt="card-img" />
