@@ -99,10 +99,7 @@
 								<div class="card card-lists flex-fill">
 									<div class="card-header">
 										<h2 class="card-titles">Basic Information</h2>
-										<ul>
-											<li><a class="add-link" data-toggle="modal" data-target="#editinformation"><i data-feather="plus"></i></a></li>
-											<li><a class="delete-link" data-toggle="modal" data-target="#delete"><i data-feather="trash-2"></i></a></li>
-										</ul>
+										
 									</div>
 									<div class="card-body">
 										<div class="member-info">
@@ -143,11 +140,8 @@
 							<div class="col-xl-4 col-sm-12 col-12 d-flex">
 								<div class="card card-lists flex-fill">
 									<div class="card-header">
-										<h2 class="card-titles">Basic Information</h2>
-										<ul>
-											<li><a class="add-link" data-toggle="modal" data-target="#editinformations"><i data-feather="plus"></i></a></li>
-											<li><a class="delete-link" data-toggle="modal" data-target="#delete"><i data-feather="trash-2"></i></a></li>
-										</ul>
+										<h2 class="card-titles">Contact Information</h2>
+										
 									</div>
 									<div class="card-body">
 										<div class="member-info">

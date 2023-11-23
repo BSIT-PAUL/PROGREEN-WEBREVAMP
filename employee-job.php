@@ -193,7 +193,7 @@ include_once("includes/system_navbar.php");
 								<h2>Members</h2>
 	<?php 
 	// Fetch data from the database
-$sql = "SELECT `UserID`, `UserName`, `ProfilePicture` FROM `userprofile`";
+$sql = "SELECT `UserID`, `UserName`, `ProfilePicture` FROM `userprofile` Limit 10 ";
 $result = $con->query($sql);
 
 // Generate HTML based on the database data

@@ -208,7 +208,7 @@ include_once("includes/system_navbar.php");
 						<div class="card_widget_header">
 							<label>Current Salary</label>
 							<h4>
-								<?php echo $totalSalary; ?>
+							₱ <?php echo $totalSalary; ?>
 							</h4>
 						</div>
 						<div class="card_widget_img">

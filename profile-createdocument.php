@@ -178,7 +178,7 @@
 											<ul>
 												<li>
 													<label>Current Salary</label>
-													<a class="edit-link"><i data-feather="edit"></i> </a>
+													<a class="edit-link">₱ <i data-feather="edit"></i> </a>
 												</li>
 											</ul>
 										</div>

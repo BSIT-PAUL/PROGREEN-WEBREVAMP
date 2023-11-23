@@ -159,7 +159,43 @@ include_once("includes/system_navbar.php");
 						<h2 class="card-titles">Progreen<span>Department</span></h2>
 						<a data-toggle="modal" data-target="#edit" class="edit-link"><i data-feather="edit"></i> </a>
 					</div>
-					
+					<div class="member-formcontent member-row">
+							<div class="member-head">
+								<h2>Members</h2>
+	<?php 
+	// Fetch data from the database
+$sql = "SELECT `UserID`, `UserName`, `ProfilePicture` FROM `userprofile` Limit 10 ";
+$result = $con->query($sql);
+
+// Generate HTML based on the database data
+if ($result->num_rows > 0) {
+	echo '<div class="avatar-group">';
+
+	while ($row = $result->fetch_assoc()) {
+			$userID = $row['UserID'];
+			$userName = $row['UserName'];
+			$profilePicture = base64_encode($row['ProfilePicture']); // Assuming ProfilePicture is a BLOB
+
+			echo '<div class="avatar avatar-xs group_img group_header">';
+			echo '<img class="avatar-img rounded-circle" alt="' . $userName . '" src="data:image/jpeg;base64,' . $profilePicture . '">';
+			echo '</div>';
+	}
+
+	echo '</div>';
+} else {
+	echo 'No users found in the database.';
+}
+
+
+
+	
+	?>
+							</div>
+							<div class="member_link">
+								<a data-toggle="collapse" href="#table" role="button" aria-expanded="false"
+									aria-controls="table"><i data-feather="chevron-down"></i></a>
+							</div>
+						</div>
 						<div class="table-responsive collapse show" id="table">
 							<table class="table  custom-table  no-footer">
 								<thead class="table">
