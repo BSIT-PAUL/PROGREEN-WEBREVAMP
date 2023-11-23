@@ -15,7 +15,7 @@
             </div>
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-light mb-4">Address</h4>
-                <p><i class="fa fa-map-marker-alt me-3"></i>Washington, D.C.</p>
+                <p><i class="fa fa-map-marker-alt me-3"></i>Brgy. Lumbangan Nasugbu, Batangas</p>
                 <p><i class="fa fa-phone-alt me-3"></i>+0330 165 5568</p>
                 <p><i class="fa fa-envelope me-3"></i>lmullins@worldbank.org</p>
             </div>
