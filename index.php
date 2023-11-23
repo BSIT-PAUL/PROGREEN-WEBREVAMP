@@ -10,13 +10,23 @@
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                     <div class="about-img position-relative overflow-hidden p-5 pe-0">
-                        <img class="img-fluid w-100" src="img/ktf_innovation_blog_1140x500.jpg.webp" style="height: 500px; width: 450px;">
+                        <img class="img-fluid w-100" src='img\plant1.png' style="height: 500px; width: 450px;">
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                    <h2 class="display-5 mb-5">Tenure Security: Underpinning Sustainable Landscape Management in the Philippines</h2>
-                    <p class="mb-4">The Philippines is considered a low forest cover country with about 24% forest cover. Illegal logging, volcanic activity, forest fires, extreme climate events, slash-and-burn agriculture are some of the many causes of forest loss.  Ensuring clear and sustainable custodianship of forests is a key factor in addressing these threats. In 2019, the Intergovernmental Panel on Climate Change (IPCC) reported that insecure land tenure affects the ability of people, communities, and organizations to invest in land and most importantly make changes that advance adaptation and mitigation. Rigorous scientific studies have further demonstrated that increased tenure security helped reduce deforestation by 10% in Brazilian Amazon and by 20% in Benin, and has shown to stimulate small-holder tree planting. Land administration and forest management in the Philippines is fragmented and hampered by inefficiencies. Conflicting systems and lack of coordination has resulted in unclear forest boundaries, long standing overlapping land claims as well as unclear and insecure tenure. Without clearly titled land, indigenous communities and small holder farmers are not incentivized to invest in long term sustainable management and are more likely to opt for excessive pesticide use or deforestation.</p>
-
+                    <h2 class="display-5 mb-5">Company Background</h2>
+                    <p class="mb-4" style="text-align: justify">Progreen Agricorp, Inc., a subsidiary of Consolidated Distillers of the Far East,
+                        has significantly influenced the Philippine business landscape since its establishment in 2013,
+                        notably in Barangay Lumbangan Nasugbu, Batangas. Under the leadership of Andrew L. Tan,
+                        the company has become a major player in the Chemical and Allied Products Merchant Wholesalers sector,
+                        showcasing adaptability and influence across diverse industries, including Merchant Wholesalers, Nondurable Goods, and Wholesale Trade.
+                        Guided by Andrew L. Tan, Progreen Agricorp, Inc. has experienced substantial growth, solidifying its pivotal role in the regional economy.
+                        Operating across various sectors, the company not only emphasizes its versatility but also demonstrates a steadfast commitment to supplying
+                        essential goods to a diverse range of industries, particularly evident in its engagement in Chemical and Allied Products Merchant Wholesalers. 
+                        Progreen Agricorp, Inc. holds operational significance and actively contributes to local employment and economic development, fostering a 
+                        positive work environment and supporting professional growth. Recognized for its Environmental, Social, and Governance (ESG) practices, 
+                        the company stands as a responsible corporate entity, aligning with global standards of environmental and social responsibility while 
+                        contributing to economic prosperity and global sustainability objectives.</p>
                 </div>
             </div>
         </div>
