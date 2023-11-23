@@ -57,7 +57,7 @@ include("includes/sidebar.php");
 								<tbody>
 									<?php
 									$query = "SELECT * FROM leave_application lp
-              								  INNER JOIN employee e ON e.employeeID = lp.employee_id";
+              								  INNER JOIN employee e ON e.employeeID = lp.employee_id where status<>'Pending'";
 
 									$result = mysqli_query($con, $query);
 
